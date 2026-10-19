@@ -1,0 +1,1690 @@
+{
+  "version": "0.1",
+  "note": "Obligations the command view tracks, per governing document, with the clause that sets each. Values are proposed in the sources; items marked confirm or decide are open. Renumbered on 15 October 2026: 14 governing documents (the Charter, 9 policies, 4 standards). Three merged policies keep the host's link; the absorbed documents are listed under retiredDocuments.",
+  "trackedByFormat": "workflow:<workflowId>[.<transitionId>] | register:<registerId> | kpi:<kpiId> | screen:<screen>",
+  "documents": [
+    {
+      "id": "DP-00",
+      "reference": "KHDA-DP-00",
+      "shortLabel": "DP-00 Charter",
+      "title": "KHDA Data Governance Charter",
+      "kind": "Charter",
+      "owner": "DS&A",
+      "version": "0.2, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "4eaf5c37-fe2b-402d-9057-3932574ef308",
+      "url": "https://claude.ai/code/artifact/4eaf5c37-fe2b-402d-9057-3932574ef308",
+      "kpiIds": [
+        "KPI-DP00-1",
+        "KPI-DP00-2"
+      ],
+      "obligations": [
+        {
+          "clause": "Charter 9.1, 10",
+          "text": "Acknowledge and schedule a DS&A standard-correction instruction",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "2 working days",
+          "trackedBy": "workflow:dq_issue.acknowledge",
+          "id": "OB-DP-00-01"
+        },
+        {
+          "clause": "Charter 9.3, 10",
+          "text": "Object to a standard correction on documented grounds, or it proceeds",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "3 working days",
+          "trackedBy": "workflow:dq_issue.object",
+          "id": "OB-DP-00-02"
+        },
+        {
+          "clause": "Charter 9.4, 10",
+          "text": "Decide a business-judgment change",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "trackedBy": "workflow:dq_issue.owner_decide",
+          "id": "OB-DP-00-03"
+        },
+        {
+          "clause": "Charter 10",
+          "text": "Data fix by script, configuration or reference data",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "trackedBy": "workflow:dq_issue.record_correction",
+          "id": "OB-DP-00-04"
+        },
+        {
+          "clause": "Charter 10",
+          "text": "Pipeline, report, API or filter-logic fix",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "10 working days",
+          "trackedBy": "workflow:dq_issue.record_correction",
+          "id": "OB-DP-00-05"
+        },
+        {
+          "clause": "Charter 9.6, 10",
+          "text": "Data impact assessment of a system change",
+          "responsibleRole": "data_administrator",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from a complete request",
+          "trackedBy": "workflow:system_change.sign_off_assessment",
+          "id": "OB-DP-00-06"
+        },
+        {
+          "clause": "Charter 9.5, 10",
+          "text": "Verify a completed change",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "3 working days",
+          "trackedBy": "workflow:dq_issue.verify_and_close",
+          "id": "OB-DP-00-07"
+        },
+        {
+          "clause": "Charter 7.6, 10",
+          "text": "Provision DS&A read-only access after classification",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "10 working days [confirm]",
+          "trackedBy": "register:access_register",
+          "confirm": true,
+          "id": "OB-DP-00-08"
+        },
+        {
+          "clause": "Charter 8.8, 10",
+          "text": "Deliver and update database metadata after a schema or view change",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "5 working days [confirm]",
+          "confirm": true,
+          "id": "OB-DP-00-09"
+        },
+        {
+          "clause": "Charter 11.1, 11.2",
+          "text": "Respond to an escalated missed service level",
+          "responsibleRole": "cdo",
+          "kind": "service_level",
+          "serviceLevel": "2 working days",
+          "trackedBy": "workflow:escalation.respond",
+          "id": "OB-DP-00-10"
+        },
+        {
+          "clause": "Charter 5.2, 11.3",
+          "text": "Refer items the Group has not resolved in 15 working days to the Director General automatically",
+          "responsibleRole": "governance_group",
+          "kind": "automatic",
+          "serviceLevel": "15 working days",
+          "trackedBy": "workflow:escalation.refer_dg",
+          "id": "OB-DP-00-11"
+        },
+        {
+          "clause": "Charter 11.4, 12.3",
+          "text": "Issue the monthly compliance report to the CDO",
+          "responsibleRole": "governance_section",
+          "kind": "recurring",
+          "cadence": "Monthly",
+          "trackedBy": "screen:compliance-report",
+          "id": "OB-DP-00-12"
+        },
+        {
+          "clause": "Charter 12.4",
+          "text": "Record every exception, time-limited, in the exception register",
+          "responsibleRole": "data_administrator",
+          "kind": "register",
+          "trackedBy": "register:exception_register",
+          "id": "OB-DP-00-13"
+        },
+        {
+          "clause": "Charter 12.5",
+          "text": "Assign an owner to a dataset without one",
+          "responsibleRole": "cdo",
+          "kind": "service_level",
+          "serviceLevel": "10 working days",
+          "trackedBy": "register:data_inventory",
+          "id": "OB-DP-00-14"
+        },
+        {
+          "clause": "Charter 12.6",
+          "text": "Annual briefing for owners, stewards and DS&A staff; new staff in their first month [confirm]",
+          "responsibleRole": "data_administrator",
+          "kind": "recurring",
+          "cadence": "Annual",
+          "trackedBy": "screen:policy-acknowledgments",
+          "confirm": true,
+          "id": "OB-DP-00-15"
+        },
+        {
+          "clause": "Charter 6 (DDM-003.3, DDM-003.10, DDM-003.11)",
+          "text": "Keep every core data role, the Data Champion and supplementary roles in the data roles register and update access when holders join, move or leave",
+          "responsibleRole": "data_administrator",
+          "kind": "register",
+          "trackedBy": "register:data_roles_register",
+          "id": "OB-DP-00-16"
+        },
+        {
+          "clause": "Charter 6 (DDM-005.3)",
+          "text": "Appoint at least one Data Steward in each department, accountable to its Data Owner [decide: phase-in period]",
+          "responsibleRole": "data_owner",
+          "kind": "register",
+          "trackedBy": "register:data_roles_register",
+          "id": "OB-DP-00-17"
+        },
+        {
+          "clause": "Charter 12 (DDM-004.1, DDM-004.7)",
+          "text": "Review data culture objectives each quarter and assess data maturity each year, reporting to the CDO",
+          "responsibleRole": "data_champion",
+          "kind": "recurring",
+          "trackedBy": "workflow:culture_review.record",
+          "id": "OB-DP-00-18"
+        }
+      ]
+    },
+    {
+      "id": "DP-01",
+      "reference": "KHDA-DP-01",
+      "shortLabel": "DP-01 Classification",
+      "title": "KHDA Data Classification Policy",
+      "kind": "Policy",
+      "owner": "DS&A",
+      "version": "0.2, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "d4e09e17-4b7d-4361-b382-e263e0619146",
+      "url": "https://claude.ai/code/artifact/d4e09e17-4b7d-4361-b382-e263e0619146",
+      "kpiIds": [
+        "KPI-DP01-1",
+        "KPI-DP01-2"
+      ],
+      "obligations": [
+        {
+          "clause": "DP-01 8, 10",
+          "text": "Classify each field and record reasons",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from receipt of definitions and business rules",
+          "trackedBy": "workflow:classification.draft",
+          "id": "OB-DP-01-01"
+        },
+        {
+          "clause": "DP-01 8, 10",
+          "text": "Confirm business facts or justify a different level (no response is agreement)",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "5 working days; 3 for a live sharing request",
+          "trackedBy": "workflow:classification.owner_confirm",
+          "id": "OB-DP-01-02"
+        },
+        {
+          "clause": "DP-01 8, 10",
+          "text": "Decide differences and approve levels",
+          "responsibleRole": "cdo",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "trackedBy": "workflow:classification.approve",
+          "id": "OB-DP-01-03"
+        },
+        {
+          "clause": "DP-01 8, 10",
+          "text": "Record in the Data Dictionary and submit to the DDSE",
+          "responsibleRole": "data_administrator",
+          "kind": "service_level",
+          "serviceLevel": "Next inventory upload",
+          "trackedBy": "workflow:classification.submit_ddse",
+          "id": "OB-DP-01-04"
+        },
+        {
+          "clause": "DP-01 10",
+          "text": "Check a Secret justification",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "trackedBy": "register:data_inventory",
+          "id": "OB-DP-01-05"
+        },
+        {
+          "clause": "DP-01 10",
+          "text": "Approve or reject a Secret designation",
+          "responsibleRole": "dg_office",
+          "kind": "service_level",
+          "serviceLevel": "10 working days",
+          "trackedBy": "register:data_inventory",
+          "id": "OB-DP-01-06"
+        },
+        {
+          "clause": "DP-01 10",
+          "text": "Hold Secret data outside the analytical environment",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "5 working days from approval",
+          "id": "OB-DP-01-07"
+        },
+        {
+          "clause": "DP-01 9",
+          "text": "Review classifications annually and on each new field, legislation change, incident or proposed publication",
+          "responsibleRole": "data_administrator",
+          "kind": "recurring",
+          "cadence": "Annual",
+          "trackedBy": "register:data_inventory",
+          "id": "OB-DP-01-08"
+        },
+        {
+          "clause": "DP-01 5, 8 (DDM-006.2, DDM-006.11)",
+          "text": "Record a justification for every Shared classification and list Confidential and Sensitive datasets in the public Data Inventory unless an exception is approved",
+          "responsibleRole": "data_administrator",
+          "kind": "register",
+          "trackedBy": "register:data_inventory",
+          "id": "OB-DP-01-09"
+        }
+      ]
+    },
+    {
+      "id": "DP-02",
+      "reference": "KHDA-DP-02",
+      "shortLabel": "DP-02 Sharing and exchange",
+      "title": "KHDA Data Sharing and Exchange Policy",
+      "kind": "Policy",
+      "owner": "DS&A",
+      "version": "0.3, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "38e9bad9-e3d1-492d-8479-b2a0feabd3e6",
+      "url": "https://claude.ai/code/artifact/38e9bad9-e3d1-492d-8479-b2a0feabd3e6",
+      "kpiIds": [
+        "KPI-DP02-1",
+        "KPI-DP02-2"
+      ],
+      "supportingMeasureIds": [
+        "KPI-DP02-S1",
+        "KPI-DP02-S2"
+      ],
+      "mergedFrom": [
+        "KHDA-DP-02 Data Sharing Policy (old numbering)",
+        "KHDA-DP-03 Data Exchange and API Policy (old numbering)"
+      ],
+      "obligations": [
+        {
+          "clause": "DP-02 7.1, 13",
+          "text": "Forward a request received elsewhere in KHDA to DS&A",
+          "responsibleRole": "requester",
+          "kind": "service_level",
+          "serviceLevel": "1 working day",
+          "trackedBy": "workflow:external_sharing.log",
+          "id": "OB-DP-02-01"
+        },
+        {
+          "clause": "DP-02 7.2, 13",
+          "text": "Register the request",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "By working day 2 from receipt",
+          "trackedBy": "workflow:external_sharing.register",
+          "id": "OB-DP-02-02"
+        },
+        {
+          "clause": "DP-02 7.3, 13",
+          "text": "Classify, trim and recommend",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "By working day 4 from receipt",
+          "trackedBy": "workflow:external_sharing.send_to_owner",
+          "id": "OB-DP-02-03"
+        },
+        {
+          "clause": "DP-02 7.4, 13",
+          "text": "Confirm content (no reply is no objection)",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "By working day 7 from receipt",
+          "trackedBy": "workflow:external_sharing.owner_confirm",
+          "id": "OB-DP-02-04"
+        },
+        {
+          "clause": "DP-02 7.5, 13",
+          "text": "Approve, refuse or escalate",
+          "responsibleRole": "cdo",
+          "kind": "service_level",
+          "serviceLevel": "By working day 10 from receipt",
+          "trackedBy": "workflow:external_sharing.cdo_approve",
+          "id": "OB-DP-02-05"
+        },
+        {
+          "clause": "DP-02 6, 13",
+          "text": "Decide an escalated request (five triggers)",
+          "responsibleRole": "dg_office",
+          "kind": "service_level",
+          "serviceLevel": "By working day 15 from receipt",
+          "trackedBy": "workflow:external_sharing.dg_approve",
+          "id": "OB-DP-02-06"
+        },
+        {
+          "clause": "DP-02 7.7, 13",
+          "text": "Run the extract or API",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "Agreed release date",
+          "trackedBy": "workflow:external_sharing.release",
+          "id": "OB-DP-02-07"
+        },
+        {
+          "clause": "DP-02 7.7, 13",
+          "text": "Record the release in the Data Sharing Register",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "Same day as release",
+          "trackedBy": "register:data_sharing_register",
+          "id": "OB-DP-02-08"
+        },
+        {
+          "clause": "DP-02 13",
+          "text": "Acknowledge a data specification and give a build estimate",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "id": "OB-DP-02-09"
+        },
+        {
+          "clause": "DP-02 13",
+          "text": "Reconcile API test output with the certified view",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "3 working days",
+          "id": "OB-DP-02-10"
+        },
+        {
+          "clause": "DP-02 13",
+          "text": "Confirm the content of the API",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "3 working days [confirm]",
+          "confirm": true,
+          "id": "OB-DP-02-11"
+        },
+        {
+          "clause": "DP-02 11.1, 13",
+          "text": "Run each scheduled push and reconcile it against control totals",
+          "responsibleRole": "digital_excellence",
+          "kind": "recurring",
+          "serviceLevel": "Daily",
+          "cadence": "Daily",
+          "trackedBy": "kpi:KPI-DP02-2",
+          "id": "OB-DP-02-12"
+        },
+        {
+          "clause": "DP-02 11.2, 13",
+          "text": "Fix and rerun a failed push",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "1 working day",
+          "trackedBy": "kpi:KPI-DP02-S2",
+          "id": "OB-DP-02-13"
+        },
+        {
+          "clause": "DP-02 11.4, 13",
+          "text": "Contain or correct incorrect data released through an API",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "1 working day from detection",
+          "trackedBy": "workflow:data_incident.contain",
+          "id": "OB-DP-02-14"
+        },
+        {
+          "clause": "DP-02 13",
+          "text": "Notify a source change affecting an API",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "10 working days before deployment",
+          "id": "OB-DP-02-15"
+        },
+        {
+          "clause": "DP-02 11.5",
+          "text": "Keep a live register of all external APIs and feeds, readable by DS&A",
+          "responsibleRole": "digital_excellence",
+          "kind": "register",
+          "id": "OB-DP-02-16"
+        },
+        {
+          "clause": "DP-02 (DDM-010.12)",
+          "text": "Approve a DPIA before any exchange of personal data",
+          "responsibleRole": "data_privacy_officer",
+          "kind": "service_level",
+          "trackedBy": "workflow:dpia.approve",
+          "id": "OB-DP-02-17",
+          "serviceLevel": "[decide: proposed 5 working days]"
+        }
+      ]
+    },
+    {
+      "id": "DP-03",
+      "reference": "KHDA-DP-03",
+      "shortLabel": "DP-03 Access and services",
+      "title": "KHDA Data Access and Data Services Policy",
+      "kind": "Policy",
+      "owner": "DS&A",
+      "version": "0.2, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "1f8d7ef1-a56d-40e7-a509-25564d22b1e1",
+      "url": "https://claude.ai/code/artifact/1f8d7ef1-a56d-40e7-a509-25564d22b1e1",
+      "kpiIds": [
+        "KPI-DP03-1",
+        "KPI-DP03-2"
+      ],
+      "obligations": [
+        {
+          "clause": "DP-03 9",
+          "text": "Review a request and confirm it is complete",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "2 working days",
+          "trackedBy": "workflow:ds_service_request.accept",
+          "id": "OB-DP-03-01"
+        },
+        {
+          "clause": "DP-03 5.1, 9",
+          "text": "Approve the business questions of an analysis request",
+          "responsibleRole": "sector_ceo",
+          "kind": "service_level",
+          "serviceLevel": "3 working days",
+          "trackedBy": "workflow:ds_service_request.approve",
+          "id": "OB-DP-03-02"
+        },
+        {
+          "clause": "DP-03 9",
+          "text": "Agree scope, method and delivery date for an analysis",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "5 working days from approval",
+          "trackedBy": "workflow:ds_service_request.start_work",
+          "id": "OB-DP-03-03"
+        },
+        {
+          "clause": "DP-03 9",
+          "text": "Write requirements and plan for a new dashboard",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "10 working days",
+          "trackedBy": "workflow:dashboard_certification.write_requirements",
+          "id": "OB-DP-03-04"
+        },
+        {
+          "clause": "DP-03 4.2, 9",
+          "text": "Approve access to Confidential or Sensitive data (no response goes to the CDO)",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "3 working days",
+          "trackedBy": "workflow:access_request.owner_approve",
+          "id": "OB-DP-03-05"
+        },
+        {
+          "clause": "DP-03 9",
+          "text": "Grant dashboard or system access",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "3 working days",
+          "trackedBy": "workflow:access_request.provision",
+          "id": "OB-DP-03-06"
+        },
+        {
+          "clause": "DP-03 6.1, 9",
+          "text": "Deliver a standard extract with a delivery note",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "trackedBy": "kpi:KPI-DP03-2",
+          "id": "OB-DP-03-07"
+        },
+        {
+          "clause": "DP-03 6.1, 9",
+          "text": "Deliver a complex or multi-system extract",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "10 working days",
+          "trackedBy": "kpi:KPI-DP03-2",
+          "id": "OB-DP-03-08"
+        },
+        {
+          "clause": "DP-03 4.3, 9",
+          "text": "Recertify access every six months [confirm]; revoke access no longer required in 5 working days",
+          "responsibleRole": "data_owner",
+          "kind": "recurring",
+          "serviceLevel": "Revocation 5 working days",
+          "cadence": "Six-monthly",
+          "trackedBy": "workflow:access_recertification",
+          "confirm": true,
+          "id": "OB-DP-03-09"
+        },
+        {
+          "clause": "DP-03 7.7, 9",
+          "text": "Service provider returns or deletes data at contract end; DS&A records the confirmation",
+          "responsibleRole": "data_administrator",
+          "kind": "service_level",
+          "serviceLevel": "10 working days",
+          "trackedBy": "register:service_provider_register",
+          "id": "OB-DP-03-10"
+        },
+        {
+          "clause": "DP-03 5.9, 9",
+          "text": "Record a data requirement and state how it will be met",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "5 working days [confirm]",
+          "trackedBy": "workflow:data_requirement.route",
+          "confirm": true,
+          "id": "OB-DP-03-11"
+        },
+        {
+          "clause": "DP-03 (DDSE services)",
+          "text": "Raise every request for a DDSE service through DS&A and record it in the DDSE services register",
+          "responsibleRole": "dsa_analyst",
+          "kind": "register",
+          "trackedBy": "register:ddse_services_register",
+          "id": "OB-DP-03-12"
+        }
+      ]
+    },
+    {
+      "id": "DP-04",
+      "reference": "KHDA-DP-04",
+      "shortLabel": "DP-04 Personal data",
+      "title": "KHDA Personal Data Protection Policy",
+      "kind": "Policy",
+      "owner": "DS&A",
+      "version": "0.2, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "a0aa7bf8-35f4-4f7c-b497-6541be2be6bc",
+      "url": "https://claude.ai/code/artifact/a0aa7bf8-35f4-4f7c-b497-6541be2be6bc",
+      "kpiIds": [
+        "KPI-DP04-1",
+        "KPI-DP04-2"
+      ],
+      "obligations": [
+        {
+          "clause": "DP-04 8.1, 10",
+          "text": "Report suspected exposure of personal data",
+          "responsibleRole": "requester",
+          "kind": "service_level",
+          "serviceLevel": "Immediately",
+          "trackedBy": "workflow:data_incident.report",
+          "id": "OB-DP-04-01"
+        },
+        {
+          "clause": "DP-04 8.3, 10",
+          "text": "Contain the exposure",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "1 working day from the report",
+          "trackedBy": "workflow:data_incident.contain",
+          "id": "OB-DP-04-02"
+        },
+        {
+          "clause": "DP-04 8.4, 10",
+          "text": "Inform the Data Owner and recipients; log the incident",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "2 working days from the report",
+          "trackedBy": "workflow:data_incident.inform",
+          "id": "OB-DP-04-03"
+        },
+        {
+          "clause": "DP-04 8.5, 10",
+          "text": "Root cause and closure report",
+          "responsibleRole": "information_security",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from the report",
+          "trackedBy": "workflow:data_incident.close_report",
+          "id": "OB-DP-04-04"
+        },
+        {
+          "clause": "DP-04 6.2, 10",
+          "text": "Verify identity and decide a correction or withdrawal request",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "5 working days from the request",
+          "id": "OB-DP-04-05"
+        },
+        {
+          "clause": "DP-04 6.3, 10",
+          "text": "Update the record or stop the exchange",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "5 working days from the decision",
+          "id": "OB-DP-04-06"
+        },
+        {
+          "clause": "DP-04 6.4, 10",
+          "text": "Reply to the requester with reasons",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from the request",
+          "id": "OB-DP-04-07"
+        }
+      ]
+    },
+    {
+      "id": "DP-05",
+      "reference": "KHDA-DP-05",
+      "shortLabel": "DP-05 Statistics and publication",
+      "title": "KHDA Official Statistics, KPI Data and Publication Policy",
+      "kind": "Policy",
+      "owner": "DS&A",
+      "version": "0.3, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "262cf982-6422-4eb3-8ee9-b16b326500e7",
+      "url": "https://claude.ai/code/artifact/262cf982-6422-4eb3-8ee9-b16b326500e7",
+      "kpiIds": [
+        "KPI-DP05-1",
+        "KPI-DP05-2"
+      ],
+      "supportingMeasureIds": [
+        "KPI-DP05-S1",
+        "KPI-DP05-S2"
+      ],
+      "mergedFrom": [
+        "KHDA-DP-06 Open Data and Publication Policy (old numbering)",
+        "KHDA-DP-08 KPI Data and Official Statistics Policy (old numbering)"
+      ],
+      "obligations": [
+        {
+          "clause": "DP-05 5.1",
+          "text": "Record every KPI and official statistic in the KPI and Statistics Catalog",
+          "responsibleRole": "data_administrator",
+          "kind": "register",
+          "trackedBy": "register:kpi_catalog",
+          "id": "OB-DP-05-01"
+        },
+        {
+          "clause": "DP-05 5.3, 17",
+          "text": "Write the counting rule and test the source",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from the proposal",
+          "trackedBy": "workflow:kpi_adoption.test",
+          "id": "OB-DP-05-02"
+        },
+        {
+          "clause": "DP-05 5.6, 17",
+          "text": "Respond to a consultation on a definition or counting rule",
+          "responsibleRole": "principal_data_user",
+          "kind": "service_level",
+          "serviceLevel": "5 working days, within the DS&A test period [confirm]",
+          "trackedBy": "workflow:kpi_adoption.test",
+          "confirm": true,
+          "id": "OB-DP-05-03"
+        },
+        {
+          "clause": "DP-05 5.4, 17",
+          "text": "Adopt or park the measure",
+          "responsibleRole": "director_strategy_excellence",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from the DS&A test",
+          "trackedBy": "workflow:kpi_adoption.adopt",
+          "id": "OB-DP-05-04"
+        },
+        {
+          "clause": "DP-05 6.1, 17",
+          "text": "Deliver source data",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "The agreed date each period",
+          "trackedBy": "kpi:KPI-DP05-S2",
+          "id": "OB-DP-05-05"
+        },
+        {
+          "clause": "DP-05 7.2, 17",
+          "text": "Certify operational statistics",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "Before the agreed delivery date each period [confirm]",
+          "trackedBy": "workflow:operational_statistic.certify",
+          "confirm": true,
+          "decide": "owner certifies operational KPI values; DS&A certifies analytical or cross-source KPIs",
+          "id": "OB-DP-05-06"
+        },
+        {
+          "clause": "DP-05 7.2, 17",
+          "text": "Certify the value (analytical output)",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "5 working days from receipt of the source data",
+          "id": "OB-DP-05-07"
+        },
+        {
+          "clause": "DP-05 8.2, 17",
+          "text": "Reconcile a figure with another official source and document any difference",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from publication of the other source [confirm]",
+          "confirm": true,
+          "id": "OB-DP-05-08"
+        },
+        {
+          "clause": "DP-05 11.1, 17",
+          "text": "Reconcile published channels against certified values; log and assign issues",
+          "responsibleRole": "dsa_analyst",
+          "kind": "recurring",
+          "serviceLevel": "Monthly",
+          "cadence": "Monthly",
+          "trackedBy": "register:operational_statistics_register",
+          "id": "OB-DP-05-09"
+        },
+        {
+          "clause": "DP-05 11.2, 17",
+          "text": "Remove or correct a published figure that is wrong or exposes restricted data",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "1 working day",
+          "trackedBy": "workflow:dq_issue",
+          "id": "OB-DP-05-10"
+        },
+        {
+          "clause": "DP-05 11.3, 17",
+          "text": "Correct a directory entry or source record with available tools, or state in writing that the tools cannot",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "trackedBy": "workflow:dq_issue",
+          "id": "OB-DP-05-11"
+        },
+        {
+          "clause": "DP-05 11.6, 17",
+          "text": "Issue the monthly published-data report to the CDO and the Director General",
+          "responsibleRole": "dsa_analyst",
+          "kind": "recurring",
+          "serviceLevel": "5th working day of each month",
+          "cadence": "Monthly",
+          "id": "OB-DP-05-12"
+        },
+        {
+          "clause": "DP-05 13.5, 17",
+          "text": "Publish the census report within 47 working days of the snapshot",
+          "responsibleRole": "data_administrator",
+          "kind": "service_level",
+          "serviceLevel": "47 working days",
+          "trackedBy": "workflow:statistical_publication",
+          "id": "OB-DP-05-13"
+        },
+        {
+          "clause": "DP-05 17",
+          "text": "Certify census operational statistics",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "trackedBy": "workflow:statistical_publication.certify",
+          "id": "OB-DP-05-14"
+        },
+        {
+          "clause": "DP-05 17",
+          "text": "Review census wording and style (no response is no comment)",
+          "responsibleRole": "engagement_department",
+          "kind": "service_level",
+          "serviceLevel": "7 working days",
+          "trackedBy": "workflow:statistical_publication.engagement_review",
+          "id": "OB-DP-05-15"
+        },
+        {
+          "clause": "DP-05 17",
+          "text": "Return the first design draft of a statistical publication",
+          "responsibleRole": "engagement_department",
+          "kind": "service_level",
+          "serviceLevel": "5 working days from receipt of final content [confirm]",
+          "trackedBy": "workflow:statistical_publication",
+          "confirm": true,
+          "id": "OB-DP-05-16"
+        }
+      ]
+    },
+    {
+      "id": "DP-06",
+      "reference": "KHDA-DP-06",
+      "shortLabel": "DP-06 Data quality",
+      "title": "KHDA Data Quality Policy",
+      "kind": "Policy",
+      "owner": "DS&A",
+      "version": "0.2, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "e0a9f95a-764a-4ea5-8be1-d2dc9511af29",
+      "url": "https://claude.ai/code/artifact/e0a9f95a-764a-4ea5-8be1-d2dc9511af29",
+      "kpiIds": [
+        "KPI-DP06-1",
+        "KPI-DP06-2"
+      ],
+      "obligations": [
+        {
+          "clause": "DP-06 7.1, 10",
+          "text": "Measure, log and find root cause; issue the monthly data quality report to the CDO",
+          "responsibleRole": "dsa_analyst",
+          "kind": "recurring",
+          "serviceLevel": "Monthly",
+          "cadence": "Monthly",
+          "trackedBy": "kpi:KPI-DP06-1",
+          "id": "OB-DP-06-01"
+        },
+        {
+          "clause": "DP-06 8.7, 10",
+          "text": "Acknowledge an issue list",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "2 working days [confirm]",
+          "trackedBy": "workflow:institution_remediation.acknowledge_list",
+          "confirm": true,
+          "id": "OB-DP-06-02"
+        },
+        {
+          "clause": "DP-06 8.7, 10",
+          "text": "Notify the institutions concerned",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "5 working days [confirm]",
+          "trackedBy": "workflow:institution_remediation.notify_institution",
+          "confirm": true,
+          "id": "OB-DP-06-03"
+        },
+        {
+          "clause": "DP-06 8.7, 10",
+          "text": "Correct flagged records (institution, coordinated by the owner)",
+          "responsibleRole": "producer_staff",
+          "kind": "service_level",
+          "serviceLevel": "20 working days from notification [confirm]",
+          "trackedBy": "workflow:institution_remediation.record_correction",
+          "confirm": true,
+          "id": "OB-DP-06-04"
+        },
+        {
+          "clause": "DP-06 8.5, 10",
+          "text": "Plan a form or service fix with Service Design",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from the change request",
+          "trackedBy": "workflow:field_change",
+          "id": "OB-DP-06-05"
+        },
+        {
+          "clause": "DP-06 8.1, 10",
+          "text": "Fix a data issue at source in the owner's system",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "As agreed between the owner and Digital Excellence [confirm values]",
+          "trackedBy": "workflow:dq_issue.route_to_source_fix",
+          "confirm": true,
+          "id": "OB-DP-06-06"
+        },
+        {
+          "clause": "DP-06 8.9, 10",
+          "text": "Confirm fit for use",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "3 working days from the correction",
+          "trackedBy": "workflow:dq_issue.confirm_fit_for_use",
+          "id": "OB-DP-06-07"
+        },
+        {
+          "clause": "DP-06 8.10, 10",
+          "text": "Re-measure against the threshold and close",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "3 working days from the fit-for-use confirmation",
+          "trackedBy": "workflow:dq_issue.verify_and_close",
+          "id": "OB-DP-06-08"
+        }
+      ]
+    },
+    {
+      "id": "DP-07",
+      "reference": "KHDA-DP-07",
+      "shortLabel": "DP-07 Collection and capture",
+      "title": "KHDA Data Collection and Source Capture Policy",
+      "kind": "Policy",
+      "owner": "DS&A",
+      "version": "0.3, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "4d5486ff-5464-4be3-98ba-67b040a91620",
+      "url": "https://claude.ai/code/artifact/4d5486ff-5464-4be3-98ba-67b040a91620",
+      "kpiIds": [
+        "KPI-DP07-1",
+        "KPI-DP07-2"
+      ],
+      "supportingMeasureIds": [
+        "KPI-DP07-S1",
+        "KPI-DP07-S2"
+      ],
+      "mergedFrom": [
+        "KHDA-DP-09 Data Collection and Survey Policy (old numbering)",
+        "KHDA-DP-12 Source Data Capture and Integration Policy (old numbering)"
+      ],
+      "obligations": [
+        {
+          "clause": "DP-07 4.2, 4.6, 10",
+          "text": "Collect-once and burden check",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "10 working days",
+          "id": "OB-DP-07-01"
+        },
+        {
+          "clause": "DP-07 4.7, 10",
+          "text": "Approve a new institution-wide collection",
+          "responsibleRole": "cdo",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "id": "OB-DP-07-02"
+        },
+        {
+          "clause": "DP-07 5.3, 10",
+          "text": "Assess service fit, customer effort and integration options",
+          "responsibleRole": "service_design",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "trackedBy": "workflow:field_change.service_design_assess",
+          "id": "OB-DP-07-03"
+        },
+        {
+          "clause": "DP-07 5.4, 10",
+          "text": "Assess the data need, and downstream use for a removal",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "trackedBy": "workflow:field_change.dsa_assess",
+          "id": "OB-DP-07-04"
+        },
+        {
+          "clause": "DP-07 5.7, 10",
+          "text": "Decide the business need for a field change",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "trackedBy": "workflow:field_change.owner_approve",
+          "id": "OB-DP-07-05"
+        },
+        {
+          "clause": "DP-07 10",
+          "text": "Estimate the build of a field change",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "10 working days [confirm]",
+          "trackedBy": "workflow:field_change.estimate",
+          "confirm": true,
+          "id": "OB-DP-07-06"
+        },
+        {
+          "clause": "DP-07 10",
+          "text": "Update the data dictionary after go-live",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "5 working days after go-live",
+          "trackedBy": "workflow:field_change.complete_updates",
+          "decide": "is 5 working days after go-live right?",
+          "id": "OB-DP-07-07"
+        },
+        {
+          "clause": "DP-07 6.5, 10",
+          "text": "Log the survey and check for duplicates",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "3 working days",
+          "trackedBy": "workflow:ds_service_request",
+          "id": "OB-DP-07-08"
+        },
+        {
+          "clause": "DP-07 6.6, 10",
+          "text": "Review method and data protection, and sign off",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "5 working days from the draft questions",
+          "trackedBy": "workflow:ds_service_request",
+          "id": "OB-DP-07-09"
+        },
+        {
+          "clause": "DP-07 6.2, 6.7",
+          "text": "Register every survey before launch, with DDSE Permit or coordination reference",
+          "responsibleRole": "dsa_analyst",
+          "kind": "register",
+          "trackedBy": "register:survey_register",
+          "id": "OB-DP-07-10"
+        },
+        {
+          "clause": "DP-07 7.9, 10",
+          "text": "Register an existing manual collection",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "30 working days from approval of DP-07",
+          "trackedBy": "register:manual_collections",
+          "id": "OB-DP-07-11"
+        },
+        {
+          "clause": "DP-07 7.11, 10",
+          "text": "Submit a digitization request",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "20 working days from registration",
+          "trackedBy": "workflow:digitization.submit_request",
+          "id": "OB-DP-07-12"
+        },
+        {
+          "clause": "DP-07 7.4, 10",
+          "text": "Attach DS&A data requirements to a digitization request",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from the request",
+          "trackedBy": "workflow:digitization.attach_requirements",
+          "id": "OB-DP-07-13"
+        },
+        {
+          "clause": "DP-07 5.6, 5.7, 10",
+          "text": "Design the service for a digitization request",
+          "responsibleRole": "service_design",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from the request",
+          "trackedBy": "workflow:digitization.attach_requirements",
+          "id": "OB-DP-07-14"
+        },
+        {
+          "clause": "DP-07 7.5, 10",
+          "text": "Acknowledge a digitization request",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "2 working days",
+          "trackedBy": "workflow:digitization.acknowledge",
+          "id": "OB-DP-07-15"
+        },
+        {
+          "clause": "DP-07 7.5, 10",
+          "text": "Give the solution, an estimate and a delivery date",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "20 working days from the requirements and design",
+          "trackedBy": "workflow:digitization.give_solution",
+          "id": "OB-DP-07-16"
+        },
+        {
+          "clause": "DP-07 7.6, 10",
+          "text": "Set the order of competing digitization requests",
+          "responsibleRole": "cdo",
+          "kind": "service_level",
+          "serviceLevel": "5 working days from referral",
+          "trackedBy": "workflow:digitization.set_priority",
+          "id": "OB-DP-07-17"
+        },
+        {
+          "clause": "DP-07 7.14, 10",
+          "text": "Confirm the first load and close the register entry",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "5 working days from the first load",
+          "trackedBy": "workflow:digitization.confirm_first_load",
+          "id": "OB-DP-07-18"
+        },
+        {
+          "clause": "DP-07 8.2, 10",
+          "text": "Submit the data warehouse plan with milestones",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "Date set under 6.2",
+          "id": "OB-DP-07-19"
+        },
+        {
+          "clause": "DP-07 6 (Res. 96/2016 Art. 4, 5, 8)",
+          "text": "Clear the Res. 96/2016 approval check before a survey goes live",
+          "responsibleRole": "data_administrator",
+          "kind": "service_level",
+          "trackedBy": "workflow:survey_approval.clear",
+          "id": "OB-DP-07-20",
+          "serviceLevel": "Before go-live"
+        }
+      ]
+    },
+    {
+      "id": "DP-08",
+      "reference": "KHDA-DP-08",
+      "shortLabel": "DP-08 Retention",
+      "title": "KHDA Data Retention and Snapshot Policy",
+      "kind": "Policy",
+      "owner": "DS&A",
+      "version": "0.2, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "a27c9d35-9bd7-4940-a9e0-5548d34d3729",
+      "url": "https://claude.ai/code/artifact/a27c9d35-9bd7-4940-a9e0-5548d34d3729",
+      "kpiIds": [
+        "KPI-DP08-1",
+        "KPI-DP08-2"
+      ],
+      "obligations": [
+        {
+          "clause": "DP-08 4.1, 8",
+          "text": "Issue the snapshot calendar and snapshot content",
+          "responsibleRole": "data_administrator",
+          "kind": "recurring",
+          "serviceLevel": "Annually",
+          "cadence": "Annual",
+          "id": "OB-DP-08-01"
+        },
+        {
+          "clause": "DP-08 4.3, 8",
+          "text": "Capture a scheduled snapshot",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "Within 1 working day of the snapshot date",
+          "trackedBy": "kpi:KPI-DP08-1",
+          "id": "OB-DP-08-02"
+        },
+        {
+          "clause": "DP-08 4.4, 8",
+          "text": "Verify a snapshot against counting rules",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "id": "OB-DP-08-03"
+        },
+        {
+          "clause": "DP-08 5.2, 8",
+          "text": "Restore historical data from backup",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from the DS&A request",
+          "id": "OB-DP-08-04"
+        },
+        {
+          "clause": "DP-08 5.4, 8",
+          "text": "List data due for disposal under the schedule",
+          "responsibleRole": "digital_excellence",
+          "kind": "recurring",
+          "serviceLevel": "Quarterly",
+          "cadence": "Quarterly",
+          "trackedBy": "kpi:KPI-DP08-2",
+          "id": "OB-DP-08-05"
+        },
+        {
+          "clause": "DP-08 5.3, 8",
+          "text": "Approve disposal of data (owner, then KHDA Legal)",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "10 working days each [confirm]",
+          "confirm": true,
+          "id": "OB-DP-08-06"
+        }
+      ]
+    },
+    {
+      "id": "DP-09",
+      "reference": "KHDA-DP-09",
+      "shortLabel": "DP-09 Analytics platforms",
+      "title": "KHDA Data Analytics Platforms and Tools Policy",
+      "kind": "Policy",
+      "owner": "DS&A",
+      "version": "0.3, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "f8a8610f-50e8-4547-b7be-8761e2d533b1",
+      "url": "https://claude.ai/code/artifact/f8a8610f-50e8-4547-b7be-8761e2d533b1",
+      "kpiIds": [
+        "KPI-DP09-1",
+        "KPI-DP09-2"
+      ],
+      "obligations": [
+        {
+          "clause": "DP-09 6.2, 10",
+          "text": "Assess a tool requirement and respond with a plan",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "10 working days",
+          "trackedBy": "kpi:KPI-DP09-1",
+          "id": "OB-DP-09-01"
+        },
+        {
+          "clause": "DP-09 4.6, 10",
+          "text": "Review the security of a proposed tool or platform",
+          "responsibleRole": "information_security",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "id": "OB-DP-09-02"
+        },
+        {
+          "clause": "DP-09 10",
+          "text": "Provision the approved tool or platform",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "10 working days after approval",
+          "id": "OB-DP-09-03"
+        },
+        {
+          "clause": "DP-09 10",
+          "text": "Grant a new user access to Power BI, Dataiku or the analytical environment",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "3 working days",
+          "id": "OB-DP-09-04"
+        },
+        {
+          "clause": "DP-09 10",
+          "text": "Deliver Power BI or Dataiku user training on request",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "20 working days",
+          "id": "OB-DP-09-05"
+        },
+        {
+          "clause": "DP-09 8.3, 10",
+          "text": "Validate a model before first use and after each material change",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "Before first use",
+          "trackedBy": "register:model_register",
+          "id": "OB-DP-09-06"
+        },
+        {
+          "clause": "DP-09 8.11, 10",
+          "text": "Review each model in use",
+          "responsibleRole": "dsa_analyst",
+          "kind": "recurring",
+          "serviceLevel": "Every 12 months",
+          "cadence": "Annual",
+          "trackedBy": "register:model_register",
+          "id": "OB-DP-09-07"
+        }
+      ]
+    },
+    {
+      "id": "ST-01",
+      "reference": "KHDA-ST-01",
+      "shortLabel": "ST-01 Standards",
+      "title": "KHDA Data Management Standards",
+      "kind": "Standard",
+      "owner": "DS&A",
+      "version": "0.2, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "5ec2de8c-6fe0-4a36-9ae7-14943456dc24",
+      "url": "https://claude.ai/code/artifact/5ec2de8c-6fe0-4a36-9ae7-14943456dc24",
+      "kpiIds": [
+        "KPI-ST01-1",
+        "KPI-ST01-2"
+      ],
+      "obligations": [
+        {
+          "clause": "ST-01 13.1",
+          "text": "Keep one data quality issue log with the ST-01 13.1 fields",
+          "responsibleRole": "dsa_analyst",
+          "kind": "register",
+          "trackedBy": "workflow:dq_issue",
+          "id": "OB-ST-01-01"
+        },
+        {
+          "clause": "ST-01 14.4, 21",
+          "text": "Acknowledge an issue list; notify the institutions concerned",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "2 working days; 5 working days",
+          "trackedBy": "workflow:institution_remediation",
+          "id": "OB-ST-01-02"
+        },
+        {
+          "clause": "ST-01 14.6, 21",
+          "text": "Correct records",
+          "responsibleRole": "producer_staff",
+          "kind": "service_level",
+          "serviceLevel": "20 working days from notification",
+          "trackedBy": "workflow:institution_remediation.record_correction",
+          "id": "OB-ST-01-03"
+        },
+        {
+          "clause": "ST-01 14.7, 21",
+          "text": "Backfill missing historical fields",
+          "responsibleRole": "producer_staff",
+          "kind": "service_level",
+          "serviceLevel": "30 working days from notification, or a plan the owner records",
+          "trackedBy": "workflow:institution_remediation.record_correction",
+          "decide": "owner sets the backfill plan instead of agreeing it with DS&A?",
+          "id": "OB-ST-01-04"
+        },
+        {
+          "clause": "ST-01 21",
+          "text": "Write business quality rules for a certified view",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "10 working days",
+          "id": "OB-ST-01-05"
+        },
+        {
+          "clause": "ST-01 21",
+          "text": "Build a certified view with technical rules",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "10 working days [confirm]",
+          "confirm": true,
+          "id": "OB-ST-01-06"
+        },
+        {
+          "clause": "ST-01 21",
+          "text": "Certify and share an operational statistic",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "By the reporting date in the counting rule register [confirm]",
+          "trackedBy": "register:operational_statistics_register",
+          "confirm": true,
+          "id": "OB-ST-01-07"
+        },
+        {
+          "clause": "ST-01 21",
+          "text": "Assign an owner to a Data Set without one",
+          "responsibleRole": "cdo",
+          "kind": "service_level",
+          "serviceLevel": "10 working days",
+          "trackedBy": "register:data_inventory",
+          "id": "OB-ST-01-08"
+        }
+      ]
+    },
+    {
+      "id": "ST-02",
+      "reference": "KHDA-ST-02",
+      "shortLabel": "ST-02 Dashboards",
+      "title": "KHDA BI and Dashboard Standard",
+      "kind": "Standard",
+      "owner": "DS&A",
+      "version": "0.1, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "613fccc4-0e41-45a8-8080-333e9b512848",
+      "url": "https://claude.ai/code/artifact/613fccc4-0e41-45a8-8080-333e9b512848",
+      "kpiIds": [
+        "KPI-ST02-1",
+        "KPI-ST02-2"
+      ],
+      "obligations": [
+        {
+          "clause": "ST-02 4.4",
+          "text": "Keep the register of certified and legacy dashboards",
+          "responsibleRole": "data_administrator",
+          "kind": "register",
+          "trackedBy": "register:dashboard_register",
+          "id": "OB-ST-02-01"
+        },
+        {
+          "clause": "ST-02 8.6, 11",
+          "text": "Update the data quality disclaimer on each certified dashboard",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "Each refresh [confirm]",
+          "trackedBy": "register:dashboard_register",
+          "confirm": true,
+          "decide": "disclaimer content and where it sits on the dashboard",
+          "id": "OB-ST-02-02"
+        },
+        {
+          "clause": "ST-02 11",
+          "text": "Peer review and data quality check",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "5 working days [confirm]",
+          "trackedBy": "workflow:dashboard_certification.submit_review",
+          "confirm": true,
+          "id": "OB-ST-02-03"
+        },
+        {
+          "clause": "ST-02 11",
+          "text": "Certify and publish a dashboard after it passes review",
+          "responsibleRole": "data_administrator",
+          "kind": "service_level",
+          "serviceLevel": "2 working days [confirm]",
+          "trackedBy": "workflow:dashboard_certification.certify",
+          "confirm": true,
+          "id": "OB-ST-02-04"
+        },
+        {
+          "clause": "ST-02 8.3, 11",
+          "text": "Restore a failed refresh (cause in the platform or gateway)",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "1 working day [confirm]",
+          "confirm": true,
+          "id": "OB-ST-02-05"
+        },
+        {
+          "clause": "ST-02 7.4, 11",
+          "text": "Grant project access",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "5 working days [confirm]",
+          "trackedBy": "workflow:access_request.provision",
+          "confirm": true,
+          "decide": "3 or 5 working days for project access; ST-02, BRD and SPEC differ",
+          "id": "OB-ST-02-06"
+        },
+        {
+          "clause": "ST-02 7.7, 11",
+          "text": "Recertify dashboard users",
+          "responsibleRole": "data_owner",
+          "kind": "recurring",
+          "serviceLevel": "Every six months [confirm]",
+          "cadence": "Six-monthly",
+          "trackedBy": "workflow:access_recertification",
+          "confirm": true,
+          "id": "OB-ST-02-07"
+        },
+        {
+          "clause": "ST-02 5.8",
+          "text": "Review every certified dashboard with its business owner",
+          "responsibleRole": "data_administrator",
+          "kind": "recurring",
+          "serviceLevel": "Yearly",
+          "cadence": "Annual",
+          "trackedBy": "register:dashboard_register",
+          "id": "OB-ST-02-08"
+        }
+      ]
+    },
+    {
+      "id": "ST-03",
+      "reference": "KHDA-ST-03",
+      "shortLabel": "ST-03 Data quality",
+      "title": "KHDA Data Quality Standard",
+      "kind": "Standard",
+      "owner": "DS&A",
+      "version": "0.1, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "bcc1711a-3f12-4203-98c0-fbda22e74cc1",
+      "url": "https://claude.ai/code/artifact/bcc1711a-3f12-4203-98c0-fbda22e74cc1",
+      "kpiIds": [
+        "KPI-ST03-1",
+        "KPI-ST03-2"
+      ],
+      "obligations": [
+        {
+          "clause": "ST-03 12.10, 17",
+          "text": "Pre-fill the timeliness matrix and send each producer its rows",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from approval of ST-03",
+          "trackedBy": "workflow:timeliness_commitment.send_rows",
+          "id": "OB-ST-03-01"
+        },
+        {
+          "clause": "ST-03 12.10, 17",
+          "text": "Confirm data types and set timeliness commitments, with Service Design consulted",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "20 working days from receipt of the pre-filled rows",
+          "trackedBy": "workflow:timeliness_commitment.commit",
+          "id": "OB-ST-03-02"
+        },
+        {
+          "clause": "ST-03 17",
+          "text": "Check that each commitment can be measured and log TL5 issues",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "5 working days",
+          "trackedBy": "workflow:timeliness_commitment.check_measurable",
+          "id": "OB-ST-03-03"
+        },
+        {
+          "clause": "ST-03 12.7, 17",
+          "text": "Add a missing event date or audit stamp (source system change)",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "Plan in 10 working days; deliver in 30",
+          "trackedBy": "workflow:dq_issue",
+          "id": "OB-ST-03-04"
+        },
+        {
+          "clause": "ST-03 17",
+          "text": "Approve the commitments",
+          "responsibleRole": "cdo",
+          "kind": "service_level",
+          "serviceLevel": "10 working days",
+          "trackedBy": "workflow:timeliness_commitment.approve",
+          "id": "OB-ST-03-05"
+        },
+        {
+          "clause": "ST-03 14.1, 17",
+          "text": "Run all rules, score every critical data element and issue the monthly report",
+          "responsibleRole": "dsa_analyst",
+          "kind": "recurring",
+          "serviceLevel": "Monthly",
+          "cadence": "Monthly",
+          "trackedBy": "kpi:KPI-ST03-1",
+          "id": "OB-ST-03-06"
+        },
+        {
+          "clause": "ST-03 14.5, 17",
+          "text": "Report on producers' commitments and flag escalations",
+          "responsibleRole": "governance_section",
+          "kind": "recurring",
+          "serviceLevel": "Monthly",
+          "cadence": "Monthly",
+          "trackedBy": "screen:compliance-report",
+          "id": "OB-ST-03-07"
+        },
+        {
+          "clause": "ST-03 18.2",
+          "text": "Escalate a service that misses its commitment two months running",
+          "responsibleRole": "governance_section",
+          "kind": "automatic",
+          "trackedBy": "workflow:escalation",
+          "decide": "escalation trigger for missed commitments",
+          "id": "OB-ST-03-08"
+        }
+      ]
+    },
+    {
+      "id": "ST-04",
+      "reference": "KHDA-ST-04",
+      "shortLabel": "ST-04 Metadata",
+      "title": "KHDA Metadata Standard",
+      "kind": "Standard",
+      "owner": "DS&A",
+      "version": "0.1, draft for review",
+      "status": "Draft for review",
+      "approvedBy": "Director General (first issue); CDO (routine revisions)",
+      "docId": "38f02cda-7fe3-4ffe-870c-82ceee96e027",
+      "url": "https://claude.ai/code/artifact/38f02cda-7fe3-4ffe-870c-82ceee96e027",
+      "kpiIds": [
+        "KPI-ST04-1",
+        "KPI-ST04-2"
+      ],
+      "obligations": [
+        {
+          "clause": "ST-04 13",
+          "text": "Issue the proposed field metadata for a Data Set",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "10 working days from the Data Set's start date [confirm]",
+          "confirm": true,
+          "id": "OB-ST-04-01"
+        },
+        {
+          "clause": "ST-04 13",
+          "text": "Confirm technical metadata, writing services and effective-date fields",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "10 working days [confirm]",
+          "confirm": true,
+          "id": "OB-ST-04-02"
+        },
+        {
+          "clause": "ST-04 10.4, 13",
+          "text": "Confirm class and history rule, and complete the owner entries",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "20 working days [confirm]",
+          "trackedBy": "kpi:KPI-ST04-1",
+          "confirm": true,
+          "id": "OB-ST-04-03"
+        },
+        {
+          "clause": "ST-04 10.3, 13",
+          "text": "Complete register entries for critical data elements",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "6 months from approval of ST-04 [confirm]",
+          "trackedBy": "kpi:KPI-ST04-1",
+          "confirm": true,
+          "id": "OB-ST-04-04"
+        },
+        {
+          "clause": "ST-04 10.3, 13",
+          "text": "Complete register entries for all other fields",
+          "responsibleRole": "data_owner",
+          "kind": "service_level",
+          "serviceLevel": "12 months from approval of ST-04 [confirm]",
+          "trackedBy": "kpi:KPI-ST04-1",
+          "confirm": true,
+          "id": "OB-ST-04-05"
+        },
+        {
+          "clause": "ST-04 13",
+          "text": "Add audit stamps to a view without them",
+          "responsibleRole": "digital_excellence",
+          "kind": "service_level",
+          "serviceLevel": "Plan in 10 working days; deliver in 30",
+          "trackedBy": "workflow:dq_issue",
+          "id": "OB-ST-04-06"
+        },
+        {
+          "clause": "ST-04 13",
+          "text": "Verify the history rule and update the data dictionary and register",
+          "responsibleRole": "dsa_analyst",
+          "kind": "service_level",
+          "serviceLevel": "3 working days",
+          "id": "OB-ST-04-07"
+        }
+      ]
+    }
+  ],
+  "retiredDocuments": [
+    {
+      "oldReference": "KHDA-DP-03",
+      "title": "Data Exchange and API Policy",
+      "mergedInto": "DP-02",
+      "retiredOn": "2026-10-15",
+      "docId": "f6acdf7c-2d68-4092-801d-02ff17641a0c",
+      "url": "https://claude.ai/code/artifact/f6acdf7c-2d68-4092-801d-02ff17641a0c",
+      "note": "Retired on 15 October 2026 and merged into KHDA-DP-02 Data Sharing and Exchange Policy; kept for history only."
+    },
+    {
+      "oldReference": "KHDA-DP-08",
+      "title": "KPI Data and Official Statistics Policy",
+      "mergedInto": "DP-05",
+      "retiredOn": "2026-10-15",
+      "docId": "91b064f3-3284-48b4-bc92-c9a69a6cebcc",
+      "url": "https://claude.ai/code/artifact/91b064f3-3284-48b4-bc92-c9a69a6cebcc",
+      "note": "Retired on 15 October 2026 and merged into KHDA-DP-05 Official Statistics, KPI Data and Publication Policy; kept for history only."
+    },
+    {
+      "oldReference": "KHDA-DP-12",
+      "title": "Source Data Capture and Integration Policy",
+      "mergedInto": "DP-07",
+      "retiredOn": "2026-10-15",
+      "docId": "aa4179b5-71c7-4378-8e49-844305e9a388",
+      "url": "https://claude.ai/code/artifact/aa4179b5-71c7-4378-8e49-844305e9a388",
+      "note": "Retired on 15 October 2026 and merged into KHDA-DP-07 Data Collection and Source Capture Policy; kept for history only."
+    }
+  ]
+}

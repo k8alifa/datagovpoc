@@ -1,0 +1,405 @@
+{
+  "note": "Fictional institutions. Names and counts are invented for the demo.",
+  "institutions": [
+    {
+      "id": "INS-001",
+      "name": "Demo School 01",
+      "type": "school",
+      "area": "Demo Area B",
+      "permitStatus": "active",
+      "studentsAsRecorded": 1112,
+      "staffAsRecorded": 142,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-002",
+      "name": "Demo School 02",
+      "type": "school",
+      "area": "Demo Area D",
+      "permitStatus": "active",
+      "studentsAsRecorded": 342,
+      "staffAsRecorded": 40,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-003",
+      "name": "Demo School 03",
+      "type": "school",
+      "area": "Demo Area A",
+      "permitStatus": "active",
+      "studentsAsRecorded": 1095,
+      "staffAsRecorded": 164,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-004",
+      "name": "Demo School 04",
+      "type": "school",
+      "area": "Demo Area D",
+      "permitStatus": "active",
+      "studentsAsRecorded": 1920,
+      "staffAsRecorded": 176,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-005",
+      "name": "Demo School 05",
+      "type": "school",
+      "area": "Demo Area D",
+      "permitStatus": "active",
+      "studentsAsRecorded": 1253,
+      "staffAsRecorded": 157,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-006",
+      "name": "Demo School 06",
+      "type": "school",
+      "area": "Demo Area A",
+      "permitStatus": "active",
+      "studentsAsRecorded": 1259,
+      "staffAsRecorded": 171,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-007",
+      "name": "Demo School 07",
+      "type": "school",
+      "area": "Demo Area B",
+      "permitStatus": "active",
+      "studentsAsRecorded": 551,
+      "staffAsRecorded": 198,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-008",
+      "name": "Demo School 08",
+      "type": "school",
+      "area": "Demo Area C",
+      "permitStatus": "active",
+      "studentsAsRecorded": 573,
+      "staffAsRecorded": 119,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-009",
+      "name": "Demo School 09",
+      "type": "school",
+      "area": "Demo Area B",
+      "permitStatus": "active",
+      "studentsAsRecorded": 1406,
+      "staffAsRecorded": 188,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-010",
+      "name": "Demo School 10",
+      "type": "school",
+      "area": "Demo Area D",
+      "permitStatus": "active",
+      "studentsAsRecorded": 1021,
+      "staffAsRecorded": 36,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-011",
+      "name": "Demo School 11",
+      "type": "school",
+      "area": "Demo Area A",
+      "permitStatus": "active",
+      "studentsAsRecorded": 306,
+      "staffAsRecorded": 167,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-012",
+      "name": "Demo School 12",
+      "type": "school",
+      "area": "Demo Area D",
+      "permitStatus": "active",
+      "studentsAsRecorded": 2041,
+      "staffAsRecorded": 72,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-013",
+      "name": "Demo School 13",
+      "type": "school",
+      "area": "Demo Area A",
+      "permitStatus": "active",
+      "studentsAsRecorded": 2125,
+      "staffAsRecorded": 157,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-014",
+      "name": "Demo School 14",
+      "type": "school",
+      "area": "Demo Area A",
+      "permitStatus": "active",
+      "studentsAsRecorded": 768,
+      "staffAsRecorded": 214,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-015",
+      "name": "Demo School 15",
+      "type": "school",
+      "area": "Demo Area A",
+      "permitStatus": "active",
+      "studentsAsRecorded": 1080,
+      "staffAsRecorded": 166,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-016",
+      "name": "Demo School 16",
+      "type": "school",
+      "area": "Demo Area A",
+      "permitStatus": "active",
+      "studentsAsRecorded": 2106,
+      "staffAsRecorded": 172,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-017",
+      "name": "Demo Early Childhood Center 01",
+      "type": "ecc",
+      "area": "Demo Area B",
+      "permitStatus": "active",
+      "studentsAsRecorded": 161,
+      "staffAsRecorded": 8,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-018",
+      "name": "Demo Early Childhood Center 02",
+      "type": "ecc",
+      "area": "Demo Area D",
+      "permitStatus": "active",
+      "studentsAsRecorded": 183,
+      "staffAsRecorded": 13,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-019",
+      "name": "Demo Early Childhood Center 03",
+      "type": "ecc",
+      "area": "Demo Area E",
+      "permitStatus": "active",
+      "studentsAsRecorded": 109,
+      "staffAsRecorded": 30,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-020",
+      "name": "Demo Early Childhood Center 04",
+      "type": "ecc",
+      "area": "Demo Area B",
+      "permitStatus": "active",
+      "studentsAsRecorded": 137,
+      "staffAsRecorded": 12,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-021",
+      "name": "Demo Early Childhood Center 05",
+      "type": "ecc",
+      "area": "Demo Area B",
+      "permitStatus": "active",
+      "studentsAsRecorded": 65,
+      "staffAsRecorded": 17,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-022",
+      "name": "Demo Early Childhood Center 06",
+      "type": "ecc",
+      "area": "Demo Area A",
+      "permitStatus": "active",
+      "studentsAsRecorded": 48,
+      "staffAsRecorded": 20,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-023",
+      "name": "Demo Early Childhood Center 07",
+      "type": "ecc",
+      "area": "Demo Area E",
+      "permitStatus": "active",
+      "studentsAsRecorded": 130,
+      "staffAsRecorded": 35,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-024",
+      "name": "Demo Early Childhood Center 08",
+      "type": "ecc",
+      "area": "Demo Area B",
+      "permitStatus": "active",
+      "studentsAsRecorded": 145,
+      "staffAsRecorded": 27,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-025",
+      "name": "Demo Early Childhood Center 09",
+      "type": "ecc",
+      "area": "Demo Area D",
+      "permitStatus": "active",
+      "studentsAsRecorded": 159,
+      "staffAsRecorded": 31,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-026",
+      "name": "Demo Early Childhood Center 10",
+      "type": "ecc",
+      "area": "Demo Area A",
+      "permitStatus": "permit_expired_no_renewal",
+      "studentsAsRecorded": 115,
+      "staffAsRecorded": 14,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-027",
+      "name": "Demo Training Institute 01",
+      "type": "training_institute",
+      "area": "Demo Area A",
+      "permitStatus": "active",
+      "studentsAsRecorded": 796,
+      "staffAsRecorded": 42,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-028",
+      "name": "Demo Training Institute 02",
+      "type": "training_institute",
+      "area": "Demo Area C",
+      "permitStatus": "active",
+      "studentsAsRecorded": 197,
+      "staffAsRecorded": 20,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-029",
+      "name": "Demo Training Institute 03",
+      "type": "training_institute",
+      "area": "Demo Area D",
+      "permitStatus": "active",
+      "studentsAsRecorded": 702,
+      "staffAsRecorded": 49,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-030",
+      "name": "Demo Training Institute 04",
+      "type": "training_institute",
+      "area": "Demo Area D",
+      "permitStatus": "active",
+      "studentsAsRecorded": 581,
+      "staffAsRecorded": 58,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-031",
+      "name": "Demo Training Institute 05",
+      "type": "training_institute",
+      "area": "Demo Area D",
+      "permitStatus": "active",
+      "studentsAsRecorded": 333,
+      "staffAsRecorded": 57,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-032",
+      "name": "Demo Training Institute 06",
+      "type": "training_institute",
+      "area": "Demo Area B",
+      "permitStatus": "active",
+      "studentsAsRecorded": 825,
+      "staffAsRecorded": 57,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-033",
+      "name": "Demo Training Institute 07",
+      "type": "training_institute",
+      "area": "Demo Area E",
+      "permitStatus": "permit_expired_no_renewal",
+      "studentsAsRecorded": 250,
+      "staffAsRecorded": 31,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-034",
+      "name": "Demo Higher Education Provider 01",
+      "type": "higher_education",
+      "area": "Demo Area A",
+      "permitStatus": "active",
+      "studentsAsRecorded": 3305,
+      "staffAsRecorded": 256,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-035",
+      "name": "Demo Higher Education Provider 02",
+      "type": "higher_education",
+      "area": "Demo Area E",
+      "permitStatus": "active",
+      "studentsAsRecorded": 909,
+      "staffAsRecorded": 242,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-036",
+      "name": "Demo Higher Education Provider 03",
+      "type": "higher_education",
+      "area": "Demo Area D",
+      "permitStatus": "active",
+      "studentsAsRecorded": 2679,
+      "staffAsRecorded": 96,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-037",
+      "name": "Demo Higher Education Provider 04",
+      "type": "higher_education",
+      "area": "Demo Area B",
+      "permitStatus": "active",
+      "studentsAsRecorded": 861,
+      "staffAsRecorded": 245,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-038",
+      "name": "Demo Higher Education Provider 05",
+      "type": "higher_education",
+      "area": "Demo Area C",
+      "permitStatus": "active",
+      "studentsAsRecorded": 3727,
+      "staffAsRecorded": 216,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-039",
+      "name": "Demo Higher Education Provider 06",
+      "type": "higher_education",
+      "area": "Demo Area A",
+      "permitStatus": "active",
+      "studentsAsRecorded": 540,
+      "staffAsRecorded": 84,
+      "ownerSectorId": "GHD"
+    },
+    {
+      "id": "INS-040",
+      "name": "Demo Higher Education Provider 07",
+      "type": "higher_education",
+      "area": "Demo Area E",
+      "permitStatus": "active",
+      "studentsAsRecorded": 783,
+      "staffAsRecorded": 50,
+      "ownerSectorId": "GHD"
+    }
+  ]
+}

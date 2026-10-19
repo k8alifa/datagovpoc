@@ -1,0 +1,43 @@
+{
+  "note": "Data culture and maturity register (synthetic). Objectives and results are demo values [decide: culture objectives].",
+  "reviews": [
+    {
+      "id": "CUL-2026-Q3",
+      "workflowId": "culture_review",
+      "state": "acknowledged",
+      "kind": "culture_review",
+      "period": "2026 Q3",
+      "dataChampionUserId": "U-data-champion",
+      "objectives": [
+        {
+          "objective": "Staff complete data literacy basics (demo)",
+          "measure": "Share of staff trained, %",
+          "target": "[decide]",
+          "result": "Not started (training launches February 2027)"
+        }
+      ],
+      "communityOfPracticeSessions": 1,
+      "maturityScores": null,
+      "actions": [
+        "Set culture objectives with the CDO (demo)"
+      ]
+    },
+    {
+      "id": "MAT-2026",
+      "workflowId": "culture_review",
+      "state": "scheduled",
+      "kind": "maturity_assessment",
+      "period": "2026",
+      "dataChampionUserId": "U-data-champion",
+      "objectives": [],
+      "communityOfPracticeSessions": 0,
+      "maturityScores": [
+        {
+          "subDimension": "[confirm Digital Maturity Policy sub-dimensions]",
+          "score": null
+        }
+      ],
+      "actions": []
+    }
+  ]
+}

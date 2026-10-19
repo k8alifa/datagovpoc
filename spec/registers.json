@@ -1,0 +1,1346 @@
+{
+  "version": "0.1",
+  "note": "The twelve registers in BRD Section 6.2 (inBrd: true) plus three POC additions. Every entry keeps version history (date, change, approver) (BR-068). Registers added 16 Oct 2026 for the Dubai Data Manual v5.0: DDSE services, DPIA, data culture and maturity.",
+  "registers": [
+    {
+      "id": "data_inventory",
+      "name": "Data Inventory and classification",
+      "inBrd": true,
+      "owner": "Data Administrator",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "reviewCycle": "Owners confirm entries yearly; review on each new field, legislation change, incident or proposed publication",
+      "policyBasis": [
+        "ST-01 6.4",
+        "DP-01 9",
+        "DDM-005.6 to DDM-005.11",
+        "DDM-006.2, DDM-006.11",
+        "DDM-007 Step 3",
+        "BR-123",
+        "BR-124"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "type": "string (Data Set, a source view)"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "businessDataOwnerSector",
+          "type": "sectorId"
+        },
+        {
+          "name": "dataStewardUserId",
+          "type": "userId"
+        },
+        {
+          "name": "custodian",
+          "type": "string"
+        },
+        {
+          "name": "sourceSystem",
+          "type": "string"
+        },
+        {
+          "name": "classification",
+          "type": "Open | Confidential | Sensitive | Secret (metadata only)"
+        },
+        {
+          "name": "classificationReason",
+          "type": "string"
+        },
+        {
+          "name": "classificationStatus",
+          "type": "awaiting_definitions | drafting | owner_review | cdo_decision | approved | submitted_ddse"
+        },
+        {
+          "name": "fieldCount",
+          "type": "number"
+        },
+        {
+          "name": "fieldsApproved",
+          "type": "number"
+        },
+        {
+          "name": "cdeCount",
+          "type": "number"
+        },
+        {
+          "name": "cdeWithFullMetadata",
+          "type": "number"
+        },
+        {
+          "name": "refreshFrequency",
+          "type": "string"
+        },
+        {
+          "name": "externalExchanges",
+          "type": "string[]"
+        },
+        {
+          "name": "latestQualityScore",
+          "type": "number"
+        },
+        {
+          "name": "ddseSubmittedAt",
+          "type": "date | null"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "name": "priorityScores",
+          "type": "{ qualityReadiness: number, risk: number, valueDemand: number, total: number } | null (standard prioritization tool [confirm tool and scale])"
+        },
+        {
+          "name": "initialScoreBy",
+          "type": "userId (Data Steward) | null"
+        },
+        {
+          "name": "scoreReviewedAt",
+          "type": "date | null (Data Administrator review)"
+        },
+        {
+          "name": "nextScoreReviewAt",
+          "type": "date | null (re-prioritization cycle)"
+        },
+        {
+          "name": "sharedJustification",
+          "type": "string | null (required when classification is not Open)"
+        },
+        {
+          "name": "publicInventoryListing",
+          "type": "listed | pending | exception | not_applicable"
+        },
+        {
+          "name": "publicListingExceptionRef",
+          "type": "string | null (Competent Entity approval)"
+        },
+        {
+          "name": "mandatoryMetadataComplete",
+          "type": "number (of the 12 DDM-007 mandatory fields)"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "datasets.json"
+    },
+    {
+      "id": "data_sharing_register",
+      "name": "Data Sharing Register",
+      "inBrd": true,
+      "owner": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "reviewCycle": "Updated on every release (DP-02 7.7); full review yearly [confirm]",
+      "policyBasis": [
+        "DP-02 6, 7.7"
+      ],
+      "fields": [
+        {
+          "name": "requestId",
+          "type": "sharingRequestId"
+        },
+        {
+          "name": "recipient",
+          "type": "string"
+        },
+        {
+          "name": "datasetIds",
+          "type": "datasetId[]"
+        },
+        {
+          "name": "fields",
+          "type": "string[]"
+        },
+        {
+          "name": "classification",
+          "type": "string"
+        },
+        {
+          "name": "purpose",
+          "type": "string"
+        },
+        {
+          "name": "legalBasis",
+          "type": "string"
+        },
+        {
+          "name": "accessPermission",
+          "type": "object"
+        },
+        {
+          "name": "retention",
+          "type": "string"
+        },
+        {
+          "name": "channel",
+          "type": "string"
+        },
+        {
+          "name": "releaseDate",
+          "type": "date"
+        },
+        {
+          "name": "approver",
+          "type": "roleId"
+        },
+        {
+          "name": "recurringScope",
+          "type": "string | null"
+        },
+        {
+          "name": "preAuthorizedRecipients",
+          "type": "string[]"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "derived from sharing_requests.json (released items)",
+      "confirm": "full review cycle"
+    },
+    {
+      "id": "access_register",
+      "name": "Access register",
+      "inBrd": true,
+      "owner": "DS&A, with Digital Excellence for provisioning",
+      "ownerRoles": [
+        "data_administrator",
+        "digital_excellence"
+      ],
+      "reviewCycle": "Six-monthly recertification by owners [confirm cycle]",
+      "policyBasis": [
+        "DP-03 4.2, 4.3",
+        "Charter 7.4"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "userId",
+          "type": "userId (demo role user)"
+        },
+        {
+          "name": "object",
+          "type": "string (dataset, system or dashboard)"
+        },
+        {
+          "name": "objectId",
+          "type": "datasetId | dashboardId"
+        },
+        {
+          "name": "level",
+          "type": "read | read-unmasked"
+        },
+        {
+          "name": "approver",
+          "type": "roleId"
+        },
+        {
+          "name": "grantedAt",
+          "type": "date"
+        },
+        {
+          "name": "nextReviewAt",
+          "type": "date"
+        },
+        {
+          "name": "revokedAt",
+          "type": "date | null"
+        },
+        {
+          "name": "type",
+          "type": "standard | project | standing | dsa_standing | service_provider"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "access_grants.json",
+      "confirm": "six-month cycle"
+    },
+    {
+      "id": "service_provider_register",
+      "name": "Service provider register",
+      "inBrd": true,
+      "owner": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "reviewCycle": "At contract start and end (DP-03 7.7); yearly [confirm]",
+      "policyBasis": [
+        "DP-03 7",
+        "DDSE Services Catalog v3.1 S09, S10, S12"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "provider",
+          "type": "string (fictional)"
+        },
+        {
+          "name": "contractReference",
+          "type": "string"
+        },
+        {
+          "name": "purpose",
+          "type": "string"
+        },
+        {
+          "name": "datasetIds",
+          "type": "datasetId[]"
+        },
+        {
+          "name": "namedStaffCount",
+          "type": "number"
+        },
+        {
+          "name": "accessPermission",
+          "type": "string"
+        },
+        {
+          "name": "approverRole",
+          "type": "roleId"
+        },
+        {
+          "name": "endDate",
+          "type": "date"
+        },
+        {
+          "name": "returnOrDeletionConfirmedAt",
+          "type": "date | null"
+        },
+        {
+          "name": "ddsePollPermitNumber",
+          "type": "string | null (survey firms)"
+        },
+        {
+          "name": "ddsePollPermitExpiry",
+          "type": "date | null"
+        },
+        {
+          "name": "technicalManagerCertificateExpiry",
+          "type": "date | null (valid three years, DDSE.S09)"
+        },
+        {
+          "name": "surveyorIdCardsIssued",
+          "type": "number | null (DDSE.S12)"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "service_providers.json"
+    },
+    {
+      "id": "exception_register",
+      "name": "Exception register",
+      "inBrd": true,
+      "owner": "DS&A; the Governance section monitors",
+      "ownerRoles": [
+        "data_administrator",
+        "governance_section"
+      ],
+      "reviewCycle": "Monthly, in the compliance report (Charter 12.4)",
+      "policyBasis": [
+        "Charter 12.4"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "documentId",
+          "type": "documentId"
+        },
+        {
+          "name": "clause",
+          "type": "string"
+        },
+        {
+          "name": "scope",
+          "type": "string"
+        },
+        {
+          "name": "justification",
+          "type": "string"
+        },
+        {
+          "name": "approverRole",
+          "type": "roleId"
+        },
+        {
+          "name": "startDate",
+          "type": "date"
+        },
+        {
+          "name": "endDate",
+          "type": "date"
+        },
+        {
+          "name": "remediationPlan",
+          "type": "string"
+        },
+        {
+          "name": "state",
+          "type": "exception workflow state"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "exceptions.json"
+    },
+    {
+      "id": "survey_register",
+      "name": "Survey register",
+      "inBrd": true,
+      "owner": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "reviewCycle": "Every survey before launch; yearly survey report (DP-07 6.2, 6.13)",
+      "policyBasis": [
+        "DP-07 6.2, 6.7, 6.13",
+        "Res. 96/2016 Art. 4, 5, 8",
+        "BR-020",
+        "BR-125"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "channel",
+          "type": "NG survey tool | DDSE Dubai Polls | DDSE Statistical Field Survey | licensed firm"
+        },
+        {
+          "name": "sector",
+          "type": "sectorId"
+        },
+        {
+          "name": "audience",
+          "type": "string"
+        },
+        {
+          "name": "owner",
+          "type": "roleId"
+        },
+        {
+          "name": "purpose",
+          "type": "string"
+        },
+        {
+          "name": "registeredAt",
+          "type": "date"
+        },
+        {
+          "name": "liveDate",
+          "type": "date"
+        },
+        {
+          "name": "closeDate",
+          "type": "date"
+        },
+        {
+          "name": "ddseReference",
+          "type": "string | null"
+        },
+        {
+          "name": "ddseReferenceType",
+          "type": "permit | coordination"
+        },
+        {
+          "name": "ngSurveyId",
+          "type": "string | null"
+        },
+        {
+          "name": "metadataComplete",
+          "type": "boolean"
+        },
+        {
+          "name": "serviceRequestId",
+          "type": "serviceRequestId | null"
+        },
+        {
+          "name": "runBy",
+          "type": "own_resources | ddse_dubai_polls | ddse_field_survey | licensed_firm"
+        },
+        {
+          "name": "firmPermitNumber",
+          "type": "string | null"
+        },
+        {
+          "name": "under18",
+          "type": "boolean"
+        },
+        {
+          "name": "guardianApprovalMethod",
+          "type": "string | null"
+        },
+        {
+          "name": "studentsAtInstitution",
+          "type": "boolean"
+        },
+        {
+          "name": "ddseStudentApprovalRef",
+          "type": "string | null"
+        },
+        {
+          "name": "sensitiveTopics",
+          "type": "boolean"
+        },
+        {
+          "name": "ddseTopicApprovalRef",
+          "type": "string | null"
+        },
+        {
+          "name": "outsideHours",
+          "type": "boolean"
+        },
+        {
+          "name": "ddseHoursApprovalRef",
+          "type": "string | null"
+        },
+        {
+          "name": "consentWording",
+          "type": "string | null"
+        },
+        {
+          "name": "approvalCheckState",
+          "type": "screening | awaiting_references | cleared | stopped"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "surveys.json"
+    },
+    {
+      "id": "kpi_catalog",
+      "name": "KPI and Statistics Catalog",
+      "inBrd": true,
+      "owner": "DS&A; approvals by the Director of Strategy and Excellence (strategic KPIs) and the CDO (official statistics)",
+      "ownerRoles": [
+        "data_administrator",
+        "director_strategy_excellence",
+        "cdo"
+      ],
+      "reviewCycle": "Annual cycle; values each period (DP-05 5, 7)",
+      "policyBasis": [
+        "DP-05 5, 7"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "type",
+          "type": "strategic | official_statistic | governance"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "definition",
+          "type": "string"
+        },
+        {
+          "name": "formula",
+          "type": "string"
+        },
+        {
+          "name": "countingRule",
+          "type": "string"
+        },
+        {
+          "name": "source",
+          "type": "string"
+        },
+        {
+          "name": "businessDataOwnerSector",
+          "type": "sectorId"
+        },
+        {
+          "name": "performanceOwner",
+          "type": "string"
+        },
+        {
+          "name": "refreshFrequency",
+          "type": "string"
+        },
+        {
+          "name": "deliveryDate",
+          "type": "string"
+        },
+        {
+          "name": "target",
+          "type": "number | null"
+        },
+        {
+          "name": "baseline",
+          "type": "number | null"
+        },
+        {
+          "name": "state",
+          "type": "kpi_adoption workflow state: proposed | rule_tested | adopted | parked"
+        },
+        {
+          "name": "certifyingRole",
+          "type": "roleId [decide]"
+        },
+        {
+          "name": "deliveries",
+          "type": "array of {period, agreedDate, deliveredAt}"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "kpi_catalog_entries.json",
+      "decide": "record the certifying role in each catalog entry (DP-05 5.1)"
+    },
+    {
+      "id": "data_roles_register",
+      "name": "Data roles register",
+      "inBrd": true,
+      "owner": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "reviewCycle": "On every change (Charter 6.5)",
+      "policyBasis": [
+        "Charter 6.1, 6.5",
+        "DDM-003.3, DDM-003.10, DDM-003.11",
+        "BR-119",
+        "BR-120"
+      ],
+      "fields": [
+        {
+          "name": "role",
+          "type": "Charter 6.1 role: Chief Data Officer (CDO), Data Administrator, Data Owner, Data Steward, Data Custodian, Data Privacy Officer, Data Champion, or a supplementary role"
+        },
+        {
+          "name": "holderUserId",
+          "type": "userId"
+        },
+        {
+          "name": "sector",
+          "type": "sectorId"
+        },
+        {
+          "name": "assignedDatasetIds",
+          "type": "datasetId[]"
+        },
+        {
+          "name": "startDate",
+          "type": "date"
+        },
+        {
+          "name": "endDate",
+          "type": "date | null"
+        },
+        {
+          "name": "coreOrSupplementary",
+          "type": "core | supplementary (DDM-003.3)"
+        },
+        {
+          "name": "department",
+          "type": "string"
+        },
+        {
+          "name": "jmlEvent",
+          "type": "joiner | mover | leaver | null (DDM-003.11)"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "derived from users.json (dataRoles)"
+    },
+    {
+      "id": "dashboard_register",
+      "name": "Dashboard register",
+      "inBrd": true,
+      "owner": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "reviewCycle": "Yearly (ST-02 5.8)",
+      "policyBasis": [
+        "ST-02 4.4, 4.7, 8.6",
+        "BR-102"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "link",
+          "type": "string (demo)"
+        },
+        {
+          "name": "classification",
+          "type": "string"
+        },
+        {
+          "name": "businessOwnerSector",
+          "type": "sectorId"
+        },
+        {
+          "name": "certification",
+          "type": "certified | legacy | in_development | badge_lost"
+        },
+        {
+          "name": "status",
+          "type": "live | in_development | retired"
+        },
+        {
+          "name": "liveSince",
+          "type": "date | null"
+        },
+        {
+          "name": "lastReviewAt",
+          "type": "date | null"
+        },
+        {
+          "name": "operationalStatisticOwners",
+          "type": "sectorId[]"
+        },
+        {
+          "name": "disclaimerIssueIds",
+          "type": "dqIssueId[] (open source data issues shown in the data quality disclaimer)"
+        },
+        {
+          "name": "dsaAccountable",
+          "type": "boolean (true for certified only)"
+        },
+        {
+          "name": "monthlyViews",
+          "type": "number"
+        },
+        {
+          "name": "servesPrincipalDataUsers",
+          "type": "sectorId[]"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "dashboards.json"
+    },
+    {
+      "id": "field_change_register",
+      "name": "Field change register",
+      "inBrd": true,
+      "owner": "DS&A, with Service Design [decide: confirm owner]",
+      "ownerRoles": [
+        "data_administrator",
+        "service_design"
+      ],
+      "reviewCycle": "On every change (DP-07 5.2)",
+      "policyBasis": [
+        "DP-07 5.2",
+        "BR-097"
+      ],
+      "fields": [
+        {
+          "name": "requestId",
+          "type": "fieldChangeRequestId"
+        },
+        {
+          "name": "serviceId",
+          "type": "serviceId"
+        },
+        {
+          "name": "field",
+          "type": "string"
+        },
+        {
+          "name": "changeType",
+          "type": "add | change | remove"
+        },
+        {
+          "name": "requester",
+          "type": "userId"
+        },
+        {
+          "name": "serviceDesignAssessment",
+          "type": "string"
+        },
+        {
+          "name": "dsaAssessment",
+          "type": "string"
+        },
+        {
+          "name": "consultedPrincipalDataUsers",
+          "type": "sectorId[]"
+        },
+        {
+          "name": "ownerDecision",
+          "type": "string"
+        },
+        {
+          "name": "estimate",
+          "type": "string"
+        },
+        {
+          "name": "buildReference",
+          "type": "string"
+        },
+        {
+          "name": "goLiveAt",
+          "type": "date | null"
+        },
+        {
+          "name": "dictionaryUpdatedAt",
+          "type": "date | null"
+        },
+        {
+          "name": "serviceDocsUpdatedAt",
+          "type": "date | null"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "derived from field_change_requests.json",
+      "decide": "confirm owner"
+    },
+    {
+      "id": "data_requirements_register",
+      "name": "Data requirements register",
+      "inBrd": true,
+      "owner": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "reviewCycle": "On every change; reviewed quarterly [decide: review cycle]",
+      "policyBasis": [
+        "DP-07 5.9",
+        "DP-03 5.9",
+        "BR-098"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "principalDataUserSector",
+          "type": "sectorId"
+        },
+        {
+          "name": "requirementType",
+          "type": "new data | field | integration | survey"
+        },
+        {
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "name": "mandate",
+          "type": "string"
+        },
+        {
+          "name": "supports",
+          "type": "string (strategic KPI or official statistic)"
+        },
+        {
+          "name": "priorityFlag",
+          "type": "boolean"
+        },
+        {
+          "name": "state",
+          "type": "data_requirement workflow state"
+        },
+        {
+          "name": "linkedItemId",
+          "type": "fieldChangeRequestId | manualCollectionId | serviceRequestId | null"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "data_requirements.json",
+      "decide": "review cycle"
+    },
+    {
+      "id": "operational_statistics_register",
+      "name": "Operational statistics register",
+      "inBrd": true,
+      "owner": "Data Owners; DS&A maintains the counting rules",
+      "ownerRoles": [
+        "data_owner",
+        "data_administrator"
+      ],
+      "reviewCycle": "Each reporting period [decide: certification cycle]",
+      "policyBasis": [
+        "DP-05 7.2",
+        "DP-05 10.1",
+        "BR-101"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "statistic",
+          "type": "string"
+        },
+        {
+          "name": "countingRuleRef",
+          "type": "string"
+        },
+        {
+          "name": "ownerSector",
+          "type": "sectorId"
+        },
+        {
+          "name": "sourceSystem",
+          "type": "string"
+        },
+        {
+          "name": "period",
+          "type": "YYYY-MM"
+        },
+        {
+          "name": "snapshotDate",
+          "type": "date"
+        },
+        {
+          "name": "certifiedValue",
+          "type": "number | null"
+        },
+        {
+          "name": "certifiedByRole",
+          "type": "roleId | null"
+        },
+        {
+          "name": "certifiedAt",
+          "type": "date | null"
+        },
+        {
+          "name": "channels",
+          "type": "array of {channel, value}"
+        },
+        {
+          "name": "state",
+          "type": "operational_statistic workflow state"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "operational_statistics.json",
+      "decide": "add this register for owner certification"
+    },
+    {
+      "id": "manual_collections",
+      "name": "Manual collections register (with digitization requests)",
+      "inBrd": false,
+      "owner": "DS&A keeps it; Data Owners register",
+      "ownerRoles": [
+        "data_administrator",
+        "data_owner"
+      ],
+      "reviewCycle": "On every change",
+      "policyBasis": [
+        "DP-07 7.9, 7.10"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "producerSector",
+          "type": "sectorId"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "holds",
+          "type": "string"
+        },
+        {
+          "name": "keptIn",
+          "type": "string"
+        },
+        {
+          "name": "frequency",
+          "type": "string"
+        },
+        {
+          "name": "recordsPerCycle",
+          "type": "number"
+        },
+        {
+          "name": "personalData",
+          "type": "boolean"
+        },
+        {
+          "name": "usedBy",
+          "type": "string"
+        },
+        {
+          "name": "registeredAt",
+          "type": "date"
+        },
+        {
+          "name": "state",
+          "type": "digitization workflow state"
+        },
+        {
+          "name": "digitization",
+          "type": "object (requestedAt, acknowledgedAt, requirementsAt, designAt, solutionAt, estimateDeliveryDate, firstLoadAt)"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "manual_collections.json",
+      "decide": "add the manual collections register to the application (DP-07 12.3)"
+    },
+    {
+      "id": "timeliness_matrix",
+      "name": "Timeliness commitment matrix",
+      "inBrd": false,
+      "owner": "DS&A pre-fills; data producers commit; the CDO approves",
+      "ownerRoles": [
+        "data_administrator",
+        "data_owner",
+        "cdo"
+      ],
+      "reviewCycle": "Every 12 months, or when the service changes [decide: review cycle]",
+      "policyBasis": [
+        "ST-03 12.8 to 12.13"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "serviceId",
+          "type": "serviceId"
+        },
+        {
+          "name": "category",
+          "type": "string"
+        },
+        {
+          "name": "dataType",
+          "type": "T1 | T2 | T3 | T4 | T5"
+        },
+        {
+          "name": "proposedStartingValue",
+          "type": "string [confirm]"
+        },
+        {
+          "name": "proposedProducerSector",
+          "type": "sectorId [confirm]"
+        },
+        {
+          "name": "eventDateFields",
+          "type": "string"
+        },
+        {
+          "name": "auditStamps",
+          "type": "boolean"
+        },
+        {
+          "name": "state",
+          "type": "timeliness_commitment workflow state"
+        },
+        {
+          "name": "committedLagWorkingDays",
+          "type": "number | null"
+        },
+        {
+          "name": "completeBy",
+          "type": "string | null"
+        },
+        {
+          "name": "targetSharePercent",
+          "type": "number | null"
+        },
+        {
+          "name": "committedByRole",
+          "type": "roleId | null"
+        },
+        {
+          "name": "agreedAt",
+          "type": "date | null"
+        },
+        {
+          "name": "approvedAt",
+          "type": "date | null"
+        },
+        {
+          "name": "lastMonthMet",
+          "type": "boolean | null"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "timeliness_commitments.json",
+      "decide": "report against the DS&A starting value until a commitment is approved (ST-03 12.12)"
+    },
+    {
+      "id": "model_register",
+      "name": "DS&A model register",
+      "inBrd": false,
+      "owner": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "reviewCycle": "Each model every 12 months (DP-09 8.11)",
+      "policyBasis": [
+        "DP-09 8.2 to 8.11"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "purpose",
+          "type": "string"
+        },
+        {
+          "name": "version",
+          "type": "string"
+        },
+        {
+          "name": "reviewingOfficerRole",
+          "type": "roleId"
+        },
+        {
+          "name": "validatedAt",
+          "type": "date | null"
+        },
+        {
+          "name": "firstUseAt",
+          "type": "date | null"
+        },
+        {
+          "name": "nextReviewAt",
+          "type": "date"
+        },
+        {
+          "name": "inUse",
+          "type": "boolean"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "models.json",
+      "decide": "add a model register for DP-09 11.2 so the KPI DS&A models validated before use can be computed"
+    },
+    {
+      "id": "ddse_services_register",
+      "name": "DDSE services register",
+      "inBrd": true,
+      "owner": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "reviewCycle": "On every request; reviewed yearly",
+      "policyBasis": [
+        "DP-03 (DDSE services)",
+        "DDSE Services Catalog v3.1",
+        "BR-121"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "ddseServiceId",
+          "type": "DDSE.S01 to DDSE.S08"
+        },
+        {
+          "name": "requestingSectorId",
+          "type": "sectorId"
+        },
+        {
+          "name": "coordinatorUserId",
+          "type": "userId (DS&A)"
+        },
+        {
+          "name": "submittedAt",
+          "type": "date | null"
+        },
+        {
+          "name": "ddseReference",
+          "type": "string | null"
+        },
+        {
+          "name": "officialLetterRef",
+          "type": "string | null (S03, S05)"
+        },
+        {
+          "name": "termsEndorsed",
+          "type": "boolean | null (S04)"
+        },
+        {
+          "name": "operationalCosts",
+          "type": "string | null"
+        },
+        {
+          "name": "state",
+          "type": "ddse_service state"
+        },
+        {
+          "name": "deliverableLink",
+          "type": "string | null"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "ddse_service_requests.json",
+      "workflow": "ddse_service"
+    },
+    {
+      "id": "dpia_register",
+      "name": "DPIA register",
+      "inBrd": true,
+      "owner": "Data Privacy Officer",
+      "ownerRoles": [
+        "data_privacy_officer"
+      ],
+      "reviewCycle": "Before each exchange or publication of personal data; reviewed yearly",
+      "policyBasis": [
+        "DP-02",
+        "DP-04",
+        "DDM-003.9",
+        "DDM-010.12",
+        "BR-122"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "datasetIds",
+          "type": "datasetId[]"
+        },
+        {
+          "name": "linkedItemId",
+          "type": "sharing request or publication id"
+        },
+        {
+          "name": "personalFields",
+          "type": "string[]"
+        },
+        {
+          "name": "purpose",
+          "type": "string"
+        },
+        {
+          "name": "recipient",
+          "type": "string"
+        },
+        {
+          "name": "risks",
+          "type": "string[]"
+        },
+        {
+          "name": "mitigations",
+          "type": "string[]"
+        },
+        {
+          "name": "transformation",
+          "type": "anonymization | pseudonymization | tokenization | aggregation | none"
+        },
+        {
+          "name": "templateVersion",
+          "type": "string (DDM-010 annex template)"
+        },
+        {
+          "name": "state",
+          "type": "dpia state"
+        },
+        {
+          "name": "decidedAt",
+          "type": "date | null"
+        },
+        {
+          "name": "reviewDueAt",
+          "type": "date | null"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "dpias.json",
+      "workflow": "dpia"
+    },
+    {
+      "id": "data_culture_maturity_register",
+      "name": "Data culture and maturity register",
+      "inBrd": true,
+      "owner": "DS&A, with the Data Champion",
+      "ownerRoles": [
+        "data_administrator",
+        "data_champion"
+      ],
+      "reviewCycle": "Quarterly culture review; yearly maturity assessment",
+      "policyBasis": [
+        "Charter 12",
+        "DDM-004.1, DDM-004.3 to DDM-004.7",
+        "BR-126"
+      ],
+      "fields": [
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "kind",
+          "type": "culture_review | maturity_assessment"
+        },
+        {
+          "name": "period",
+          "type": "string"
+        },
+        {
+          "name": "objectives",
+          "type": "{ objective, measure, target, result }[]"
+        },
+        {
+          "name": "literacyMetrics",
+          "type": "{ name, value }[]"
+        },
+        {
+          "name": "communityOfPracticeSessions",
+          "type": "number"
+        },
+        {
+          "name": "maturityScores",
+          "type": "{ subDimension, score }[] | null (Digital Maturity Policy [confirm scale])"
+        },
+        {
+          "name": "actions",
+          "type": "string[]"
+        },
+        {
+          "name": "state",
+          "type": "culture_review state"
+        },
+        {
+          "name": "dataChampionUserId",
+          "type": "userId"
+        }
+      ],
+      "versionHistory": true,
+      "seedFile": "culture_reviews.json",
+      "workflow": "culture_review"
+    }
+  ]
+}

@@ -1,0 +1,1339 @@
+{
+  "note": "M4 institution remediation items grouped by issue list. DS&A does not chase institutions; the owner does.",
+  "items": [
+    {
+      "id": "REM-2026-0001",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-006",
+      "issueId": "DQI-2026-0006",
+      "institutionId": "INS-039",
+      "ruleId": "CMP-006",
+      "records": 15,
+      "ownerSectorId": "GHD",
+      "state": "with_institution",
+      "issueListSentAt": "2026-09-04",
+      "acknowledgedAt": "2026-09-08",
+      "notifiedAt": "2026-09-17",
+      "correctionDueAt": "2026-10-15",
+      "backfillDueAt": "2026-10-29",
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [
+        "Reminder sent to the institution (demo)"
+      ],
+      "stateEnteredAt": "2026-09-17",
+      "dueAt": "2026-10-15",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-09-04T11:20:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-08T12:52:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-17T08:05:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0002",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-006",
+      "issueId": "DQI-2026-0006",
+      "institutionId": "INS-021",
+      "ruleId": "CMP-006",
+      "records": 45,
+      "ownerSectorId": "GHD",
+      "state": "closed",
+      "issueListSentAt": "2026-09-04",
+      "acknowledgedAt": "2026-09-08",
+      "notifiedAt": "2026-09-11",
+      "correctionDueAt": "2026-10-09",
+      "backfillDueAt": "2026-10-23",
+      "backfillPlanDate": null,
+      "correctedAt": "2026-10-01",
+      "fitForUseAt": "2026-10-05",
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [],
+      "stateEnteredAt": "2026-10-07",
+      "dueAt": null,
+      "assigneeRole": "dsa_analyst",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-09-04T09:52:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-08T15:20:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-11T12:20:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-10-01T13:34:00+04:00",
+          "from": "with_institution",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-10-05T09:05:00+04:00",
+          "from": "corrected",
+          "to": "fit_for_use",
+          "transition": "confirm_fit_for_use",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-10-07T13:34:00+04:00",
+          "from": "fit_for_use",
+          "to": "closed",
+          "transition": "remeasure_close",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0003",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-006",
+      "issueId": "DQI-2026-0006",
+      "institutionId": "INS-009",
+      "ruleId": "CMP-006",
+      "records": 42,
+      "ownerSectorId": "GHD",
+      "state": "corrected",
+      "issueListSentAt": "2026-09-04",
+      "acknowledgedAt": "2026-09-08",
+      "notifiedAt": "2026-09-11",
+      "correctionDueAt": "2026-10-09",
+      "backfillDueAt": "2026-10-23",
+      "backfillPlanDate": null,
+      "correctedAt": "2026-10-15",
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [],
+      "stateEnteredAt": "2026-10-19",
+      "dueAt": "2026-10-22",
+      "assigneeRole": "data_owner",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-09-04T08:20:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-08T15:12:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-11T15:12:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-10-15T08:41:00+04:00",
+          "from": "with_institution",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0004",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-007",
+      "issueId": "DQI-2026-0007",
+      "institutionId": "INS-033",
+      "ruleId": "ACC-007",
+      "records": 29,
+      "ownerSectorId": "GHD",
+      "state": "closed",
+      "issueListSentAt": "2026-09-11",
+      "acknowledgedAt": "2026-09-15",
+      "notifiedAt": "2026-09-18",
+      "correctionDueAt": "2026-10-16",
+      "backfillDueAt": "2026-10-30",
+      "backfillPlanDate": null,
+      "correctedAt": "2026-10-08",
+      "fitForUseAt": "2026-10-12",
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [],
+      "stateEnteredAt": "2026-10-14",
+      "dueAt": null,
+      "assigneeRole": "dsa_analyst",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-09-11T11:41:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-15T13:41:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-18T08:12:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-10-08T12:34:00+04:00",
+          "from": "with_institution",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-10-12T10:05:00+04:00",
+          "from": "corrected",
+          "to": "fit_for_use",
+          "transition": "confirm_fit_for_use",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-10-14T10:52:00+04:00",
+          "from": "fit_for_use",
+          "to": "closed",
+          "transition": "remeasure_close",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0005",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-007",
+      "issueId": "DQI-2026-0007",
+      "institutionId": "INS-036",
+      "ruleId": "ACC-007",
+      "records": 35,
+      "ownerSectorId": "GHD",
+      "state": "with_institution",
+      "issueListSentAt": "2026-09-11",
+      "acknowledgedAt": "2026-09-15",
+      "notifiedAt": "2026-09-18",
+      "correctionDueAt": "2026-10-16",
+      "backfillDueAt": "2026-10-30",
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [
+        "Reminder sent to the institution (demo)"
+      ],
+      "stateEnteredAt": "2026-10-22",
+      "dueAt": "2026-10-16",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-09-11T09:20:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-15T08:05:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-18T12:34:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0006",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-007",
+      "issueId": "DQI-2026-0007",
+      "institutionId": "INS-026",
+      "ruleId": "ACC-007",
+      "records": 58,
+      "ownerSectorId": "GHD",
+      "state": "with_institution",
+      "issueListSentAt": "2026-09-11",
+      "acknowledgedAt": "2026-09-15",
+      "notifiedAt": "2026-09-18",
+      "correctionDueAt": "2026-10-16",
+      "backfillDueAt": "2026-10-30",
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [
+        "Reminder sent to the institution (demo)"
+      ],
+      "stateEnteredAt": "2026-10-26",
+      "dueAt": "2026-10-16",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-09-11T09:05:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-15T09:41:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-18T14:41:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0007",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-007",
+      "issueId": "DQI-2026-0007",
+      "institutionId": "INS-028",
+      "ruleId": "ACC-007",
+      "records": 11,
+      "ownerSectorId": "GHD",
+      "state": "with_institution",
+      "issueListSentAt": "2026-09-11",
+      "acknowledgedAt": "2026-09-15",
+      "notifiedAt": "2026-09-18",
+      "correctionDueAt": "2026-10-16",
+      "backfillDueAt": "2026-10-30",
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [
+        "Reminder sent to the institution (demo)"
+      ],
+      "stateEnteredAt": "2026-09-18",
+      "dueAt": "2026-10-16",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-09-11T10:41:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-15T14:20:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-18T11:41:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0008",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-013",
+      "issueId": "DQI-2026-0013",
+      "institutionId": "INS-008",
+      "ruleId": "UNQ-013",
+      "records": 31,
+      "ownerSectorId": "GHD",
+      "state": "closed",
+      "issueListSentAt": "2026-09-08",
+      "acknowledgedAt": "2026-09-10",
+      "notifiedAt": "2026-09-15",
+      "correctionDueAt": "2026-10-13",
+      "backfillDueAt": "2026-10-27",
+      "backfillPlanDate": null,
+      "correctedAt": "2026-10-05",
+      "fitForUseAt": "2026-10-07",
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [],
+      "stateEnteredAt": "2026-10-09",
+      "dueAt": null,
+      "assigneeRole": "dsa_analyst",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-09-08T09:05:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-10T14:05:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-15T14:12:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-10-05T10:12:00+04:00",
+          "from": "with_institution",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-10-07T10:12:00+04:00",
+          "from": "corrected",
+          "to": "fit_for_use",
+          "transition": "confirm_fit_for_use",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-10-09T12:41:00+04:00",
+          "from": "fit_for_use",
+          "to": "closed",
+          "transition": "remeasure_close",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0009",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-013",
+      "issueId": "DQI-2026-0013",
+      "institutionId": "INS-019",
+      "ruleId": "UNQ-013",
+      "records": 14,
+      "ownerSectorId": "GHD",
+      "state": "with_institution",
+      "issueListSentAt": "2026-09-08",
+      "acknowledgedAt": "2026-09-10",
+      "notifiedAt": "2026-09-15",
+      "correctionDueAt": "2026-10-13",
+      "backfillDueAt": "2026-10-27",
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [
+        "Reminder sent to the institution (demo)"
+      ],
+      "stateEnteredAt": "2026-10-19",
+      "dueAt": "2026-10-13",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-09-08T13:05:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-10T08:41:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-15T11:05:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0010",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-013",
+      "issueId": "DQI-2026-0013",
+      "institutionId": "INS-016",
+      "ruleId": "UNQ-013",
+      "records": 32,
+      "ownerSectorId": "GHD",
+      "state": "with_institution",
+      "issueListSentAt": "2026-09-08",
+      "acknowledgedAt": "2026-09-10",
+      "notifiedAt": "2026-09-15",
+      "correctionDueAt": "2026-10-13",
+      "backfillDueAt": "2026-10-27",
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [
+        "Reminder sent to the institution (demo)"
+      ],
+      "stateEnteredAt": "2026-10-21",
+      "dueAt": "2026-10-13",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-09-08T14:20:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-10T12:05:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-15T13:52:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0011",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-016",
+      "issueId": "DQI-2026-0016",
+      "institutionId": "INS-002",
+      "ruleId": "ACC-016",
+      "records": 31,
+      "ownerSectorId": "GHD",
+      "state": "with_institution",
+      "issueListSentAt": "2026-08-07",
+      "acknowledgedAt": "2026-08-11",
+      "notifiedAt": "2026-08-14",
+      "correctionDueAt": "2026-09-11",
+      "backfillDueAt": "2026-09-25",
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [
+        "Reminder sent to the institution (demo)"
+      ],
+      "stateEnteredAt": "2026-08-14",
+      "dueAt": "2026-09-11",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-08-07T14:20:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-11T10:05:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-14T14:20:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0012",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-016",
+      "issueId": "DQI-2026-0016",
+      "institutionId": "INS-022",
+      "ruleId": "ACC-016",
+      "records": 23,
+      "ownerSectorId": "GHD",
+      "state": "closed",
+      "issueListSentAt": "2026-08-07",
+      "acknowledgedAt": "2026-08-13",
+      "notifiedAt": "2026-08-18",
+      "correctionDueAt": "2026-09-15",
+      "backfillDueAt": "2026-09-29",
+      "backfillPlanDate": null,
+      "correctedAt": "2026-09-07",
+      "fitForUseAt": "2026-09-09",
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [],
+      "stateEnteredAt": "2026-09-11",
+      "dueAt": null,
+      "assigneeRole": "dsa_analyst",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-08-07T15:52:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-13T12:41:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-18T15:41:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-09-07T08:41:00+04:00",
+          "from": "with_institution",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-09-09T14:34:00+04:00",
+          "from": "corrected",
+          "to": "fit_for_use",
+          "transition": "confirm_fit_for_use",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-11T08:20:00+04:00",
+          "from": "fit_for_use",
+          "to": "closed",
+          "transition": "remeasure_close",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0013",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-016",
+      "issueId": "DQI-2026-0016",
+      "institutionId": "INS-035",
+      "ruleId": "ACC-016",
+      "records": 55,
+      "ownerSectorId": "GHD",
+      "state": "with_institution",
+      "issueListSentAt": "2026-08-07",
+      "acknowledgedAt": "2026-08-11",
+      "notifiedAt": "2026-08-20",
+      "correctionDueAt": "2026-09-17",
+      "backfillDueAt": "2026-10-01",
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [
+        "Reminder sent to the institution (demo)"
+      ],
+      "stateEnteredAt": "2026-08-20",
+      "dueAt": "2026-09-17",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-08-07T14:52:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-11T11:20:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-20T14:05:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0014",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-016",
+      "issueId": "DQI-2026-0016",
+      "institutionId": "INS-007",
+      "ruleId": "ACC-016",
+      "records": 51,
+      "ownerSectorId": "GHD",
+      "state": "closed",
+      "issueListSentAt": "2026-08-07",
+      "acknowledgedAt": "2026-08-11",
+      "notifiedAt": "2026-08-14",
+      "correctionDueAt": "2026-09-11",
+      "backfillDueAt": "2026-09-25",
+      "backfillPlanDate": null,
+      "correctedAt": "2026-09-03",
+      "fitForUseAt": "2026-09-07",
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [],
+      "stateEnteredAt": "2026-09-09",
+      "dueAt": null,
+      "assigneeRole": "dsa_analyst",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-08-07T14:34:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-11T15:41:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-14T08:52:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-09-03T15:05:00+04:00",
+          "from": "with_institution",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-09-07T09:34:00+04:00",
+          "from": "corrected",
+          "to": "fit_for_use",
+          "transition": "confirm_fit_for_use",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-09T11:52:00+04:00",
+          "from": "fit_for_use",
+          "to": "closed",
+          "transition": "remeasure_close",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0015",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-016",
+      "issueId": "DQI-2026-0016",
+      "institutionId": "INS-017",
+      "ruleId": "ACC-016",
+      "records": 53,
+      "ownerSectorId": "GHD",
+      "state": "closed",
+      "issueListSentAt": "2026-08-07",
+      "acknowledgedAt": "2026-08-11",
+      "notifiedAt": "2026-08-14",
+      "correctionDueAt": "2026-09-11",
+      "backfillDueAt": "2026-09-25",
+      "backfillPlanDate": null,
+      "correctedAt": "2026-09-17",
+      "fitForUseAt": "2026-09-21",
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [],
+      "stateEnteredAt": "2026-09-23",
+      "dueAt": null,
+      "assigneeRole": "dsa_analyst",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-08-07T10:12:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-11T13:20:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-14T11:12:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-09-17T13:41:00+04:00",
+          "from": "with_institution",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        },
+        {
+          "at": "2026-09-21T14:20:00+04:00",
+          "from": "corrected",
+          "to": "fit_for_use",
+          "transition": "confirm_fit_for_use",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-23T10:05:00+04:00",
+          "from": "fit_for_use",
+          "to": "closed",
+          "transition": "remeasure_close",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0016",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-019",
+      "issueId": "DQI-2026-0019",
+      "institutionId": "INS-036",
+      "ruleId": "ACC-019",
+      "records": 10,
+      "ownerSectorId": "GHD",
+      "state": "with_institution",
+      "issueListSentAt": "2026-10-06",
+      "acknowledgedAt": "2026-10-08",
+      "notifiedAt": "2026-10-13",
+      "correctionDueAt": "2026-11-10",
+      "backfillDueAt": "2026-11-24",
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [
+        "Reminder sent to the institution (demo)"
+      ],
+      "stateEnteredAt": "2026-11-02",
+      "dueAt": "2026-11-10",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-10-06T12:12:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-08T15:34:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-10-13T10:41:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0017",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-019",
+      "issueId": "DQI-2026-0019",
+      "institutionId": "INS-021",
+      "ruleId": "ACC-019",
+      "records": 56,
+      "ownerSectorId": "GHD",
+      "state": "with_institution",
+      "issueListSentAt": "2026-10-06",
+      "acknowledgedAt": "2026-10-08",
+      "notifiedAt": "2026-10-13",
+      "correctionDueAt": "2026-11-10",
+      "backfillDueAt": "2026-11-24",
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [
+        "Reminder sent to the institution (demo)"
+      ],
+      "stateEnteredAt": "2026-11-16",
+      "dueAt": "2026-11-10",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-10-06T14:20:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-08T11:20:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-10-13T11:20:00+04:00",
+          "from": "awaiting_notification",
+          "to": "with_institution",
+          "transition": "notify_institution",
+          "actorRole": "producer_staff",
+          "actorUserId": "U-producer-staff"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0018",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-020",
+      "issueId": "DQI-2026-0020",
+      "institutionId": "INS-016",
+      "ruleId": "CMP-020",
+      "records": 58,
+      "ownerSectorId": "GHD",
+      "state": "awaiting_notification",
+      "issueListSentAt": "2026-10-12",
+      "acknowledgedAt": "2026-10-14",
+      "notifiedAt": null,
+      "correctionDueAt": null,
+      "backfillDueAt": null,
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [],
+      "stateEnteredAt": "2026-10-19",
+      "dueAt": "2026-10-26",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-10-12T08:20:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-14T11:12:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0019",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-020",
+      "issueId": "DQI-2026-0020",
+      "institutionId": "INS-025",
+      "ruleId": "CMP-020",
+      "records": 43,
+      "ownerSectorId": "GHD",
+      "state": "awaiting_notification",
+      "issueListSentAt": "2026-10-12",
+      "acknowledgedAt": "2026-10-14",
+      "notifiedAt": null,
+      "correctionDueAt": null,
+      "backfillDueAt": null,
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [],
+      "stateEnteredAt": "2026-10-19",
+      "dueAt": "2026-10-26",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-10-12T12:41:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-14T15:41:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0020",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-020",
+      "issueId": "DQI-2026-0020",
+      "institutionId": "INS-039",
+      "ruleId": "CMP-020",
+      "records": 38,
+      "ownerSectorId": "GHD",
+      "state": "awaiting_notification",
+      "issueListSentAt": "2026-10-12",
+      "acknowledgedAt": "2026-10-14",
+      "notifiedAt": null,
+      "correctionDueAt": null,
+      "backfillDueAt": null,
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [],
+      "stateEnteredAt": "2026-10-19",
+      "dueAt": "2026-10-26",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-10-12T09:12:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-14T10:12:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0021",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-020",
+      "issueId": "DQI-2026-0020",
+      "institutionId": "INS-032",
+      "ruleId": "CMP-020",
+      "records": 57,
+      "ownerSectorId": "GHD",
+      "state": "awaiting_acknowledgment",
+      "issueListSentAt": "2026-10-12",
+      "acknowledgedAt": null,
+      "notifiedAt": null,
+      "correctionDueAt": null,
+      "backfillDueAt": null,
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [],
+      "stateEnteredAt": "2026-10-16",
+      "dueAt": "2026-10-20",
+      "assigneeRole": "data_owner",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-10-12T08:34:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "REM-2026-0022",
+      "workflowId": "institution_remediation",
+      "issueListId": "IL-2026-020",
+      "issueId": "DQI-2026-0020",
+      "institutionId": "INS-009",
+      "ruleId": "CMP-020",
+      "records": 45,
+      "ownerSectorId": "GHD",
+      "state": "awaiting_notification",
+      "issueListSentAt": "2026-10-12",
+      "acknowledgedAt": "2026-10-14",
+      "notifiedAt": null,
+      "correctionDueAt": null,
+      "backfillDueAt": null,
+      "backfillPlanDate": null,
+      "correctedAt": null,
+      "fitForUseAt": null,
+      "referredAt": null,
+      "referralReference": null,
+      "followUpNotes": [],
+      "stateEnteredAt": "2026-10-23",
+      "dueAt": "2026-10-30",
+      "assigneeRole": "producer_staff",
+      "documentIds": [
+        "ST-01",
+        "DP-06"
+      ],
+      "history": [
+        {
+          "at": "2026-10-12T15:05:00+04:00",
+          "from": null,
+          "to": "awaiting_acknowledgment",
+          "transition": "send_issue_list",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-14T14:52:00+04:00",
+          "from": "awaiting_acknowledgment",
+          "to": "awaiting_notification",
+          "transition": "acknowledge_list",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        }
+      ]
+    }
+  ]
+}

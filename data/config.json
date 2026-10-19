@@ -1,0 +1,28 @@
+{
+  "asOfDate": "2026-10-15",
+  "seedVersion": "0.1",
+  "workingWeek": [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri"
+  ],
+  "workingWeekConfirm": true,
+  "dueSoonWorkingDays": 2,
+  "dueSoonConfirm": true,
+  "reminderLeadWorkingDays": 2,
+  "reminderLeadConfirm": true,
+  "escalation": {
+    "level1ResponseWorkingDays": 2,
+    "cdoLevelWorkingDays": 2,
+    "cdoLevelConfirm": true,
+    "groupToDgWorkingDays": 15
+  },
+  "projectAccessProvisioningWorkingDays": 3,
+  "projectAccessDecide": "3 or 5 working days",
+  "recertificationMonths": 6,
+  "recertificationConfirm": true,
+  "applicationName": "KHDA Data Governance Application (working name) [confirm name]",
+  "classificationLabel": "Shared: Confidential [confirm]"
+}

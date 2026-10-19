@@ -1,0 +1,89 @@
+{
+  "note": "Data requirements register for principal data users (synthetic).",
+  "requirements": [
+    {
+      "id": "DRQ-2026-001",
+      "principalDataUserSectorId": "PRP",
+      "requirementType": "field",
+      "description": "Enrollment start and leaving dates for student mobility research",
+      "mandate": "Research program (demo)",
+      "supports": "Official statistic: student mobility (demo)",
+      "priorityFlag": true,
+      "state": "routed",
+      "linkedItemId": "FCR-2026-0002",
+      "submittedAt": "2026-07-14",
+      "workflowId": "data_requirement",
+      "dueAt": null
+    },
+    {
+      "id": "DRQ-2026-002",
+      "principalDataUserSectorId": "QAC",
+      "requirementType": "new data",
+      "description": "Institution profile indicators for inspection planning",
+      "mandate": "Inspection planning",
+      "supports": null,
+      "priorityFlag": true,
+      "state": "routed",
+      "linkedItemId": "DSA-2026-00110",
+      "submittedAt": "2026-08-03",
+      "workflowId": "data_requirement",
+      "dueAt": null
+    },
+    {
+      "id": "DRQ-2026-003",
+      "principalDataUserSectorId": "SD",
+      "requirementType": "integration",
+      "description": "Strategic KPI inputs moved from a working file into a system",
+      "mandate": "Corporate strategy KPIs",
+      "supports": "Strategic KPIs (demo)",
+      "priorityFlag": true,
+      "state": "routed",
+      "linkedItemId": "MAN-2026-006",
+      "submittedAt": "2026-09-02",
+      "workflowId": "data_requirement",
+      "dueAt": null
+    },
+    {
+      "id": "DRQ-2026-004",
+      "principalDataUserSectorId": "PRP",
+      "requirementType": "survey",
+      "description": "Parent views on early years provision",
+      "mandate": "Early years programs",
+      "supports": null,
+      "priorityFlag": false,
+      "state": "submitted",
+      "linkedItemId": null,
+      "submittedAt": "2026-10-12",
+      "workflowId": "data_requirement",
+      "dueAt": "2026-10-19"
+    },
+    {
+      "id": "DRQ-2026-005",
+      "principalDataUserSectorId": "QAC",
+      "requirementType": "field",
+      "description": "Coded compliance outcomes",
+      "mandate": "Compliance monitoring",
+      "supports": null,
+      "priorityFlag": false,
+      "state": "met",
+      "linkedItemId": "FCR-2026-0004",
+      "submittedAt": "2026-06-10",
+      "workflowId": "data_requirement",
+      "dueAt": null
+    },
+    {
+      "id": "DRQ-2026-006",
+      "principalDataUserSectorId": "PRP",
+      "requirementType": "new data",
+      "description": "Historical fee bands by curriculum",
+      "mandate": "Affordability research (demo)",
+      "supports": null,
+      "priorityFlag": false,
+      "state": "submitted",
+      "linkedItemId": null,
+      "submittedAt": "2026-10-05",
+      "workflowId": "data_requirement",
+      "dueAt": "2026-10-12"
+    }
+  ]
+}

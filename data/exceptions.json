@@ -1,0 +1,57 @@
+{
+  "note": "Exception register (synthetic).",
+  "exceptions": [
+    {
+      "id": "EXC-2026-001",
+      "documentId": "ST-04",
+      "clause": "ST-04 9 (audit stamps)",
+      "scope": "Views without CreatedOn or UpdatedOn (22 of 49)",
+      "justification": "Source system change needed",
+      "approverRole": "cdo",
+      "startDate": "2026-07-01",
+      "endDate": "2026-12-31",
+      "remediationPlan": "Digital Excellence adds audit stamps in the next scheduled release",
+      "state": "approved",
+      "workflowId": "exception"
+    },
+    {
+      "id": "EXC-2026-002",
+      "documentId": "ST-02",
+      "clause": "ST-02 12.3",
+      "scope": "Legacy dashboards still in use",
+      "justification": "Rebuild plan in progress",
+      "approverRole": "cdo",
+      "startDate": "2026-05-01",
+      "endDate": "2026-10-31",
+      "remediationPlan": "Rebuild or retire each legacy dashboard",
+      "state": "approved",
+      "workflowId": "exception"
+    },
+    {
+      "id": "EXC-2026-003",
+      "documentId": "DP-06",
+      "clause": "DP-06 11.1",
+      "scope": "Uniqueness threshold for student records",
+      "justification": "No unique KHDA student identifier yet (ST-01 10.1)",
+      "approverRole": "leadership_council",
+      "startDate": "2026-09-15",
+      "endDate": "2027-09-14",
+      "remediationPlan": "Unique identifier and match-and-merge rules",
+      "state": "referred_to_council",
+      "workflowId": "exception"
+    },
+    {
+      "id": "EXC-2026-004",
+      "documentId": "DP-07",
+      "clause": "DP-07 7.11",
+      "scope": "Two manual collections without a digitization request",
+      "justification": "Requirements still being written",
+      "approverRole": "cdo",
+      "startDate": "2026-10-13",
+      "endDate": "2027-01-31",
+      "remediationPlan": "Submit requests by the end date",
+      "state": "requested",
+      "workflowId": "exception"
+    }
+  ]
+}

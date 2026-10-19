@@ -1,0 +1,82 @@
+{
+  "version": "0.1",
+  "asOf": "2026-10-16",
+  "source": "Dubai Data Manual v5.0, DDM-008 Data Quality (nine dimensions, p.5; standards DDM-008.1 to DDM-008.7; Relevance and Availability mandatory requirements pp.16 to 17); Reconciliation is a KHDA addition (DP-06 5.1)",
+  "confirm": "with DDSE: DDM-008 lists nine dimensions; its glossary and annex list six",
+  "dimensions": [
+    {
+      "id": "Accuracy",
+      "ddm": "DDM-008.1",
+      "origin": "DDM-008",
+      "measure": "Share of values that match the authoritative source or pass accuracy rules",
+      "threshold": "existing ST-03 value"
+    },
+    {
+      "id": "Completeness",
+      "ddm": "DDM-008.2",
+      "origin": "DDM-008",
+      "measure": "Share of required values present",
+      "threshold": "existing ST-03 value"
+    },
+    {
+      "id": "Consistency",
+      "ddm": "DDM-008.3",
+      "origin": "DDM-008",
+      "measure": "Share of values consistent across systems and views",
+      "threshold": "existing ST-03 value"
+    },
+    {
+      "id": "Timeliness",
+      "ddm": "DDM-008.4",
+      "origin": "DDM-008",
+      "measure": "Share of records captured within the committed lag (timeliness matrix)",
+      "threshold": "existing ST-03 value"
+    },
+    {
+      "id": "Uniqueness",
+      "ddm": "DDM-008.5",
+      "origin": "DDM-008",
+      "measure": "Share of records without duplicates on the key",
+      "threshold": "existing ST-03 value"
+    },
+    {
+      "id": "Validity",
+      "ddm": "DDM-008.6",
+      "origin": "DDM-008",
+      "measure": "Share of values that pass format, range and code-list rules",
+      "threshold": "existing ST-03 value"
+    },
+    {
+      "id": "Interpretability",
+      "ddm": "DDM-008.7",
+      "origin": "DDM-008",
+      "measure": "Share of critical data elements with a definition, unit and business rule in the data dictionary",
+      "threshold": "[decide]",
+      "method": "[decide]"
+    },
+    {
+      "id": "Relevance",
+      "ddm": "DDM-008 dimension 7 (mandatory requirement, no numbered standard)",
+      "origin": "DDM-008",
+      "measure": "Share of collected fields linked to a stated purpose, KPI or mandate",
+      "threshold": "[decide]",
+      "method": "[decide]"
+    },
+    {
+      "id": "Availability",
+      "ddm": "DDM-008 dimension 9 (mandatory requirement, no numbered standard)",
+      "origin": "DDM-008",
+      "measure": "Share of scheduled refreshes of certified views delivered on time",
+      "threshold": "[decide]",
+      "method": "[decide]"
+    },
+    {
+      "id": "Reconciliation",
+      "ddm": null,
+      "origin": "KHDA addition",
+      "measure": "Share of totals that reconcile between source and published figures",
+      "threshold": "existing ST-03 value"
+    }
+  ],
+  "note": "Seed data holds values for the six dimensions measured today and Reconciliation; Interpretability, Relevance and Availability have no baseline until their method and threshold are decided (BR-127)."
+}

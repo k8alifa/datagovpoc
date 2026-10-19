@@ -1,0 +1,41 @@
+{
+  "note": "Fictional service providers.",
+  "serviceProviders": [
+    {
+      "id": "SP-001",
+      "provider": "Demo Consultancy C",
+      "contractReference": "DEMO-CTR-001",
+      "purpose": "Workforce study (demo)",
+      "datasetIds": [
+        "DS-003"
+      ],
+      "namedStaffCount": 3,
+      "accessPermission": "DEMO-AP-001",
+      "approverRole": "dg_office",
+      "endDate": "2026-09-30",
+      "returnOrDeletionConfirmedAt": null,
+      "returnDueAt": "2026-10-14",
+      "ddsePollPermitNumber": null,
+      "ddsePollPermitExpiry": null,
+      "technicalManagerCertificateExpiry": null,
+      "surveyorIdCardsIssued": null
+    },
+    {
+      "id": "SP-002",
+      "provider": "Demo Design Vendor",
+      "contractReference": "DEMO-CTR-002",
+      "purpose": "Census report design (demo)",
+      "datasetIds": [],
+      "namedStaffCount": 2,
+      "accessPermission": "None (aggregates only)",
+      "approverRole": "cdo",
+      "endDate": "2027-03-31",
+      "returnOrDeletionConfirmedAt": null,
+      "returnDueAt": null,
+      "ddsePollPermitNumber": null,
+      "ddsePollPermitExpiry": null,
+      "technicalManagerCertificateExpiry": null,
+      "surveyorIdCardsIssued": null
+    }
+  ]
+}

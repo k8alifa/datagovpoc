@@ -1,0 +1,1233 @@
+{
+  "note": "M1 DS&A service requests (synthetic). IDs keep the DSA-YYYY-00001 format (BR-002).",
+  "serviceRequests": [
+    {
+      "id": "DSA-2026-00101",
+      "workflowId": "ds_service_request",
+      "serviceCode": "ANL",
+      "title": "Enrollment trend analysis by curriculum (demo)",
+      "state": "closed",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "sectorId": "BSS",
+      "ownerSectorId": "GHD",
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": null,
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-08-17T09:12:00+04:00"
+      },
+      "submittedAt": "2026-08-17T09:12:00+04:00",
+      "stateEnteredAt": "2026-10-06",
+      "dueAt": null,
+      "targetDate": "2026-10-06",
+      "deliveredAt": "2026-09-29",
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": 3,
+      "documentIds": [
+        "DP-03"
+      ],
+      "history": [
+        {
+          "at": "2026-08-17T09:12:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-08-18T14:05:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_approval",
+          "transition": "route_for_approval",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-08-20T13:34:00+04:00",
+          "from": "awaiting_approval",
+          "to": "accepted",
+          "transition": "approve",
+          "actorRole": "sector_ceo",
+          "actorUserId": "U-sector-ceo"
+        },
+        {
+          "at": "2026-08-25T09:34:00+04:00",
+          "from": "accepted",
+          "to": "in_progress",
+          "transition": "start_work",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-29T08:12:00+04:00",
+          "from": "in_progress",
+          "to": "delivered",
+          "transition": "deliver",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-06T14:20:00+04:00",
+          "from": "delivered",
+          "to": "closed",
+          "transition": "close",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00102",
+      "workflowId": "ds_service_request",
+      "serviceCode": "ANL",
+      "title": "Teacher turnover analysis for inspection planning (demo)",
+      "state": "delivered",
+      "requesterUserId": "U-principal-data-user",
+      "requesterRole": "principal_data_user",
+      "sectorId": "PRP",
+      "ownerSectorId": "GHD",
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": null,
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": true,
+      "priorityReason": "Tied to a principal data user mandate [decide: confirm the priority rule]",
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-06-19T14:05:00+04:00"
+      },
+      "submittedAt": "2026-06-19T14:05:00+04:00",
+      "stateEnteredAt": "2026-08-17",
+      "dueAt": null,
+      "targetDate": "2026-08-13",
+      "deliveredAt": "2026-08-17",
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": null,
+      "documentIds": [
+        "DP-03"
+      ],
+      "history": [
+        {
+          "at": "2026-06-19T14:05:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-06-22T11:41:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_approval",
+          "transition": "route_for_approval",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-06-26T12:20:00+04:00",
+          "from": "awaiting_approval",
+          "to": "accepted",
+          "transition": "approve",
+          "actorRole": "sector_ceo",
+          "actorUserId": "U-sector-ceo",
+          "comment": "Approved one day late"
+        },
+        {
+          "at": "2026-07-02T15:52:00+04:00",
+          "from": "accepted",
+          "to": "in_progress",
+          "transition": "start_work",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-17T08:12:00+04:00",
+          "from": "in_progress",
+          "to": "delivered",
+          "transition": "deliver",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00103",
+      "workflowId": "ds_service_request",
+      "serviceCode": "ANL",
+      "title": "Fee change effects on enrollment (demo)",
+      "state": "in_progress",
+      "requesterUserId": "U-principal-data-user",
+      "requesterRole": "principal_data_user",
+      "sectorId": "PRP",
+      "ownerSectorId": "GHD",
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": "dsa_analyst",
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": true,
+      "priorityReason": "Tied to a principal data user mandate [decide: confirm the priority rule]",
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-09-02T10:12:00+04:00"
+      },
+      "submittedAt": "2026-09-02T10:12:00+04:00",
+      "stateEnteredAt": "2026-09-21",
+      "dueAt": "2026-11-02",
+      "targetDate": "2026-11-02",
+      "deliveredAt": null,
+      "clockStoppedDays": 4,
+      "ddseReference": null,
+      "satisfactionScore": null,
+      "documentIds": [
+        "DP-03"
+      ],
+      "history": [
+        {
+          "at": "2026-09-02T10:12:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-09-03T10:52:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_information",
+          "transition": "request_information",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Population and period not stated"
+        },
+        {
+          "at": "2026-09-09T10:12:00+04:00",
+          "from": "awaiting_information",
+          "to": "submitted",
+          "transition": "provide_information",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-09-10T11:34:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_approval",
+          "transition": "route_for_approval",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-14T08:05:00+04:00",
+          "from": "awaiting_approval",
+          "to": "accepted",
+          "transition": "approve",
+          "actorRole": "sector_ceo",
+          "actorUserId": "U-sector-ceo"
+        },
+        {
+          "at": "2026-09-21T15:20:00+04:00",
+          "from": "accepted",
+          "to": "in_progress",
+          "transition": "start_work",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00104",
+      "workflowId": "ds_service_request",
+      "serviceCode": "ANL",
+      "title": "Student mobility between schools, mid-year (demo)",
+      "state": "awaiting_approval",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "sectorId": "BSS",
+      "ownerSectorId": "GHD",
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": "sector_ceo",
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-09-22T12:05:00+04:00"
+      },
+      "submittedAt": "2026-09-22T12:05:00+04:00",
+      "stateEnteredAt": "2026-09-23",
+      "dueAt": "2026-09-28",
+      "targetDate": null,
+      "deliveredAt": null,
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": null,
+      "documentIds": [
+        "DP-03"
+      ],
+      "history": [
+        {
+          "at": "2026-09-22T12:05:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-09-23T11:34:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_approval",
+          "transition": "route_for_approval",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00105",
+      "workflowId": "ds_service_request",
+      "serviceCode": "ANL",
+      "title": "ECC capacity utilization analysis (demo)",
+      "state": "submitted",
+      "requesterUserId": "U-principal-data-user",
+      "requesterRole": "principal_data_user",
+      "sectorId": "PRP",
+      "ownerSectorId": "GHD",
+      "assigneeUserId": null,
+      "responsibleRole": "dsa_analyst",
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": true,
+      "priorityReason": "Tied to a principal data user mandate [decide: confirm the priority rule]",
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-10-09T13:41:00+04:00"
+      },
+      "submittedAt": "2026-10-09T13:41:00+04:00",
+      "stateEnteredAt": "2026-10-09",
+      "dueAt": "2026-10-13",
+      "targetDate": null,
+      "deliveredAt": null,
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": null,
+      "documentIds": [
+        "DP-03"
+      ],
+      "history": [
+        {
+          "at": "2026-10-09T13:41:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00106",
+      "workflowId": "ds_service_request",
+      "serviceCode": "ANL",
+      "title": "Higher education graduate outcomes analysis (demo)",
+      "state": "closed",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "sectorId": "BSS",
+      "ownerSectorId": "GHD",
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": null,
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-07-08T10:12:00+04:00"
+      },
+      "submittedAt": "2026-07-08T10:12:00+04:00",
+      "stateEnteredAt": "2026-08-27",
+      "dueAt": null,
+      "targetDate": "2026-08-27",
+      "deliveredAt": "2026-08-20",
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": 5,
+      "documentIds": [
+        "DP-03"
+      ],
+      "history": [
+        {
+          "at": "2026-07-08T10:12:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-07-09T09:12:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_approval",
+          "transition": "route_for_approval",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-07-13T10:20:00+04:00",
+          "from": "awaiting_approval",
+          "to": "accepted",
+          "transition": "approve",
+          "actorRole": "sector_ceo",
+          "actorUserId": "U-sector-ceo"
+        },
+        {
+          "at": "2026-07-16T09:12:00+04:00",
+          "from": "accepted",
+          "to": "in_progress",
+          "transition": "start_work",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-20T12:05:00+04:00",
+          "from": "in_progress",
+          "to": "delivered",
+          "transition": "deliver",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-27T09:34:00+04:00",
+          "from": "delivered",
+          "to": "closed",
+          "transition": "close",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00107",
+      "workflowId": "ds_service_request",
+      "serviceCode": "NGS",
+      "title": "Institution survey: wellbeing provision (demo)",
+      "state": "closed",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "sectorId": "BSS",
+      "ownerSectorId": null,
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": null,
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-08-03T12:52:00+04:00"
+      },
+      "submittedAt": "2026-08-03T12:52:00+04:00",
+      "stateEnteredAt": "2026-09-30",
+      "dueAt": null,
+      "targetDate": "2026-09-23",
+      "deliveredAt": "2026-09-23",
+      "clockStoppedDays": 0,
+      "ddseReference": "DEMO-DDSE-REF-107",
+      "satisfactionScore": 3,
+      "documentIds": [
+        "DP-03",
+        "DP-07"
+      ],
+      "history": [
+        {
+          "at": "2026-08-03T12:52:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-08-05T08:20:00+04:00",
+          "from": "submitted",
+          "to": "accepted",
+          "transition": "accept",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-12T15:20:00+04:00",
+          "from": "accepted",
+          "to": "in_progress",
+          "transition": "start_work",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "DDSE coordination reference recorded"
+        },
+        {
+          "at": "2026-09-23T12:20:00+04:00",
+          "from": "in_progress",
+          "to": "delivered",
+          "transition": "deliver",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-30T08:05:00+04:00",
+          "from": "delivered",
+          "to": "closed",
+          "transition": "close",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00108",
+      "workflowId": "ds_service_request",
+      "serviceCode": "NGS",
+      "title": "Institution survey: digital readiness (demo)",
+      "state": "accepted",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "sectorId": "BSS",
+      "ownerSectorId": null,
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": "dsa_analyst",
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-08-26T13:05:00+04:00"
+      },
+      "submittedAt": "2026-08-26T13:05:00+04:00",
+      "stateEnteredAt": "2026-08-31",
+      "dueAt": "2026-09-07",
+      "targetDate": null,
+      "deliveredAt": null,
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": null,
+      "documentIds": [
+        "DP-03",
+        "DP-07"
+      ],
+      "history": [
+        {
+          "at": "2026-08-26T13:05:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-08-31T14:05:00+04:00",
+          "from": "submitted",
+          "to": "accepted",
+          "transition": "accept",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Initial review one day late"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00109",
+      "workflowId": "ds_service_request",
+      "serviceCode": "DDS",
+      "title": "Parent survey: school choice factors (demo)",
+      "state": "in_progress",
+      "requesterUserId": "U-principal-data-user",
+      "requesterRole": "principal_data_user",
+      "sectorId": "PRP",
+      "ownerSectorId": null,
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": "dsa_analyst",
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-09-01T13:41:00+04:00"
+      },
+      "submittedAt": "2026-09-01T13:41:00+04:00",
+      "stateEnteredAt": "2026-09-10",
+      "dueAt": "2026-10-22",
+      "targetDate": "2026-10-22",
+      "deliveredAt": null,
+      "clockStoppedDays": 0,
+      "ddseReference": "DEMO-DDSE-REF-109",
+      "satisfactionScore": null,
+      "documentIds": [
+        "DP-03",
+        "DP-07"
+      ],
+      "history": [
+        {
+          "at": "2026-09-01T13:41:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-09-03T15:52:00+04:00",
+          "from": "submitted",
+          "to": "accepted",
+          "transition": "accept",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-10T13:41:00+04:00",
+          "from": "accepted",
+          "to": "in_progress",
+          "transition": "start_work",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "DDSE Permit reference recorded"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00110",
+      "workflowId": "ds_service_request",
+      "serviceCode": "DBC",
+      "title": "QAC inspection planning dashboard (demo)",
+      "state": "closed",
+      "requesterUserId": "U-principal-data-user",
+      "requesterRole": "principal_data_user",
+      "sectorId": "PRP",
+      "ownerSectorId": null,
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": null,
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": true,
+      "priorityReason": "Tied to a principal data user mandate [decide: confirm the priority rule]",
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-06-23T14:05:00+04:00"
+      },
+      "submittedAt": "2026-06-23T14:05:00+04:00",
+      "stateEnteredAt": "2026-09-02",
+      "dueAt": null,
+      "targetDate": "2026-08-27",
+      "deliveredAt": "2026-08-26",
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": 5,
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-06-23T14:05:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-06-25T09:20:00+04:00",
+          "from": "submitted",
+          "to": "accepted",
+          "transition": "accept",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-02T10:05:00+04:00",
+          "from": "accepted",
+          "to": "in_progress",
+          "transition": "start_work",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-20T12:52:00+04:00",
+          "from": "in_progress",
+          "to": "awaiting_requester_acceptance",
+          "transition": "send_for_acceptance",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-26T14:12:00+04:00",
+          "from": "awaiting_requester_acceptance",
+          "to": "delivered",
+          "transition": "requester_accept",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-09-02T08:20:00+04:00",
+          "from": "delivered",
+          "to": "closed",
+          "transition": "close",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00111",
+      "workflowId": "ds_service_request",
+      "serviceCode": "DBC",
+      "title": "PRP early years indicators dashboard (demo)",
+      "state": "in_progress",
+      "requesterUserId": "U-principal-data-user",
+      "requesterRole": "principal_data_user",
+      "sectorId": "PRP",
+      "ownerSectorId": null,
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": "dsa_analyst",
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": true,
+      "priorityReason": "Tied to a principal data user mandate [decide: confirm the priority rule]",
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-09-23T14:52:00+04:00"
+      },
+      "submittedAt": "2026-09-23T14:52:00+04:00",
+      "stateEnteredAt": "2026-10-05",
+      "dueAt": "2026-11-30",
+      "targetDate": "2026-11-30",
+      "deliveredAt": null,
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": null,
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-09-23T14:52:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-09-25T11:41:00+04:00",
+          "from": "submitted",
+          "to": "accepted",
+          "transition": "accept",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-05T10:52:00+04:00",
+          "from": "accepted",
+          "to": "in_progress",
+          "transition": "start_work",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00112",
+      "workflowId": "ds_service_request",
+      "serviceCode": "DBC",
+      "title": "Training institute activity dashboard (demo)",
+      "state": "awaiting_requester_acceptance",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "sectorId": "BSS",
+      "ownerSectorId": null,
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": "requester",
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-08-19T14:12:00+04:00"
+      },
+      "submittedAt": "2026-08-19T14:12:00+04:00",
+      "stateEnteredAt": "2026-10-08",
+      "dueAt": "2026-10-15",
+      "targetDate": "2026-10-22",
+      "deliveredAt": null,
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": null,
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-08-19T14:12:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-08-20T08:34:00+04:00",
+          "from": "submitted",
+          "to": "accepted",
+          "transition": "accept",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-27T12:05:00+04:00",
+          "from": "accepted",
+          "to": "in_progress",
+          "transition": "start_work",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-08T15:05:00+04:00",
+          "from": "in_progress",
+          "to": "awaiting_requester_acceptance",
+          "transition": "send_for_acceptance",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00113",
+      "workflowId": "ds_service_request",
+      "serviceCode": "DBA",
+      "title": "Access to enrollment overview dashboard (demo)",
+      "state": "closed",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "sectorId": "BSS",
+      "ownerSectorId": "GHD",
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": null,
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-09-21T14:20:00+04:00"
+      },
+      "submittedAt": "2026-09-21T14:20:00+04:00",
+      "stateEnteredAt": "2026-10-05",
+      "dueAt": null,
+      "targetDate": "2026-09-29",
+      "deliveredAt": "2026-09-28",
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": 5,
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T14:20:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-09-22T09:12:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_approval",
+          "transition": "route_for_approval",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-23T14:20:00+04:00",
+          "from": "awaiting_approval",
+          "to": "accepted",
+          "transition": "approve",
+          "actorRole": "line_manager",
+          "actorUserId": "U-line-manager"
+        },
+        {
+          "at": "2026-09-24T13:41:00+04:00",
+          "from": "accepted",
+          "to": "in_progress",
+          "transition": "start_work",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-28T14:12:00+04:00",
+          "from": "in_progress",
+          "to": "delivered",
+          "transition": "deliver",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-05T14:41:00+04:00",
+          "from": "delivered",
+          "to": "closed",
+          "transition": "close",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00114",
+      "workflowId": "ds_service_request",
+      "serviceCode": "DBA",
+      "title": "Access to fees dashboard (demo)",
+      "state": "delivered",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "sectorId": "BSS",
+      "ownerSectorId": "GHD",
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": null,
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-09-04T12:41:00+04:00"
+      },
+      "submittedAt": "2026-09-04T12:41:00+04:00",
+      "stateEnteredAt": "2026-09-18",
+      "dueAt": null,
+      "targetDate": "2026-09-18",
+      "deliveredAt": "2026-09-18",
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": null,
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-09-04T12:41:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-09-07T09:20:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_approval",
+          "transition": "route_for_approval",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-14T12:41:00+04:00",
+          "from": "awaiting_approval",
+          "to": "accepted",
+          "transition": "approve",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner",
+          "comment": "Owner approval late"
+        },
+        {
+          "at": "2026-09-15T11:20:00+04:00",
+          "from": "accepted",
+          "to": "in_progress",
+          "transition": "start_work",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-18T15:05:00+04:00",
+          "from": "in_progress",
+          "to": "delivered",
+          "transition": "deliver",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00115",
+      "workflowId": "ds_service_request",
+      "serviceCode": "DBA",
+      "title": "Access to staffing dashboard (demo)",
+      "state": "awaiting_approval",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "sectorId": "BSS",
+      "ownerSectorId": "GHD",
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": "line_manager",
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-09-15T09:34:00+04:00"
+      },
+      "submittedAt": "2026-09-15T09:34:00+04:00",
+      "stateEnteredAt": "2026-09-16",
+      "dueAt": "2026-09-21",
+      "targetDate": null,
+      "deliveredAt": null,
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": null,
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-09-15T09:34:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-09-16T09:05:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_approval",
+          "transition": "route_for_approval",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00116",
+      "workflowId": "ds_service_request",
+      "serviceCode": "DBE",
+      "title": "Add academic year filter to enrollment overview (demo)",
+      "state": "closed",
+      "requesterUserId": "U-principal-data-user",
+      "requesterRole": "principal_data_user",
+      "sectorId": "PRP",
+      "ownerSectorId": null,
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": null,
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-07-27T10:34:00+04:00"
+      },
+      "submittedAt": "2026-07-27T10:34:00+04:00",
+      "stateEnteredAt": "2026-08-20",
+      "dueAt": null,
+      "targetDate": "2026-08-14",
+      "deliveredAt": "2026-08-13",
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": 3,
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-07-27T10:34:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-07-29T13:05:00+04:00",
+          "from": "submitted",
+          "to": "accepted",
+          "transition": "accept",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-31T11:05:00+04:00",
+          "from": "accepted",
+          "to": "in_progress",
+          "transition": "start_work",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-13T10:52:00+04:00",
+          "from": "in_progress",
+          "to": "delivered",
+          "transition": "deliver",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-20T15:12:00+04:00",
+          "from": "delivered",
+          "to": "closed",
+          "transition": "close",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00117",
+      "workflowId": "ds_service_request",
+      "serviceCode": "DBE",
+      "title": "Add curriculum breakdown to fees dashboard (demo)",
+      "state": "rejected",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "sectorId": "BSS",
+      "ownerSectorId": null,
+      "assigneeUserId": "U-dsa-analyst",
+      "responsibleRole": null,
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": {
+        "version": "1.0",
+        "acceptedAt": "2026-09-24T14:52:00+04:00"
+      },
+      "submittedAt": "2026-09-24T14:52:00+04:00",
+      "stateEnteredAt": "2026-09-28",
+      "dueAt": null,
+      "targetDate": null,
+      "deliveredAt": null,
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": null,
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-09-24T14:52:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-09-28T10:05:00+04:00",
+          "from": "submitted",
+          "to": "rejected",
+          "transition": "reject",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Change adds a data source; resubmit as dashboard creation (DBC)"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00118",
+      "workflowId": "ds_service_request",
+      "serviceCode": "RED",
+      "title": "Record-level extract of ECC enrollments (redirected to Digital Excellence) (demo)",
+      "state": "redirected",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "sectorId": "BSS",
+      "ownerSectorId": null,
+      "assigneeUserId": null,
+      "responsibleRole": null,
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": null,
+      "submittedAt": "2026-08-03T13:52:00+04:00",
+      "stateEnteredAt": "2026-08-03",
+      "dueAt": null,
+      "targetDate": null,
+      "deliveredAt": null,
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": null,
+      "redirectReason": "extract",
+      "documentIds": [
+        "DP-03"
+      ],
+      "history": [
+        {
+          "at": "2026-08-03T15:52:00+04:00",
+          "from": null,
+          "to": "redirected",
+          "transition": "redirect",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DSA-2026-00119",
+      "workflowId": "ds_service_request",
+      "serviceCode": "RED",
+      "title": "Correction to a school's grade data (redirected to M3) (demo)",
+      "state": "redirected",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "sectorId": "BSS",
+      "ownerSectorId": null,
+      "assigneeUserId": null,
+      "responsibleRole": null,
+      "classification": "Confidential",
+      "sensitive": false,
+      "priority": false,
+      "priorityReason": null,
+      "acknowledgment": null,
+      "submittedAt": "2026-09-25T11:20:00+04:00",
+      "stateEnteredAt": "2026-09-25",
+      "dueAt": null,
+      "targetDate": null,
+      "deliveredAt": null,
+      "clockStoppedDays": 0,
+      "ddseReference": null,
+      "satisfactionScore": null,
+      "redirectReason": "correction",
+      "documentIds": [
+        "DP-03"
+      ],
+      "history": [
+        {
+          "at": "2026-09-25T09:52:00+04:00",
+          "from": null,
+          "to": "redirected",
+          "transition": "redirect",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    }
+  ]
+}

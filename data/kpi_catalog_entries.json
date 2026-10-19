@@ -1,0 +1,590 @@
+{
+  "note": "KPI and Statistics Catalog entries for demo strategic KPIs. Names are placeholders; the 28 governance KPIs are in spec/kpis.json.",
+  "entries": [
+    {
+      "id": "KC-001",
+      "type": "strategic",
+      "name": "Demo strategic KPI 01",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S01 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "QAC",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-10"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "KC-002",
+      "type": "strategic",
+      "name": "Demo strategic KPI 02",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S02 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "GHD",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-15"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": null
+        }
+      ]
+    },
+    {
+      "id": "KC-003",
+      "type": "strategic",
+      "name": "Demo strategic KPI 03",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S03 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "GHD",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-10"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-09"
+        }
+      ]
+    },
+    {
+      "id": "KC-004",
+      "type": "strategic",
+      "name": "Demo strategic KPI 04",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S04 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "GHD",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "parked",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": "No identified data source (DP-05 5.2)",
+      "deliveries": []
+    },
+    {
+      "id": "KC-005",
+      "type": "strategic",
+      "name": "Demo strategic KPI 05",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S05 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "SD",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-10"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-14"
+        }
+      ]
+    },
+    {
+      "id": "KC-006",
+      "type": "strategic",
+      "name": "Demo strategic KPI 06",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S06 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "PRP",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-15"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-09"
+        }
+      ]
+    },
+    {
+      "id": "KC-007",
+      "type": "strategic",
+      "name": "Demo strategic KPI 07",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S07 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "QAC",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-10"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-09"
+        }
+      ]
+    },
+    {
+      "id": "KC-008",
+      "type": "strategic",
+      "name": "Demo strategic KPI 08",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S08 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "SD",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-10"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-09"
+        }
+      ]
+    },
+    {
+      "id": "KC-009",
+      "type": "strategic",
+      "name": "Demo strategic KPI 09",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S09 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "PRP",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "parked",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": "No identified data source (DP-05 5.2)",
+      "deliveries": []
+    },
+    {
+      "id": "KC-010",
+      "type": "strategic",
+      "name": "Demo strategic KPI 10",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S10 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "QAC",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-15"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-09"
+        }
+      ]
+    },
+    {
+      "id": "KC-011",
+      "type": "strategic",
+      "name": "Demo strategic KPI 11",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S11 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "PRP",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-10"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": null
+        }
+      ]
+    },
+    {
+      "id": "KC-012",
+      "type": "strategic",
+      "name": "Demo strategic KPI 12",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S12 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "GHD",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-10"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-09"
+        }
+      ]
+    },
+    {
+      "id": "KC-013",
+      "type": "strategic",
+      "name": "Demo strategic KPI 13",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S13 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "SD",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "parked",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": "No identified data source (DP-05 5.2)",
+      "deliveries": []
+    },
+    {
+      "id": "KC-014",
+      "type": "strategic",
+      "name": "Demo strategic KPI 14",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S14 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "GHD",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-15"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-09"
+        }
+      ]
+    },
+    {
+      "id": "KC-015",
+      "type": "strategic",
+      "name": "Demo strategic KPI 15",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S15 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "GHD",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-10"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-09"
+        }
+      ]
+    },
+    {
+      "id": "KC-016",
+      "type": "strategic",
+      "name": "Demo strategic KPI 16",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S16 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "SD",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-10"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-09"
+        }
+      ]
+    },
+    {
+      "id": "KC-017",
+      "type": "strategic",
+      "name": "Demo strategic KPI 17",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S17 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "GHD",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "parked",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": "No identified data source (DP-05 5.2)",
+      "deliveries": []
+    },
+    {
+      "id": "KC-018",
+      "type": "strategic",
+      "name": "Demo strategic KPI 18",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S18 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "GHD",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-15"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-09"
+        }
+      ]
+    },
+    {
+      "id": "KC-019",
+      "type": "strategic",
+      "name": "Demo strategic KPI 19",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S19 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "PRP",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "adopted",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": null,
+      "deliveries": [
+        {
+          "period": "2026-Q2",
+          "agreedDate": "2026-07-10",
+          "deliveredAt": "2026-07-10"
+        },
+        {
+          "period": "2026-Q3",
+          "agreedDate": "2026-10-09",
+          "deliveredAt": "2026-10-09"
+        }
+      ]
+    },
+    {
+      "id": "KC-020",
+      "type": "strategic",
+      "name": "Demo strategic KPI 20",
+      "definition": "Synthetic demo definition",
+      "formula": "Numerator / denominator (demo)",
+      "countingRule": "CR-S20 (demo)",
+      "source": "Demo source system",
+      "businessDataOwnerSectorId": "PRP",
+      "performanceOwner": "Sector CEO (demo)",
+      "refreshFrequency": "Quarterly",
+      "deliveryDate": "10th working day after quarter end (demo)",
+      "target": null,
+      "baseline": null,
+      "state": "parked",
+      "workflowId": "kpi_adoption",
+      "certifyingRole": "data_owner",
+      "certifyingRoleDecide": true,
+      "parkedReason": "No identified data source (DP-05 5.2)",
+      "deliveries": []
+    }
+  ]
+}

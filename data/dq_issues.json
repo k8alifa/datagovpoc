@@ -1,0 +1,1416 @@
+{
+  "note": "M3 data quality issue log with the ST-01 13.1 fields (synthetic). Real gap types from the workbook are used as examples.",
+  "issues": [
+    {
+      "id": "DQI-2026-0001",
+      "workflowId": "dq_issue",
+      "title": "Same student under more than one institution (demo)",
+      "state": "in_progress",
+      "st01Status": "in progress",
+      "datasetId": "DS-001",
+      "view": "ParentStudent_vw_ParentStudent",
+      "field": "SchoolECCStudent_EmiratesID",
+      "ruleId": "UNQ-001",
+      "dimension": "Uniqueness",
+      "recordsAffected": 2697,
+      "institutionIds": [],
+      "detectedAt": "2026-07-17",
+      "rootCause": "system_pipeline",
+      "route": "source_fix",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "digital_excellence",
+      "changeType": "resolution_at_source",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-07-20",
+      "dueAt": "2026-08-31",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": true,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-07-17T12:52:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-20T15:52:00+04:00",
+          "from": "open",
+          "to": "in_progress",
+          "transition": "route_to_source_fix",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Resolution at source by the owner and Digital Excellence (Charter 9.8)"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0002",
+      "workflowId": "dq_issue",
+      "title": "No enrollment start or leaving date in school student view (demo)",
+      "state": "in_progress",
+      "st01Status": "in progress",
+      "datasetId": "DS-001",
+      "view": "ParentStudent_vw_ParentStudent",
+      "field": "(missing field)",
+      "ruleId": "CMP-002",
+      "dimension": "Completeness",
+      "recordsAffected": 1504,
+      "institutionIds": [],
+      "detectedAt": "2026-08-19",
+      "rootCause": "form_service_design",
+      "route": "field_change",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "digital_excellence",
+      "changeType": "system_change",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-08-20",
+      "dueAt": "2026-10-01",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-08-19T13:05:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-20T10:05:00+04:00",
+          "from": "open",
+          "to": "in_progress",
+          "transition": "route_to_source_fix",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Form or service design gap: change request raised in M6"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0003",
+      "workflowId": "dq_issue",
+      "title": "No CreatedOn or UpdatedOn stamp in faculty view (demo)",
+      "state": "closed",
+      "st01Status": "closed",
+      "datasetId": "DS-004",
+      "view": "HEPFaculty_vw_HEPFaculty",
+      "field": "(missing audit stamps)",
+      "ruleId": "TML-003",
+      "dimension": "Timeliness",
+      "recordsAffected": 900,
+      "institutionIds": [],
+      "detectedAt": "2026-08-26",
+      "rootCause": "system_pipeline",
+      "route": "instruction",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": null,
+      "changeType": "standard_correction",
+      "fixType": "pipeline_report_api_filter_fix",
+      "publishedData": false,
+      "stateEnteredAt": "2026-09-21",
+      "dueAt": null,
+      "closedAt": "2026-09-21",
+      "scoreAfterRemeasure": 98.3,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00",
+        "ST-03",
+        "ST-04"
+      ],
+      "history": [
+        {
+          "at": "2026-08-26T12:12:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-27T15:12:00+04:00",
+          "from": "open",
+          "to": "instruction_sent",
+          "transition": "send_instruction",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Cites ST-01 rule TML-04"
+        },
+        {
+          "at": "2026-08-31T12:41:00+04:00",
+          "from": "instruction_sent",
+          "to": "in_progress",
+          "transition": "acknowledge",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-09-11T14:05:00+04:00",
+          "from": "in_progress",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-09-11T12:12:00+04:00",
+          "from": "corrected",
+          "to": "awaiting_fit_for_use",
+          "transition": "request_fit_for_use",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-16T08:52:00+04:00",
+          "from": "awaiting_fit_for_use",
+          "to": "verification",
+          "transition": "confirm_fit_for_use",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-21T14:34:00+04:00",
+          "from": "verification",
+          "to": "closed",
+          "transition": "verify_and_close",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0004",
+      "workflowId": "dq_issue",
+      "title": "Website and DX Hub show different school counts (demo)",
+      "state": "closed",
+      "st01Status": "closed",
+      "datasetId": "DS-005",
+      "view": "EducationCenters_vw_EducationCenters",
+      "field": "EducationCenter_Status",
+      "ruleId": "CNS-004",
+      "dimension": "Consistency",
+      "recordsAffected": 2678,
+      "institutionIds": [],
+      "detectedAt": "2026-09-21",
+      "rootCause": "system_pipeline",
+      "route": "instruction",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "Data platform pipeline",
+      "assigneeRole": null,
+      "changeType": "standard_correction",
+      "fixType": "pipeline_report_api_filter_fix",
+      "publishedData": true,
+      "stateEnteredAt": "2026-10-15",
+      "dueAt": null,
+      "closedAt": "2026-10-15",
+      "scoreAfterRemeasure": 99.1,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00",
+        "DP-05"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T11:20:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-22T08:34:00+04:00",
+          "from": "open",
+          "to": "instruction_sent",
+          "transition": "send_instruction",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Cites ST-01 rule CNS-05"
+        },
+        {
+          "at": "2026-09-24T10:12:00+04:00",
+          "from": "instruction_sent",
+          "to": "in_progress",
+          "transition": "acknowledge",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-10-07T12:34:00+04:00",
+          "from": "in_progress",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-10-07T12:20:00+04:00",
+          "from": "corrected",
+          "to": "awaiting_fit_for_use",
+          "transition": "request_fit_for_use",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-10-12T11:20:00+04:00",
+          "from": "awaiting_fit_for_use",
+          "to": "verification",
+          "transition": "confirm_fit_for_use",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-10-15T10:41:00+04:00",
+          "from": "verification",
+          "to": "closed",
+          "transition": "verify_and_close",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0005",
+      "workflowId": "dq_issue",
+      "title": "Invalid mobile number format (demo)",
+      "state": "referred_to_group",
+      "st01Status": "in progress",
+      "datasetId": "DS-011",
+      "view": "ParentContract_vw_ParentContract",
+      "field": "ParentContract_Mobile",
+      "ruleId": "VLD-005",
+      "dimension": "Validity",
+      "recordsAffected": 3398,
+      "institutionIds": [],
+      "detectedAt": "2026-09-29",
+      "rootCause": "system_pipeline",
+      "route": "instruction",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "Parent Contract Application",
+      "assigneeRole": "governance_group",
+      "changeType": "standard_correction",
+      "fixType": "data_fix",
+      "publishedData": false,
+      "stateEnteredAt": "2026-10-02",
+      "dueAt": "2026-10-23",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": true,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-09-29T11:52:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-30T13:05:00+04:00",
+          "from": "open",
+          "to": "instruction_sent",
+          "transition": "send_instruction",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Cites ST-01 rule VLD-06"
+        },
+        {
+          "at": "2026-10-02T11:05:00+04:00",
+          "from": "instruction_sent",
+          "to": "objected",
+          "transition": "object",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner",
+          "comment": "Owner objects: the value is correct for this case"
+        },
+        {
+          "at": "2026-10-02T08:12:00+04:00",
+          "from": "objected",
+          "to": "referred_to_group",
+          "transition": "refer_objection",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0006",
+      "workflowId": "dq_issue",
+      "title": "Fee amounts missing for new academic year (demo)",
+      "state": "with_institution",
+      "st01Status": "with institution",
+      "datasetId": "DS-008",
+      "view": "SchoolFee_vw_SCHOOL_FEE",
+      "field": "SchoolFee_FeesAmount",
+      "ruleId": "CMP-006",
+      "dimension": "Completeness",
+      "recordsAffected": 1435,
+      "institutionIds": [
+        "INS-039",
+        "INS-021",
+        "INS-009"
+      ],
+      "detectedAt": "2026-09-03",
+      "rootCause": "institution_submission",
+      "route": "institution",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "data_owner",
+      "changeType": "institution_correction",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-09-04",
+      "dueAt": "2026-10-09",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-09-03T12:20:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-04T11:34:00+04:00",
+          "from": "open",
+          "to": "with_institution",
+          "transition": "route_to_institution",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0007",
+      "workflowId": "dq_issue",
+      "title": "Teacher leaving date before joining date (demo)",
+      "state": "with_institution",
+      "st01Status": "with institution",
+      "datasetId": "DS-003",
+      "view": "Faculty_vw_FacultyRegistrations",
+      "field": "Faculty_LeavingDate",
+      "ruleId": "ACC-007",
+      "dimension": "Accuracy",
+      "recordsAffected": 4078,
+      "institutionIds": [
+        "INS-033",
+        "INS-036",
+        "INS-026",
+        "INS-028"
+      ],
+      "detectedAt": "2026-09-10",
+      "rootCause": "institution_submission",
+      "route": "institution",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "data_owner",
+      "changeType": "institution_correction",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-09-11",
+      "dueAt": "2026-10-16",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-09-10T10:52:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-11T08:52:00+04:00",
+          "from": "open",
+          "to": "with_institution",
+          "transition": "route_to_institution",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0008",
+      "workflowId": "dq_issue",
+      "title": "Inspection report date missing for completed visits (demo)",
+      "state": "corrected",
+      "st01Status": "resolved",
+      "datasetId": "DS-009",
+      "view": "Inspection_vw_InspectionResults",
+      "field": "Inspection_ReportDate",
+      "ruleId": "TML-008",
+      "dimension": "Timeliness",
+      "recordsAffected": 3641,
+      "institutionIds": [],
+      "detectedAt": "2026-09-24",
+      "rootCause": "system_pipeline",
+      "route": "business_judgment",
+      "ownerSectorId": "QAC",
+      "sourceSystem": "Inspection Application",
+      "assigneeRole": "data_owner",
+      "changeType": "business_judgment",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-10-08",
+      "dueAt": "2026-10-13",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-09-24T15:41:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-25T09:41:00+04:00",
+          "from": "open",
+          "to": "awaiting_owner_decision",
+          "transition": "route_business_judgment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-01T14:12:00+04:00",
+          "from": "awaiting_owner_decision",
+          "to": "in_progress",
+          "transition": "owner_decide",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-10-08T15:41:00+04:00",
+          "from": "in_progress",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0009",
+      "workflowId": "dq_issue",
+      "title": "Unmapped curriculum codes (demo)",
+      "state": "awaiting_fit_for_use",
+      "st01Status": "resolved",
+      "datasetId": "DS-005",
+      "view": "EducationCenters_vw_EducationCenters",
+      "field": "EducationCenter_CurriculumID",
+      "ruleId": "VLD-009",
+      "dimension": "Validity",
+      "recordsAffected": 2641,
+      "institutionIds": [],
+      "detectedAt": "2026-10-02",
+      "rootCause": "reference_data",
+      "route": "instruction",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "data_owner",
+      "changeType": "standard_correction",
+      "fixType": "data_fix",
+      "publishedData": false,
+      "stateEnteredAt": "2026-10-16",
+      "dueAt": "2026-10-21",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-10-02T11:34:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-05T12:34:00+04:00",
+          "from": "open",
+          "to": "instruction_sent",
+          "transition": "send_instruction",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Cites ST-01 rule VLD-01"
+        },
+        {
+          "at": "2026-10-07T08:12:00+04:00",
+          "from": "instruction_sent",
+          "to": "in_progress",
+          "transition": "acknowledge",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-10-13T11:41:00+04:00",
+          "from": "in_progress",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-10-13T14:41:00+04:00",
+          "from": "corrected",
+          "to": "awaiting_fit_for_use",
+          "transition": "request_fit_for_use",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0010",
+      "workflowId": "dq_issue",
+      "title": "Compliance visit outcome free text instead of codes (demo)",
+      "state": "in_progress",
+      "st01Status": "in progress",
+      "datasetId": "DS-010",
+      "view": "Compliance_vw_ComplianceVisit",
+      "field": "Compliance_Outcome",
+      "ruleId": "VLD-010",
+      "dimension": "Validity",
+      "recordsAffected": 4112,
+      "institutionIds": [],
+      "detectedAt": "2026-09-15",
+      "rootCause": "form_service_design",
+      "route": "field_change",
+      "ownerSectorId": "QAC",
+      "sourceSystem": "Compliance Application",
+      "assigneeRole": "digital_excellence",
+      "changeType": "system_change",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-09-16",
+      "dueAt": "2026-10-28",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-09-15T10:20:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-16T14:05:00+04:00",
+          "from": "open",
+          "to": "in_progress",
+          "transition": "route_to_source_fix",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Form or service design gap: change request raised in M6"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0011",
+      "workflowId": "dq_issue",
+      "title": "Published ECC count differs from certified value (demo)",
+      "state": "referred_to_group",
+      "st01Status": "in progress",
+      "datasetId": "DS-005",
+      "view": "EducationCenters_vw_EducationCenters",
+      "field": "EducationCenter_Type",
+      "ruleId": "REC-011",
+      "dimension": "Reconciliation",
+      "recordsAffected": 689,
+      "institutionIds": [],
+      "detectedAt": "2026-10-07",
+      "rootCause": "system_pipeline",
+      "route": "instruction",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "Data platform pipeline",
+      "assigneeRole": "governance_group",
+      "changeType": "standard_correction",
+      "fixType": "pipeline_report_api_filter_fix",
+      "publishedData": true,
+      "stateEnteredAt": "2026-10-12",
+      "dueAt": "2026-11-02",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00",
+        "DP-05"
+      ],
+      "history": [
+        {
+          "at": "2026-10-07T09:41:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-08T13:05:00+04:00",
+          "from": "open",
+          "to": "instruction_sent",
+          "transition": "send_instruction",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Cites ST-01 rule REC-03"
+        },
+        {
+          "at": "2026-10-12T15:34:00+04:00",
+          "from": "instruction_sent",
+          "to": "declined",
+          "transition": "decline",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence",
+          "comment": "Declined on technical grounds: view logic owned by a vendor"
+        },
+        {
+          "at": "2026-10-12T11:12:00+04:00",
+          "from": "declined",
+          "to": "referred_to_group",
+          "transition": "refer_objection",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0012",
+      "workflowId": "dq_issue",
+      "title": "Expired permits still marked active (demo)",
+      "state": "awaiting_owner_decision",
+      "st01Status": "in progress",
+      "datasetId": "DS-006",
+      "view": "EducationCenterPermit_vw_Permit",
+      "field": "EducationcenterPermit_ISACTIVE",
+      "ruleId": "TML-012",
+      "dimension": "Timeliness",
+      "recordsAffected": 2378,
+      "institutionIds": [],
+      "detectedAt": "2026-09-30",
+      "rootCause": "system_pipeline",
+      "route": "business_judgment",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "data_owner",
+      "changeType": "business_judgment",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-10-01",
+      "dueAt": "2026-10-08",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-09-30T09:52:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-01T08:41:00+04:00",
+          "from": "open",
+          "to": "awaiting_owner_decision",
+          "transition": "route_business_judgment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0013",
+      "workflowId": "dq_issue",
+      "title": "Duplicate course records for a training institute (demo)",
+      "state": "with_institution",
+      "st01Status": "with institution",
+      "datasetId": "DS-013",
+      "view": "TrainingInstituteCourses_vw_TrainingInstituteCourses",
+      "field": "TICourse_Name",
+      "ruleId": "UNQ-013",
+      "dimension": "Uniqueness",
+      "recordsAffected": 1142,
+      "institutionIds": [
+        "INS-008",
+        "INS-019",
+        "INS-016"
+      ],
+      "detectedAt": "2026-09-07",
+      "rootCause": "institution_submission",
+      "route": "institution",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "data_owner",
+      "changeType": "institution_correction",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-09-08",
+      "dueAt": "2026-10-13",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-09-07T11:52:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-08T08:12:00+04:00",
+          "from": "open",
+          "to": "with_institution",
+          "transition": "route_to_institution",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0014",
+      "workflowId": "dq_issue",
+      "title": "Exam dataset has no submission date (demo)",
+      "state": "in_progress",
+      "st01Status": "in progress",
+      "datasetId": "DS-012",
+      "view": "SchoolExam_vw_SchoolExam",
+      "field": "(missing audit stamps)",
+      "ruleId": "TML-014",
+      "dimension": "Timeliness",
+      "recordsAffected": 2546,
+      "institutionIds": [],
+      "detectedAt": "2026-08-14",
+      "rootCause": "system_pipeline",
+      "route": "source_fix",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "digital_excellence",
+      "changeType": "resolution_at_source",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-08-17",
+      "dueAt": "2026-09-28",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00",
+        "ST-03",
+        "ST-04"
+      ],
+      "history": [
+        {
+          "at": "2026-08-14T09:34:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-17T10:41:00+04:00",
+          "from": "open",
+          "to": "in_progress",
+          "transition": "route_to_source_fix",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Resolution at source by the owner and Digital Excellence (Charter 9.8)"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0015",
+      "workflowId": "dq_issue",
+      "title": "Premise records without audit stamps (demo)",
+      "state": "referred_to_group",
+      "st01Status": "in progress",
+      "datasetId": "DS-016",
+      "view": "EducationCenterPremise_vw_EducationCenterPremise",
+      "field": "(missing audit stamps)",
+      "ruleId": "TML-015",
+      "dimension": "Timeliness",
+      "recordsAffected": 3388,
+      "institutionIds": [],
+      "detectedAt": "2026-07-27",
+      "rootCause": "system_pipeline",
+      "route": "instruction",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "governance_group",
+      "changeType": "standard_correction",
+      "fixType": "pipeline_report_api_filter_fix",
+      "publishedData": false,
+      "stateEnteredAt": "2026-07-30",
+      "dueAt": "2026-08-20",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00",
+        "ST-03",
+        "ST-04"
+      ],
+      "history": [
+        {
+          "at": "2026-07-27T13:34:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-28T11:12:00+04:00",
+          "from": "open",
+          "to": "instruction_sent",
+          "transition": "send_instruction",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Cites ST-01 rule TML-07"
+        },
+        {
+          "at": "2026-07-30T08:34:00+04:00",
+          "from": "instruction_sent",
+          "to": "objected",
+          "transition": "object",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner",
+          "comment": "Owner objects: the value is correct for this case"
+        },
+        {
+          "at": "2026-07-30T12:52:00+04:00",
+          "from": "objected",
+          "to": "referred_to_group",
+          "transition": "refer_objection",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0016",
+      "workflowId": "dq_issue",
+      "title": "Graduation date earlier than enrollment date (demo)",
+      "state": "with_institution",
+      "st01Status": "with institution",
+      "datasetId": "DS-002",
+      "view": "HEPStudents_vw_HEP_Students",
+      "field": "UniversityStudent_GraduationDate",
+      "ruleId": "ACC-016",
+      "dimension": "Accuracy",
+      "recordsAffected": 2657,
+      "institutionIds": [
+        "INS-002",
+        "INS-022",
+        "INS-035",
+        "INS-007",
+        "INS-017"
+      ],
+      "detectedAt": "2026-08-06",
+      "rootCause": "institution_submission",
+      "route": "institution",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "data_owner",
+      "changeType": "institution_correction",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-08-07",
+      "dueAt": "2026-09-11",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-08-06T13:05:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-07T13:20:00+04:00",
+          "from": "open",
+          "to": "with_institution",
+          "transition": "route_to_institution",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0017",
+      "workflowId": "dq_issue",
+      "title": "Nationality code outside the code list (demo)",
+      "state": "closed",
+      "st01Status": "closed",
+      "datasetId": "DS-001",
+      "view": "ParentStudent_vw_ParentStudent",
+      "field": "SchoolECCStudent_NationalityID",
+      "ruleId": "VLD-017",
+      "dimension": "Validity",
+      "recordsAffected": 624,
+      "institutionIds": [],
+      "detectedAt": "2026-06-11",
+      "rootCause": "reference_data",
+      "route": "instruction",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": null,
+      "changeType": "standard_correction",
+      "fixType": "data_fix",
+      "publishedData": false,
+      "stateEnteredAt": "2026-07-02",
+      "dueAt": null,
+      "closedAt": "2026-07-02",
+      "scoreAfterRemeasure": 99.2,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-06-11T09:05:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-06-12T13:34:00+04:00",
+          "from": "open",
+          "to": "instruction_sent",
+          "transition": "send_instruction",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Cites ST-01 rule VLD-09"
+        },
+        {
+          "at": "2026-06-18T09:12:00+04:00",
+          "from": "instruction_sent",
+          "to": "in_progress",
+          "transition": "acknowledge",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence",
+          "comment": "Acknowledged late"
+        },
+        {
+          "at": "2026-06-26T13:34:00+04:00",
+          "from": "in_progress",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-06-26T14:41:00+04:00",
+          "from": "corrected",
+          "to": "awaiting_fit_for_use",
+          "transition": "request_fit_for_use",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-06-30T11:41:00+04:00",
+          "from": "awaiting_fit_for_use",
+          "to": "verification",
+          "transition": "confirm_fit_for_use",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-07-02T08:05:00+04:00",
+          "from": "verification",
+          "to": "closed",
+          "transition": "verify_and_close",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0018",
+      "workflowId": "dq_issue",
+      "title": "Feed to analytical environment failed twice (demo)",
+      "state": "closed",
+      "st01Status": "closed",
+      "datasetId": "DS-007",
+      "view": "ECCFee_vw_ECC_FEE",
+      "field": "(whole view)",
+      "ruleId": "TML-018",
+      "dimension": "Timeliness",
+      "recordsAffected": 481,
+      "institutionIds": [],
+      "detectedAt": "2026-09-17",
+      "rootCause": "system_pipeline",
+      "route": "self_detected",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "Data platform pipeline",
+      "assigneeRole": null,
+      "changeType": "standard_correction",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-09-23",
+      "dueAt": null,
+      "closedAt": "2026-09-23",
+      "scoreAfterRemeasure": 98.4,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-09-17T15:12:00+04:00",
+          "from": null,
+          "to": "in_progress",
+          "transition": "log_self_detected",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence",
+          "comment": "Digital Excellence detected and fixed the failed feed"
+        },
+        {
+          "at": "2026-09-18T12:05:00+04:00",
+          "from": "in_progress",
+          "to": "corrected",
+          "transition": "record_correction",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-09-18T08:20:00+04:00",
+          "from": "corrected",
+          "to": "awaiting_fit_for_use",
+          "transition": "request_fit_for_use",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-22T14:41:00+04:00",
+          "from": "awaiting_fit_for_use",
+          "to": "verification",
+          "transition": "confirm_fit_for_use",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-23T12:52:00+04:00",
+          "from": "verification",
+          "to": "closed",
+          "transition": "verify_and_close",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0019",
+      "workflowId": "dq_issue",
+      "title": "Shareholder percentage totals above 100 (demo)",
+      "state": "with_institution",
+      "st01Status": "with institution",
+      "datasetId": "DS-014",
+      "view": "Shareholders_vw_Shareholders",
+      "field": "Shareholder_Percentage",
+      "ruleId": "ACC-019",
+      "dimension": "Accuracy",
+      "recordsAffected": 708,
+      "institutionIds": [
+        "INS-036",
+        "INS-021"
+      ],
+      "detectedAt": "2026-10-05",
+      "rootCause": "institution_submission",
+      "route": "institution",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "data_owner",
+      "changeType": "institution_correction",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-10-06",
+      "dueAt": "2026-11-10",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-10-05T08:20:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-06T09:20:00+04:00",
+          "from": "open",
+          "to": "with_institution",
+          "transition": "route_to_institution",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0020",
+      "workflowId": "dq_issue",
+      "title": "Grade capacity blank for ECCs (demo)",
+      "state": "with_institution",
+      "st01Status": "with institution",
+      "datasetId": "DS-005",
+      "view": "EducationCenters_vw_EducationCenters",
+      "field": "EducationCenter_Capacity",
+      "ruleId": "CMP-020",
+      "dimension": "Completeness",
+      "recordsAffected": 3805,
+      "institutionIds": [
+        "INS-016",
+        "INS-025",
+        "INS-039",
+        "INS-032",
+        "INS-009"
+      ],
+      "detectedAt": "2026-10-09",
+      "rootCause": "institution_submission",
+      "route": "institution",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "data_owner",
+      "changeType": "institution_correction",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-10-12",
+      "dueAt": "2026-11-16",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-10-09T14:20:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-12T08:52:00+04:00",
+          "from": "open",
+          "to": "with_institution",
+          "transition": "route_to_institution",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0021",
+      "workflowId": "dq_issue",
+      "title": "Inspector profile missing degree data (demo)",
+      "state": "in_progress",
+      "st01Status": "in progress",
+      "datasetId": "DS-009",
+      "view": "Inspection_vw_InspectionResults",
+      "field": "Inspection_InspectorID",
+      "ruleId": "CMP-021",
+      "dimension": "Completeness",
+      "recordsAffected": 1374,
+      "institutionIds": [],
+      "detectedAt": "2026-10-12",
+      "rootCause": "system_pipeline",
+      "route": "source_fix",
+      "ownerSectorId": "QAC",
+      "sourceSystem": "Inspection Application",
+      "assigneeRole": "digital_excellence",
+      "changeType": "resolution_at_source",
+      "fixType": null,
+      "publishedData": false,
+      "stateEnteredAt": "2026-10-13",
+      "dueAt": "2026-11-24",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-10-12T10:05:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-13T09:41:00+04:00",
+          "from": "open",
+          "to": "in_progress",
+          "transition": "route_to_source_fix",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Resolution at source by the owner and Digital Excellence (Charter 9.8)"
+        }
+      ]
+    },
+    {
+      "id": "DQI-2026-0022",
+      "workflowId": "dq_issue",
+      "title": "Enrollment status inconsistent with IsActive flag (demo)",
+      "state": "instruction_sent",
+      "st01Status": "in progress",
+      "datasetId": "DS-001",
+      "view": "ParentStudent_vw_ParentStudent",
+      "field": "SchoolECCStudent_IsActive",
+      "ruleId": "CNS-022",
+      "dimension": "Consistency",
+      "recordsAffected": 2253,
+      "institutionIds": [],
+      "detectedAt": "2026-10-13",
+      "rootCause": "system_pipeline",
+      "route": "instruction",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "assigneeRole": "digital_excellence",
+      "changeType": "standard_correction",
+      "fixType": "pipeline_report_api_filter_fix",
+      "publishedData": false,
+      "stateEnteredAt": "2026-10-20",
+      "dueAt": "2026-10-22",
+      "closedAt": null,
+      "scoreAfterRemeasure": null,
+      "sensitive": false,
+      "documentIds": [
+        "DP-06",
+        "ST-01",
+        "DP-00"
+      ],
+      "history": [
+        {
+          "at": "2026-10-13T08:12:00+04:00",
+          "from": null,
+          "to": "open",
+          "transition": "log_issue",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-14T11:41:00+04:00",
+          "from": "open",
+          "to": "instruction_sent",
+          "transition": "send_instruction",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Cites ST-01 rule CNS-05"
+        }
+      ]
+    }
+  ]
+}

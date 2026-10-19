@@ -1,0 +1,730 @@
+{
+  "note": "M6 field change requests through the joint field process (DP-07 5), at each step (synthetic).",
+  "fieldChangeRequests": [
+    {
+      "id": "FCR-2026-0001",
+      "workflowId": "field_change",
+      "title": "Add enrollment start date to school student registration (demo)",
+      "changeType": "add",
+      "view": "ParentStudent_vw_ParentStudent",
+      "datasetId": "DS-001",
+      "serviceId": "SVC-017",
+      "field": "(proposed field)",
+      "state": "closed",
+      "requesterUserId": "U-principal-data-user",
+      "requesterRole": "principal_data_user",
+      "ownerSectorId": "GHD",
+      "definitionRecordedAt": "2026-07-27",
+      "serviceDesignAssessment": "Service fit confirmed; customer effort low; no integration source found (demo)",
+      "dsaAssessment": "Meets ST-01 and ST-04; field class Event or validity date; history rule append only (demo)",
+      "consultedPrincipalDataUsers": [
+        "PRP",
+        "QAC"
+      ],
+      "linkedIssueId": "DQI-2026-0002",
+      "goLiveAt": "2026-10-02",
+      "dictionaryUpdatedAt": "2026-10-08",
+      "stateEnteredAt": "2026-10-08",
+      "dueAt": null,
+      "documentIds": [
+        "DP-07",
+        "ST-04",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-07-27T08:12:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-07-27T10:05:00+04:00",
+          "from": "submitted",
+          "to": "service_design_assessment",
+          "transition": "route_service_design",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-07-31T08:12:00+04:00",
+          "from": "service_design_assessment",
+          "to": "dsa_assessment",
+          "transition": "service_design_assess",
+          "actorRole": "service_design",
+          "actorUserId": "U-service-design"
+        },
+        {
+          "at": "2026-08-07T15:12:00+04:00",
+          "from": "dsa_assessment",
+          "to": "owner_decision",
+          "transition": "dsa_assess",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-12T15:41:00+04:00",
+          "from": "owner_decision",
+          "to": "estimate",
+          "transition": "owner_approve",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-25T08:34:00+04:00",
+          "from": "estimate",
+          "to": "in_build",
+          "transition": "estimate",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-10-02T10:05:00+04:00",
+          "from": "in_build",
+          "to": "live",
+          "transition": "go_live",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-10-08T08:20:00+04:00",
+          "from": "live",
+          "to": "closed",
+          "transition": "complete_updates",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "FCR-2026-0002",
+      "workflowId": "field_change",
+      "title": "Add leaving date and transfer reason to school student records (demo)",
+      "changeType": "add",
+      "view": "ParentStudent_vw_ParentStudent",
+      "datasetId": "DS-001",
+      "serviceId": "SVC-017",
+      "field": "(proposed field)",
+      "state": "live",
+      "requesterUserId": "U-dsa-analyst",
+      "requesterRole": "dsa_analyst",
+      "ownerSectorId": "GHD",
+      "definitionRecordedAt": "2026-07-17",
+      "serviceDesignAssessment": "Service fit confirmed; customer effort low; no integration source found (demo)",
+      "dsaAssessment": "Meets ST-01 and ST-04; field class Event or validity date; history rule append only (demo)",
+      "consultedPrincipalDataUsers": [
+        "PRP",
+        "QAC"
+      ],
+      "linkedIssueId": "DQI-2026-0002",
+      "goLiveAt": "2026-09-24",
+      "dictionaryUpdatedAt": null,
+      "stateEnteredAt": "2026-09-24",
+      "dueAt": "2026-10-01",
+      "documentIds": [
+        "DP-07",
+        "ST-04",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-07-17T08:52:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-17T08:12:00+04:00",
+          "from": "submitted",
+          "to": "service_design_assessment",
+          "transition": "route_service_design",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-07-23T10:20:00+04:00",
+          "from": "service_design_assessment",
+          "to": "dsa_assessment",
+          "transition": "service_design_assess",
+          "actorRole": "service_design",
+          "actorUserId": "U-service-design"
+        },
+        {
+          "at": "2026-07-30T08:05:00+04:00",
+          "from": "dsa_assessment",
+          "to": "owner_decision",
+          "transition": "dsa_assess",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-04T10:05:00+04:00",
+          "from": "owner_decision",
+          "to": "estimate",
+          "transition": "owner_approve",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-17T13:12:00+04:00",
+          "from": "estimate",
+          "to": "in_build",
+          "transition": "estimate",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-09-24T15:05:00+04:00",
+          "from": "in_build",
+          "to": "live",
+          "transition": "go_live",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        }
+      ]
+    },
+    {
+      "id": "FCR-2026-0003",
+      "workflowId": "field_change",
+      "title": "Add joining and leaving dates to higher education faculty (demo)",
+      "changeType": "add",
+      "view": "HEPFaculty_vw_HEPFaculty",
+      "datasetId": "DS-004",
+      "serviceId": "SVC-014",
+      "field": "(proposed field)",
+      "state": "in_build",
+      "requesterUserId": "U-dsa-analyst",
+      "requesterRole": "dsa_analyst",
+      "ownerSectorId": "GHD",
+      "definitionRecordedAt": "2026-08-31",
+      "serviceDesignAssessment": "Service fit confirmed; customer effort low; no integration source found (demo)",
+      "dsaAssessment": "Meets ST-01 and ST-04; field class Event or validity date; history rule append only (demo)",
+      "consultedPrincipalDataUsers": [
+        "PRP"
+      ],
+      "linkedIssueId": null,
+      "goLiveAt": null,
+      "dictionaryUpdatedAt": null,
+      "stateEnteredAt": "2026-09-29",
+      "dueAt": "2026-11-10",
+      "documentIds": [
+        "DP-07",
+        "ST-04",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-08-31T08:05:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-31T14:05:00+04:00",
+          "from": "submitted",
+          "to": "service_design_assessment",
+          "transition": "route_service_design",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-04T10:34:00+04:00",
+          "from": "service_design_assessment",
+          "to": "dsa_assessment",
+          "transition": "service_design_assess",
+          "actorRole": "service_design",
+          "actorUserId": "U-service-design"
+        },
+        {
+          "at": "2026-09-11T09:20:00+04:00",
+          "from": "dsa_assessment",
+          "to": "owner_decision",
+          "transition": "dsa_assess",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-16T08:05:00+04:00",
+          "from": "owner_decision",
+          "to": "estimate",
+          "transition": "owner_approve",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-29T13:12:00+04:00",
+          "from": "estimate",
+          "to": "in_build",
+          "transition": "estimate",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        }
+      ]
+    },
+    {
+      "id": "FCR-2026-0004",
+      "workflowId": "field_change",
+      "title": "Replace free-text compliance outcome with a coded list (demo)",
+      "changeType": "change",
+      "view": "Compliance_vw_ComplianceVisit",
+      "datasetId": "DS-010",
+      "serviceId": "SVC-001",
+      "field": "(proposed field)",
+      "state": "estimate",
+      "requesterUserId": "U-dsa-analyst",
+      "requesterRole": "dsa_analyst",
+      "ownerSectorId": "QAC",
+      "definitionRecordedAt": null,
+      "serviceDesignAssessment": "Service fit confirmed; customer effort low; no integration source found (demo)",
+      "dsaAssessment": "Meets ST-01 and ST-04; field class Event or validity date; history rule append only (demo)",
+      "consultedPrincipalDataUsers": [
+        "PRP"
+      ],
+      "linkedIssueId": "DQI-2026-0010",
+      "goLiveAt": null,
+      "dictionaryUpdatedAt": null,
+      "stateEnteredAt": "2026-10-06",
+      "dueAt": "2026-10-20",
+      "documentIds": [
+        "DP-07",
+        "ST-04",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-09-18T12:34:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-18T14:34:00+04:00",
+          "from": "submitted",
+          "to": "service_design_assessment",
+          "transition": "route_service_design",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-24T12:34:00+04:00",
+          "from": "service_design_assessment",
+          "to": "dsa_assessment",
+          "transition": "service_design_assess",
+          "actorRole": "service_design",
+          "actorUserId": "U-service-design"
+        },
+        {
+          "at": "2026-10-01T11:20:00+04:00",
+          "from": "dsa_assessment",
+          "to": "owner_decision",
+          "transition": "dsa_assess",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-06T13:05:00+04:00",
+          "from": "owner_decision",
+          "to": "estimate",
+          "transition": "owner_approve",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        }
+      ]
+    },
+    {
+      "id": "FCR-2026-0005",
+      "workflowId": "field_change",
+      "title": "Remove unused fax number field from ECC registration (demo)",
+      "changeType": "remove",
+      "view": "EducationCenters_vw_EducationCenters",
+      "datasetId": "DS-005",
+      "serviceId": "SVC-005",
+      "field": "(proposed field)",
+      "state": "owner_decision",
+      "requesterUserId": "U-service-design",
+      "requesterRole": "service_design",
+      "ownerSectorId": "GHD",
+      "definitionRecordedAt": null,
+      "serviceDesignAssessment": "Service fit confirmed; customer effort low; no integration source found (demo)",
+      "dsaAssessment": "Meets ST-01 and ST-04; field class Event or validity date; history rule append only (demo)",
+      "consultedPrincipalDataUsers": [
+        "PRP"
+      ],
+      "linkedIssueId": null,
+      "goLiveAt": null,
+      "dictionaryUpdatedAt": null,
+      "stateEnteredAt": "2026-10-06",
+      "dueAt": "2026-10-13",
+      "documentIds": [
+        "DP-07",
+        "ST-04",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-09-23T14:52:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "service_design",
+          "actorUserId": "U-service-design"
+        },
+        {
+          "at": "2026-09-23T09:05:00+04:00",
+          "from": "submitted",
+          "to": "service_design_assessment",
+          "transition": "route_service_design",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-29T10:20:00+04:00",
+          "from": "service_design_assessment",
+          "to": "dsa_assessment",
+          "transition": "service_design_assess",
+          "actorRole": "service_design",
+          "actorUserId": "U-service-design"
+        },
+        {
+          "at": "2026-10-06T14:34:00+04:00",
+          "from": "dsa_assessment",
+          "to": "owner_decision",
+          "transition": "dsa_assess",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "FCR-2026-0006",
+      "workflowId": "field_change",
+      "title": "Add disability category to parent contract form (demo)",
+      "changeType": "add",
+      "view": "ParentContract_vw_ParentContract",
+      "datasetId": "DS-011",
+      "serviceId": "SVC-030",
+      "field": "(proposed field)",
+      "state": "service_design_assessment",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "ownerSectorId": "GHD",
+      "definitionRecordedAt": null,
+      "serviceDesignAssessment": null,
+      "dsaAssessment": null,
+      "consultedPrincipalDataUsers": [
+        "PRP"
+      ],
+      "linkedIssueId": null,
+      "goLiveAt": null,
+      "dictionaryUpdatedAt": null,
+      "stateEnteredAt": "2026-10-07",
+      "dueAt": "2026-10-14",
+      "documentIds": [
+        "DP-07",
+        "ST-04",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-10-07T08:20:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-10-07T15:12:00+04:00",
+          "from": "submitted",
+          "to": "service_design_assessment",
+          "transition": "route_service_design",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "FCR-2026-0007",
+      "workflowId": "field_change",
+      "title": "Add premise capacity by grade (demo)",
+      "changeType": "add",
+      "view": "EducationCenterPremise_vw_EducationCenterPremise",
+      "datasetId": "DS-016",
+      "serviceId": "SVC-009",
+      "field": "(proposed field)",
+      "state": "submitted",
+      "requesterUserId": "U-principal-data-user",
+      "requesterRole": "principal_data_user",
+      "ownerSectorId": "GHD",
+      "definitionRecordedAt": null,
+      "serviceDesignAssessment": null,
+      "dsaAssessment": null,
+      "consultedPrincipalDataUsers": [
+        "PRP"
+      ],
+      "linkedIssueId": null,
+      "goLiveAt": null,
+      "dictionaryUpdatedAt": null,
+      "stateEnteredAt": "2026-10-14",
+      "dueAt": "2026-10-15",
+      "documentIds": [
+        "DP-07",
+        "ST-04",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-10-14T10:41:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        }
+      ]
+    },
+    {
+      "id": "FCR-2026-0008",
+      "workflowId": "field_change",
+      "title": "Collect parent occupation in student registration (demo)",
+      "changeType": "add",
+      "view": "ParentStudent_vw_ParentStudent",
+      "datasetId": "DS-001",
+      "serviceId": "SVC-017",
+      "field": "(proposed field)",
+      "state": "refused",
+      "requesterUserId": "U-requester",
+      "requesterRole": "requester",
+      "ownerSectorId": "GHD",
+      "definitionRecordedAt": null,
+      "serviceDesignAssessment": "Service fit confirmed; customer effort low; no integration source found (demo)",
+      "dsaAssessment": null,
+      "consultedPrincipalDataUsers": [
+        "PRP",
+        "QAC"
+      ],
+      "linkedIssueId": null,
+      "goLiveAt": null,
+      "dictionaryUpdatedAt": null,
+      "stateEnteredAt": "2026-10-08",
+      "dueAt": null,
+      "documentIds": [
+        "DP-07",
+        "ST-04",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T12:05:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-09-21T12:34:00+04:00",
+          "from": "submitted",
+          "to": "service_design_assessment",
+          "transition": "route_service_design",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-25T11:34:00+04:00",
+          "from": "service_design_assessment",
+          "to": "dsa_assessment",
+          "transition": "service_design_assess",
+          "actorRole": "service_design",
+          "actorUserId": "U-service-design"
+        },
+        {
+          "at": "2026-10-02T11:20:00+04:00",
+          "from": "dsa_assessment",
+          "to": "owner_decision",
+          "transition": "dsa_assess",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-08T13:52:00+04:00",
+          "from": "owner_decision",
+          "to": "refused",
+          "transition": "owner_refuse",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner",
+          "comment": "Not needed for the service; customer effort too high"
+        }
+      ]
+    },
+    {
+      "id": "FCR-2026-0009",
+      "workflowId": "field_change",
+      "title": "Change fee field to fee band (demo)",
+      "changeType": "change",
+      "view": "SchoolFee_vw_SCHOOL_FEE",
+      "datasetId": "DS-008",
+      "serviceId": "SVC-030",
+      "field": "(proposed field)",
+      "state": "referred_to_cdo",
+      "requesterUserId": "U-data-owner",
+      "requesterRole": "data_owner",
+      "ownerSectorId": "GHD",
+      "definitionRecordedAt": null,
+      "serviceDesignAssessment": "Service fit confirmed; customer effort low; no integration source found (demo)",
+      "dsaAssessment": null,
+      "consultedPrincipalDataUsers": [
+        "PRP"
+      ],
+      "linkedIssueId": null,
+      "goLiveAt": null,
+      "dictionaryUpdatedAt": null,
+      "stateEnteredAt": "2026-10-09",
+      "dueAt": "2026-10-16",
+      "documentIds": [
+        "DP-07",
+        "ST-04",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-09-30T09:52:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-30T13:05:00+04:00",
+          "from": "submitted",
+          "to": "service_design_assessment",
+          "transition": "route_service_design",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-10-06T15:52:00+04:00",
+          "from": "service_design_assessment",
+          "to": "dsa_assessment",
+          "transition": "service_design_assess",
+          "actorRole": "service_design",
+          "actorUserId": "U-service-design"
+        },
+        {
+          "at": "2026-10-09T14:34:00+04:00",
+          "from": "dsa_assessment",
+          "to": "referred_to_cdo",
+          "transition": "refer_disagreement",
+          "actorRole": "service_design",
+          "actorUserId": "U-service-design",
+          "comment": "Service Design and DS&A disagree on the fee band definition"
+        }
+      ]
+    },
+    {
+      "id": "FCR-2026-0010",
+      "workflowId": "field_change",
+      "title": "Add course delivery mode to training institute courses (demo)",
+      "changeType": "add",
+      "view": "TrainingInstituteCourses_vw_TrainingInstituteCourses",
+      "datasetId": "DS-013",
+      "serviceId": "SVC-041",
+      "field": "(proposed field)",
+      "state": "closed",
+      "requesterUserId": "U-principal-data-user",
+      "requesterRole": "principal_data_user",
+      "ownerSectorId": "GHD",
+      "definitionRecordedAt": null,
+      "serviceDesignAssessment": "Service fit confirmed; customer effort low; no integration source found (demo)",
+      "dsaAssessment": "Meets ST-01 and ST-04; field class Event or validity date; history rule append only (demo)",
+      "consultedPrincipalDataUsers": [
+        "PRP"
+      ],
+      "linkedIssueId": null,
+      "goLiveAt": "2026-10-06",
+      "dictionaryUpdatedAt": "2026-10-12",
+      "stateEnteredAt": "2026-10-12",
+      "dueAt": null,
+      "documentIds": [
+        "DP-07",
+        "ST-04",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-07-29T08:20:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-07-29T13:34:00+04:00",
+          "from": "submitted",
+          "to": "service_design_assessment",
+          "transition": "route_service_design",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-08-04T10:20:00+04:00",
+          "from": "service_design_assessment",
+          "to": "dsa_assessment",
+          "transition": "service_design_assess",
+          "actorRole": "service_design",
+          "actorUserId": "U-service-design"
+        },
+        {
+          "at": "2026-08-11T08:12:00+04:00",
+          "from": "dsa_assessment",
+          "to": "owner_decision",
+          "transition": "dsa_assess",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-14T08:05:00+04:00",
+          "from": "owner_decision",
+          "to": "estimate",
+          "transition": "owner_approve",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-27T14:52:00+04:00",
+          "from": "estimate",
+          "to": "in_build",
+          "transition": "estimate",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-10-06T12:52:00+04:00",
+          "from": "in_build",
+          "to": "live",
+          "transition": "go_live",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-10-12T09:20:00+04:00",
+          "from": "live",
+          "to": "closed",
+          "transition": "complete_updates",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    }
+  ]
+}

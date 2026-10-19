@@ -1,0 +1,379 @@
+{
+  "note": "Dashboard register (synthetic). DS&A answers only for certified dashboards; legacy dashboards (built before 2026) carry no DS&A accountability. Each certified dashboard lists its open source data issues in its data quality disclaimer [decide: disclaimer content and placement].",
+  "dashboards": [
+    {
+      "id": "DSH-001",
+      "name": "Enrollment overview (demo)",
+      "link": "https://example.invalid/powerbi/DSH-001",
+      "classification": "Confidential",
+      "businessOwnerSectorId": "GHD",
+      "certification": "certified",
+      "status": "live",
+      "workflowId": "dashboard_certification",
+      "state": "certified",
+      "liveSince": "2026-07-23",
+      "lastReviewAt": "2026-05-19",
+      "operationalStatisticOwners": [
+        "GHD"
+      ],
+      "disclaimerIssueIds": [
+        "DQI-2026-0001",
+        "DQI-2026-0002",
+        "DQI-2026-0009"
+      ],
+      "dsaAccountable": true,
+      "monthlyViews": 1240,
+      "servesPrincipalDataUsers": [
+        "PRP",
+        "SD"
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-002",
+      "name": "School fees and affordability (demo)",
+      "link": "https://example.invalid/powerbi/DSH-002",
+      "classification": "Confidential",
+      "businessOwnerSectorId": "GHD",
+      "certification": "certified",
+      "status": "live",
+      "workflowId": "dashboard_certification",
+      "state": "certified",
+      "liveSince": "2026-06-18",
+      "lastReviewAt": "2026-08-08",
+      "operationalStatisticOwners": [
+        "GHD"
+      ],
+      "disclaimerIssueIds": [
+        "DQI-2026-0001",
+        "DQI-2026-0005",
+        "DQI-2026-0016"
+      ],
+      "dsaAccountable": true,
+      "monthlyViews": 640,
+      "servesPrincipalDataUsers": [
+        "PRP"
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-003",
+      "name": "QAC inspection planning (demo)",
+      "link": "https://example.invalid/powerbi/DSH-003",
+      "classification": "Confidential",
+      "businessOwnerSectorId": "QAC",
+      "certification": "in_development",
+      "status": "in_development",
+      "workflowId": "dashboard_certification",
+      "state": "build",
+      "liveSince": null,
+      "lastReviewAt": null,
+      "operationalStatisticOwners": [
+        "QAC"
+      ],
+      "disclaimerIssueIds": [],
+      "dsaAccountable": false,
+      "monthlyViews": 0,
+      "servesPrincipalDataUsers": [
+        "QAC"
+      ],
+      "dueAt": "2026-10-13",
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-004",
+      "name": "Early years indicators (demo)",
+      "link": "https://example.invalid/powerbi/DSH-004",
+      "classification": "Confidential",
+      "businessOwnerSectorId": "GHD",
+      "certification": "certified",
+      "status": "live",
+      "workflowId": "dashboard_certification",
+      "state": "certified",
+      "liveSince": "2026-03-18",
+      "lastReviewAt": "2026-04-05",
+      "operationalStatisticOwners": [
+        "GHD"
+      ],
+      "disclaimerIssueIds": [
+        "DQI-2026-0019",
+        "DQI-2026-0005",
+        "DQI-2026-0001"
+      ],
+      "dsaAccountable": true,
+      "monthlyViews": 410,
+      "servesPrincipalDataUsers": [
+        "PRP"
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-005",
+      "name": "DS&A service performance (demo)",
+      "link": "https://example.invalid/powerbi/DSH-005",
+      "classification": "Confidential",
+      "businessOwnerSectorId": "SD",
+      "certification": "certified",
+      "status": "live",
+      "workflowId": "dashboard_certification",
+      "state": "certified",
+      "liveSince": "2026-08-09",
+      "lastReviewAt": "2026-07-14",
+      "operationalStatisticOwners": [],
+      "disclaimerIssueIds": [],
+      "dsaAccountable": true,
+      "monthlyViews": 380,
+      "servesPrincipalDataUsers": [
+        "SD"
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-006",
+      "name": "Data quality across 49 views (demo)",
+      "link": "https://example.invalid/powerbi/DSH-006",
+      "classification": "Confidential",
+      "businessOwnerSectorId": "SD",
+      "certification": "certified",
+      "status": "live",
+      "workflowId": "dashboard_certification",
+      "state": "certified",
+      "liveSince": "2026-06-08",
+      "lastReviewAt": "2026-05-26",
+      "operationalStatisticOwners": [],
+      "disclaimerIssueIds": [],
+      "dsaAccountable": true,
+      "monthlyViews": 520,
+      "servesPrincipalDataUsers": [
+        "SD",
+        "QAC"
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-007",
+      "name": "Teacher workforce (legacy) (demo)",
+      "link": "https://example.invalid/powerbi/DSH-007",
+      "classification": "Confidential",
+      "businessOwnerSectorId": "GHD",
+      "certification": "legacy",
+      "status": "live",
+      "workflowId": "dashboard_certification",
+      "state": "legacy",
+      "liveSince": "2023-08-01",
+      "lastReviewAt": null,
+      "operationalStatisticOwners": [
+        "GHD"
+      ],
+      "disclaimerIssueIds": [],
+      "dsaAccountable": false,
+      "monthlyViews": 210,
+      "servesPrincipalDataUsers": [],
+      "dueAt": null,
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-008",
+      "name": "Higher education students (legacy) (demo)",
+      "link": "https://example.invalid/powerbi/DSH-008",
+      "classification": "Confidential",
+      "businessOwnerSectorId": "GHD",
+      "certification": "legacy",
+      "status": "live",
+      "workflowId": "dashboard_certification",
+      "state": "legacy",
+      "liveSince": "2023-10-01",
+      "lastReviewAt": null,
+      "operationalStatisticOwners": [
+        "GHD"
+      ],
+      "disclaimerIssueIds": [],
+      "dsaAccountable": false,
+      "monthlyViews": 95,
+      "servesPrincipalDataUsers": [],
+      "dueAt": null,
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-009",
+      "name": "Training institutes activity (legacy) (demo)",
+      "link": "https://example.invalid/powerbi/DSH-009",
+      "classification": "Confidential",
+      "businessOwnerSectorId": "GHD",
+      "certification": "legacy",
+      "status": "live",
+      "workflowId": "dashboard_certification",
+      "state": "legacy",
+      "liveSince": "2023-08-01",
+      "lastReviewAt": null,
+      "operationalStatisticOwners": [
+        "GHD"
+      ],
+      "disclaimerIssueIds": [],
+      "dsaAccountable": false,
+      "monthlyViews": 40,
+      "servesPrincipalDataUsers": [],
+      "dueAt": null,
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-010",
+      "name": "Parent contracts (legacy) (demo)",
+      "link": "https://example.invalid/powerbi/DSH-010",
+      "classification": "Confidential",
+      "businessOwnerSectorId": "GHD",
+      "certification": "legacy",
+      "status": "live",
+      "workflowId": "dashboard_certification",
+      "state": "legacy",
+      "liveSince": "2023-11-01",
+      "lastReviewAt": null,
+      "operationalStatisticOwners": [
+        "GHD"
+      ],
+      "disclaimerIssueIds": [],
+      "dsaAccountable": false,
+      "monthlyViews": 22,
+      "servesPrincipalDataUsers": [],
+      "dueAt": null,
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-011",
+      "name": "Census 2025 explorer (legacy) (demo)",
+      "link": "https://example.invalid/powerbi/DSH-011",
+      "classification": "Open",
+      "businessOwnerSectorId": "GHD",
+      "certification": "legacy",
+      "status": "live",
+      "workflowId": "dashboard_certification",
+      "state": "legacy",
+      "liveSince": "2023-06-01",
+      "lastReviewAt": null,
+      "operationalStatisticOwners": [
+        "GHD"
+      ],
+      "disclaimerIssueIds": [],
+      "dsaAccountable": false,
+      "monthlyViews": 300,
+      "servesPrincipalDataUsers": [],
+      "dueAt": null,
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-012",
+      "name": "Permits and licensing (badge lost) (demo)",
+      "link": "https://example.invalid/powerbi/DSH-012",
+      "classification": "Confidential",
+      "businessOwnerSectorId": "GHD",
+      "certification": "badge_lost",
+      "status": "live",
+      "workflowId": "dashboard_certification",
+      "state": "badge_lost",
+      "liveSince": "2023-07-01",
+      "lastReviewAt": null,
+      "operationalStatisticOwners": [
+        "GHD"
+      ],
+      "disclaimerIssueIds": [],
+      "dsaAccountable": false,
+      "monthlyViews": 260,
+      "servesPrincipalDataUsers": [
+        "PRP"
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-013",
+      "name": "Survey results hub (demo)",
+      "link": "https://example.invalid/powerbi/DSH-013",
+      "classification": "Confidential",
+      "businessOwnerSectorId": "SD",
+      "certification": "in_development",
+      "status": "in_development",
+      "workflowId": "dashboard_certification",
+      "state": "build",
+      "liveSince": null,
+      "lastReviewAt": null,
+      "operationalStatisticOwners": [],
+      "disclaimerIssueIds": [],
+      "dsaAccountable": false,
+      "monthlyViews": 0,
+      "servesPrincipalDataUsers": [
+        "PRP"
+      ],
+      "dueAt": "2026-10-13",
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    },
+    {
+      "id": "DSH-014",
+      "name": "School profile (legacy) (demo)",
+      "link": "https://example.invalid/powerbi/DSH-014",
+      "classification": "Open",
+      "businessOwnerSectorId": "GHD",
+      "certification": "legacy",
+      "status": "retired",
+      "workflowId": "dashboard_certification",
+      "state": "retired",
+      "liveSince": "2023-12-01",
+      "lastReviewAt": null,
+      "operationalStatisticOwners": [
+        "GHD"
+      ],
+      "disclaimerIssueIds": [],
+      "dsaAccountable": false,
+      "monthlyViews": 0,
+      "servesPrincipalDataUsers": [],
+      "dueAt": null,
+      "documentIds": [
+        "ST-02",
+        "DP-03"
+      ]
+    }
+  ]
+}

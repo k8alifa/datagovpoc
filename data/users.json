@@ -1,0 +1,198 @@
+{
+  "note": "One demo user per role. Titles only, no personal names.",
+  "users": [
+    {
+      "id": "U-requester",
+      "roleId": "requester",
+      "title": "Employee, Business Support Sector (demo)",
+      "sectorId": "BSS",
+      "dataRoles": []
+    },
+    {
+      "id": "U-line-manager",
+      "roleId": "line_manager",
+      "title": "Line manager, Business Support Sector (demo)",
+      "sectorId": "BSS",
+      "dataRoles": []
+    },
+    {
+      "id": "U-sector-ceo",
+      "roleId": "sector_ceo",
+      "title": "Sector CEO, GHD (demo)",
+      "sectorId": "GHD",
+      "dataRoles": []
+    },
+    {
+      "id": "U-data-owner",
+      "roleId": "data_owner",
+      "title": "Data Owner, GHD (demo)",
+      "sectorId": "GHD",
+      "dataRoles": [
+        "Data Owner"
+      ]
+    },
+    {
+      "id": "U-data-steward",
+      "roleId": "data_steward",
+      "title": "Data Steward, DS&A, covering departments until department stewards are trained (demo)",
+      "sectorId": "SD",
+      "dataRoles": [
+        "Data Steward"
+      ]
+    },
+    {
+      "id": "U-producer-staff",
+      "roleId": "producer_staff",
+      "title": "Data producer staff, GHD (demo)",
+      "sectorId": "GHD",
+      "dataRoles": []
+    },
+    {
+      "id": "U-dsa-analyst",
+      "roleId": "dsa_analyst",
+      "title": "Data specialist, DS&A (demo)",
+      "sectorId": "SD",
+      "dataRoles": [
+        "Data specialist"
+      ]
+    },
+    {
+      "id": "U-data-administrator",
+      "roleId": "data_administrator",
+      "title": "Data Administrator, DS&A (demo)",
+      "sectorId": "SD",
+      "dataRoles": [
+        "Data Administrator"
+      ]
+    },
+    {
+      "id": "U-cdo",
+      "roleId": "cdo",
+      "title": "CEO, Strategic Development, Chief Data Officer (CDO) (demo)",
+      "sectorId": "SD",
+      "dataRoles": [
+        "Chief Data Officer (CDO)"
+      ]
+    },
+    {
+      "id": "U-dg-office",
+      "roleId": "dg_office",
+      "title": "Director General's office (demo)",
+      "sectorId": "DGO",
+      "dataRoles": []
+    },
+    {
+      "id": "U-digital-excellence",
+      "roleId": "digital_excellence",
+      "title": "Digital Excellence fulfiller (demo)",
+      "sectorId": "BSS",
+      "dataRoles": [
+        "Data Custodian"
+      ]
+    },
+    {
+      "id": "U-information-security",
+      "roleId": "information_security",
+      "title": "Information Security officer (demo)",
+      "sectorId": "BSS",
+      "dataRoles": []
+    },
+    {
+      "id": "U-khda-legal",
+      "roleId": "khda_legal",
+      "title": "KHDA Legal adviser (demo)",
+      "sectorId": "BSS",
+      "dataRoles": []
+    },
+    {
+      "id": "U-governance-section",
+      "roleId": "governance_section",
+      "title": "Governance section officer (demo)",
+      "sectorId": "SD",
+      "dataRoles": []
+    },
+    {
+      "id": "U-director-strategy-excellence",
+      "roleId": "director_strategy_excellence",
+      "title": "Director of Strategy and Excellence (demo)",
+      "sectorId": "SD",
+      "dataRoles": []
+    },
+    {
+      "id": "U-dashboard-viewer",
+      "roleId": "dashboard_viewer",
+      "title": "Dashboard viewer, leadership (demo)",
+      "sectorId": "DGO",
+      "dataRoles": []
+    },
+    {
+      "id": "U-service-design",
+      "roleId": "service_design",
+      "title": "Service Design officer (demo)",
+      "sectorId": "SD",
+      "dataRoles": []
+    },
+    {
+      "id": "U-principal-data-user",
+      "roleId": "principal_data_user",
+      "title": "Principal data user, PRP (demo)",
+      "sectorId": "PRP",
+      "dataRoles": []
+    },
+    {
+      "id": "U-system-administrator",
+      "roleId": "system_administrator",
+      "title": "System administrator, Digital Excellence (demo)",
+      "sectorId": "BSS",
+      "dataRoles": []
+    },
+    {
+      "id": "U-governance-group",
+      "roleId": "governance_group",
+      "title": "Data and Digital Governance Group secretariat (demo)",
+      "sectorId": "SD",
+      "dataRoles": []
+    },
+    {
+      "id": "U-leadership-council",
+      "roleId": "leadership_council",
+      "title": "Leadership Council secretariat (demo)",
+      "sectorId": "DGO",
+      "dataRoles": []
+    },
+    {
+      "id": "U-engagement-department",
+      "roleId": "engagement_department",
+      "title": "Engagement Department officer (demo)",
+      "sectorId": "BSS",
+      "dataRoles": []
+    },
+    {
+      "id": "U-data-steward-ghd",
+      "roleId": "data_steward",
+      "title": "Department Data Steward, GHD (demo)",
+      "sectorId": "GHD",
+      "dataRoles": [
+        "Data Steward"
+      ]
+    },
+    {
+      "id": "U-data-privacy-officer",
+      "roleId": "data_privacy_officer",
+      "title": "Data Privacy Officer (demo) [decide: holding unit]",
+      "sectorId": "BSS",
+      "dataRoles": [
+        "Data Privacy Officer"
+      ]
+    },
+    {
+      "id": "U-data-champion",
+      "roleId": "data_champion",
+      "title": "Data Champion, DS&A (demo)",
+      "sectorId": "SD",
+      "dataRoles": [
+        "Data Champion"
+      ]
+    }
+  ]
+}

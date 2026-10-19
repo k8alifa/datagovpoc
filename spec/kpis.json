@@ -1,0 +1,718 @@
+{
+  "version": "0.1",
+  "source": "Director Brief, Measuring impact; BRD Section 8; stage grouping from the Director Brief chart 'KPIs by lifecycle stage'. Renumbered on 15 October 2026: 28 KPIs (two per governing document); the three merged policies keep two further measures each as supporting measures (supporting: true, ids KPI-DPxx-S1 and -S2), tracked but not reported to leadership and not counted in the 28.",
+  "stages": [
+    {
+      "id": "collect",
+      "name": "Collect",
+      "question": "Is new data born clean and documented?"
+    },
+    {
+      "id": "store_move",
+      "name": "Store and move",
+      "question": "Does data arrive whole and keep its history?"
+    },
+    {
+      "id": "fix_at_source",
+      "name": "Fix at source",
+      "question": "Are errors fixed at source, and how fast?"
+    },
+    {
+      "id": "classify_protect",
+      "name": "Classify and protect",
+      "question": "Do we know what we hold, and is it safe?"
+    },
+    {
+      "id": "analyze_certify",
+      "name": "Analyze and certify",
+      "question": "Can leadership trust every number?"
+    },
+    {
+      "id": "use_share",
+      "name": "Use and share",
+      "question": "Does the right data reach the right people?"
+    },
+    {
+      "id": "retain",
+      "name": "Retain",
+      "question": "Can we reproduce any past figure?"
+    },
+    {
+      "id": "govern",
+      "name": "Govern",
+      "question": "Are decisions made on time?"
+    }
+  ],
+  "kpis": [
+    {
+      "id": "KPI-DP00-1",
+      "document": "DP-00",
+      "name": "DS&A instructions acknowledged by Digital Excellence within 2 working days",
+      "measuredOn": "Digital Excellence",
+      "ownerRoles": [
+        "digital_excellence"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "fix_at_source",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M3 correction instructions",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "correctionInstructions where sentAt in period and acknowledgedAt <= ackDueAt (2 working days after sentAt)",
+      "denominator": "correctionInstructions where ackDueAt in period (acknowledged, declined or still open)"
+    },
+    {
+      "id": "KPI-DP00-2",
+      "document": "DP-00",
+      "name": "Items escalated past 15 working days without a decision",
+      "measuredOn": "Data and Digital Governance Group",
+      "ownerRoles": [
+        "governance_group"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "govern",
+      "unit": "count",
+      "direction": "down",
+      "dataSource": "M9 escalations",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "formula": "count of escalations that reached level director_general (Group unresolved for 15 working days) with referredToDgAt in period"
+    },
+    {
+      "id": "KPI-DP01-1",
+      "document": "DP-01",
+      "name": "Inventory fields classified and approved, %",
+      "measuredOn": "Data Owners; DS&A",
+      "ownerRoles": [
+        "data_owner",
+        "data_administrator"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "classify_protect",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M7 Data Inventory",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "sum(datasets.fieldsApproved) at period end",
+      "denominator": "sum(datasets.fieldCount) at period end"
+    },
+    {
+      "id": "KPI-DP01-2",
+      "document": "DP-01",
+      "name": "Classifications of DX Hub datasets submitted to the DDSE, %",
+      "measuredOn": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "classify_protect",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M7 Data Inventory",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "datasets whose externalExchanges include 'DX Hub', with classificationStatus approved or submitted_ddse, and ddseSubmittedAt set",
+      "denominator": "datasets whose externalExchanges include 'DX Hub', with classificationStatus approved or submitted_ddse"
+    },
+    {
+      "id": "KPI-DP02-1",
+      "document": "DP-02",
+      "name": "Requests decided within 15 working days, %",
+      "measuredOn": "DS&A; CDO",
+      "ownerRoles": [
+        "data_administrator",
+        "cdo"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "use_share",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M2 sharing requests",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "sharingRequests with decidedAt in period and workingDays(receivedAt, decidedAt) <= 15",
+      "denominator": "sharingRequests with decidedAt in period"
+    },
+    {
+      "id": "KPI-DP02-2",
+      "document": "DP-02",
+      "name": "Daily pushes passing reconciliation, %",
+      "measuredOn": "Digital Excellence",
+      "ownerRoles": [
+        "digital_excellence"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "store_move",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Digital Excellence feed or DS&A entry [confirm]",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "confirm": "feed",
+      "formerId": "KPI-DP03-1"
+    },
+    {
+      "id": "KPI-DP02-S1",
+      "document": "DP-02",
+      "name": "Share of decisions escalated to the Director General (should fall)",
+      "measuredOn": "CDO",
+      "ownerRoles": [
+        "cdo"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "use_share",
+      "unit": "percent",
+      "direction": "down",
+      "dataSource": "M2 sharing requests",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "sharingRequests decided in period with decidedBy = dg_office",
+      "denominator": "sharingRequests decided in period",
+      "formerId": "KPI-DP02-2",
+      "supporting": true
+    },
+    {
+      "id": "KPI-DP02-S2",
+      "document": "DP-02",
+      "name": "Failed pushes fixed within 1 working day, %",
+      "measuredOn": "Digital Excellence",
+      "ownerRoles": [
+        "digital_excellence"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "store_move",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Digital Excellence feed or DS&A entry [confirm]",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "confirm": "feed",
+      "formerId": "KPI-DP03-2",
+      "supporting": true
+    },
+    {
+      "id": "KPI-DP03-1",
+      "document": "DP-03",
+      "name": "Requests delivered within their priority tier target, %",
+      "measuredOn": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "analyze_certify",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M1 service requests",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "serviceRequests with deliveredAt in period and deliveredAt <= targetDate",
+      "denominator": "serviceRequests with deliveredAt in period and a targetDate",
+      "formerId": "KPI-DP04-1"
+    },
+    {
+      "id": "KPI-DP03-2",
+      "document": "DP-03",
+      "name": "Extracts delivered by Digital Excellence within 5 or 10 working days, %",
+      "measuredOn": "Digital Excellence",
+      "ownerRoles": [
+        "digital_excellence"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "use_share",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M1 redirected extracts, or the Digital Excellence service desk [confirm]",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "confirm": "whether the Digital Excellence service desk stays the system of record",
+      "formerId": "KPI-DP04-2"
+    },
+    {
+      "id": "KPI-DP04-1",
+      "document": "DP-04",
+      "name": "Incidents contained within 1 working day, %",
+      "measuredOn": "Digital Excellence; Cybersecurity function",
+      "ownerRoles": [
+        "digital_excellence",
+        "information_security"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "classify_protect",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M3 data incidents",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "dataIncidents reported in period with containedAt <= 1 working day after reportedAt",
+      "denominator": "dataIncidents reported in period",
+      "formerId": "KPI-DP05-1"
+    },
+    {
+      "id": "KPI-DP04-2",
+      "document": "DP-04",
+      "name": "Collection forms with a transparency notice and consent, %",
+      "measuredOn": "Data Owners",
+      "ownerRoles": [
+        "data_owner"
+      ],
+      "cadence": "Semi-annual",
+      "lifecycleStage": "collect",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M6 go-live checklist; DS&A entry for existing forms [confirm]",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "confirm": "source",
+      "formerId": "KPI-DP05-2"
+    },
+    {
+      "id": "KPI-DP05-1",
+      "document": "DP-05",
+      "name": "Strategic KPIs that are measurable, %",
+      "measuredOn": "Strategy and Excellence department",
+      "ownerRoles": [
+        "director_strategy_excellence"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "analyze_certify",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M7 KPI and Statistics Catalog",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "kpiCatalogEntries of type strategic with state adopted",
+      "denominator": "kpiCatalogEntries of type strategic with state adopted or parked",
+      "formerId": "KPI-DP08-1"
+    },
+    {
+      "id": "KPI-DP05-2",
+      "document": "DP-05",
+      "name": "Published operational figures matching the owner's certified data, %",
+      "measuredOn": "Data Owners",
+      "ownerRoles": [
+        "data_owner"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "use_share",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M7 operational statistics register (channel values)",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "channel values (website, DX Hub, Education Directory) equal to the certified value, for statistics of the period",
+      "denominator": "channel values recorded for statistics of the period",
+      "note": "The BRD lists this KPI as 'Published figures matching certified data, %' measured on DS&A; the Director Brief title and owner are used here.",
+      "formerId": "KPI-DP06-1"
+    },
+    {
+      "id": "KPI-DP05-S1",
+      "document": "DP-05",
+      "name": "Published-data issues open past service level",
+      "measuredOn": "GHD; Digital Excellence",
+      "ownerRoles": [
+        "data_owner",
+        "digital_excellence"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "fix_at_source",
+      "unit": "count",
+      "direction": "down",
+      "dataSource": "M3 issues with channel = published",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "formula": "count of dqIssues with publishedData = true, not closed, and dueAt before period end",
+      "formerId": "KPI-DP06-2",
+      "supporting": true
+    },
+    {
+      "id": "KPI-DP05-S2",
+      "document": "DP-05",
+      "name": "KPI source data delivered on the agreed date, %",
+      "measuredOn": "Data Owners",
+      "ownerRoles": [
+        "data_owner"
+      ],
+      "cadence": "Per period",
+      "lifecycleStage": "analyze_certify",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M7 KPI and Statistics Catalog (deliveries)",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "catalog deliveries with agreedDate in period and deliveredAt <= agreedDate",
+      "denominator": "catalog deliveries with agreedDate in period",
+      "formerId": "KPI-DP08-2",
+      "supporting": true
+    },
+    {
+      "id": "KPI-DP06-1",
+      "document": "DP-06",
+      "name": "Quality score of critical data elements, by dimension",
+      "measuredOn": "Data Owners",
+      "ownerRoles": [
+        "data_owner"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "fix_at_source",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Data quality rule results [confirm feed]",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "confirm": "feed",
+      "note": "Seeded with a breakdown by dimension (Completeness, Uniqueness, Timeliness, Accuracy, Consistency, Reconciliation, Validity). Interpretability, Relevance and Availability (DDM-008) are listed in spec/dq_dimensions.json and show no value until their method and threshold are decided.",
+      "formerId": "KPI-DP07-1"
+    },
+    {
+      "id": "KPI-DP06-2",
+      "document": "DP-06",
+      "name": "Institution issues corrected within 20 working days, %",
+      "measuredOn": "GHD, QAC and other owners",
+      "ownerRoles": [
+        "data_owner",
+        "producer_staff"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "fix_at_source",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M4 remediation items",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "remediationItems with correctionDueAt in period and correctedAt <= correctionDueAt",
+      "denominator": "remediationItems with correctionDueAt in period",
+      "formerId": "KPI-DP07-2"
+    },
+    {
+      "id": "KPI-DP07-1",
+      "document": "DP-07",
+      "name": "Manual collections with an approved digitization request, %",
+      "measuredOn": "Data Owners",
+      "ownerRoles": [
+        "data_owner"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "collect",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Manual collections register",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "manualCollections whose digitization state is solution_given or later (Digital Excellence gave a solution, estimate and date)",
+      "denominator": "manualCollections registered and not closed before the period",
+      "decide": "is 'solution, estimate and delivery date given' the right meaning of approved?",
+      "formerId": "KPI-DP12-1"
+    },
+    {
+      "id": "KPI-DP07-2",
+      "document": "DP-07",
+      "name": "New fields with definition and business rules before go-live, %",
+      "measuredOn": "Data Owners",
+      "ownerRoles": [
+        "data_owner"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "collect",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M6 field change requests",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "fieldChangeRequests of type add with goLiveAt in period and definitionRecordedAt < goLiveAt",
+      "denominator": "fieldChangeRequests of type add with goLiveAt in period",
+      "formerId": "KPI-DP09-2"
+    },
+    {
+      "id": "KPI-DP07-S1",
+      "document": "DP-07",
+      "name": "Surveys registered with full metadata before launch, %",
+      "measuredOn": "Requesting owners",
+      "ownerRoles": [
+        "data_owner"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "collect",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M7 survey register; NG survey feed [confirm]",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "surveys with liveDate in period, registeredAt < liveDate and metadataComplete",
+      "denominator": "surveys with liveDate in period",
+      "formerId": "KPI-DP09-1",
+      "supporting": true
+    },
+    {
+      "id": "KPI-DP07-S2",
+      "document": "DP-07",
+      "name": "Source systems feeding the warehouse or DS&A environment on schedule, %",
+      "measuredOn": "Digital Excellence",
+      "ownerRoles": [
+        "digital_excellence"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "store_move",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Digital Excellence feed [confirm]",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "confirm": "feed",
+      "formerId": "KPI-DP12-2",
+      "supporting": true
+    },
+    {
+      "id": "KPI-DP08-1",
+      "document": "DP-08",
+      "name": "Snapshots captured within 1 working day of the scheduled date, %",
+      "measuredOn": "Digital Excellence",
+      "ownerRoles": [
+        "digital_excellence"
+      ],
+      "cadence": "Per snapshot",
+      "lifecycleStage": "retain",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Digital Excellence feed or DS&A entry [confirm]",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "confirm": "feed",
+      "formerId": "KPI-DP10-1"
+    },
+    {
+      "id": "KPI-DP08-2",
+      "document": "DP-08",
+      "name": "Disposals carried out with evidence, %",
+      "measuredOn": "Digital Excellence",
+      "ownerRoles": [
+        "digital_excellence"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "retain",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "DS&A entry [confirm]",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "confirm": "source",
+      "formerId": "KPI-DP10-2"
+    },
+    {
+      "id": "KPI-DP09-1",
+      "document": "DP-09",
+      "name": "Tool requests fulfilled within service level, %",
+      "measuredOn": "Digital Excellence",
+      "ownerRoles": [
+        "digital_excellence"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "analyze_certify",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Digital Excellence service desk [confirm]",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "confirm": "source",
+      "decide": "do the DP-09 KPIs stay after the DP-09 rescope? (BRD open question 19)",
+      "formerId": "KPI-DP11-1"
+    },
+    {
+      "id": "KPI-DP09-2",
+      "document": "DP-09",
+      "name": "DS&A models validated before use, %",
+      "measuredOn": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "analyze_certify",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Model register (POC addition) [decide]",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "models in use with validatedAt before firstUseAt",
+      "denominator": "models in use",
+      "decide": "add a model register for DP-09 11.2 so this KPI can be computed",
+      "formerId": "KPI-DP11-2"
+    },
+    {
+      "id": "KPI-ST01-1",
+      "document": "ST-01",
+      "name": "Critical data elements with full metadata, %",
+      "measuredOn": "Data Owners",
+      "ownerRoles": [
+        "data_owner"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "collect",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M7 Data Inventory; data dictionary [confirm location]",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "sum(datasets.cdeWithFullMetadata)",
+      "denominator": "sum(datasets.cdeCount)"
+    },
+    {
+      "id": "KPI-ST01-2",
+      "document": "ST-01",
+      "name": "Loads passing source-to-refined reconciliation, %",
+      "measuredOn": "Digital Excellence",
+      "ownerRoles": [
+        "digital_excellence"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "store_move",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Digital Excellence feed [confirm]",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "confirm": "feed"
+    },
+    {
+      "id": "KPI-ST02-1",
+      "document": "ST-02",
+      "name": "Dashboards in use that are certified, %",
+      "measuredOn": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "analyze_certify",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M7 Dashboard register",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "dashboards with status live and certification = certified",
+      "denominator": "dashboards with status live"
+    },
+    {
+      "id": "KPI-ST02-2",
+      "document": "ST-02",
+      "name": "Project access for PRP and QAC granted within service level, %",
+      "measuredOn": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "use_share",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "M5 project access requests",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "accessRequests of type project granted in period within the provisioning service level",
+      "denominator": "accessRequests of type project granted in period",
+      "decide": "3 or 5 working days for project access; ST-02, BRD and SPEC differ"
+    },
+    {
+      "id": "KPI-ST03-1",
+      "document": "ST-03",
+      "name": "Critical data elements meeting every sub-dimension threshold, %",
+      "measuredOn": "DS&A",
+      "ownerRoles": [
+        "data_administrator"
+      ],
+      "cadence": "Monthly",
+      "lifecycleStage": "fix_at_source",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Data quality rule results [confirm feed]",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "confirm": "feed"
+    },
+    {
+      "id": "KPI-ST03-2",
+      "document": "ST-03",
+      "name": "Services with an agreed timeliness commitment, %",
+      "measuredOn": "Data Owners",
+      "ownerRoles": [
+        "data_owner"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "collect",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Timeliness commitment matrix",
+      "computedFromApp": true,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "numerator": "timelinessCommitments (service rows) with status approved or measuring",
+      "denominator": "timelinessCommitments (75 service rows)",
+      "confirm": "unit: service rows (75) or distinct services (69)"
+    },
+    {
+      "id": "KPI-ST04-1",
+      "document": "ST-04",
+      "name": "Fields with a confirmed field class and history rule, %",
+      "measuredOn": "Data Owners",
+      "ownerRoles": [
+        "data_owner"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "collect",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Field metadata register (1,028 fields) [decide: where the register lives]",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "note": "Seeded. None of the owner columns were complete at issue of ST-04."
+    },
+    {
+      "id": "KPI-ST04-2",
+      "document": "ST-04",
+      "name": "Changing fields that keep history as ST-04 requires, %",
+      "measuredOn": "Digital Excellence",
+      "ownerRoles": [
+        "digital_excellence"
+      ],
+      "cadence": "Quarterly",
+      "lifecycleStage": "store_move",
+      "unit": "percent",
+      "direction": "up",
+      "dataSource": "Field metadata register; Digital Excellence confirmation",
+      "computedFromApp": false,
+      "target": null,
+      "targetNote": "Baseline in the first quarter after launch, then targets [confirm]",
+      "decide": "which classes count as changing (ST-04 15.1)"
+    }
+  ]
+}

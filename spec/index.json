@@ -1,0 +1,12 @@
+{
+  "files": [
+    "decision_matrix.json",
+    "dq_dimensions.json",
+    "kpis.json",
+    "modules.json",
+    "obligations.json",
+    "registers.json",
+    "roles.json",
+    "workflows.json"
+  ]
+}

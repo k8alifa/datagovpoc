@@ -1,0 +1,83 @@
+{
+  "note": "DPIA register (synthetic). DPIA template: DDM-010 annex [confirm KHDA adopted template].",
+  "dpias": [
+    {
+      "id": "DPIA-2026-001",
+      "workflowId": "dpia",
+      "state": "approved",
+      "datasetIds": [
+        "DS-001"
+      ],
+      "linkedItemId": "SHR-2026-0011",
+      "personalFields": [
+        "Student name",
+        "Emirates ID"
+      ],
+      "purpose": "Planning study by a federal entity (demo)",
+      "recipient": "Demo Government Entity B (federal)",
+      "risks": [
+        "Re-identification of students"
+      ],
+      "mitigations": [
+        "Pseudonymize identifiers",
+        "Access limited to named staff"
+      ],
+      "transformation": "pseudonymization",
+      "templateVersion": "DDM-010 annex (demo)",
+      "assigneeUserId": "U-data-privacy-officer",
+      "decidedAt": "2026-10-08",
+      "reviewDueAt": "2027-10-08"
+    },
+    {
+      "id": "DPIA-2026-002",
+      "workflowId": "dpia",
+      "state": "submitted",
+      "datasetIds": [
+        "DS-001"
+      ],
+      "linkedItemId": "SHR-2026-0007",
+      "personalFields": [
+        "Student name",
+        "Date of birth"
+      ],
+      "purpose": "Service eligibility check (demo)",
+      "recipient": "Demo Government Entity A (Dubai)",
+      "risks": [
+        "Disclosure beyond purpose"
+      ],
+      "mitigations": [
+        "Field-level minimization"
+      ],
+      "transformation": "tokenization",
+      "templateVersion": "DDM-010 annex (demo)",
+      "assigneeUserId": "U-data-privacy-officer",
+      "decidedAt": null,
+      "reviewDueAt": null
+    },
+    {
+      "id": "DPIA-2026-003",
+      "workflowId": "dpia",
+      "state": "draft",
+      "datasetIds": [
+        "DS-014"
+      ],
+      "linkedItemId": "SHR-2026-0006",
+      "personalFields": [
+        "Teacher name"
+      ],
+      "purpose": "Workforce analysis by a consultancy (demo)",
+      "recipient": "Demo Consultancy C (non-government)",
+      "risks": [
+        "Non-government recipient"
+      ],
+      "mitigations": [
+        "Aggregate before release"
+      ],
+      "transformation": "aggregation",
+      "templateVersion": "DDM-010 annex (demo)",
+      "assigneeUserId": "U-dsa-analyst",
+      "decidedAt": null,
+      "reviewDueAt": null
+    }
+  ]
+}

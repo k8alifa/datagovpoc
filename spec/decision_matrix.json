@@ -1,0 +1,1851 @@
+{
+  "version": "0.1",
+  "source": "KHDA Data Governance Charter, Appendix B (Draft v0.2, read 2026-10-15)",
+  "codes": {
+    "D": "decides or approves",
+    "R": "does the work or proposes",
+    "C": "consulted before the decision",
+    "I": "informed after",
+    "E": "escalation point"
+  },
+  "note": "A decision a clause gives to DS&A is shown under DS&A (Data Administrators): DS&A decisions sit with the function, not a named post (decided 15 October 2026). The Engagement Department has no column; its role is in the notes of the statistical publication rows.",
+  "columns": [
+    {
+      "charterColumn": "Director General",
+      "roleId": "dg_office"
+    },
+    {
+      "charterColumn": "CDO",
+      "roleId": "cdo"
+    },
+    {
+      "charterColumn": "Data and Digital Governance Group",
+      "roleId": "governance_group"
+    },
+    {
+      "charterColumn": "Leadership Council",
+      "roleId": "leadership_council"
+    },
+    {
+      "charterColumn": "Sector CEO or Data Owner",
+      "roleId": "data_owner"
+    },
+    {
+      "charterColumn": "Service Design",
+      "roleId": "service_design"
+    },
+    {
+      "charterColumn": "DS&A (Data Administrators)",
+      "roleId": "data_administrator"
+    },
+    {
+      "charterColumn": "DS&A (data specialists and stewards)",
+      "roleId": "dsa_analyst"
+    },
+    {
+      "charterColumn": "Digital Excellence",
+      "roleId": "digital_excellence"
+    },
+    {
+      "charterColumn": "Governance section",
+      "roleId": "governance_section"
+    },
+    {
+      "charterColumn": "Cybersecurity function",
+      "roleId": "information_security"
+    },
+    {
+      "charterColumn": "KHDA Legal",
+      "roleId": "khda_legal"
+    },
+    {
+      "charterColumn": "Principal data users (PRP, Strategic Development, QAC)",
+      "roleId": "principal_data_user"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "DM-01",
+      "area": "Policy and governance",
+      "decision": "First issue of this charter and of each policy and standard",
+      "assignments": {
+        "dg_office": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "leadership_council": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (reviews before first issue)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (drafts and reviews)"
+        }
+      },
+      "basis": "Charter 5, 6, 12.1, 12.2 [decide: Leadership Council reviews; Director General approves first issue]",
+      "openTags": [
+        "[decide: Leadership Council reviews; Director General approves first issue]"
+      ]
+    },
+    {
+      "id": "DM-02",
+      "area": "Policy and governance",
+      "decision": "Routine revisions",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (reviews at least annually)"
+        }
+      },
+      "basis": "Charter 6, 12.1, 12.2"
+    },
+    {
+      "id": "DM-03",
+      "area": "Policy and governance",
+      "decision": "Exception of up to 6 months",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (exception register)"
+        },
+        "governance_section": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (monthly report)"
+        }
+      },
+      "basis": "Charter 6, 11.4, 12.4; Charter 1 (Data Administrator keeps the registers)"
+    },
+    {
+      "id": "DM-04",
+      "area": "Policy and governance",
+      "decision": "Exception over 6 months, or repeated",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "C"
+          ],
+          "text": "C"
+        },
+        "leadership_council": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (secretariat)"
+        },
+        "governance_section": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (monthly report)"
+        }
+      },
+      "basis": "Charter 5, 5.1, 11.4, 12.4 [decide: confirm the CDO refers the exception]",
+      "openTags": [
+        "[decide: confirm the CDO refers the exception]"
+      ]
+    },
+    {
+      "id": "DM-05",
+      "area": "Policy and governance",
+      "decision": "Item not resolved within its service level; referral after 15 working days",
+      "assignments": {
+        "dg_office": {
+          "codes": [
+            "E"
+          ],
+          "text": "E (automatic after 15 working days)"
+        },
+        "cdo": {
+          "codes": [
+            "E"
+          ],
+          "text": "E (first level)"
+        },
+        "governance_group": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "leadership_council": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (quarterly report of escalated items)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (raises a missed service level; secretariat)"
+        },
+        "governance_section": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (flags items)"
+        },
+        "principal_data_user": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (may escalate unmet requests under Section 11)"
+        }
+      },
+      "basis": "Charter 5, 5.1, 5.2, 11.1 to 11.4, 12.3 [decide: unresolved items go to the Director General under 5.2]",
+      "openTags": [
+        "[decide: unresolved items go to the Director General under 5.2]"
+      ]
+    },
+    {
+      "id": "DM-06",
+      "area": "Policy and governance",
+      "decision": "Compliance monitoring and the monthly compliance report",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (monthly)"
+        },
+        "leadership_council": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (quarterly)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (reporting to the DDSE)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (records exceptions)"
+        },
+        "governance_section": {
+          "codes": [
+            "R"
+          ],
+          "text": "R"
+        }
+      },
+      "basis": "Charter 8.6, 11.4, 12.3; reporting step, no approval"
+    },
+    {
+      "id": "DM-07",
+      "area": "Roles",
+      "decision": "Owner for a dataset without one",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (within 10 working days)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (Data Inventory)"
+        }
+      },
+      "basis": "Charter 6, 12.5; DP-01 8; ST-01 20"
+    },
+    {
+      "id": "DM-08",
+      "area": "Roles",
+      "decision": "Naming sector Data Stewards under 6.4",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (sets the maturity level)"
+        },
+        "data_owner": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (onboards)"
+        }
+      },
+      "basis": "Charter 6.4"
+    },
+    {
+      "id": "DM-09",
+      "area": "Roles",
+      "decision": "Data roles register",
+      "assignments": {
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (keeps the list of role holders)"
+        }
+      },
+      "basis": "Charter 6.5; no approver named [decide: confirm assignment]",
+      "openTags": [
+        "[decide: confirm assignment]"
+      ]
+    },
+    {
+      "id": "DM-10",
+      "area": "Classification",
+      "decision": "Draft, and a difference between the owner's proposal and the DS&A draft",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (differences)"
+        },
+        "data_owner": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (proposes; confirms in 5 working days)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (drafts each field)"
+        }
+      },
+      "basis": "Charter 6, 6.2; DP-01 8(2), 8(3), 10"
+    },
+    {
+      "id": "DM-11",
+      "area": "Classification",
+      "decision": "Approval",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (data inventory and each classification)"
+        },
+        "data_owner": {
+          "codes": [
+            "C"
+          ],
+          "text": "C"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (submits to the DDSE)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (applies the level)"
+        },
+        "information_security": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (applies controls)"
+        }
+      },
+      "basis": "Charter 6, 6.2; DP-01 8(4) to 8(6), to be aligned [decide: CDO approves the inventory and classification (6.2)]",
+      "openTags": [
+        "[decide: CDO approves the inventory and classification (6.2)]"
+      ]
+    },
+    {
+      "id": "DM-12",
+      "area": "Classification",
+      "decision": "Secret designation",
+      "assignments": {
+        "dg_office": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "data_owner": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (written justification)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (checks the justification)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (holds the data outside the analytical environment)"
+        }
+      },
+      "basis": "Charter 6, 7.5; DP-01 6(6), 10"
+    },
+    {
+      "id": "DM-13",
+      "area": "Access",
+      "decision": "DS&A access to Open, Confidential and Sensitive data",
+      "assignments": {
+        "dg_office": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (grants it by issuing this charter)"
+        },
+        "data_owner": {
+          "codes": [
+            "None"
+          ],
+          "text": "None (Charter 6)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (access register)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (provisions in 10 working days)"
+        },
+        "information_security": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (quarterly review of Sensitive access)"
+        }
+      },
+      "basis": "Charter 6, 7.1, 7.4, 7.6, 12.1 [decide: confirm assignment]",
+      "openTags": [
+        "[decide: confirm assignment]"
+      ]
+    },
+    {
+      "id": "DM-14",
+      "area": "Access",
+      "decision": "Access to Secret data",
+      "assignments": {
+        "dg_office": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "No access"
+          ],
+          "text": "No access"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (holds it outside the analytical environment)"
+        },
+        "information_security": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (controls)"
+        },
+        "khda_legal": {
+          "codes": [
+            "C"
+          ],
+          "text": "C"
+        }
+      },
+      "basis": "Charter 6, 7.5; DP-01 6(6); DP-02 5 (Secret row) [decide: confirm who approves internal access to Secret data]",
+      "openTags": [
+        "[decide: confirm who approves internal access to Secret data]"
+      ]
+    },
+    {
+      "id": "DM-15",
+      "area": "Access",
+      "decision": "Project access for PRP and QAC",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "E"
+          ],
+          "text": "E (no owner response)"
+        },
+        "data_owner": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (Confidential data) [confirm]"
+        },
+        "data_administrator": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (within the classification)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (sets up access)"
+        },
+        "principal_data_user": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (requests; reports project end)"
+        }
+      },
+      "basis": "DP-03 5.6, 8, 9; ST-02 7.4, 10. D split: DS&A within the classification, owner for Confidential data",
+      "openTags": [
+        "[confirm]"
+      ]
+    },
+    {
+      "id": "DM-16",
+      "area": "Access",
+      "decision": "Standing access of principal data users to the certified dashboards and analyses that serve their mandate",
+      "assignments": {
+        "dg_office": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (grants it by issuing this charter)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (sets up access; masked, no personal data)"
+        },
+        "principal_data_user": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (uses within the mandate)"
+        }
+      },
+      "basis": "Charter 6 (principal data users); DP-03; ST-02 [decide: standing access without a fresh request]",
+      "openTags": [
+        "[decide: standing access without a fresh request]"
+      ]
+    },
+    {
+      "id": "DM-17",
+      "area": "Access",
+      "decision": "Research access to de-identified record-level data (PRP)",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (research protocol)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (prepares the de-identified data)"
+        },
+        "khda_legal": {
+          "codes": [
+            "C"
+          ],
+          "text": "C"
+        },
+        "principal_data_user": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (PRP requests)"
+        }
+      },
+      "basis": "Charter 6 (principal data users); DP-03; DP-04 [decide: allow de-identified record-level research data]",
+      "openTags": [
+        "[decide: allow de-identified record-level research data]"
+      ]
+    },
+    {
+      "id": "DM-18",
+      "area": "Sharing and publication",
+      "decision": "Routine external share",
+      "assignments": {
+        "dg_office": {
+          "codes": [
+            "E"
+          ],
+          "text": "E (escalated cases)"
+        },
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "data_owner": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (confirms content in 3 working days)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (registers; drafts classification and release specification)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (assessment)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (runs the extract)"
+        }
+      },
+      "basis": "Charter 6, 7.7; DP-02 5(1), 6, 7"
+    },
+    {
+      "id": "DM-19",
+      "area": "Sharing and publication",
+      "decision": "The five Director General triggers: Sensitive or Secret data, non-Open data to a non-government recipient, record-level personal data, a new agreement, a CDO referral",
+      "assignments": {
+        "dg_office": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "cdo": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (refers)"
+        },
+        "data_owner": {
+          "codes": [
+            "C"
+          ],
+          "text": "C"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R"
+        },
+        "khda_legal": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (Secret data; agreements)"
+        }
+      },
+      "basis": "Charter 6; DP-02 5, 6, 12"
+    },
+    {
+      "id": "DM-20",
+      "area": "Sharing and publication",
+      "decision": "Recurring share, approved once for its scope",
+      "assignments": {
+        "dg_office": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (sharing dashboard)"
+        },
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "data_owner": {
+          "codes": [
+            "C"
+          ],
+          "text": "C"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (list of pre-authorized recipients)"
+        }
+      },
+      "basis": "DP-02 6"
+    },
+    {
+      "id": "DM-21",
+      "area": "Sharing and publication",
+      "decision": "Publication of figures and the census report",
+      "assignments": {
+        "dg_office": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (census report, where required)"
+        },
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (reclassification to Open; narrative approval as in the statistical publication rows)"
+        },
+        "data_owner": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (produces and certifies the operational statistics; answers for them on every channel; corrects within 1 working day)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (certifies analytical outputs only, for analytical correctness) [decide: census report counts treated as operational statistics the owner certifies?]"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (measures reconciliation monthly; flags differences)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (platform; corrections)"
+        }
+      },
+      "basis": "DP-01 9; DP-05 9.1, 10.1, 15.1, 11.1, 11.2, 13.2. D split: CDO, then Director General where required",
+      "openTags": [
+        "[decide: census report counts treated as operational statistics the owner certifies?]"
+      ]
+    },
+    {
+      "id": "DM-22",
+      "area": "Operational statistics",
+      "decision": "certification",
+      "assignments": {
+        "data_owner": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (checks, certifies and keeps up to date all operational data from its systems; produces, validates and certifies the statistics; shares them; answers for them on every channel)"
+        },
+        "data_administrator": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (receives them for analytics; sets the counting rules in ST-01)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (consumes them for analytics)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (produces them from the source system with the owner)"
+        }
+      },
+      "basis": "Charter 1, 6, 6.6; ST-01 counting rules"
+    },
+    {
+      "id": "DM-23",
+      "area": "Statistical publication",
+      "decision": "content and findings",
+      "assignments": {
+        "data_owner": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (certifies the operational figures used)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (drafts content, findings and main messages from certified data; proposes what is released; owns templates and standards)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (analysis)"
+        }
+      },
+      "basis": "Charter 6 (Engagement Department row), 6.6. The Engagement Department has no column in this matrix"
+    },
+    {
+      "id": "DM-24",
+      "area": "Statistical publication",
+      "decision": "narrative approval",
+      "assignments": {
+        "dg_office": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (census report) [decide: Director General approves the census narrative]"
+        },
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D [decide: CDO approves the narrative of other statistical publications]"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (proposes the narrative)"
+        }
+      },
+      "basis": "Charter 6 (Engagement Department row); DP-05",
+      "openTags": [
+        "[decide: Director General approves the census narrative]",
+        "[decide: CDO approves the narrative of other statistical publications]"
+      ]
+    },
+    {
+      "id": "DM-25",
+      "area": "Statistical publication",
+      "decision": "design and wording",
+      "assignments": {
+        "data_administrator": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (signs off any change that affects a figure, a finding or its meaning; trains Engagement Department staff on templates)"
+        }
+      },
+      "basis": "Charter 6 (Engagement Department row). Engagement Department: R (design, layout, plain-language wording, brand and release logistics, within DS&A templates and standards)"
+    },
+    {
+      "id": "DM-26",
+      "area": "Sharing and publication",
+      "decision": "DX Hub (Dubai Data platform) requests and data contracts",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (request; data contract; compliance statement)"
+        },
+        "data_owner": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (confirms content)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (reviews each request, sets role-based access, records the approval)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (data contract content)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (sample data)"
+        }
+      },
+      "basis": "Charter 3.1, 6.2; DP-02 6, 9.3"
+    },
+    {
+      "id": "DM-27",
+      "area": "Quality and correction",
+      "decision": "Standard correction",
+      "assignments": {
+        "governance_group": {
+          "codes": [
+            "E"
+          ],
+          "text": "E (objection or declined instruction)"
+        },
+        "data_owner": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (may object within 3 working days); may trigger [decide: owner may also trigger a pre-approved correction?]"
+        },
+        "data_administrator": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (triggers, only under a pre-approved rule)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (detects, logs and verifies)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (executes at source; fixes defects it detects)"
+        }
+      },
+      "basis": "Charter 6, 9, 9.1 to 9.3, 9.5, 9.7; DP-06 8.3",
+      "openTags": [
+        "[decide: owner may also trigger a pre-approved correction?]"
+      ]
+    },
+    {
+      "id": "DM-28",
+      "area": "Quality and correction",
+      "decision": "Business-judgment change",
+      "assignments": {
+        "governance_group": {
+          "codes": [
+            "E"
+          ],
+          "text": "E (no decision in 5 working days)"
+        },
+        "data_owner": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (verifies)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (executes)"
+        }
+      },
+      "basis": "Charter 6, 9, 9.4, 9.5; DP-06 8.4"
+    },
+    {
+      "id": "DM-29",
+      "area": "Quality and correction",
+      "decision": "Quality thresholds for critical data elements",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (default values, with the standard)"
+        },
+        "data_owner": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (threshold for each critical data element)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (proposes; records in ST-01)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (measures)"
+        }
+      },
+      "basis": "Charter 9; DP-06 5.3; ST-01 11.3. D split: owner sets each threshold, CDO approves the defaults [decide: owner sets thresholds on a DS&A proposal; CDO approves the defaults]",
+      "openTags": [
+        "[decide: owner sets thresholds on a DS&A proposal; CDO approves the defaults]"
+      ]
+    },
+    {
+      "id": "DM-30",
+      "area": "Quality and correction",
+      "decision": "Timeliness commitment for each service",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "leadership_council": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (method)"
+        },
+        "data_owner": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (proposes the commitment)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (framework)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (measures)"
+        }
+      },
+      "basis": "ST-03 12.10 to 12.13 [decide: confirm assignment]",
+      "openTags": [
+        "[decide: confirm assignment]"
+      ]
+    },
+    {
+      "id": "DM-31",
+      "area": "Quality and correction",
+      "decision": "Remediation with institutions",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "E"
+          ],
+          "text": "E"
+        },
+        "data_owner": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (GHD and QAC; plan, follow-up, fit for use)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (issue list; re-measures and closes; does not chase institutions)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (remediation application; resolves issues at source with the owner)"
+        }
+      },
+      "basis": "Charter 11.3; DP-06 4.4, 8.5, 8.7 to 8.11"
+    },
+    {
+      "id": "DM-32",
+      "area": "Metadata and standards",
+      "decision": "Data standards (ST-01 to ST-04)",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (new standards and changes)"
+        },
+        "governance_group": {
+          "codes": [
+            "C"
+          ],
+          "text": "C"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (drafts and maintains)"
+        },
+        "principal_data_user": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (standards that affect their mandates)"
+        }
+      },
+      "basis": "Charter 5, 6; DP-06 4.3; ST-01 20 [decide: CDO approves standards; Group consulted]",
+      "openTags": [
+        "[decide: CDO approves standards; Group consulted]"
+      ]
+    },
+    {
+      "id": "DM-33",
+      "area": "Metadata and standards",
+      "decision": "Critical data elements",
+      "assignments": {
+        "governance_group": {
+          "codes": [
+            "I"
+          ],
+          "text": "I"
+        },
+        "data_owner": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (designates with DS&A)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (records in the Data Dictionary)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R"
+        }
+      },
+      "basis": "Charter 5; DP-06 5.2 [decide: owner designates with DS&A; Group informed]",
+      "openTags": [
+        "[decide: owner designates with DS&A; Group informed]"
+      ]
+    },
+    {
+      "id": "DM-34",
+      "area": "Metadata and standards",
+      "decision": "Field definitions and business rules",
+      "assignments": {
+        "governance_group": {
+          "codes": [
+            "E"
+          ],
+          "text": "E (disputes on definitions)"
+        },
+        "data_owner": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (stewards maintain with the owner)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (a field does not go live without them)"
+        }
+      },
+      "basis": "Charter 5, 6; DP-01 8(2); DP-06 6.2; ST-01 20"
+    },
+    {
+      "id": "DM-35",
+      "area": "Metadata and standards",
+      "decision": "History rules for fields that change over time",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "data_owner": {
+          "codes": [
+            "C"
+          ],
+          "text": "C"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (proposes field classes and rules)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (keeps history in systems)"
+        }
+      },
+      "basis": "ST-04, in drafting [decide: confirm assignment]",
+      "openTags": [
+        "[decide: confirm assignment]"
+      ]
+    },
+    {
+      "id": "DM-36",
+      "area": "Collection and digitization",
+      "decision": "New survey",
+      "assignments": {
+        "data_owner": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (named collection owner)"
+        },
+        "data_administrator": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (sign-off)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (review; DDSE Permit or coordination)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (NG validation rules)"
+        },
+        "principal_data_user": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (request)"
+        }
+      },
+      "basis": "DP-03 5.1; DP-07 2.1, 2.2, 6.6, 6.7"
+    },
+    {
+      "id": "DM-37",
+      "area": "Collection and digitization",
+      "decision": "New field, or new institution-wide collection",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (institution-wide collection) [confirm]"
+        },
+        "data_owner": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (definition, business rules, proposed level)"
+        },
+        "service_design": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (service fit and customer effort for a field asked of a customer, DP-07 5.3)"
+        },
+        "data_administrator": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (new field)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (burden check; data impact assessment)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (builds after the assessment)"
+        }
+      },
+      "basis": "Charter 9; DP-06 6.1, 6.2; DP-07 4.6 to 4.8. D split: DS&A for fields, CDO for institution-wide collections",
+      "openTags": [
+        "[confirm]"
+      ]
+    },
+    {
+      "id": "DM-38",
+      "area": "Collection and digitization",
+      "decision": "Add, change or remove a service field (joint field process)",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "E"
+          ],
+          "text": "E (disagreement)"
+        },
+        "data_owner": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (business need)"
+        },
+        "service_design": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (service fit and customer effort)"
+        },
+        "data_administrator": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (data standards and definitions) [decide: Section 6 gives field definitions to the Data Owner; confirm DS&A decides definitions in the joint field process (DP-07 5.7)]"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (data need; downstream use for a removal; Data Dictionary)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "D",
+            "R"
+          ],
+          "text": "D (technical implementation); R (builds; technical metadata)"
+        },
+        "principal_data_user": {
+          "codes": [
+            "R",
+            "C"
+          ],
+          "text": "R (may request); C (when a change affects data they use)"
+        }
+      },
+      "basis": "DP-07 5 (joint field process), 5.7; Charter 9, 11. D split by aspect [decide: confirm the split between Service Design, DS&A, owner and Digital Excellence]",
+      "openTags": [
+        "[decide: Section 6 gives field definitions to the Data Owner; confirm DS&A decides definitions in the joint field process (DP-07 5.7)]",
+        "[decide: confirm the split between Service Design, DS&A, owner and Digital Excellence]"
+      ]
+    },
+    {
+      "id": "DM-39",
+      "area": "Collection and digitization",
+      "decision": "Integration instead of asking the customer",
+      "assignments": {
+        "data_owner": {
+          "codes": [
+            "C"
+          ],
+          "text": "C"
+        },
+        "service_design": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "data_administrator": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (existing KHDA sources)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (builds the integration)"
+        }
+      },
+      "basis": "Charter 6 (Service Design row); DP-07 5.3 (joint field process) [decide: confirm assignment] [confirm reference to the applicable Dubai or federal program]",
+      "openTags": [
+        "[decide: confirm assignment]",
+        "[confirm reference to the applicable Dubai or federal program]"
+      ]
+    },
+    {
+      "id": "DM-40",
+      "area": "Collection and digitization",
+      "decision": "Request to digitize a manual collection",
+      "assignments": {
+        "data_owner": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (requests)"
+        },
+        "data_administrator": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (sets the requirement)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (where and how data is stored)"
+        },
+        "principal_data_user": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (digitization priorities)"
+        }
+      },
+      "basis": "DP-07, in drafting [decide: confirm assignment]",
+      "openTags": [
+        "[decide: confirm assignment]"
+      ]
+    },
+    {
+      "id": "DM-41",
+      "area": "Collection and digitization",
+      "decision": "Data warehouse plan and build",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "I"
+          ],
+          "text": "I"
+        },
+        "governance_group": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (ratifies a new platform)"
+        },
+        "data_administrator": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (data requirements)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (plans and builds)"
+        }
+      },
+      "basis": "Charter 6; DP-09 6.3; DP-07, in drafting. D split: Digital Excellence plans, the Group ratifies [decide: confirm assignment]",
+      "openTags": [
+        "[decide: confirm assignment]"
+      ]
+    },
+    {
+      "id": "DM-42",
+      "area": "Collection and digitization",
+      "decision": "Service level agreements for services",
+      "assignments": {
+        "data_owner": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (operates the service)"
+        },
+        "service_design": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (develops, documents and monitors)"
+        }
+      },
+      "basis": "Charter 6 (Service Design row); Service Design functional statement, January 2025. Processing time is a service level, not timeliness [decide: confirm assignment]",
+      "openTags": [
+        "[decide: confirm assignment]"
+      ]
+    },
+    {
+      "id": "DM-43",
+      "area": "Collection and digitization",
+      "decision": "Customer feedback data (complaints, reviews, surveys; NPS, CSAT, CES)",
+      "assignments": {
+        "service_design": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (collects and analyzes)"
+        },
+        "data_administrator": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (survey review under DP-07 6.6)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (complaints system) [confirm system name]"
+        }
+      },
+      "basis": "Service Design functional statement, January 2025; DP-07 6.6 [decide: confirm assignment]",
+      "openTags": [
+        "[confirm system name]",
+        "[decide: confirm assignment]"
+      ]
+    },
+    {
+      "id": "DM-44",
+      "area": "Collection and digitization",
+      "decision": "Data requirements register",
+      "assignments": {
+        "data_administrator": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (records and decides the route)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (records)"
+        },
+        "principal_data_user": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (submit requirements)"
+        }
+      },
+      "basis": "Charter 6 (principal data users) [decide: confirm assignment]",
+      "openTags": [
+        "[decide: confirm assignment]"
+      ]
+    },
+    {
+      "id": "DM-45",
+      "area": "Analytics",
+      "decision": "Dashboard certification",
+      "assignments": {
+        "data_owner": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (signs off measures; acceptance)"
+        },
+        "data_administrator": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (names the reviewers)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (reviews; applies the badge)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (Power BI certification setting)"
+        },
+        "principal_data_user": {
+          "codes": [
+            "C",
+            "I"
+          ],
+          "text": "C (dashboards that affect their mandates); I (told when a badge is lost)"
+        }
+      },
+      "basis": "DP-03 9; ST-02 4.2 to 4.5, 5.2, 10"
+    },
+    {
+      "id": "DM-46",
+      "area": "Analytics",
+      "decision": "Legacy dashboard rebuild, merger or retirement",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (plan) [confirm]"
+        },
+        "data_owner": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (may object to retirement)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (plan)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (removes access; archives)"
+        },
+        "principal_data_user": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (may object to retirement)"
+        }
+      },
+      "basis": "ST-02 4.7, 5.7",
+      "openTags": [
+        "[confirm]"
+      ]
+    },
+    {
+      "id": "DM-47",
+      "area": "Analytics",
+      "decision": "Model validation before first use",
+      "assignments": {
+        "data_administrator": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (documents and validates)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (deploys production models)"
+        }
+      },
+      "basis": "DP-09 8.2, 8.3; no approver named [decide: confirm assignment]",
+      "openTags": [
+        "[decide: confirm assignment]"
+      ]
+    },
+    {
+      "id": "DM-48",
+      "area": "Analytics",
+      "decision": "Tool provision",
+      "assignments": {
+        "governance_group": {
+          "codes": [
+            "D",
+            "E"
+          ],
+          "text": "D (ratifies a new platform); E (refusal)"
+        },
+        "data_administrator": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (requirement; acceptance)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (tests against criteria)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (selects and provides)"
+        },
+        "information_security": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (security review)"
+        }
+      },
+      "basis": "Charter 4.5, 6; DP-09 5.3, 5.4, 6.1 to 6.4. D split: Digital Excellence selects, the Group ratifies a new platform"
+    },
+    {
+      "id": "DM-49",
+      "area": "Analytics",
+      "decision": "Service queue priority",
+      "assignments": {
+        "data_administrator": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "principal_data_user": {
+          "codes": [
+            "C"
+          ],
+          "text": "C"
+        }
+      },
+      "basis": "Charter 6 (principal data users) [decide: priority for requests tied to mandates, strategic KPIs or official statistics]",
+      "openTags": [
+        "[decide: priority for requests tied to mandates, strategic KPIs or official statistics]"
+      ]
+    },
+    {
+      "id": "DM-50",
+      "area": "Analytics",
+      "decision": "Inspection and compliance analytics for QAC",
+      "assignments": {
+        "data_administrator": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (agrees scope and schedule with QAC)"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (produces the analytics)"
+        },
+        "principal_data_user": {
+          "codes": [
+            "D"
+          ],
+          "text": "D (QAC agrees scope and schedule)"
+        }
+      },
+      "basis": "Charter 6 (principal data users) [decide: scope and schedule]",
+      "openTags": [
+        "[decide: scope and schedule]"
+      ]
+    },
+    {
+      "id": "DM-51",
+      "area": "Retention",
+      "decision": "Snapshot calendar and content",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (missed snapshot dates)"
+        },
+        "data_administrator": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "dsa_analyst": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (verifies snapshots)"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (captures within 1 working day)"
+        },
+        "governance_section": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (monthly report)"
+        }
+      },
+      "basis": "DP-08 4.1 to 4.3, 9.1; no approver named [decide: confirm assignment]",
+      "openTags": [
+        "[decide: confirm assignment]"
+      ]
+    },
+    {
+      "id": "DM-52",
+      "area": "Retention",
+      "decision": "Disposal",
+      "assignments": {
+        "cdo": {
+          "codes": [
+            "I"
+          ],
+          "text": "I (disposal without approval)"
+        },
+        "data_owner": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        },
+        "digital_excellence": {
+          "codes": [
+            "R"
+          ],
+          "text": "R (lists data due; disposes; records evidence)"
+        },
+        "information_security": {
+          "codes": [
+            "C"
+          ],
+          "text": "C (secure method)"
+        },
+        "khda_legal": {
+          "codes": [
+            "D"
+          ],
+          "text": "D"
+        }
+      },
+      "basis": "DP-08 5.3, 5.4, 9.1. D split: owner, then KHDA Legal"
+    }
+  ]
+}

@@ -1,0 +1,1190 @@
+{
+  "note": "Operational statistics register. Values are counts of the fictional demo institutions, so they match institutions.json. The owner certifies them (Charter 6.6) [decide: owner certification step].",
+  "statistics": [
+    {
+      "id": "OST-01-2026-04",
+      "statistic": "Active private schools",
+      "countingRuleRef": "CR-01 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-04",
+      "snapshotDate": "2026-04-15",
+      "agreedDeliveryDate": "2026-05-08",
+      "certifiedValue": 16,
+      "producedValue": 16,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-05-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 16
+        },
+        {
+          "channel": "DX Hub",
+          "value": 16
+        },
+        {
+          "channel": "Education Directory",
+          "value": 16
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-01-2026-05",
+      "statistic": "Active private schools",
+      "countingRuleRef": "CR-01 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-05",
+      "snapshotDate": "2026-05-15",
+      "agreedDeliveryDate": "2026-06-08",
+      "certifiedValue": 16,
+      "producedValue": 16,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-06-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 16
+        },
+        {
+          "channel": "DX Hub",
+          "value": 16
+        },
+        {
+          "channel": "Education Directory",
+          "value": 16
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-01-2026-06",
+      "statistic": "Active private schools",
+      "countingRuleRef": "CR-01 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-06",
+      "snapshotDate": "2026-06-15",
+      "agreedDeliveryDate": "2026-07-08",
+      "certifiedValue": 16,
+      "producedValue": 16,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-07-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 16
+        },
+        {
+          "channel": "DX Hub",
+          "value": 16
+        },
+        {
+          "channel": "Education Directory",
+          "value": 16
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-01-2026-07",
+      "statistic": "Active private schools",
+      "countingRuleRef": "CR-01 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-07",
+      "snapshotDate": "2026-07-15",
+      "agreedDeliveryDate": "2026-08-07",
+      "certifiedValue": 16,
+      "producedValue": 16,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-08-07",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 16
+        },
+        {
+          "channel": "DX Hub",
+          "value": 16
+        },
+        {
+          "channel": "Education Directory",
+          "value": 16
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-01-2026-08",
+      "statistic": "Active private schools",
+      "countingRuleRef": "CR-01 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-08",
+      "snapshotDate": "2026-08-15",
+      "agreedDeliveryDate": "2026-09-08",
+      "certifiedValue": 16,
+      "producedValue": 16,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-09-11",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 16
+        },
+        {
+          "channel": "DX Hub",
+          "value": 17
+        },
+        {
+          "channel": "Education Directory",
+          "value": 16
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-01-2026-09",
+      "statistic": "Active private schools",
+      "countingRuleRef": "CR-01 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-09",
+      "snapshotDate": "2026-09-15",
+      "agreedDeliveryDate": "2026-10-08",
+      "certifiedValue": 16,
+      "producedValue": 16,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-10-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 17
+        },
+        {
+          "channel": "DX Hub",
+          "value": 16
+        },
+        {
+          "channel": "Education Directory",
+          "value": 16
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-02-2026-04",
+      "statistic": "Active early childhood centers",
+      "countingRuleRef": "CR-02 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-04",
+      "snapshotDate": "2026-04-15",
+      "agreedDeliveryDate": "2026-05-08",
+      "certifiedValue": 9,
+      "producedValue": 9,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-05-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 9
+        },
+        {
+          "channel": "DX Hub",
+          "value": 9
+        },
+        {
+          "channel": "Education Directory",
+          "value": 9
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-02-2026-05",
+      "statistic": "Active early childhood centers",
+      "countingRuleRef": "CR-02 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-05",
+      "snapshotDate": "2026-05-15",
+      "agreedDeliveryDate": "2026-06-08",
+      "certifiedValue": 9,
+      "producedValue": 9,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-06-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 9
+        },
+        {
+          "channel": "DX Hub",
+          "value": 9
+        },
+        {
+          "channel": "Education Directory",
+          "value": 9
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-02-2026-06",
+      "statistic": "Active early childhood centers",
+      "countingRuleRef": "CR-02 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-06",
+      "snapshotDate": "2026-06-15",
+      "agreedDeliveryDate": "2026-07-08",
+      "certifiedValue": 9,
+      "producedValue": 9,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-07-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 9
+        },
+        {
+          "channel": "DX Hub",
+          "value": 9
+        },
+        {
+          "channel": "Education Directory",
+          "value": 9
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-02-2026-07",
+      "statistic": "Active early childhood centers",
+      "countingRuleRef": "CR-02 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-07",
+      "snapshotDate": "2026-07-15",
+      "agreedDeliveryDate": "2026-08-07",
+      "certifiedValue": 9,
+      "producedValue": 9,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-08-12",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 10
+        },
+        {
+          "channel": "DX Hub",
+          "value": 9
+        },
+        {
+          "channel": "Education Directory",
+          "value": 9
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-02-2026-08",
+      "statistic": "Active early childhood centers",
+      "countingRuleRef": "CR-02 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-08",
+      "snapshotDate": "2026-08-15",
+      "agreedDeliveryDate": "2026-09-08",
+      "certifiedValue": 9,
+      "producedValue": 9,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-09-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 9
+        },
+        {
+          "channel": "DX Hub",
+          "value": 9
+        },
+        {
+          "channel": "Education Directory",
+          "value": 9
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-02-2026-09",
+      "statistic": "Active early childhood centers",
+      "countingRuleRef": "CR-02 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-09",
+      "snapshotDate": "2026-09-15",
+      "agreedDeliveryDate": "2026-10-08",
+      "certifiedValue": 9,
+      "producedValue": 9,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-10-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 9
+        },
+        {
+          "channel": "DX Hub",
+          "value": 9
+        },
+        {
+          "channel": "Education Directory",
+          "value": 9
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-03-2026-04",
+      "statistic": "Active training institutes",
+      "countingRuleRef": "CR-03 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-04",
+      "snapshotDate": "2026-04-15",
+      "agreedDeliveryDate": "2026-05-08",
+      "certifiedValue": 6,
+      "producedValue": 6,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-05-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 6
+        },
+        {
+          "channel": "DX Hub",
+          "value": 6
+        },
+        {
+          "channel": "Education Directory",
+          "value": 6
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-03-2026-05",
+      "statistic": "Active training institutes",
+      "countingRuleRef": "CR-03 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-05",
+      "snapshotDate": "2026-05-15",
+      "agreedDeliveryDate": "2026-06-08",
+      "certifiedValue": 6,
+      "producedValue": 6,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-06-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 6
+        },
+        {
+          "channel": "DX Hub",
+          "value": 6
+        },
+        {
+          "channel": "Education Directory",
+          "value": 6
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-03-2026-06",
+      "statistic": "Active training institutes",
+      "countingRuleRef": "CR-03 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-06",
+      "snapshotDate": "2026-06-15",
+      "agreedDeliveryDate": "2026-07-08",
+      "certifiedValue": 6,
+      "producedValue": 6,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-07-13",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 6
+        },
+        {
+          "channel": "DX Hub",
+          "value": 6
+        },
+        {
+          "channel": "Education Directory",
+          "value": 6
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-03-2026-07",
+      "statistic": "Active training institutes",
+      "countingRuleRef": "CR-03 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-07",
+      "snapshotDate": "2026-07-15",
+      "agreedDeliveryDate": "2026-08-07",
+      "certifiedValue": 6,
+      "producedValue": 6,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-08-07",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 6
+        },
+        {
+          "channel": "DX Hub",
+          "value": 6
+        },
+        {
+          "channel": "Education Directory",
+          "value": 6
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-03-2026-08",
+      "statistic": "Active training institutes",
+      "countingRuleRef": "CR-03 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-08",
+      "snapshotDate": "2026-08-15",
+      "agreedDeliveryDate": "2026-09-08",
+      "certifiedValue": 6,
+      "producedValue": 6,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-09-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 6
+        },
+        {
+          "channel": "DX Hub",
+          "value": 6
+        },
+        {
+          "channel": "Education Directory",
+          "value": 6
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-03-2026-09",
+      "statistic": "Active training institutes",
+      "countingRuleRef": "CR-03 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-09",
+      "snapshotDate": "2026-09-15",
+      "agreedDeliveryDate": "2026-10-08",
+      "certifiedValue": 6,
+      "producedValue": 6,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-10-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 6
+        },
+        {
+          "channel": "DX Hub",
+          "value": 6
+        },
+        {
+          "channel": "Education Directory",
+          "value": 6
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-04-2026-04",
+      "statistic": "Higher education providers",
+      "countingRuleRef": "CR-04 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-04",
+      "snapshotDate": "2026-04-15",
+      "agreedDeliveryDate": "2026-05-08",
+      "certifiedValue": 7,
+      "producedValue": 7,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-05-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 7
+        },
+        {
+          "channel": "DX Hub",
+          "value": 7
+        },
+        {
+          "channel": "Education Directory",
+          "value": 7
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-04-2026-05",
+      "statistic": "Higher education providers",
+      "countingRuleRef": "CR-04 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-05",
+      "snapshotDate": "2026-05-15",
+      "agreedDeliveryDate": "2026-06-08",
+      "certifiedValue": 7,
+      "producedValue": 7,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-06-11",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 7
+        },
+        {
+          "channel": "DX Hub",
+          "value": 7
+        },
+        {
+          "channel": "Education Directory",
+          "value": 7
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-04-2026-06",
+      "statistic": "Higher education providers",
+      "countingRuleRef": "CR-04 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-06",
+      "snapshotDate": "2026-06-15",
+      "agreedDeliveryDate": "2026-07-08",
+      "certifiedValue": 7,
+      "producedValue": 7,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-07-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 7
+        },
+        {
+          "channel": "DX Hub",
+          "value": 7
+        },
+        {
+          "channel": "Education Directory",
+          "value": 7
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-04-2026-07",
+      "statistic": "Higher education providers",
+      "countingRuleRef": "CR-04 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-07",
+      "snapshotDate": "2026-07-15",
+      "agreedDeliveryDate": "2026-08-07",
+      "certifiedValue": 7,
+      "producedValue": 7,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-08-07",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 7
+        },
+        {
+          "channel": "DX Hub",
+          "value": 7
+        },
+        {
+          "channel": "Education Directory",
+          "value": 7
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-04-2026-08",
+      "statistic": "Higher education providers",
+      "countingRuleRef": "CR-04 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-08",
+      "snapshotDate": "2026-08-15",
+      "agreedDeliveryDate": "2026-09-08",
+      "certifiedValue": 7,
+      "producedValue": 7,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-09-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 7
+        },
+        {
+          "channel": "DX Hub",
+          "value": 7
+        },
+        {
+          "channel": "Education Directory",
+          "value": 7
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-04-2026-09",
+      "statistic": "Higher education providers",
+      "countingRuleRef": "CR-04 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-09",
+      "snapshotDate": "2026-09-15",
+      "agreedDeliveryDate": "2026-10-08",
+      "certifiedValue": null,
+      "producedValue": 7,
+      "certifiedByRole": null,
+      "certifiedAt": null,
+      "state": "produced",
+      "workflowId": "operational_statistic",
+      "channels": [],
+      "dueAt": "2026-10-08",
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-05-2026-04",
+      "statistic": "Students in private schools, as recorded",
+      "countingRuleRef": "CR-05 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-04",
+      "snapshotDate": "2026-04-15",
+      "agreedDeliveryDate": "2026-05-08",
+      "certifiedValue": 18773,
+      "producedValue": 18773,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-05-13",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 18773
+        },
+        {
+          "channel": "DX Hub",
+          "value": 18773
+        },
+        {
+          "channel": "Education Directory",
+          "value": 18773
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-05-2026-05",
+      "statistic": "Students in private schools, as recorded",
+      "countingRuleRef": "CR-05 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-05",
+      "snapshotDate": "2026-05-15",
+      "agreedDeliveryDate": "2026-06-08",
+      "certifiedValue": 18810,
+      "producedValue": 18810,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-06-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 18810
+        },
+        {
+          "channel": "DX Hub",
+          "value": 18810
+        },
+        {
+          "channel": "Education Directory",
+          "value": 18810
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-05-2026-06",
+      "statistic": "Students in private schools, as recorded",
+      "countingRuleRef": "CR-05 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-06",
+      "snapshotDate": "2026-06-15",
+      "agreedDeliveryDate": "2026-07-08",
+      "certifiedValue": 18847,
+      "producedValue": 18847,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-07-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 18847
+        },
+        {
+          "channel": "DX Hub",
+          "value": 18959
+        },
+        {
+          "channel": "Education Directory",
+          "value": 18847
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-05-2026-07",
+      "statistic": "Students in private schools, as recorded",
+      "countingRuleRef": "CR-05 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-07",
+      "snapshotDate": "2026-07-15",
+      "agreedDeliveryDate": "2026-08-07",
+      "certifiedValue": 18884,
+      "producedValue": 18884,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-08-07",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 18884
+        },
+        {
+          "channel": "DX Hub",
+          "value": 18884
+        },
+        {
+          "channel": "Education Directory",
+          "value": 18884
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-05-2026-08",
+      "statistic": "Students in private schools, as recorded",
+      "countingRuleRef": "CR-05 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-08",
+      "snapshotDate": "2026-08-15",
+      "agreedDeliveryDate": "2026-09-08",
+      "certifiedValue": 18921,
+      "producedValue": 18921,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-09-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 18921
+        },
+        {
+          "channel": "DX Hub",
+          "value": 18921
+        },
+        {
+          "channel": "Education Directory",
+          "value": 18921
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-05-2026-09",
+      "statistic": "Students in private schools, as recorded",
+      "countingRuleRef": "CR-05 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-09",
+      "snapshotDate": "2026-09-15",
+      "agreedDeliveryDate": "2026-10-08",
+      "certifiedValue": null,
+      "producedValue": 18958,
+      "certifiedByRole": null,
+      "certifiedAt": null,
+      "state": "produced",
+      "workflowId": "operational_statistic",
+      "channels": [],
+      "dueAt": "2026-10-08",
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-06-2026-04",
+      "statistic": "Teachers in private schools, as recorded",
+      "countingRuleRef": "CR-06 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-04",
+      "snapshotDate": "2026-04-15",
+      "agreedDeliveryDate": "2026-05-08",
+      "certifiedValue": 2319,
+      "producedValue": 2319,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-05-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 2319
+        },
+        {
+          "channel": "DX Hub",
+          "value": 2319
+        },
+        {
+          "channel": "Education Directory",
+          "value": 2319
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-06-2026-05",
+      "statistic": "Teachers in private schools, as recorded",
+      "countingRuleRef": "CR-06 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-05",
+      "snapshotDate": "2026-05-15",
+      "agreedDeliveryDate": "2026-06-08",
+      "certifiedValue": 2323,
+      "producedValue": 2323,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-06-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 2323
+        },
+        {
+          "channel": "DX Hub",
+          "value": 2323
+        },
+        {
+          "channel": "Education Directory",
+          "value": 2323
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-06-2026-06",
+      "statistic": "Teachers in private schools, as recorded",
+      "countingRuleRef": "CR-06 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-06",
+      "snapshotDate": "2026-06-15",
+      "agreedDeliveryDate": "2026-07-08",
+      "certifiedValue": 2327,
+      "producedValue": 2327,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-07-08",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 2327
+        },
+        {
+          "channel": "DX Hub",
+          "value": 2327
+        },
+        {
+          "channel": "Education Directory",
+          "value": 2327
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-06-2026-07",
+      "statistic": "Teachers in private schools, as recorded",
+      "countingRuleRef": "CR-06 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-07",
+      "snapshotDate": "2026-07-15",
+      "agreedDeliveryDate": "2026-08-07",
+      "certifiedValue": 2331,
+      "producedValue": 2331,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-08-07",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 2331
+        },
+        {
+          "channel": "DX Hub",
+          "value": 2331
+        },
+        {
+          "channel": "Education Directory",
+          "value": 2331
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-06-2026-08",
+      "statistic": "Teachers in private schools, as recorded",
+      "countingRuleRef": "CR-06 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-08",
+      "snapshotDate": "2026-08-15",
+      "agreedDeliveryDate": "2026-09-08",
+      "certifiedValue": 2335,
+      "producedValue": 2335,
+      "certifiedByRole": "data_owner",
+      "certifiedAt": "2026-09-11",
+      "state": "shared",
+      "workflowId": "operational_statistic",
+      "channels": [
+        {
+          "channel": "Website",
+          "value": 2335
+        },
+        {
+          "channel": "DX Hub",
+          "value": 2335
+        },
+        {
+          "channel": "Education Directory",
+          "value": 2335
+        }
+      ],
+      "dueAt": null,
+      "documentIds": [
+        "DP-05"
+      ]
+    },
+    {
+      "id": "OST-06-2026-09",
+      "statistic": "Teachers in private schools, as recorded",
+      "countingRuleRef": "CR-06 (DS&A counting rule, demo)",
+      "ownerSectorId": "GHD",
+      "sourceSystem": "KHDA portal",
+      "period": "2026-09",
+      "snapshotDate": "2026-09-15",
+      "agreedDeliveryDate": "2026-10-08",
+      "certifiedValue": null,
+      "producedValue": 2339,
+      "certifiedByRole": null,
+      "certifiedAt": null,
+      "state": "produced",
+      "workflowId": "operational_statistic",
+      "channels": [],
+      "dueAt": "2026-10-08",
+      "documentIds": [
+        "DP-05"
+      ]
+    }
+  ]
+}

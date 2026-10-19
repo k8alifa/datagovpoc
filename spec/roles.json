@@ -1,0 +1,959 @@
+{
+  "version": "0.1",
+  "accessCodes": "C create, R read, U update, A approve, F flag for escalation, Cfg configuration only, '-' no access. 'own' = items the user raised or is named on; 'sector' = items of the user's sector (BRD Section 5).",
+  "rowLevelRules": [
+    "Requesters see only items they raised or are named on.",
+    "Sector CEOs, Data Owners, Data Stewards and producer staff see only their sector's items and assigned datasets.",
+    "A Sensitive item is visible only to the people named on it, DS&A, the CDO, the Data Privacy Officer (items with a DPIA) and the Director General's office; other roles with read access see ID, status and dates only [confirm for the Governance section].",
+    "Digital Excellence sees items assigned to it.",
+    "A user cannot approve an item they raised. System administrators configure; they do not approve or edit items."
+  ],
+  "roles": [
+    {
+      "id": "requester",
+      "title": "Requester",
+      "heldBy": "Any KHDA employee",
+      "description": "Raises service, sharing, access and change requests; submits data gaps; asks DS&A to request government data from the DX Hub; logs data issues; tracks own items.",
+      "source": "BRD Section 5",
+      "group": "Everyone",
+      "home": "my-items",
+      "moduleAccess": {
+        "M1": "CR own",
+        "M2": "CR own",
+        "M3": "CR own",
+        "M4": "-",
+        "M5": "CR own",
+        "M6": "-",
+        "M7": "R (Open entries)",
+        "M8": "R, acknowledge",
+        "M9": "R own",
+        "M10": "-"
+      },
+      "actions": [
+        "ds_service_request.submit",
+        "ds_service_request.submit_data_gap",
+        "ds_service_request.provide_information",
+        "ds_service_request.requester_accept",
+        "ds_service_request.withdraw",
+        "external_sharing.log",
+        "external_sharing.withdraw",
+        "dq_issue.log_issue",
+        "data_incident.report",
+        "access_request.submit",
+        "access_request.withdraw",
+        "field_change.submit",
+        "escalation.raise"
+      ]
+    },
+    {
+      "id": "line_manager",
+      "title": "Line manager",
+      "heldBy": "The requester's manager",
+      "description": "Approves dashboard and data access for staff.",
+      "source": "BRD Section 5",
+      "group": "Everyone",
+      "home": "approvals",
+      "moduleAccess": {
+        "M1": "RA own team",
+        "M2": "-",
+        "M3": "-",
+        "M4": "-",
+        "M5": "RA own team",
+        "M6": "-",
+        "M7": "-",
+        "M8": "R",
+        "M9": "R own",
+        "M10": "-"
+      },
+      "actions": [
+        "ds_service_request.approve",
+        "ds_service_request.reject_approval",
+        "access_request.line_manager_approve"
+      ]
+    },
+    {
+      "id": "sector_ceo",
+      "title": "Sector CEO",
+      "heldBy": "CEO of each sector",
+      "description": "Approves analysis questions for the sector; views the sector's items and dashboard page.",
+      "source": "BRD Section 5",
+      "group": "Leadership",
+      "home": "sector",
+      "moduleAccess": {
+        "M1": "RA sector",
+        "M2": "R sector",
+        "M3": "R sector",
+        "M4": "R sector",
+        "M5": "R sector",
+        "M6": "R sector",
+        "M7": "R",
+        "M8": "R",
+        "M9": "R sector",
+        "M10": "R sector"
+      },
+      "actions": [
+        "ds_service_request.approve",
+        "ds_service_request.reject_approval",
+        "kpi_adoption.propose",
+        "escalation.respond"
+      ]
+    },
+    {
+      "id": "data_owner",
+      "title": "Data Owner",
+      "heldBy": "Head of the sector whose service creates the data [confirm]",
+      "description": "Confirms content of external releases; approves access; objects to or decides corrections; confirms fit for use; acknowledges issue lists; recertifies access; confirms register entries; resolves issues at source with Digital Excellence; certifies operational statistics; sets timeliness commitments; answers for the source data issues listed in dashboard disclaimers.",
+      "source": "BRD Section 5; Charter 6, 6.6; DDM-003.5",
+      "group": "Producers",
+      "home": "owner",
+      "moduleAccess": {
+        "M1": "RA own data",
+        "M2": "RA own data",
+        "M3": "RUA own data",
+        "M4": "RU own data",
+        "M5": "RA own data",
+        "M6": "CRA",
+        "M7": "RU own entries",
+        "M8": "R",
+        "M9": "R own",
+        "M10": "R sector"
+      },
+      "actions": [
+        "ds_service_request.approve",
+        "ds_service_request.reject_approval",
+        "external_sharing.owner_confirm",
+        "dq_issue.object",
+        "dq_issue.owner_decide",
+        "dq_issue.confirm_fit_for_use",
+        "data_incident.report",
+        "institution_remediation.acknowledge_list",
+        "institution_remediation.notify_institution",
+        "institution_remediation.record_correction",
+        "institution_remediation.refer_overdue",
+        "institution_remediation.confirm_fit_for_use",
+        "institution_remediation.referral_corrected",
+        "access_request.owner_approve",
+        "access_request.owner_refuse",
+        "access_recertification.recertify",
+        "access_recertification.revoke",
+        "field_change.submit",
+        "field_change.owner_approve",
+        "field_change.owner_refuse",
+        "field_change.refer_disagreement",
+        "system_change.submit",
+        "system_change.provide_information",
+        "digitization.register",
+        "digitization.submit_request",
+        "timeliness_commitment.commit",
+        "operational_statistic.produce",
+        "operational_statistic.certify",
+        "operational_statistic.share",
+        "statistical_publication.take_snapshot",
+        "statistical_publication.certify",
+        "kpi_adoption.propose",
+        "classification.receive_definitions",
+        "classification.owner_confirm",
+        "dashboard_certification.owner_signoff",
+        "exception.request",
+        "escalation.respond"
+      ]
+    },
+    {
+      "id": "data_steward",
+      "title": "Data Steward",
+      "heldBy": "At least one per department, appointed at launch and accountable to its Data Owner (DDM-005.3, DDM-003.6); DS&A stewards cover the duties until department stewards are trained (Charter 6.4) [decide: phase-in period]",
+      "description": "Maintains definitions, metadata and quality rules of assigned datasets; makes the initial classification and priority score of its department's datasets; logs issues. Does not correct business records.",
+      "source": "BRD Section 5; Charter 6.1, 6.3; DDM-003.6; DDM-005.3, DDM-005.6",
+      "group": "DS&A",
+      "home": "my-items",
+      "moduleAccess": {
+        "M1": "R",
+        "M2": "R",
+        "M3": "CRU assigned",
+        "M4": "R assigned",
+        "M5": "R assigned",
+        "M6": "R",
+        "M7": "RU assigned",
+        "M8": "R",
+        "M9": "R",
+        "M10": "R"
+      },
+      "actions": [
+        "classification.steward_draft",
+        "dq_issue.log_issue"
+      ]
+    },
+    {
+      "id": "producer_staff",
+      "title": "Data producer staff",
+      "heldBy": "Staff in GHD, QAC and other owning sectors",
+      "description": "Work institution remediation items and source corrections assigned to their sector.",
+      "source": "BRD Section 5",
+      "group": "Producers",
+      "home": "worklist",
+      "moduleAccess": {
+        "M1": "-",
+        "M2": "-",
+        "M3": "RU assigned",
+        "M4": "RU assigned",
+        "M5": "-",
+        "M6": "-",
+        "M7": "R",
+        "M8": "R",
+        "M9": "R assigned",
+        "M10": "R sector"
+      },
+      "actions": [
+        "institution_remediation.notify_institution",
+        "institution_remediation.record_correction",
+        "institution_remediation.referral_corrected",
+        "digitization.register"
+      ]
+    },
+    {
+      "id": "dsa_analyst",
+      "title": "DS&A analyst or data specialist",
+      "heldBy": "DS&A staff",
+      "description": "Registers and assesses requests; logs issues; issues correction instructions; verifies and closes; maintains registers.",
+      "source": "BRD Section 5; Charter 6.1",
+      "group": "DS&A",
+      "home": "dsa-queue",
+      "moduleAccess": {
+        "M1": "RU",
+        "M2": "CRU",
+        "M3": "CRU",
+        "M4": "CRU",
+        "M5": "RU",
+        "M6": "CRU",
+        "M7": "CRU",
+        "M8": "R",
+        "M9": "R",
+        "M10": "R"
+      },
+      "actions": [
+        "access_request.provision",
+        "classification.draft",
+        "dashboard_certification.recertify",
+        "dashboard_certification.submit_review",
+        "dashboard_certification.write_requirements",
+        "data_incident.inform",
+        "data_incident.report",
+        "data_requirement.mark_met",
+        "data_requirement.route",
+        "ddse_service.deliver",
+        "ddse_service.record_reference",
+        "ddse_service.submit",
+        "digitization.attach_requirements",
+        "digitization.confirm_first_load",
+        "dpia.start",
+        "dpia.submit",
+        "dq_issue.log_issue",
+        "dq_issue.route_business_judgment",
+        "dq_issue.route_to_institution",
+        "dq_issue.route_to_source_fix",
+        "dq_issue.send_instruction",
+        "dq_issue.verification_failed",
+        "dq_issue.verify_and_close",
+        "ds_service_request.accept",
+        "ds_service_request.deliver",
+        "ds_service_request.flag_priority",
+        "ds_service_request.reject",
+        "ds_service_request.request_information",
+        "ds_service_request.route_operational_statistic",
+        "ds_service_request.send_for_acceptance",
+        "ds_service_request.set_priority_tier",
+        "ds_service_request.start_work",
+        "external_sharing.log",
+        "external_sharing.record_in_register",
+        "external_sharing.register",
+        "external_sharing.send_to_owner",
+        "external_sharing.start_assessment",
+        "external_sharing.withdraw",
+        "field_change.complete_updates",
+        "field_change.dsa_assess",
+        "field_change.refer_disagreement",
+        "field_change.submit",
+        "institution_remediation.remeasure_close",
+        "institution_remediation.send_issue_list",
+        "kpi_adoption.test",
+        "statistical_publication.deliver_first_design",
+        "statistical_publication.revise",
+        "statistical_publication.submit_narrative",
+        "statistical_publication.take_snapshot",
+        "survey_approval.record_reference",
+        "survey_approval.screen",
+        "system_change.confirm_golive",
+        "system_change.request_information",
+        "system_change.start_assessment",
+        "timeliness_commitment.check_measurable",
+        "timeliness_commitment.send_rows"
+      ]
+    },
+    {
+      "id": "data_administrator",
+      "title": "Data Administrator (DS&A)",
+      "heldBy": "Named staff of the Data Science and Analytics function (DS&A), Strategy and Excellence department [confirm]",
+      "description": "Accepts and assigns work; signs off impact assessments and closures; owns registers and the policy library; keeps the data roles register; reviews priority scores and classifications; exports Sensitive items. The entity manager role maps to this role (DDM-003). Main user of the POC: the DS&A command view is this role's home.",
+      "source": "BRD Section 5; Charter 6.1, 6.2",
+      "group": "DS&A",
+      "home": "command",
+      "moduleAccess": {
+        "M1": "RUA",
+        "M2": "CRUA",
+        "M3": "CRUA",
+        "M4": "CRUA",
+        "M5": "CRU",
+        "M6": "CRUA",
+        "M7": "CRUA",
+        "M8": "CRUA",
+        "M9": "RU",
+        "M10": "R"
+      },
+      "actions": [
+        "access_recertification.revoke",
+        "classification.admin_review",
+        "classification.draft",
+        "classification.submit_ddse",
+        "culture_review.record",
+        "culture_review.report",
+        "dashboard_certification.certify",
+        "dashboard_certification.rebuild_legacy",
+        "dashboard_certification.retire",
+        "dashboard_certification.write_requirements",
+        "data_incident.inform",
+        "data_requirement.decline",
+        "data_requirement.mark_met",
+        "data_requirement.route",
+        "ddse_service.decline",
+        "ddse_service.deliver",
+        "ddse_service.record_reference",
+        "ddse_service.submit",
+        "digitization.attach_requirements",
+        "digitization.confirm_first_load",
+        "digitization.refer_priority",
+        "dpia.start",
+        "dpia.submit",
+        "dq_issue.log_issue",
+        "dq_issue.route_business_judgment",
+        "dq_issue.route_to_institution",
+        "dq_issue.route_to_source_fix",
+        "dq_issue.send_instruction",
+        "dq_issue.verification_failed",
+        "dq_issue.verify_and_close",
+        "ds_service_request.accept",
+        "ds_service_request.deliver",
+        "ds_service_request.flag_priority",
+        "ds_service_request.reject",
+        "ds_service_request.request_information",
+        "ds_service_request.route_operational_statistic",
+        "ds_service_request.send_for_acceptance",
+        "ds_service_request.set_priority_tier",
+        "ds_service_request.start_work",
+        "escalation.raise",
+        "exception.close",
+        "exception.request",
+        "external_sharing.log",
+        "external_sharing.record_in_register",
+        "external_sharing.register",
+        "external_sharing.send_to_owner",
+        "external_sharing.start_assessment",
+        "field_change.complete_updates",
+        "field_change.dsa_assess",
+        "field_change.refer_disagreement",
+        "institution_remediation.remeasure_close",
+        "institution_remediation.send_issue_list",
+        "kpi_adoption.test",
+        "statistical_publication.deliver_first_design",
+        "statistical_publication.revise",
+        "statistical_publication.submit_narrative",
+        "survey_approval.clear",
+        "survey_approval.record_reference",
+        "survey_approval.screen",
+        "survey_approval.stop",
+        "system_change.confirm_golive",
+        "system_change.refer_material",
+        "system_change.request_information",
+        "system_change.sign_off_assessment",
+        "system_change.start_assessment",
+        "timeliness_commitment.check_measurable",
+        "timeliness_commitment.send_rows"
+      ]
+    },
+    {
+      "id": "cdo",
+      "title": "Chief Data Officer (CDO)",
+      "heldBy": "CEO, Strategic Development, as Chief Data Officer (CDO) [confirm]",
+      "description": "Decides external sharing, classifications, exceptions up to 6 months, owner assignments, timeliness commitments and digitization priorities; gives final approval of classifications and signs the Dubai Data Compliance Statement; approves changes to the data roles register; appoints the Data Champion; receives escalations (DDM-003.4).",
+      "source": "BRD Section 5; Charter 6, 6.1; DDM-003.3, DDM-003.4",
+      "group": "Leadership",
+      "home": "decisions",
+      "moduleAccess": {
+        "M1": "R",
+        "M2": "RA",
+        "M3": "RA",
+        "M4": "R",
+        "M5": "RA",
+        "M6": "R",
+        "M7": "RA",
+        "M8": "RA",
+        "M9": "RA",
+        "M10": "R"
+      },
+      "actions": [
+        "access_request.cdo_decide",
+        "access_request.cdo_refuse",
+        "classification.approve",
+        "culture_review.acknowledge",
+        "digitization.set_priority",
+        "escalation.respond",
+        "exception.approve",
+        "exception.refer_council",
+        "exception.refuse",
+        "external_sharing.cdo_approve",
+        "external_sharing.cdo_refuse",
+        "external_sharing.route_to_dg",
+        "field_change.cdo_refuse",
+        "field_change.cdo_resolve",
+        "kpi_adoption.adopt",
+        "kpi_adoption.park",
+        "statistical_publication.approve",
+        "timeliness_commitment.approve"
+      ]
+    },
+    {
+      "id": "data_privacy_officer",
+      "title": "Data Privacy Officer",
+      "heldBy": "[decide: which unit holds it, for example KHDA Legal or the Cybersecurity function]",
+      "description": "Approves the data protection impact assessment (DPIA) for any exchange or publication of personal data; keeps the DPIA register; monitors data risks and mitigations.",
+      "source": "BRD Section 5; Charter 6; DDM-003.8, DDM-003.9, DDM-010.12",
+      "group": "Advisers",
+      "home": "decisions",
+      "moduleAccess": {
+        "M1": "-",
+        "M2": "RA (DPIA)",
+        "M3": "R incidents",
+        "M4": "-",
+        "M5": "R",
+        "M6": "-",
+        "M7": "CRU (DPIA register)",
+        "M8": "R",
+        "M9": "R own",
+        "M10": "R"
+      },
+      "actions": [
+        "dpia.approve",
+        "dpia.return",
+        "dpia.refuse",
+        "dpia.start_review"
+      ],
+      "decide": "which unit holds the Data Privacy Officer role"
+    },
+    {
+      "id": "data_champion",
+      "title": "Data Champion",
+      "heldBy": "At least one, appointed by the CDO [confirm number and holder]",
+      "description": "Records data culture objectives, quarterly culture reviews, the annual data maturity assessment and community of practice participation; liaises with the Dubai Digital Authority and other entities' data champions.",
+      "source": "BRD Section 5; Charter 6; DDM-004.1, DDM-004.4 to DDM-004.7",
+      "group": "DS&A",
+      "home": "my-items",
+      "moduleAccess": {
+        "M1": "-",
+        "M2": "-",
+        "M3": "-",
+        "M4": "-",
+        "M5": "-",
+        "M6": "-",
+        "M7": "CRU (culture and maturity register)",
+        "M8": "R",
+        "M9": "R own",
+        "M10": "R"
+      },
+      "actions": [
+        "culture_review.record",
+        "culture_review.report"
+      ],
+      "confirm": "number and holder of the Data Champion role"
+    },
+    {
+      "id": "dg_office",
+      "title": "Director General's office",
+      "heldBy": "Director General and the office's staff",
+      "description": "Logs requests made to the Director General; records Director General decisions on escalated sharing, service provider access to Sensitive data, Secret designations, the census report and items unresolved by the Group after 15 working days.",
+      "source": "BRD Section 5; Charter 6",
+      "group": "Leadership",
+      "home": "decisions",
+      "moduleAccess": {
+        "M1": "-",
+        "M2": "CRA",
+        "M3": "-",
+        "M4": "-",
+        "M5": "A (service providers)",
+        "M6": "-",
+        "M7": "RA (Secret metadata)",
+        "M8": "R",
+        "M9": "R",
+        "M10": "R"
+      },
+      "actions": [
+        "external_sharing.log",
+        "external_sharing.dg_approve",
+        "external_sharing.dg_refuse",
+        "statistical_publication.approve",
+        "escalation.respond"
+      ]
+    },
+    {
+      "id": "digital_excellence",
+      "title": "Data Custodian (Digital Excellence)",
+      "heldBy": "Digital Excellence staff assigned as fulfillers (data custodian)",
+      "description": "Acknowledges, executes or declines corrections; logs self-detected defects; delivers extracts and releases; provisions and revokes access; records metadata delivery; estimates and builds field changes and digitization requests.",
+      "source": "BRD Section 5; Charter 6 (Data custodian); DDM-003.7",
+      "group": "Custodian",
+      "home": "worklist",
+      "moduleAccess": {
+        "M1": "RU assigned",
+        "M2": "RU assigned",
+        "M3": "CRU assigned",
+        "M4": "R",
+        "M5": "RU assigned",
+        "M6": "CRU",
+        "M7": "R",
+        "M8": "R",
+        "M9": "R assigned",
+        "M10": "R own items"
+      },
+      "actions": [
+        "external_sharing.release",
+        "dq_issue.log_issue",
+        "dq_issue.acknowledge",
+        "dq_issue.decline",
+        "dq_issue.log_self_detected",
+        "dq_issue.record_correction",
+        "data_incident.report",
+        "data_incident.contain",
+        "access_request.provision",
+        "access_recertification.complete_revocation",
+        "field_change.submit",
+        "field_change.estimate",
+        "field_change.go_live",
+        "system_change.submit",
+        "system_change.provide_information",
+        "system_change.submit_for_golive",
+        "digitization.acknowledge",
+        "digitization.give_solution",
+        "digitization.refer_priority",
+        "digitization.start_build",
+        "digitization.first_load",
+        "operational_statistic.produce",
+        "exception.request",
+        "escalation.respond"
+      ]
+    },
+    {
+      "id": "information_security",
+      "title": "Information Security (Cybersecurity function)",
+      "heldBy": "Cybersecurity function, Digital Governance and Information Security section [confirm]",
+      "description": "Receives data incident notices; assesses incidents and issues closure reports; reviews Sensitive access and the audit log.",
+      "source": "BRD Section 5; Charter 6 (Security lead)",
+      "group": "Advisers",
+      "home": "worklist",
+      "moduleAccess": {
+        "M1": "-",
+        "M2": "R incidents",
+        "M3": "RU incidents",
+        "M4": "-",
+        "M5": "R",
+        "M6": "R",
+        "M7": "R",
+        "M8": "R",
+        "M9": "-",
+        "M10": "R"
+      },
+      "actions": [
+        "data_incident.report",
+        "data_incident.close_report"
+      ]
+    },
+    {
+      "id": "khda_legal",
+      "title": "KHDA Legal",
+      "heldBy": "KHDA Legal",
+      "description": "Advises on legal basis, Secret data, service provider contracts and Res. 2/2017 Art. 27 cases.",
+      "source": "BRD Section 5; Charter 6 (Legal adviser)",
+      "group": "Advisers",
+      "home": "worklist",
+      "moduleAccess": {
+        "M1": "-",
+        "M2": "RU assigned",
+        "M3": "-",
+        "M4": "-",
+        "M5": "RU assigned",
+        "M6": "-",
+        "M7": "R",
+        "M8": "R",
+        "M9": "-",
+        "M10": "-"
+      },
+      "actions": []
+    },
+    {
+      "id": "governance_section",
+      "title": "Governance section",
+      "heldBy": "Governance section, Strategy and Excellence department",
+      "description": "Monitors all modules read-only; flags items for escalation; issues the monthly compliance report to the CDO. Does not draft, own or approve policies.",
+      "source": "BRD Section 5; Charter 12.3",
+      "group": "Oversight",
+      "home": "compliance",
+      "moduleAccess": {
+        "M1": "R, F",
+        "M2": "R, F",
+        "M3": "R, F",
+        "M4": "R, F",
+        "M5": "R, F",
+        "M6": "R, F",
+        "M7": "R, F",
+        "M8": "R",
+        "M9": "R, F",
+        "M10": "CRU"
+      },
+      "actions": [
+        "escalation.raise"
+      ]
+    },
+    {
+      "id": "director_strategy_excellence",
+      "title": "Director of Strategy and Excellence",
+      "heldBy": "Director of Strategy and Excellence",
+      "description": "Sees every accepted DS&A service request, may enhance it and approves it within 2 working days; views dashboards; approves strategic KPI definitions in the KPI catalog (DP-05 5.4).",
+      "source": "BRD Section 5",
+      "group": "Leadership",
+      "home": "kpis",
+      "moduleAccess": {
+        "M1": "RA (accepted service requests)",
+        "M2": "R",
+        "M3": "R",
+        "M4": "R",
+        "M5": "R",
+        "M6": "R",
+        "M7": "RA (KPI catalog)",
+        "M8": "R",
+        "M9": "R",
+        "M10": "R"
+      },
+      "actions": [
+        "ds_service_request.director_approve",
+        "kpi_adoption.propose",
+        "kpi_adoption.adopt",
+        "kpi_adoption.park"
+      ]
+    },
+    {
+      "id": "dashboard_viewer",
+      "title": "Dashboard viewer",
+      "heldBy": "Sector CEOs and the Director General",
+      "description": "View the leadership dashboard pages.",
+      "source": "BRD Section 5",
+      "group": "Leadership",
+      "home": "kpis",
+      "moduleAccess": {
+        "M1": "-",
+        "M2": "-",
+        "M3": "-",
+        "M4": "-",
+        "M5": "-",
+        "M6": "-",
+        "M7": "-",
+        "M8": "-",
+        "M9": "-",
+        "M10": "R"
+      },
+      "actions": []
+    },
+    {
+      "id": "service_design",
+      "title": "Service Design",
+      "heldBy": "The Service Design department (Strategic Development sector)",
+      "description": "Assesses service fit, customer effort and integration options on field change requests and digitization requests; updates service documentation and service level agreements after go-live. Has no access to personal data.",
+      "source": "BRD Section 5; Charter 6",
+      "group": "Partners",
+      "home": "worklist",
+      "moduleAccess": {
+        "M1": "-",
+        "M2": "-",
+        "M3": "-",
+        "M4": "-",
+        "M5": "-",
+        "M6": "RU field change requests and customer-effort assessments [decide: confirm access]",
+        "M7": "R (field change register)",
+        "M8": "R",
+        "M9": "R own",
+        "M10": "-"
+      },
+      "actions": [
+        "field_change.submit",
+        "field_change.service_design_assess",
+        "field_change.refer_disagreement",
+        "field_change.complete_updates",
+        "digitization.attach_requirements"
+      ]
+    },
+    {
+      "id": "principal_data_user",
+      "title": "Principal data user",
+      "heldBy": "Staff of PRP, the Strategic Development sector and QAC (Charter definition)",
+      "description": "Submits data requirements and field change requests; is consulted on field changes, KPI definitions and dashboards that affect its mandate; tracks its requirements in the data requirements register.",
+      "source": "BRD Section 5; Charter 6",
+      "group": "Consumers",
+      "home": "my-items",
+      "moduleAccess": {
+        "M1": "CR own",
+        "M2": "CR own",
+        "M3": "CR own",
+        "M4": "-",
+        "M5": "CR own",
+        "M6": "CR own; R consulted [decide: confirm access]",
+        "M7": "CR own (data requirements register)",
+        "M8": "R, acknowledge",
+        "M9": "R own",
+        "M10": "-"
+      },
+      "actions": [
+        "ds_service_request.submit",
+        "ds_service_request.provide_information",
+        "ds_service_request.requester_accept",
+        "ds_service_request.withdraw",
+        "external_sharing.log",
+        "external_sharing.withdraw",
+        "dq_issue.log_issue",
+        "access_request.submit",
+        "access_request.withdraw",
+        "field_change.submit",
+        "data_requirement.submit",
+        "ds_service_request.submit_data_gap"
+      ]
+    },
+    {
+      "id": "system_administrator",
+      "title": "System administrator",
+      "heldBy": "Named Digital Excellence staff [confirm]",
+      "description": "Maintains roles, configuration, service-level values and the calendar; does not approve or edit items. In the POC this role also owns Reset demo data.",
+      "source": "BRD Section 5",
+      "group": "Platform",
+      "home": "settings",
+      "moduleAccess": {
+        "M1": "Cfg",
+        "M2": "Cfg",
+        "M3": "Cfg",
+        "M4": "Cfg",
+        "M5": "Cfg",
+        "M6": "Cfg",
+        "M7": "Cfg",
+        "M8": "Cfg",
+        "M9": "Cfg",
+        "M10": "Cfg"
+      },
+      "actions": []
+    },
+    {
+      "id": "governance_group",
+      "title": "Data and Digital Governance Group (secretariat view)",
+      "heldBy": "Co-chaired by the CEO, Strategic Development and the CEO, Business Support; DS&A is secretariat (Charter 5, 5.1)",
+      "description": "Decides objections to standard corrections, declined instructions, business-judgment changes without a decision, disputes on definitions, ownership, quality and system changes; ratifies material changes and new platforms. Items it has not resolved in 15 working days go to the Director General automatically (Charter 5.2).",
+      "source": "Charter 5, 5.2, 9, 11.3",
+      "group": "Bodies",
+      "home": "decisions",
+      "moduleAccess": {
+        "M1": "-",
+        "M2": "-",
+        "M3": "R",
+        "M4": "-",
+        "M5": "-",
+        "M6": "RA (material changes)",
+        "M7": "R",
+        "M8": "R",
+        "M9": "RA (Group level)",
+        "M10": "R"
+      },
+      "actions": [
+        "dq_issue.group_decide_proceed",
+        "dq_issue.group_decide_no_action",
+        "system_change.group_ratify",
+        "system_change.group_reject",
+        "escalation.respond"
+      ],
+      "isBody": true
+    },
+    {
+      "id": "leadership_council",
+      "title": "Leadership Council (data item)",
+      "heldBy": "Director General and Sector CEOs; DS&A and Digital Excellence attend",
+      "description": "Decides exceptions over 6 months or repeated; receives the quarterly report of escalated items.",
+      "source": "Charter 5, 12.4",
+      "group": "Bodies",
+      "home": "decisions",
+      "moduleAccess": {
+        "M1": "-",
+        "M2": "-",
+        "M3": "-",
+        "M4": "-",
+        "M5": "-",
+        "M6": "-",
+        "M7": "RA (exceptions over 6 months)",
+        "M8": "R",
+        "M9": "R",
+        "M10": "R"
+      },
+      "actions": [
+        "exception.council_approve",
+        "exception.council_refuse"
+      ],
+      "isBody": true
+    },
+    {
+      "id": "engagement_department",
+      "title": "Engagement Department",
+      "heldBy": "Engagement Department, Business Support Sector [confirm English name and unit]",
+      "description": "Design, layout, plain-language wording and brand of statistical publications, and release logistics, within DS&A templates and service levels. Has no role in the BRD yet; included in the POC only for the census publication tracker [decide: give the Engagement Department a role in the application, or leave it out].",
+      "source": "Charter 6 (Engagement Department row); DP-05 13.10",
+      "group": "Partners",
+      "home": "worklist",
+      "moduleAccess": {
+        "M1": "-",
+        "M2": "-",
+        "M3": "-",
+        "M4": "-",
+        "M5": "-",
+        "M6": "-",
+        "M7": "-",
+        "M8": "R",
+        "M9": "R own",
+        "M10": "-"
+      },
+      "actions": [
+        "statistical_publication.engagement_review",
+        "statistical_publication.publish"
+      ],
+      "decide": "give the Engagement Department a role in the application, or leave it out"
+    }
+  ],
+  "charterRoleMap": [
+    {
+      "charterRole": "Director General",
+      "appRoles": [
+        "dg_office"
+      ]
+    },
+    {
+      "charterRole": "Chief Data Officer (CDO)",
+      "appRoles": [
+        "cdo"
+      ]
+    },
+    {
+      "charterRole": "Data Champion",
+      "appRoles": [
+        "data_champion"
+      ]
+    },
+    {
+      "charterRole": "Data Privacy Officer",
+      "appRoles": [
+        "data_privacy_officer"
+      ]
+    },
+    {
+      "charterRole": "DS&A function",
+      "appRoles": [
+        "data_administrator",
+        "dsa_analyst",
+        "data_steward"
+      ]
+    },
+    {
+      "charterRole": "Data Administrator (6.1)",
+      "appRoles": [
+        "data_administrator"
+      ]
+    },
+    {
+      "charterRole": "Data specialist (6.1)",
+      "appRoles": [
+        "dsa_analyst"
+      ]
+    },
+    {
+      "charterRole": "Data Steward (6.1)",
+      "appRoles": [
+        "data_steward"
+      ]
+    },
+    {
+      "charterRole": "Data Owner",
+      "appRoles": [
+        "data_owner",
+        "producer_staff"
+      ]
+    },
+    {
+      "charterRole": "Service Design",
+      "appRoles": [
+        "service_design"
+      ]
+    },
+    {
+      "charterRole": "Engagement Department",
+      "appRoles": [
+        "engagement_department"
+      ]
+    },
+    {
+      "charterRole": "Data Custodian",
+      "appRoles": [
+        "digital_excellence"
+      ]
+    },
+    {
+      "charterRole": "Governance section",
+      "appRoles": [
+        "governance_section"
+      ]
+    },
+    {
+      "charterRole": "Principal data users",
+      "appRoles": [
+        "principal_data_user"
+      ]
+    },
+    {
+      "charterRole": "Other data users",
+      "appRoles": [
+        "requester"
+      ]
+    },
+    {
+      "charterRole": "Security lead",
+      "appRoles": [
+        "information_security"
+      ]
+    },
+    {
+      "charterRole": "Legal adviser",
+      "appRoles": [
+        "khda_legal"
+      ]
+    },
+    {
+      "charterRole": "Leadership Council (body, Charter 5)",
+      "appRoles": [
+        "leadership_council"
+      ]
+    },
+    {
+      "charterRole": "Data and Digital Governance Group (body, Charter 5)",
+      "appRoles": [
+        "governance_group"
+      ]
+    }
+  ],
+  "coreRolesNote": "Core data roles of the Dubai Data Manual v5.0 (DDM-003.3): Chief Data Officer (cdo), Data Administrator (data_administrator), Data Owner (data_owner), Data Steward (data_steward), Data Custodian (digital_excellence), Data Privacy Officer (data_privacy_officer); Data Champion (data_champion) under DDM-004.5."
+}

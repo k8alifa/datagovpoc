@@ -1,0 +1,550 @@
+{
+  "note": "Manual collections register with digitization requests (DP-07 7). Collection names are invented for the demo. Timeliness of a manual collection cannot be measured (ST-03 T6).",
+  "manualCollections": [
+    {
+      "id": "MAN-2026-001",
+      "workflowId": "digitization",
+      "producerSectorId": "GHD",
+      "name": "Nursery waiting list tracker (demo)",
+      "holds": "Applications waiting for ECC places",
+      "keptIn": "Spreadsheet on a shared drive",
+      "frequency": "Weekly",
+      "recordsPerCycle": 900,
+      "personalData": true,
+      "usedBy": "Sector reporting (demo)",
+      "registeredAt": "2026-04-21",
+      "state": "closed",
+      "digitization": {
+        "requestedAt": "2026-05-12",
+        "acknowledgedAt": "2026-05-14",
+        "requirementsAt": "2026-05-27",
+        "solutionAt": "2026-06-22",
+        "firstLoadAt": "2026-07-16",
+        "closedAt": "2026-07-21"
+      },
+      "estimateDeliveryDate": "2026-08-03",
+      "targetSystem": "[Digital Excellence to confirm]",
+      "stateEnteredAt": "2026-07-21",
+      "dueAt": null,
+      "responsibleRole": null,
+      "documentIds": [
+        "DP-07",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-04-21T10:41:00+04:00",
+          "from": null,
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-05-12T12:41:00+04:00",
+          "from": "registered",
+          "to": "request_submitted",
+          "transition": "submit_request",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-05-14T10:20:00+04:00",
+          "from": "request_submitted",
+          "to": "acknowledged",
+          "transition": "acknowledge",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-05-27T13:12:00+04:00",
+          "from": "acknowledged",
+          "to": "requirements_and_design",
+          "transition": "attach_requirements",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-06-22T09:52:00+04:00",
+          "from": "requirements_and_design",
+          "to": "solution_given",
+          "transition": "give_solution",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-06-25T09:34:00+04:00",
+          "from": "solution_given",
+          "to": "in_build",
+          "transition": "start_build",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-07-16T14:41:00+04:00",
+          "from": "in_build",
+          "to": "first_load",
+          "transition": "first_load",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-07-21T10:12:00+04:00",
+          "from": "first_load",
+          "to": "closed",
+          "transition": "confirm_first_load",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "MAN-2026-002",
+      "workflowId": "digitization",
+      "producerSectorId": "QAC",
+      "name": "Inspection follow-up actions log (demo)",
+      "holds": "Actions agreed after inspection visits",
+      "keptIn": "Spreadsheet",
+      "frequency": "Per visit",
+      "recordsPerCycle": 400,
+      "personalData": false,
+      "usedBy": "Sector reporting (demo)",
+      "registeredAt": "2026-04-30",
+      "state": "solution_given",
+      "digitization": {
+        "requestedAt": "2026-05-21",
+        "acknowledgedAt": "2026-05-25",
+        "requirementsAt": "2026-06-05",
+        "solutionAt": "2026-07-01",
+        "firstLoadAt": null,
+        "closedAt": null
+      },
+      "estimateDeliveryDate": "2026-08-12",
+      "targetSystem": "[Digital Excellence to confirm]",
+      "stateEnteredAt": "2026-07-01",
+      "dueAt": null,
+      "responsibleRole": "digital_excellence",
+      "documentIds": [
+        "DP-07",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-04-30T10:12:00+04:00",
+          "from": null,
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-05-21T13:41:00+04:00",
+          "from": "registered",
+          "to": "request_submitted",
+          "transition": "submit_request",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-05-25T10:52:00+04:00",
+          "from": "request_submitted",
+          "to": "acknowledged",
+          "transition": "acknowledge",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-06-05T12:12:00+04:00",
+          "from": "acknowledged",
+          "to": "requirements_and_design",
+          "transition": "attach_requirements",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-01T12:05:00+04:00",
+          "from": "requirements_and_design",
+          "to": "solution_given",
+          "transition": "give_solution",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        }
+      ]
+    },
+    {
+      "id": "MAN-2026-003",
+      "workflowId": "digitization",
+      "producerSectorId": "QAC",
+      "name": "Compliance complaints intake sheet (demo)",
+      "holds": "Complaints received about institutions",
+      "keptIn": "Email and spreadsheet",
+      "frequency": "Daily",
+      "recordsPerCycle": 120,
+      "personalData": true,
+      "usedBy": "Sector reporting (demo)",
+      "registeredAt": "2026-07-30",
+      "state": "requirements_and_design",
+      "digitization": {
+        "requestedAt": "2026-08-20",
+        "acknowledgedAt": "2026-08-24",
+        "requirementsAt": "2026-09-04",
+        "solutionAt": null,
+        "firstLoadAt": null,
+        "closedAt": null
+      },
+      "estimateDeliveryDate": null,
+      "targetSystem": "[Digital Excellence to confirm]",
+      "stateEnteredAt": "2026-09-04",
+      "dueAt": "2026-10-02",
+      "responsibleRole": "digital_excellence",
+      "documentIds": [
+        "DP-07",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-07-30T15:20:00+04:00",
+          "from": null,
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-20T13:52:00+04:00",
+          "from": "registered",
+          "to": "request_submitted",
+          "transition": "submit_request",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-24T10:12:00+04:00",
+          "from": "request_submitted",
+          "to": "acknowledged",
+          "transition": "acknowledge",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-09-04T13:41:00+04:00",
+          "from": "acknowledged",
+          "to": "requirements_and_design",
+          "transition": "attach_requirements",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "MAN-2026-004",
+      "workflowId": "digitization",
+      "producerSectorId": "GHD",
+      "name": "Training institute course approvals log (demo)",
+      "holds": "Approvals granted outside the portal",
+      "keptIn": "Spreadsheet",
+      "frequency": "Monthly",
+      "recordsPerCycle": 60,
+      "personalData": false,
+      "usedBy": "Sector reporting (demo)",
+      "registeredAt": "2026-08-07",
+      "state": "acknowledged",
+      "digitization": {
+        "requestedAt": "2026-08-28",
+        "acknowledgedAt": "2026-09-01",
+        "requirementsAt": null,
+        "solutionAt": null,
+        "firstLoadAt": null,
+        "closedAt": null
+      },
+      "estimateDeliveryDate": null,
+      "targetSystem": "[Digital Excellence to confirm]",
+      "stateEnteredAt": "2026-09-01",
+      "dueAt": "2026-09-15",
+      "responsibleRole": "dsa_analyst",
+      "documentIds": [
+        "DP-07",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-08-07T11:34:00+04:00",
+          "from": null,
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-28T12:20:00+04:00",
+          "from": "registered",
+          "to": "request_submitted",
+          "transition": "submit_request",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-01T13:41:00+04:00",
+          "from": "request_submitted",
+          "to": "acknowledged",
+          "transition": "acknowledge",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        }
+      ]
+    },
+    {
+      "id": "MAN-2026-005",
+      "workflowId": "digitization",
+      "producerSectorId": "PRP",
+      "name": "Program participation lists (demo)",
+      "holds": "Institutions taking part in programs",
+      "keptIn": "Spreadsheet",
+      "frequency": "Per program",
+      "recordsPerCycle": 150,
+      "personalData": false,
+      "usedBy": "Sector reporting (demo)",
+      "registeredAt": "2026-07-27",
+      "state": "request_submitted",
+      "digitization": {
+        "requestedAt": "2026-08-17",
+        "acknowledgedAt": null,
+        "requirementsAt": null,
+        "solutionAt": null,
+        "firstLoadAt": null,
+        "closedAt": null
+      },
+      "estimateDeliveryDate": null,
+      "targetSystem": "[Digital Excellence to confirm]",
+      "stateEnteredAt": "2026-08-17",
+      "dueAt": "2026-08-19",
+      "responsibleRole": "digital_excellence",
+      "documentIds": [
+        "DP-07",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-07-27T10:34:00+04:00",
+          "from": null,
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-17T10:41:00+04:00",
+          "from": "registered",
+          "to": "request_submitted",
+          "transition": "submit_request",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        }
+      ]
+    },
+    {
+      "id": "MAN-2026-006",
+      "workflowId": "digitization",
+      "producerSectorId": "SD",
+      "name": "Strategic KPI working file (demo)",
+      "holds": "Quarterly KPI inputs from sectors",
+      "keptIn": "Spreadsheet",
+      "frequency": "Quarterly",
+      "recordsPerCycle": 80,
+      "personalData": false,
+      "usedBy": "Sector reporting (demo)",
+      "registeredAt": "2026-08-14",
+      "state": "registered",
+      "digitization": {
+        "requestedAt": null,
+        "acknowledgedAt": null,
+        "requirementsAt": null,
+        "solutionAt": null,
+        "firstLoadAt": null,
+        "closedAt": null
+      },
+      "estimateDeliveryDate": null,
+      "targetSystem": "[Digital Excellence to confirm]",
+      "stateEnteredAt": "2026-08-14",
+      "dueAt": "2026-09-11",
+      "responsibleRole": "data_owner",
+      "documentIds": [
+        "DP-07",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-08-14T10:52:00+04:00",
+          "from": null,
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        }
+      ]
+    },
+    {
+      "id": "MAN-2026-007",
+      "workflowId": "digitization",
+      "producerSectorId": "GHD",
+      "name": "Teacher licensing exceptions (demo)",
+      "holds": "Exceptions approved by email",
+      "keptIn": "Email",
+      "frequency": "Ad hoc",
+      "recordsPerCycle": 30,
+      "personalData": true,
+      "usedBy": "Sector reporting (demo)",
+      "registeredAt": "2026-07-14",
+      "state": "registered",
+      "digitization": {
+        "requestedAt": null,
+        "acknowledgedAt": null,
+        "requirementsAt": null,
+        "solutionAt": null,
+        "firstLoadAt": null,
+        "closedAt": null
+      },
+      "estimateDeliveryDate": null,
+      "targetSystem": "[Digital Excellence to confirm]",
+      "stateEnteredAt": "2026-07-14",
+      "dueAt": "2026-08-11",
+      "responsibleRole": "data_owner",
+      "documentIds": [
+        "DP-07",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-07-14T10:34:00+04:00",
+          "from": null,
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        }
+      ]
+    },
+    {
+      "id": "MAN-2026-008",
+      "workflowId": "digitization",
+      "producerSectorId": "QAC",
+      "name": "Inspector availability calendar (demo)",
+      "holds": "Inspector schedules",
+      "keptIn": "Shared calendar export",
+      "frequency": "Weekly",
+      "recordsPerCycle": 50,
+      "personalData": true,
+      "usedBy": "Sector reporting (demo)",
+      "registeredAt": "2026-05-12",
+      "state": "in_build",
+      "digitization": {
+        "requestedAt": "2026-06-02",
+        "acknowledgedAt": "2026-06-04",
+        "requirementsAt": "2026-06-17",
+        "solutionAt": "2026-07-13",
+        "firstLoadAt": null,
+        "closedAt": null
+      },
+      "estimateDeliveryDate": "2026-08-24",
+      "targetSystem": "[Digital Excellence to confirm]",
+      "stateEnteredAt": "2026-07-16",
+      "dueAt": null,
+      "responsibleRole": "digital_excellence",
+      "documentIds": [
+        "DP-07",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-05-12T10:05:00+04:00",
+          "from": null,
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-06-02T14:05:00+04:00",
+          "from": "registered",
+          "to": "request_submitted",
+          "transition": "submit_request",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-06-04T10:05:00+04:00",
+          "from": "request_submitted",
+          "to": "acknowledged",
+          "transition": "acknowledge",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-06-17T12:12:00+04:00",
+          "from": "acknowledged",
+          "to": "requirements_and_design",
+          "transition": "attach_requirements",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-13T13:12:00+04:00",
+          "from": "requirements_and_design",
+          "to": "solution_given",
+          "transition": "give_solution",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-07-16T10:52:00+04:00",
+          "from": "solution_given",
+          "to": "in_build",
+          "transition": "start_build",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        }
+      ]
+    },
+    {
+      "id": "MAN-2026-009",
+      "workflowId": "digitization",
+      "producerSectorId": "PRP",
+      "name": "Research data requests log (demo)",
+      "holds": "Requests for research data",
+      "keptIn": "Spreadsheet",
+      "frequency": "Ad hoc",
+      "recordsPerCycle": 25,
+      "personalData": false,
+      "usedBy": "Sector reporting (demo)",
+      "registeredAt": "2026-07-14",
+      "state": "registered",
+      "digitization": {
+        "requestedAt": null,
+        "acknowledgedAt": null,
+        "requirementsAt": null,
+        "solutionAt": null,
+        "firstLoadAt": null,
+        "closedAt": null
+      },
+      "estimateDeliveryDate": null,
+      "targetSystem": "[Digital Excellence to confirm]",
+      "stateEnteredAt": "2026-07-14",
+      "dueAt": "2026-08-11",
+      "responsibleRole": "data_owner",
+      "documentIds": [
+        "DP-07",
+        "ST-03"
+      ],
+      "history": [
+        {
+          "at": "2026-07-14T11:52:00+04:00",
+          "from": null,
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        }
+      ]
+    }
+  ]
+}

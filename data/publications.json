@@ -1,0 +1,136 @@
+{
+  "note": "Statistical publication tracker. The census stages total 47 working days from the snapshot (DP-05 13.5).",
+  "publications": [
+    {
+      "id": "PUB-2026-01",
+      "workflowId": "statistical_publication",
+      "title": "Annual census report 2026-27 (demo)",
+      "state": "first_design",
+      "snapshotDate": "2026-09-15",
+      "snapshotDateNote": "Date fixed in the publication calendar [confirm]; demo date",
+      "targetPublishDate": "2026-11-19",
+      "forecastPublishDate": "2026-11-20",
+      "stages": [
+        {
+          "stateId": "certify_statistics",
+          "label": "Certify census operational statistics",
+          "responsibleRole": "data_owner",
+          "serviceLevelWorkingDays": 5,
+          "plannedStart": "2026-09-15",
+          "plannedEnd": "2026-09-22",
+          "actualEnd": "2026-09-23",
+          "status": "done"
+        },
+        {
+          "stateId": "analysis_narrative",
+          "label": "Analysis, narrative and design brief",
+          "responsibleRole": "dsa_analyst",
+          "serviceLevelWorkingDays": 15,
+          "plannedStart": "2026-09-23",
+          "plannedEnd": "2026-10-14",
+          "actualEnd": "2026-10-14",
+          "status": "done"
+        },
+        {
+          "stateId": "first_design",
+          "label": "First design (design vendor)",
+          "responsibleRole": "dsa_analyst",
+          "serviceLevelWorkingDays": 10,
+          "plannedStart": "2026-10-14",
+          "plannedEnd": "2026-10-28",
+          "actualEnd": null,
+          "status": "in_progress"
+        },
+        {
+          "stateId": "engagement_review",
+          "label": "Engagement Department wording and style review",
+          "responsibleRole": "engagement_department",
+          "serviceLevelWorkingDays": 7,
+          "plannedStart": "2026-10-28",
+          "plannedEnd": "2026-11-06",
+          "actualEnd": null,
+          "status": "not_started"
+        },
+        {
+          "stateId": "revise_design",
+          "label": "Revise design",
+          "responsibleRole": "dsa_analyst",
+          "serviceLevelWorkingDays": 3,
+          "plannedStart": "2026-11-06",
+          "plannedEnd": "2026-11-11",
+          "actualEnd": null,
+          "status": "not_started"
+        },
+        {
+          "stateId": "approval",
+          "label": "Approval (CDO, then Director General where required)",
+          "responsibleRole": "cdo",
+          "serviceLevelWorkingDays": 5,
+          "plannedStart": "2026-11-11",
+          "plannedEnd": "2026-11-18",
+          "actualEnd": null,
+          "status": "not_started"
+        },
+        {
+          "stateId": "publish",
+          "label": "Publish",
+          "responsibleRole": "engagement_department",
+          "serviceLevelWorkingDays": 2,
+          "plannedStart": "2026-11-18",
+          "plannedEnd": "2026-11-20",
+          "actualEnd": null,
+          "status": "not_started"
+        }
+      ],
+      "stateEnteredAt": "2026-10-14",
+      "dueAt": "2026-10-28",
+      "narrativeApprover": "Director General [decide: Director General approves the census narrative]",
+      "operationalStatisticIds": [
+        "OST-01-2026-09",
+        "OST-02-2026-09",
+        "OST-03-2026-09",
+        "OST-04-2026-09",
+        "OST-05-2026-09",
+        "OST-06-2026-09"
+      ],
+      "documentIds": [
+        "DP-05"
+      ],
+      "history": [
+        {
+          "at": "2026-09-15T10:34:00+04:00",
+          "from": null,
+          "to": "snapshot",
+          "transition": "take_snapshot",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-15T15:52:00+04:00",
+          "from": "snapshot",
+          "to": "certify_statistics",
+          "transition": "start_certification",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-23T11:12:00+04:00",
+          "from": "certify_statistics",
+          "to": "analysis_narrative",
+          "transition": "certify",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner",
+          "comment": "Certified one working day after the 5-day service level"
+        },
+        {
+          "at": "2026-10-14T15:34:00+04:00",
+          "from": "analysis_narrative",
+          "to": "first_design",
+          "transition": "submit_narrative",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    }
+  ]
+}

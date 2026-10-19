@@ -1,0 +1,104 @@
+{
+  "note": "Data incidents (BR-048), synthetic. Visible only to named roles (Sensitive).",
+  "incidents": [
+    {
+      "id": "INC-2026-001",
+      "workflowId": "data_incident",
+      "title": "Published figure in error on the website (demo)",
+      "kind": "published_figure_error",
+      "state": "closed",
+      "reportedAt": "2026-08-20",
+      "containedAt": "2026-08-21",
+      "containmentDueAt": "2026-08-21",
+      "dueAt": null,
+      "stateEnteredAt": "2026-09-02",
+      "sensitive": true,
+      "ownerSectorId": "GHD",
+      "documentIds": [
+        "DP-04",
+        "DP-00",
+        "DP-05"
+      ],
+      "history": [
+        {
+          "at": "2026-08-20T15:05:00+04:00",
+          "from": null,
+          "to": "reported",
+          "transition": "report",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-08-21T14:52:00+04:00",
+          "from": "reported",
+          "to": "contained",
+          "transition": "contain",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-08-24T12:41:00+04:00",
+          "from": "contained",
+          "to": "notified",
+          "transition": "inform",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-02T15:20:00+04:00",
+          "from": "notified",
+          "to": "closed",
+          "transition": "close_report",
+          "actorRole": "information_security",
+          "actorUserId": "U-information-security"
+        }
+      ]
+    },
+    {
+      "id": "INC-2026-002",
+      "workflowId": "data_incident",
+      "title": "Extract sent with an unmasked column (demo)",
+      "kind": "personal_data_exposed",
+      "state": "notified",
+      "reportedAt": "2026-10-07",
+      "containedAt": "2026-10-09",
+      "containmentDueAt": "2026-10-08",
+      "dueAt": "2026-10-21",
+      "stateEnteredAt": "2026-10-09",
+      "sensitive": true,
+      "ownerSectorId": "GHD",
+      "documentIds": [
+        "DP-04",
+        "DP-00",
+        "DP-05"
+      ],
+      "history": [
+        {
+          "at": "2026-10-07T10:20:00+04:00",
+          "from": null,
+          "to": "reported",
+          "transition": "report",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-10-09T15:34:00+04:00",
+          "from": "reported",
+          "to": "contained",
+          "transition": "contain",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence",
+          "comment": "Contained one day late"
+        },
+        {
+          "at": "2026-10-09T14:05:00+04:00",
+          "from": "contained",
+          "to": "notified",
+          "transition": "inform",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    }
+  ]
+}

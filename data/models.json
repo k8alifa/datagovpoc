@@ -1,0 +1,49 @@
+{
+  "note": "DS&A model register, a POC addition [decide: add a model register for DP-09 11.2].",
+  "models": [
+    {
+      "id": "MOD-001",
+      "name": "Enrollment forecast (demo)",
+      "purpose": "Seat planning",
+      "version": "1.2",
+      "reviewingOfficerRole": "data_administrator",
+      "validatedAt": "2026-05-12",
+      "firstUseAt": "2026-05-20",
+      "nextReviewAt": "2027-05-20",
+      "inUse": true
+    },
+    {
+      "id": "MOD-002",
+      "name": "Student record match-and-merge scoring (demo)",
+      "purpose": "Duplicate detection for analysis",
+      "version": "0.9",
+      "reviewingOfficerRole": "data_administrator",
+      "validatedAt": null,
+      "firstUseAt": "2026-08-04",
+      "nextReviewAt": "2027-08-04",
+      "inUse": true
+    },
+    {
+      "id": "MOD-003",
+      "name": "Teacher turnover risk (demo)",
+      "purpose": "Inspection planning input",
+      "version": "1.0",
+      "reviewingOfficerRole": "data_administrator",
+      "validatedAt": "2026-09-01",
+      "firstUseAt": "2026-09-10",
+      "nextReviewAt": "2027-09-10",
+      "inUse": true
+    },
+    {
+      "id": "MOD-004",
+      "name": "Fee change classifier (demo)",
+      "purpose": "Flag unusual fee changes",
+      "version": "0.3",
+      "reviewingOfficerRole": "data_administrator",
+      "validatedAt": null,
+      "firstUseAt": null,
+      "nextReviewAt": "2027-01-15",
+      "inUse": false
+    }
+  ]
+}

@@ -1,0 +1,4167 @@
+{
+  "version": "0.1",
+  "asOf": "2026-10-15",
+  "clockRules": {
+    "workingWeek": [
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu",
+      "Fri"
+    ],
+    "workingWeekConfirm": true,
+    "holidays": "Held in configuration (data/holidays.json); the KHDA official holiday list is not in the sources [confirm]",
+    "countFrom": "The day after the trigger event (Charter 1, Service level; BR-077)",
+    "pausedDays": "Excluded from the responsible party's time and stored on the item (SPEC ClockStoppedDays)",
+    "reassignment": "Reassigning an item does not reset the clock (BR-008)",
+    "dueSoonThresholdWorkingDays": 2,
+    "dueSoonConfirm": true,
+    "statusBands": {
+      "onTrack": "More than 2 working days left",
+      "dueSoon": "0 to 2 working days left",
+      "overdue": "Past the due date",
+      "paused": "Clock paused"
+    }
+  },
+  "escalationPolicy": {
+    "rules": [
+      {
+        "id": "11.1",
+        "trigger": "Service level missed by Digital Excellence, a Data Owner or another sector",
+        "raisedBy": "data_administrator",
+        "raisedWith": "Responsible director",
+        "responseWorkingDays": 2
+      },
+      {
+        "id": "11.2",
+        "trigger": "Service level missed by DS&A",
+        "raisedBy": "requester",
+        "raisedWith": "cdo",
+        "responseWorkingDays": 2,
+        "notify": [
+          "requester"
+        ]
+      },
+      {
+        "id": "11.3",
+        "trigger": "Approval not given within its service level, or item not resolved under 11.1 or 11.2",
+        "levels": [
+          "cdo",
+          "governance_group",
+          "dg_office"
+        ],
+        "groupToDirectorGeneralWorkingDays": 15,
+        "cdoLevelWorkingDays": null,
+        "cdoLevelConfirm": true,
+        "note": "Section 9 referrals (objections, declines, business-judgment changes without a decision) go directly to the Group."
+      }
+    ],
+    "governanceSectionFlag": "The Governance section may flag any item for escalation or support with a reason, visible to the CDO (BR-084).",
+    "reminders": {
+      "beforeDueWorkingDays": 2,
+      "confirm": true,
+      "onDueDate": true,
+      "eachWorkingDayAfter": true,
+      "ref": "BR-079 [confirm lead time]"
+    }
+  },
+  "workflows": [
+    {
+      "id": "ds_service_request",
+      "name": "DS&A service request",
+      "module": "M1",
+      "entity": "ServiceRequest",
+      "policyBasis": [
+        "BR-015 to BR-022",
+        "BR-111 to BR-115 (request form, check and routing, Director of Strategy and Excellence approval, priority tiers, data gaps)",
+        "BR-125 (survey approval check, Res. 96/2016)",
+        "DP-03 5, 9",
+        "SPEC 5.1, 5.2"
+      ],
+      "idFormat": "DSA-YYYY-00001",
+      "clock": {
+        "starts": "Submission",
+        "pauses": [
+          "awaiting_information"
+        ],
+        "stops": [
+          "delivered",
+          "rejected",
+          "withdrawn",
+          "redirected"
+        ],
+        "pausedDaysField": "clockStoppedDays"
+      },
+      "states": [
+        {
+          "id": "submitted",
+          "label": "Submitted"
+        },
+        {
+          "id": "awaiting_information",
+          "label": "Awaiting information",
+          "clockPaused": true
+        },
+        {
+          "id": "awaiting_approval",
+          "label": "Awaiting approval"
+        },
+        {
+          "id": "accepted",
+          "label": "Accepted"
+        },
+        {
+          "id": "in_progress",
+          "label": "In progress"
+        },
+        {
+          "id": "awaiting_requester_acceptance",
+          "label": "Awaiting requester acceptance"
+        },
+        {
+          "id": "delivered",
+          "label": "Delivered"
+        },
+        {
+          "id": "closed",
+          "label": "Closed",
+          "terminal": true
+        },
+        {
+          "id": "redirected",
+          "label": "Redirected",
+          "terminal": true
+        },
+        {
+          "id": "rejected",
+          "label": "Rejected",
+          "terminal": true
+        },
+        {
+          "id": "withdrawn",
+          "label": "Withdrawn",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "submit",
+          "from": [
+            "start"
+          ],
+          "to": "submitted",
+          "actor": [
+            "requester",
+            "principal_data_user"
+          ],
+          "label": "Submit request (acknowledgment required)",
+          "guard": "Versioned requester acknowledgment accepted (BR-018)"
+        },
+        {
+          "id": "redirect",
+          "from": [
+            "start"
+          ],
+          "to": "redirected",
+          "actor": [
+            "system"
+          ],
+          "label": "Redirect extract or correction",
+          "note": "Extract requests go to the Digital Excellence extraction service and are logged as RED; only Digital Excellence produces and masks record-level extracts. A correction request opens a data quality issue in M3 (BR-016)."
+        },
+        {
+          "id": "request_information",
+          "from": [
+            "submitted"
+          ],
+          "to": "awaiting_information",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Ask the requester for information"
+        },
+        {
+          "id": "provide_information",
+          "from": [
+            "awaiting_information"
+          ],
+          "to": "submitted",
+          "actor": [
+            "requester",
+            "principal_data_user"
+          ],
+          "label": "Reply with information"
+        },
+        {
+          "id": "auto_withdraw",
+          "from": [
+            "awaiting_information"
+          ],
+          "to": "withdrawn",
+          "actor": [
+            "system"
+          ],
+          "label": "Withdraw after no reply",
+          "slaWorkingDays": 10,
+          "confirm": true,
+          "note": "SPEC 5.1: withdrawn after 10 working days without reply [confirm]"
+        },
+        {
+          "id": "route_for_approval",
+          "from": [
+            "submitted"
+          ],
+          "to": "awaiting_approval",
+          "actor": [
+            "system"
+          ],
+          "label": "Route for approval",
+          "note": "ANL: Sector CEO approves business questions; DBA: line manager, then Data Owner where the dashboard holds Confidential or Sensitive data."
+        },
+        {
+          "id": "approve",
+          "from": [
+            "awaiting_approval"
+          ],
+          "to": "accepted",
+          "actor": [
+            "sector_ceo",
+            "line_manager",
+            "data_owner"
+          ],
+          "label": "Approve",
+          "slaWorkingDays": 3,
+          "slaRef": "DP-03 9; SPEC 5.2",
+          "escalation": {
+            "rule": "Charter 11.3",
+            "firstLevel": "cdo",
+            "note": "An approval not given within its service level is referred to the CDO, then the Group, then the Director General."
+          }
+        },
+        {
+          "id": "reject_approval",
+          "from": [
+            "awaiting_approval"
+          ],
+          "to": "rejected",
+          "actor": [
+            "sector_ceo",
+            "line_manager",
+            "data_owner"
+          ],
+          "label": "Reject",
+          "requiresReason": true
+        },
+        {
+          "id": "accept",
+          "from": [
+            "submitted"
+          ],
+          "to": "accepted",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Accept and set target date",
+          "slaWorkingDays": 2,
+          "slaRef": "DP-03 9 (completeness check)",
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "reject",
+          "from": [
+            "submitted"
+          ],
+          "to": "rejected",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Reject",
+          "requiresReason": true
+        },
+        {
+          "id": "start_work",
+          "from": [
+            "accepted"
+          ],
+          "to": "in_progress",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Start work",
+          "slaWorkingDays": 3,
+          "slaRef": "BR-113 (scope agreed with the requester after the Director of Strategy and Excellence approves)",
+          "guard": "Director of Strategy and Excellence approval recorded (BR-113); ANL needs Sector CEO approval recorded (BR-019); NGS and DDS need the DDSE Permit or coordination reference (BR-020); NGS and DDS also need the survey approval check cleared (survey_approval workflow, BR-125)",
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "deliver",
+          "from": [
+            "in_progress"
+          ],
+          "to": "delivered",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Deliver",
+          "slaNote": "By the target of the request's priority tier (BR-114); studies, models and new certified dashboards take the tier target times the multiplier [decide]",
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "send_for_acceptance",
+          "from": [
+            "in_progress"
+          ],
+          "to": "awaiting_requester_acceptance",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Send dashboard for acceptance"
+        },
+        {
+          "id": "requester_accept",
+          "from": [
+            "awaiting_requester_acceptance"
+          ],
+          "to": "delivered",
+          "actor": [
+            "requester",
+            "principal_data_user"
+          ],
+          "label": "Accept dashboard",
+          "slaWorkingDays": 5,
+          "slaRef": "DP-03 9"
+        },
+        {
+          "id": "close",
+          "from": [
+            "delivered"
+          ],
+          "to": "closed",
+          "actor": [
+            "system"
+          ],
+          "label": "Close after 5 working days or the closure survey",
+          "slaWorkingDays": 5
+        },
+        {
+          "id": "withdraw",
+          "from": [
+            "submitted",
+            "awaiting_information",
+            "awaiting_approval",
+            "accepted"
+          ],
+          "to": "withdrawn",
+          "actor": [
+            "requester",
+            "principal_data_user"
+          ],
+          "label": "Withdraw"
+        },
+        {
+          "id": "flag_priority",
+          "from": [
+            "submitted",
+            "accepted",
+            "in_progress"
+          ],
+          "to": null,
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Flag as priority within its tier (principal data user mandate, strategic KPI or official statistic)",
+          "decide": "confirm the priority rule (BR-099)",
+          "stateless": true
+        },
+        {
+          "id": "submit_data_gap",
+          "from": [
+            "start"
+          ],
+          "to": "submitted",
+          "actor": [
+            "requester",
+            "principal_data_user"
+          ],
+          "label": "Submit a data gap: what data is missing, why it is needed, which KPI or mandate it serves",
+          "guard": "Requester has checked the data dictionary; the gap is written to the data gap register (BR-115)"
+        },
+        {
+          "id": "route_operational_statistic",
+          "from": [
+            "submitted"
+          ],
+          "to": "redirected",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Route an operational statistic to its Data Owner, who verifies and certifies its own numbers (BR-112)"
+        },
+        {
+          "id": "set_priority_tier",
+          "from": [
+            "submitted",
+            "accepted"
+          ],
+          "to": null,
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Set the priority tier from the requester's level (BR-114)",
+          "stateless": true
+        },
+        {
+          "id": "director_approve",
+          "from": [
+            "accepted"
+          ],
+          "to": null,
+          "actor": [
+            "director_strategy_excellence"
+          ],
+          "label": "See the accepted request, enhance it if needed, and approve (BR-113)",
+          "slaWorkingDays": 2,
+          "slaRef": "BR-113",
+          "stateless": true
+        }
+      ],
+      "serviceLevelsByService": {
+        "ANL": "Initial review 2; CEO approval 3; scope and date agreed 5; delivery by the priority tier target",
+        "NGS": "Logged 3; review 5; live on the planned date",
+        "DDS": "Logged 3; review 5; live on the planned date [confirm DDA lead time]",
+        "DBC": "Initial review 2; requirements 10; owner sign-off 5; delivery by the priority tier target",
+        "DBA": "Initial review 2; owner approval 3; access granted 3",
+        "DBE": "Initial review 2; minor change 10",
+        "GAP": "Data gap submission: recorded in the data gap register on submission [decide: service code]"
+      },
+      "priorityMatrix": {
+        "source": "BRD M1 prioritization matrix (BR-114); all targets proposed",
+        "tiers": [
+          {
+            "tier": 1,
+            "requestedBy": "Director General",
+            "target": "[decide: proposed 5 working days for a data analysis report]"
+          },
+          {
+            "tier": 2,
+            "requestedBy": "A KHDA committee",
+            "target": "[decide: proposed 10 working days]"
+          },
+          {
+            "tier": 3,
+            "requestedBy": "A sector CEO",
+            "target": "[decide: proposed 15 working days]"
+          },
+          {
+            "tier": 4,
+            "requestedBy": "A department",
+            "target": "[decide: proposed 20 working days]"
+          },
+          {
+            "tier": 5,
+            "requestedBy": "A section",
+            "target": "[decide: proposed 25 working days]"
+          }
+        ],
+        "multiplier": {
+          "appliesTo": "Studies, models and new certified dashboards, at any tier",
+          "value": "[decide: proposed x2 for studies and dashboards]"
+        }
+      }
+    },
+    {
+      "id": "external_sharing",
+      "name": "External data sharing request",
+      "module": "M2",
+      "entity": "SharingRequest",
+      "policyBasis": [
+        "BR-023 to BR-035",
+        "BR-122 (DPIA before exchange of personal data)",
+        "DP-01 8",
+        "DP-02 5 to 7, 12, 13"
+      ],
+      "idFormat": "SHR-YYYY-0001",
+      "clock": {
+        "starts": "Receipt anywhere in KHDA (date received, not date logged)",
+        "pauses": [],
+        "stops": [
+          "released",
+          "refused",
+          "withdrawn",
+          "closed"
+        ],
+        "pauseNote": "None [confirm whether an incomplete request pauses the clock]",
+        "confirm": true,
+        "countFrom": "receipt",
+        "dueDayFromReceipt": true
+      },
+      "states": [
+        {
+          "id": "received",
+          "label": "Received"
+        },
+        {
+          "id": "registered",
+          "label": "Registered"
+        },
+        {
+          "id": "in_assessment",
+          "label": "In assessment"
+        },
+        {
+          "id": "owner_confirmation",
+          "label": "Owner confirmation"
+        },
+        {
+          "id": "awaiting_cdo",
+          "label": "Awaiting CDO decision"
+        },
+        {
+          "id": "awaiting_dg",
+          "label": "Awaiting Director General decision"
+        },
+        {
+          "id": "approved_awaiting_release",
+          "label": "Approved, awaiting release"
+        },
+        {
+          "id": "released",
+          "label": "Released"
+        },
+        {
+          "id": "refused",
+          "label": "Refused"
+        },
+        {
+          "id": "withdrawn",
+          "label": "Withdrawn"
+        },
+        {
+          "id": "closed",
+          "label": "Closed",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "log",
+          "from": [
+            "start"
+          ],
+          "to": "received",
+          "actor": [
+            "requester",
+            "dg_office",
+            "dsa_analyst",
+            "data_administrator",
+            "principal_data_user"
+          ],
+          "label": "Log a request received anywhere in KHDA",
+          "slaWorkingDays": 1,
+          "slaRef": "DP-02 7.1, 13 (forward within 1 working day)",
+          "note": "Flag the item when it is logged more than 1 working day after receipt (BR-023). Director General's office entries are marked DG-routed (BR-024). DX Hub requests carry the DX Hub reference (BR-025)."
+        },
+        {
+          "id": "register",
+          "from": [
+            "received"
+          ],
+          "to": "registered",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Register (purpose, legal basis, fields, retention, recipient type, channel)",
+          "dueByWorkingDay": 2,
+          "slaRef": "DP-02 13",
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "start_assessment",
+          "from": [
+            "registered"
+          ],
+          "to": "in_assessment",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Start assessment"
+        },
+        {
+          "id": "send_to_owner",
+          "from": [
+            "in_assessment"
+          ],
+          "to": "owner_confirmation",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Send draft classification and release specification to the owner",
+          "dueByWorkingDay": 4,
+          "slaRef": "DP-02 13",
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "owner_confirm",
+          "from": [
+            "owner_confirmation"
+          ],
+          "to": "awaiting_cdo",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Confirm content, or record objection",
+          "dueByWorkingDay": 7,
+          "slaRef": "DP-02 7.4, 13",
+          "note": "No reply by working day 7 is recorded automatically as no objection (BR-028)."
+        },
+        {
+          "id": "owner_no_reply",
+          "from": [
+            "owner_confirmation"
+          ],
+          "to": "awaiting_cdo",
+          "actor": [
+            "system"
+          ],
+          "label": "No reply recorded as no objection",
+          "dueByWorkingDay": 7,
+          "auto": true
+        },
+        {
+          "id": "route_to_dg",
+          "from": [
+            "awaiting_cdo",
+            "in_assessment"
+          ],
+          "to": "awaiting_dg",
+          "actor": [
+            "system",
+            "cdo"
+          ],
+          "label": "Route to the Director General (a trigger applies, or CDO refers)",
+          "note": "Five triggers: Sensitive or Secret data; non-government recipient and data not Open; record-level personal data; a new agreement or MoU; a CDO referral (BR-029)."
+        },
+        {
+          "id": "cdo_approve",
+          "from": [
+            "awaiting_cdo"
+          ],
+          "to": "approved_awaiting_release",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Approve with Access Permission terms",
+          "dueByWorkingDay": 10,
+          "slaRef": "DP-02 13",
+          "escalation": {
+            "rule": "Charter 11.3",
+            "firstLevel": "cdo",
+            "note": "An approval not given within its service level is referred to the CDO, then the Group, then the Director General."
+          }
+        },
+        {
+          "id": "cdo_refuse",
+          "from": [
+            "awaiting_cdo"
+          ],
+          "to": "refused",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Refuse with written reasons",
+          "dueByWorkingDay": 10,
+          "requiresReason": true
+        },
+        {
+          "id": "dg_approve",
+          "from": [
+            "awaiting_dg"
+          ],
+          "to": "approved_awaiting_release",
+          "actor": [
+            "dg_office"
+          ],
+          "label": "Record Director General approval",
+          "dueByWorkingDay": 15,
+          "slaRef": "DP-02 13"
+        },
+        {
+          "id": "dg_refuse",
+          "from": [
+            "awaiting_dg"
+          ],
+          "to": "refused",
+          "actor": [
+            "dg_office"
+          ],
+          "label": "Record Director General refusal",
+          "dueByWorkingDay": 15,
+          "requiresReason": true
+        },
+        {
+          "id": "release",
+          "from": [
+            "approved_awaiting_release"
+          ],
+          "to": "released",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Confirm extract or API delivered",
+          "slaNote": "Agreed release date",
+          "slaRef": "DP-02 13",
+          "guard": "When the data contains personal data, a DPIA approved by the Data Privacy Officer is recorded (dpia workflow, BR-122)"
+        },
+        {
+          "id": "record_in_register",
+          "from": [
+            "released"
+          ],
+          "to": "closed",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Write the Data Sharing Register entry",
+          "slaWorkingDays": 0,
+          "slaNote": "Same day as release",
+          "slaRef": "DP-02 7.7, 13"
+        },
+        {
+          "id": "close_refused",
+          "from": [
+            "refused"
+          ],
+          "to": "closed",
+          "actor": [
+            "system"
+          ],
+          "label": "Close"
+        },
+        {
+          "id": "withdraw",
+          "from": [
+            "received",
+            "registered",
+            "in_assessment",
+            "owner_confirmation"
+          ],
+          "to": "withdrawn",
+          "actor": [
+            "requester",
+            "principal_data_user",
+            "dsa_analyst"
+          ],
+          "label": "Withdraw"
+        },
+        {
+          "id": "close_withdrawn",
+          "from": [
+            "withdrawn"
+          ],
+          "to": "closed",
+          "actor": [
+            "system"
+          ],
+          "label": "Close"
+        }
+      ]
+    },
+    {
+      "id": "dq_issue",
+      "name": "Data quality issue and source correction",
+      "module": "M3",
+      "entity": "DataQualityIssue",
+      "policyBasis": [
+        "DP-06 7, 8",
+        "Charter 9, 10",
+        "ST-01 13",
+        "BR-036 to BR-047",
+        "BR-100"
+      ],
+      "idFormat": "DQI-YYYY-0001",
+      "clock": {
+        "starts": "Instruction sent, routing to owner, or institution notification (per route)",
+        "pauses": [
+          "objected",
+          "referred_to_group"
+        ],
+        "stops": [
+          "corrected",
+          "closed"
+        ],
+        "note": "A request for business approval does not pause a standard-correction instruction (Charter 9.1; BR-041). An owner objection pauses it until the Group decides."
+      },
+      "states": [
+        {
+          "id": "open",
+          "label": "Open",
+          "st01Status": "open"
+        },
+        {
+          "id": "instruction_sent",
+          "label": "Instruction sent",
+          "st01Status": "in progress"
+        },
+        {
+          "id": "objected",
+          "label": "Objected",
+          "st01Status": "in progress",
+          "clockPaused": true
+        },
+        {
+          "id": "declined",
+          "label": "Declined",
+          "st01Status": "in progress"
+        },
+        {
+          "id": "awaiting_owner_decision",
+          "label": "Awaiting owner decision",
+          "st01Status": "in progress"
+        },
+        {
+          "id": "referred_to_group",
+          "label": "Referred to the Group",
+          "st01Status": "in progress",
+          "clockPaused": true
+        },
+        {
+          "id": "with_institution",
+          "label": "With institution",
+          "st01Status": "with institution"
+        },
+        {
+          "id": "in_progress",
+          "label": "In progress",
+          "st01Status": "in progress"
+        },
+        {
+          "id": "corrected",
+          "label": "Corrected",
+          "st01Status": "resolved"
+        },
+        {
+          "id": "awaiting_fit_for_use",
+          "label": "Awaiting fit for use",
+          "st01Status": "resolved"
+        },
+        {
+          "id": "verification",
+          "label": "Verification",
+          "st01Status": "resolved"
+        },
+        {
+          "id": "reopened",
+          "label": "Reopened",
+          "st01Status": "reopened"
+        },
+        {
+          "id": "closed",
+          "label": "Closed",
+          "st01Status": "closed",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "log_issue",
+          "from": [
+            "start"
+          ],
+          "to": "open",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator",
+            "data_steward",
+            "digital_excellence",
+            "principal_data_user",
+            "requester"
+          ],
+          "label": "Log issue with Data Set, field, rule, dimension, root cause and owner",
+          "slaNote": "On detection",
+          "slaRef": "ST-01 21"
+        },
+        {
+          "id": "send_instruction",
+          "from": [
+            "open"
+          ],
+          "to": "instruction_sent",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Trigger standard-correction instruction (cites the pre-approved rule)",
+          "guard": "Citation of the standard, rule, definition, classification, data contract or recorded decision is required (BR-038)"
+        },
+        {
+          "id": "acknowledge",
+          "from": [
+            "instruction_sent"
+          ],
+          "to": "in_progress",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Acknowledge and schedule",
+          "slaWorkingDays": 2,
+          "slaRef": "Charter 10",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "decline",
+          "from": [
+            "instruction_sent"
+          ],
+          "to": "declined",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Decline on documented technical, security or legal grounds",
+          "slaWorkingDays": 2,
+          "requiresReason": true
+        },
+        {
+          "id": "object",
+          "from": [
+            "instruction_sent"
+          ],
+          "to": "objected",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Object on documented grounds",
+          "slaWorkingDays": 3,
+          "slaRef": "Charter 9.3, 10",
+          "requiresReason": true
+        },
+        {
+          "id": "refer_objection",
+          "from": [
+            "objected",
+            "declined"
+          ],
+          "to": "referred_to_group",
+          "actor": [
+            "system"
+          ],
+          "label": "Refer to the Data and Digital Governance Group",
+          "auto": true
+        },
+        {
+          "id": "route_business_judgment",
+          "from": [
+            "open"
+          ],
+          "to": "awaiting_owner_decision",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Route as business-judgment change"
+        },
+        {
+          "id": "owner_decide",
+          "from": [
+            "awaiting_owner_decision"
+          ],
+          "to": "in_progress",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Decide the change",
+          "slaWorkingDays": 5,
+          "slaRef": "Charter 9.4, 10",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "owner_no_decision",
+          "from": [
+            "awaiting_owner_decision"
+          ],
+          "to": "referred_to_group",
+          "actor": [
+            "system"
+          ],
+          "label": "Refer to the Group (no decision in 5 working days)",
+          "auto": true,
+          "slaWorkingDays": 5
+        },
+        {
+          "id": "group_decide_proceed",
+          "from": [
+            "referred_to_group"
+          ],
+          "to": "in_progress",
+          "actor": [
+            "governance_group"
+          ],
+          "label": "Group decision: proceed"
+        },
+        {
+          "id": "group_decide_no_action",
+          "from": [
+            "referred_to_group"
+          ],
+          "to": "closed",
+          "actor": [
+            "governance_group"
+          ],
+          "label": "Group decision: close with no action",
+          "requiresReason": true
+        },
+        {
+          "id": "route_to_institution",
+          "from": [
+            "open"
+          ],
+          "to": "with_institution",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Route institution submission error to M4",
+          "note": "Opens remediation items in M4 for the owner to follow up."
+        },
+        {
+          "id": "route_to_source_fix",
+          "from": [
+            "open"
+          ],
+          "to": "in_progress",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Route to the owner and Digital Excellence for resolution at source (no pre-approved rule)",
+          "slaNote": "As agreed between the owner, as system owner, and Digital Excellence [confirm values]",
+          "confirm": true,
+          "slaRef": "Charter 9.8, 10"
+        },
+        {
+          "id": "log_self_detected",
+          "from": [
+            "start"
+          ],
+          "to": "in_progress",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Log a defect Digital Excellence found and fixed itself",
+          "slaRef": "Charter 9.7; BR-043"
+        },
+        {
+          "id": "institution_corrected",
+          "from": [
+            "with_institution"
+          ],
+          "to": "awaiting_fit_for_use",
+          "actor": [
+            "system"
+          ],
+          "label": "All M4 items corrected"
+        },
+        {
+          "id": "record_correction",
+          "from": [
+            "in_progress"
+          ],
+          "to": "corrected",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Record executed change (before and after values, executor, reversal reference)",
+          "slaByFixType": {
+            "data_fix": 5,
+            "pipeline_report_api_filter_fix": 10,
+            "source_system_change": "plan 10, deliver 30 or the next scheduled release"
+          },
+          "slaRef": "Charter 10; BR-045",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "request_fit_for_use",
+          "from": [
+            "corrected"
+          ],
+          "to": "awaiting_fit_for_use",
+          "actor": [
+            "system"
+          ],
+          "label": "Ask the owner to confirm fit for use",
+          "auto": true
+        },
+        {
+          "id": "confirm_fit_for_use",
+          "from": [
+            "awaiting_fit_for_use"
+          ],
+          "to": "verification",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Confirm data is fit for use",
+          "slaWorkingDays": 3,
+          "slaRef": "DP-06 8.9, 10",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "verify_and_close",
+          "from": [
+            "verification"
+          ],
+          "to": "closed",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Re-measure at or above threshold and close",
+          "slaWorkingDays": 3,
+          "slaRef": "DP-06 8.10; Charter 10",
+          "guard": "Owner confirmation and re-measured score at or above threshold both recorded (BR-047)",
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "verification_failed",
+          "from": [
+            "verification"
+          ],
+          "to": "reopened",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Score below threshold: reopen"
+        },
+        {
+          "id": "resume",
+          "from": [
+            "reopened"
+          ],
+          "to": "in_progress",
+          "actor": [
+            "system"
+          ],
+          "label": "Resume"
+        }
+      ]
+    },
+    {
+      "id": "data_incident",
+      "name": "Data incident (wrong data released, published figure in error, or personal data exposed)",
+      "module": "M3",
+      "entity": "DataIncident",
+      "policyBasis": [
+        "Charter 10",
+        "DP-04 8",
+        "DP-02 5.11",
+        "BR-048"
+      ],
+      "idFormat": "INC-YYYY-001",
+      "phase": 2,
+      "clock": {
+        "starts": "Report",
+        "pauses": [],
+        "stops": [
+          "closed"
+        ]
+      },
+      "states": [
+        {
+          "id": "reported",
+          "label": "Reported"
+        },
+        {
+          "id": "contained",
+          "label": "Contained"
+        },
+        {
+          "id": "notified",
+          "label": "Owner and recipients informed"
+        },
+        {
+          "id": "closed",
+          "label": "Closed",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "report",
+          "from": [
+            "start"
+          ],
+          "to": "reported",
+          "actor": [
+            "requester",
+            "dsa_analyst",
+            "digital_excellence",
+            "information_security",
+            "data_owner"
+          ],
+          "label": "Report suspected incident to the Cybersecurity function and DS&A together",
+          "slaNote": "Immediately",
+          "slaRef": "DP-04 8.1"
+        },
+        {
+          "id": "contain",
+          "from": [
+            "reported"
+          ],
+          "to": "contained",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Contain the exposure",
+          "slaWorkingDays": 1,
+          "slaRef": "Charter 10; DP-04 8.3",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "inform",
+          "from": [
+            "contained"
+          ],
+          "to": "notified",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Inform the owner and recipients; log the incident",
+          "slaWorkingDays": 2,
+          "slaFrom": "report",
+          "slaRef": "DP-04 8.4"
+        },
+        {
+          "id": "close_report",
+          "from": [
+            "notified"
+          ],
+          "to": "closed",
+          "actor": [
+            "information_security"
+          ],
+          "label": "Issue root cause and closure report",
+          "slaWorkingDays": 10,
+          "slaFrom": "report",
+          "slaRef": "DP-04 8.5"
+        }
+      ]
+    },
+    {
+      "id": "institution_remediation",
+      "name": "Institution remediation item",
+      "module": "M4",
+      "entity": "RemediationItem",
+      "policyBasis": [
+        "ST-01 14",
+        "DP-06 8.7 to 8.10",
+        "BR-049 to BR-054"
+      ],
+      "idFormat": "REM-YYYY-0001",
+      "phase": 2,
+      "clock": {
+        "starts": "Notification of the institution",
+        "pauses": [],
+        "stops": [
+          "corrected",
+          "closed"
+        ],
+        "note": "An agreed backfill plan sets a new due date."
+      },
+      "states": [
+        {
+          "id": "awaiting_acknowledgment",
+          "label": "Awaiting owner acknowledgment"
+        },
+        {
+          "id": "awaiting_notification",
+          "label": "Awaiting institution notification"
+        },
+        {
+          "id": "with_institution",
+          "label": "With institution"
+        },
+        {
+          "id": "corrected",
+          "label": "Corrected"
+        },
+        {
+          "id": "fit_for_use",
+          "label": "Fit for use confirmed"
+        },
+        {
+          "id": "referred",
+          "label": "Referred to QAC compliance"
+        },
+        {
+          "id": "closed",
+          "label": "Closed",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "send_issue_list",
+          "from": [
+            "start"
+          ],
+          "to": "awaiting_acknowledgment",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Send issue list by institution with rule references",
+          "slaNote": "Monthly with the data quality report, or on detection",
+          "slaRef": "ST-01 14.3, 21"
+        },
+        {
+          "id": "acknowledge_list",
+          "from": [
+            "awaiting_acknowledgment"
+          ],
+          "to": "awaiting_notification",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Acknowledge the issue list",
+          "slaWorkingDays": 2,
+          "slaRef": "ST-01 14.4",
+          "confirm": true,
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "notify_institution",
+          "from": [
+            "awaiting_notification"
+          ],
+          "to": "with_institution",
+          "actor": [
+            "data_owner",
+            "producer_staff"
+          ],
+          "label": "Notify the institution",
+          "slaWorkingDays": 5,
+          "slaRef": "ST-01 14.4",
+          "confirm": true,
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "record_correction",
+          "from": [
+            "with_institution"
+          ],
+          "to": "corrected",
+          "actor": [
+            "producer_staff",
+            "data_owner"
+          ],
+          "label": "Record correction (or backfill)",
+          "slaWorkingDays": 20,
+          "slaFrom": "notification",
+          "slaNote": "Correction 20 working days; backfill 30 working days or a plan the owner records",
+          "slaRef": "ST-01 14.6, 14.7",
+          "decide": "owner sets the backfill plan instead of agreeing it with DS&A?",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "refer_overdue",
+          "from": [
+            "with_institution"
+          ],
+          "to": "referred",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Refer overdue or repeated errors to the Compliance department in QAC",
+          "slaRef": "ST-01 14.9",
+          "confirm": true,
+          "decide": "route when QAC is itself the owner"
+        },
+        {
+          "id": "confirm_fit_for_use",
+          "from": [
+            "corrected"
+          ],
+          "to": "fit_for_use",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Confirm fit for use",
+          "slaWorkingDays": 3,
+          "slaRef": "ST-01 14.8"
+        },
+        {
+          "id": "remeasure_close",
+          "from": [
+            "fit_for_use"
+          ],
+          "to": "closed",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Re-measure and close",
+          "slaWorkingDays": 3,
+          "slaRef": "ST-01 14.8",
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "referral_corrected",
+          "from": [
+            "referred"
+          ],
+          "to": "corrected",
+          "actor": [
+            "producer_staff",
+            "data_owner"
+          ],
+          "label": "Record correction after referral"
+        }
+      ]
+    },
+    {
+      "id": "access_request",
+      "name": "Access request",
+      "module": "M5",
+      "entity": "AccessRequest",
+      "policyBasis": [
+        "DP-03 4, 5.6, 7, 9",
+        "ST-02 7",
+        "Charter 7",
+        "BR-055 to BR-062"
+      ],
+      "idFormat": "ACC-YYYY-0001",
+      "phase": 2,
+      "clock": {
+        "starts": "Submission",
+        "pauses": [],
+        "stops": [
+          "granted",
+          "refused",
+          "withdrawn"
+        ]
+      },
+      "states": [
+        {
+          "id": "submitted",
+          "label": "Submitted"
+        },
+        {
+          "id": "awaiting_line_manager",
+          "label": "Awaiting line manager"
+        },
+        {
+          "id": "awaiting_owner",
+          "label": "Awaiting owner approval"
+        },
+        {
+          "id": "referred_to_cdo",
+          "label": "Referred to the CDO"
+        },
+        {
+          "id": "approved_awaiting_provision",
+          "label": "Approved, awaiting provisioning"
+        },
+        {
+          "id": "granted",
+          "label": "Granted",
+          "terminal": true
+        },
+        {
+          "id": "refused",
+          "label": "Refused",
+          "terminal": true
+        },
+        {
+          "id": "withdrawn",
+          "label": "Withdrawn",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "submit",
+          "from": [
+            "start"
+          ],
+          "to": "submitted",
+          "actor": [
+            "requester",
+            "principal_data_user"
+          ],
+          "label": "Request access (purpose, period, object); classification read from the Data Inventory"
+        },
+        {
+          "id": "route_line_manager",
+          "from": [
+            "submitted"
+          ],
+          "to": "awaiting_line_manager",
+          "actor": [
+            "system"
+          ],
+          "label": "Route to line manager (dashboard access)",
+          "auto": true
+        },
+        {
+          "id": "line_manager_approve",
+          "from": [
+            "awaiting_line_manager"
+          ],
+          "to": "awaiting_owner",
+          "actor": [
+            "line_manager"
+          ],
+          "label": "Approve"
+        },
+        {
+          "id": "route_owner",
+          "from": [
+            "submitted"
+          ],
+          "to": "awaiting_owner",
+          "actor": [
+            "system"
+          ],
+          "label": "Route Confidential or Sensitive access to the owner",
+          "auto": true,
+          "note": "Open data needs no approval (BR-056)."
+        },
+        {
+          "id": "open_auto_approve",
+          "from": [
+            "submitted"
+          ],
+          "to": "approved_awaiting_provision",
+          "actor": [
+            "system"
+          ],
+          "label": "Open data: no approval needed",
+          "auto": true
+        },
+        {
+          "id": "owner_approve",
+          "from": [
+            "awaiting_owner"
+          ],
+          "to": "approved_awaiting_provision",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Approve",
+          "slaWorkingDays": 3,
+          "slaRef": "DP-03 4.2, 9",
+          "escalation": {
+            "rule": "Charter 11.3",
+            "firstLevel": "cdo",
+            "note": "An approval not given within its service level is referred to the CDO, then the Group, then the Director General."
+          }
+        },
+        {
+          "id": "owner_refuse",
+          "from": [
+            "awaiting_owner"
+          ],
+          "to": "refused",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Refuse",
+          "requiresReason": true
+        },
+        {
+          "id": "owner_no_response",
+          "from": [
+            "awaiting_owner"
+          ],
+          "to": "referred_to_cdo",
+          "actor": [
+            "system"
+          ],
+          "label": "No response: refer to the CDO",
+          "auto": true,
+          "slaWorkingDays": 3
+        },
+        {
+          "id": "cdo_decide",
+          "from": [
+            "referred_to_cdo"
+          ],
+          "to": "approved_awaiting_provision",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Approve"
+        },
+        {
+          "id": "cdo_refuse",
+          "from": [
+            "referred_to_cdo"
+          ],
+          "to": "refused",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Refuse",
+          "requiresReason": true
+        },
+        {
+          "id": "provision",
+          "from": [
+            "approved_awaiting_provision"
+          ],
+          "to": "granted",
+          "actor": [
+            "digital_excellence",
+            "dsa_analyst"
+          ],
+          "label": "Provision and record grant date",
+          "slaWorkingDays": 3,
+          "slaRef": "DP-03 9",
+          "slaNote": "Project access for PRP and QAC: 3 or 5 working days",
+          "decide": "3 or 5 working days for project access; ST-02, BRD and SPEC differ",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "withdraw",
+          "from": [
+            "submitted",
+            "awaiting_line_manager",
+            "awaiting_owner"
+          ],
+          "to": "withdrawn",
+          "actor": [
+            "requester",
+            "principal_data_user"
+          ],
+          "label": "Withdraw"
+        }
+      ]
+    },
+    {
+      "id": "access_recertification",
+      "name": "Access recertification and revocation",
+      "module": "M5",
+      "entity": "AccessGrant",
+      "policyBasis": [
+        "DP-03 4.3, 9",
+        "ST-02 7.7",
+        "BR-060"
+      ],
+      "phase": 2,
+      "clock": {
+        "starts": "Recertification task opened (every six months [confirm cycle])",
+        "pauses": [],
+        "stops": [
+          "recertified",
+          "revoked"
+        ]
+      },
+      "states": [
+        {
+          "id": "active",
+          "label": "Active"
+        },
+        {
+          "id": "review_due",
+          "label": "Review due"
+        },
+        {
+          "id": "recertified",
+          "label": "Recertified"
+        },
+        {
+          "id": "revocation_requested",
+          "label": "Revocation requested"
+        },
+        {
+          "id": "revoked",
+          "label": "Revoked",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "open_review",
+          "from": [
+            "active"
+          ],
+          "to": "review_due",
+          "actor": [
+            "system"
+          ],
+          "label": "Open recertification task",
+          "auto": true,
+          "slaNote": "Every six months [confirm cycle]",
+          "confirm": true
+        },
+        {
+          "id": "recertify",
+          "from": [
+            "review_due"
+          ],
+          "to": "recertified",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Confirm grant"
+        },
+        {
+          "id": "renew",
+          "from": [
+            "recertified"
+          ],
+          "to": "active",
+          "actor": [
+            "system"
+          ],
+          "label": "Return to active with next review date",
+          "auto": true
+        },
+        {
+          "id": "revoke",
+          "from": [
+            "review_due",
+            "active"
+          ],
+          "to": "revocation_requested",
+          "actor": [
+            "data_owner",
+            "data_administrator"
+          ],
+          "label": "Revoke"
+        },
+        {
+          "id": "complete_revocation",
+          "from": [
+            "revocation_requested"
+          ],
+          "to": "revoked",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Complete revocation",
+          "slaWorkingDays": 5,
+          "slaRef": "DP-03 9",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        }
+      ]
+    },
+    {
+      "id": "field_change",
+      "name": "Field change request (joint field process)",
+      "module": "M6",
+      "entity": "FieldChangeRequest",
+      "policyBasis": [
+        "DP-07 5, 10",
+        "Charter 9, 11",
+        "BR-091 to BR-097"
+      ],
+      "idFormat": "FCR-YYYY-0001",
+      "phase": 2,
+      "clock": {
+        "starts": "Submission (day 0)",
+        "pauses": [],
+        "stops": [
+          "closed",
+          "refused"
+        ]
+      },
+      "states": [
+        {
+          "id": "submitted",
+          "label": "Submitted"
+        },
+        {
+          "id": "service_design_assessment",
+          "label": "Service Design assessment"
+        },
+        {
+          "id": "dsa_assessment",
+          "label": "DS&A data assessment"
+        },
+        {
+          "id": "owner_decision",
+          "label": "Owner decision"
+        },
+        {
+          "id": "referred_to_cdo",
+          "label": "Referred to the CDO"
+        },
+        {
+          "id": "estimate",
+          "label": "Digital Excellence estimate"
+        },
+        {
+          "id": "in_build",
+          "label": "In build"
+        },
+        {
+          "id": "live",
+          "label": "Live: dictionary and service documentation updates"
+        },
+        {
+          "id": "closed",
+          "label": "Closed",
+          "terminal": true
+        },
+        {
+          "id": "refused",
+          "label": "Refused",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "submit",
+          "from": [
+            "start"
+          ],
+          "to": "submitted",
+          "actor": [
+            "requester",
+            "principal_data_user",
+            "data_owner",
+            "dsa_analyst",
+            "service_design",
+            "digital_excellence"
+          ],
+          "label": "Request a field change (add, change or remove)"
+        },
+        {
+          "id": "route_service_design",
+          "from": [
+            "submitted"
+          ],
+          "to": "service_design_assessment",
+          "actor": [
+            "system"
+          ],
+          "label": "Route to Service Design",
+          "auto": true
+        },
+        {
+          "id": "service_design_assess",
+          "from": [
+            "service_design_assessment"
+          ],
+          "to": "dsa_assessment",
+          "actor": [
+            "service_design"
+          ],
+          "label": "Assess service fit, customer effort and integration options",
+          "slaWorkingDays": 5,
+          "slaRef": "DP-07 10",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "dsa_assess",
+          "from": [
+            "dsa_assessment"
+          ],
+          "to": "owner_decision",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Assess data need (removal: downstream use and DP-08 retention); add consulted principal data users",
+          "slaWorkingDays": 5,
+          "slaRef": "DP-07 10",
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "owner_approve",
+          "from": [
+            "owner_decision"
+          ],
+          "to": "estimate",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Approve business need",
+          "slaWorkingDays": 5,
+          "slaRef": "DP-07 10; Charter 9",
+          "escalation": {
+            "rule": "Charter 11.3",
+            "firstLevel": "cdo",
+            "note": "An approval not given within its service level is referred to the CDO, then the Group, then the Director General."
+          }
+        },
+        {
+          "id": "owner_refuse",
+          "from": [
+            "owner_decision"
+          ],
+          "to": "refused",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Refuse",
+          "requiresReason": true
+        },
+        {
+          "id": "refer_disagreement",
+          "from": [
+            "service_design_assessment",
+            "dsa_assessment",
+            "owner_decision"
+          ],
+          "to": "referred_to_cdo",
+          "actor": [
+            "service_design",
+            "dsa_analyst",
+            "data_administrator",
+            "data_owner"
+          ],
+          "label": "Refer a disagreement to the CDO",
+          "note": "Decision split [decide]: Service Design decides service and form design; DS&A decides data standards and definitions; owner decides business need; Digital Excellence decides technical implementation.",
+          "decide": "confirm the decision split"
+        },
+        {
+          "id": "cdo_resolve",
+          "from": [
+            "referred_to_cdo"
+          ],
+          "to": "estimate",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Resolve and continue"
+        },
+        {
+          "id": "cdo_refuse",
+          "from": [
+            "referred_to_cdo"
+          ],
+          "to": "refused",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Resolve: do not proceed",
+          "requiresReason": true
+        },
+        {
+          "id": "estimate",
+          "from": [
+            "estimate"
+          ],
+          "to": "in_build",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Give the build estimate",
+          "slaWorkingDays": 10,
+          "slaRef": "DP-07 10",
+          "confirm": true,
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "go_live",
+          "from": [
+            "in_build"
+          ],
+          "to": "live",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Record go-live with technical metadata",
+          "slaNote": "Plan in 10 working days; deliver in 30 working days or the next scheduled release",
+          "slaRef": "Charter 10",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "complete_updates",
+          "from": [
+            "live"
+          ],
+          "to": "closed",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator",
+            "service_design"
+          ],
+          "label": "Data dictionary updated (DS&A) and service documentation and SLA updated (Service Design)",
+          "slaWorkingDays": 5,
+          "slaRef": "DP-07 10",
+          "decide": "is 5 working days after go-live right?"
+        }
+      ]
+    },
+    {
+      "id": "system_change",
+      "name": "System change request and data impact assessment",
+      "module": "M6",
+      "entity": "ChangeRequest",
+      "policyBasis": [
+        "Charter 8.5, 9, 9.6, 10",
+        "DP-07 8",
+        "BR-063 to BR-066"
+      ],
+      "idFormat": "CHG-YYYY-001",
+      "phase": 3,
+      "clock": {
+        "starts": "Complete change request",
+        "pauses": [
+          "awaiting_information"
+        ],
+        "stops": [
+          "live",
+          "rejected"
+        ],
+        "pauseNote": "Awaiting information from the requester [confirm]",
+        "confirm": true
+      },
+      "states": [
+        {
+          "id": "submitted",
+          "label": "Submitted"
+        },
+        {
+          "id": "awaiting_information",
+          "label": "Awaiting information",
+          "clockPaused": true
+        },
+        {
+          "id": "impact_assessment",
+          "label": "Data impact assessment"
+        },
+        {
+          "id": "group_ratification",
+          "label": "Group ratification (material change)"
+        },
+        {
+          "id": "in_build",
+          "label": "In build"
+        },
+        {
+          "id": "golive_check",
+          "label": "Go-live checklist"
+        },
+        {
+          "id": "live",
+          "label": "Live",
+          "terminal": true
+        },
+        {
+          "id": "rejected",
+          "label": "Rejected",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "submit",
+          "from": [
+            "start"
+          ],
+          "to": "submitted",
+          "actor": [
+            "data_owner",
+            "digital_excellence"
+          ],
+          "label": "Raise a system change request"
+        },
+        {
+          "id": "request_information",
+          "from": [
+            "submitted",
+            "impact_assessment"
+          ],
+          "to": "awaiting_information",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Ask for information"
+        },
+        {
+          "id": "provide_information",
+          "from": [
+            "awaiting_information"
+          ],
+          "to": "impact_assessment",
+          "actor": [
+            "data_owner",
+            "digital_excellence"
+          ],
+          "label": "Provide information"
+        },
+        {
+          "id": "start_assessment",
+          "from": [
+            "submitted"
+          ],
+          "to": "impact_assessment",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Start data impact assessment"
+        },
+        {
+          "id": "sign_off_assessment",
+          "from": [
+            "impact_assessment"
+          ],
+          "to": "in_build",
+          "actor": [
+            "data_administrator"
+          ],
+          "label": "Sign off assessment",
+          "slaWorkingDays": 10,
+          "slaRef": "Charter 9.6, 10",
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "refer_material",
+          "from": [
+            "impact_assessment"
+          ],
+          "to": "group_ratification",
+          "actor": [
+            "data_administrator"
+          ],
+          "label": "Refer material change to the Group"
+        },
+        {
+          "id": "group_ratify",
+          "from": [
+            "group_ratification"
+          ],
+          "to": "in_build",
+          "actor": [
+            "governance_group"
+          ],
+          "label": "Ratify"
+        },
+        {
+          "id": "group_reject",
+          "from": [
+            "group_ratification"
+          ],
+          "to": "rejected",
+          "actor": [
+            "governance_group"
+          ],
+          "label": "Reject",
+          "requiresReason": true
+        },
+        {
+          "id": "submit_for_golive",
+          "from": [
+            "in_build"
+          ],
+          "to": "golive_check",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Provide test data, logs and metadata",
+          "slaWorkingDays": 5,
+          "slaNote": "5 working days, before go-live",
+          "slaRef": "Charter 10"
+        },
+        {
+          "id": "confirm_golive",
+          "from": [
+            "golive_check"
+          ],
+          "to": "live",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Verify checklist and record go-live",
+          "slaWorkingDays": 3,
+          "slaRef": "DP-07 10",
+          "guard": "Audit logging, metadata feed, Data Inventory entry, field definitions and business rules, proposed classification, test data, logs and metadata delivered (BR-065)"
+        }
+      ]
+    },
+    {
+      "id": "digitization",
+      "name": "Manual collection and digitization request",
+      "module": "M7",
+      "entity": "ManualCollection",
+      "policyBasis": [
+        "DP-07 7.3, 7.4, 5.6, 5.7, 7.5, 7.6, 7, 10",
+        "ST-03 12.14"
+      ],
+      "idFormat": "MAN-YYYY-001",
+      "pocAddition": true,
+      "decide": "add the manual collections register and digitization requests to the application (DP-07 12.3 names the Data Governance Application)",
+      "clock": {
+        "starts": "Registration of the manual collection",
+        "pauses": [],
+        "stops": [
+          "closed"
+        ]
+      },
+      "states": [
+        {
+          "id": "registered",
+          "label": "Registered"
+        },
+        {
+          "id": "request_submitted",
+          "label": "Digitization request submitted"
+        },
+        {
+          "id": "acknowledged",
+          "label": "Acknowledged by Digital Excellence"
+        },
+        {
+          "id": "requirements_and_design",
+          "label": "DS&A requirements and Service Design design"
+        },
+        {
+          "id": "solution_given",
+          "label": "Solution, estimate and date given"
+        },
+        {
+          "id": "priority_referral",
+          "label": "Priority set by the CDO"
+        },
+        {
+          "id": "in_build",
+          "label": "In build"
+        },
+        {
+          "id": "first_load",
+          "label": "First load received"
+        },
+        {
+          "id": "closed",
+          "label": "Closed",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "register",
+          "from": [
+            "start"
+          ],
+          "to": "registered",
+          "actor": [
+            "data_owner",
+            "producer_staff"
+          ],
+          "label": "Register a manual collection",
+          "slaNote": "Existing: 30 working days from approval of DP-07; new: before collection starts",
+          "slaRef": "DP-07 10"
+        },
+        {
+          "id": "submit_request",
+          "from": [
+            "registered"
+          ],
+          "to": "request_submitted",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Submit digitization request to Digital Excellence",
+          "slaWorkingDays": 20,
+          "slaFrom": "registration",
+          "slaRef": "DP-07 7.11, 10",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "acknowledge",
+          "from": [
+            "request_submitted"
+          ],
+          "to": "acknowledged",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Acknowledge",
+          "slaWorkingDays": 2,
+          "slaRef": "DP-07 10",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "attach_requirements",
+          "from": [
+            "acknowledged"
+          ],
+          "to": "requirements_and_design",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator",
+            "service_design"
+          ],
+          "label": "Attach DS&A data requirements (10 working days) and service design (10 working days)",
+          "slaWorkingDays": 10,
+          "slaFrom": "request",
+          "slaRef": "DP-07 10"
+        },
+        {
+          "id": "give_solution",
+          "from": [
+            "requirements_and_design"
+          ],
+          "to": "solution_given",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Give solution, estimate and delivery date",
+          "slaWorkingDays": 20,
+          "slaRef": "DP-07 10",
+          "note": "Counts as an approved digitization request for the DP-07 KPI [decide: is this the right meaning of approved?]",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "refer_priority",
+          "from": [
+            "solution_given"
+          ],
+          "to": "priority_referral",
+          "actor": [
+            "digital_excellence",
+            "data_administrator"
+          ],
+          "label": "Refer competing requests to the CDO"
+        },
+        {
+          "id": "set_priority",
+          "from": [
+            "priority_referral"
+          ],
+          "to": "in_build",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Set the order",
+          "slaWorkingDays": 5,
+          "slaRef": "DP-07 7.6, 10"
+        },
+        {
+          "id": "start_build",
+          "from": [
+            "solution_given"
+          ],
+          "to": "in_build",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Start build"
+        },
+        {
+          "id": "first_load",
+          "from": [
+            "in_build"
+          ],
+          "to": "first_load",
+          "actor": [
+            "digital_excellence"
+          ],
+          "label": "Deliver source system and feed (delivery date in the estimate)"
+        },
+        {
+          "id": "confirm_first_load",
+          "from": [
+            "first_load"
+          ],
+          "to": "closed",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Confirm first load and close the register entry",
+          "slaWorkingDays": 5,
+          "slaRef": "DP-07 7.14, 10"
+        }
+      ]
+    },
+    {
+      "id": "timeliness_commitment",
+      "name": "Timeliness commitment per service",
+      "module": "M7",
+      "entity": "TimelinessCommitment",
+      "policyBasis": [
+        "ST-03 12.8 to 12.13, 17",
+        "Charter Appendix B"
+      ],
+      "pocAddition": true,
+      "clock": {
+        "starts": "Pre-filled rows sent to the producer",
+        "pauses": [],
+        "stops": [
+          "approved"
+        ]
+      },
+      "states": [
+        {
+          "id": "prefilled",
+          "label": "Pre-filled by DS&A"
+        },
+        {
+          "id": "sent",
+          "label": "Sent to producer"
+        },
+        {
+          "id": "committed",
+          "label": "Committed by producer"
+        },
+        {
+          "id": "measurability_checked",
+          "label": "Measurability checked"
+        },
+        {
+          "id": "approved",
+          "label": "Approved by the CDO"
+        },
+        {
+          "id": "measuring",
+          "label": "Measuring",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "send_rows",
+          "from": [
+            "prefilled"
+          ],
+          "to": "sent",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Send each producer its rows",
+          "slaWorkingDays": 10,
+          "slaNote": "10 working days from approval of ST-03",
+          "slaRef": "ST-03 17"
+        },
+        {
+          "id": "commit",
+          "from": [
+            "sent"
+          ],
+          "to": "committed",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Confirm data type and set commitment (Service Design consulted)",
+          "slaWorkingDays": 20,
+          "slaRef": "ST-03 17",
+          "escalation": {
+            "rule": "Charter 11.1",
+            "firstLevel": "data_administrator",
+            "note": "A service level missed by Digital Excellence, a Data Owner or another sector is raised by DS&A with the responsible director, who must respond within 2 working days."
+          }
+        },
+        {
+          "id": "check_measurable",
+          "from": [
+            "committed"
+          ],
+          "to": "measurability_checked",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Check the commitment can be measured; log TL5 issues",
+          "slaWorkingDays": 5,
+          "slaRef": "ST-03 17"
+        },
+        {
+          "id": "approve",
+          "from": [
+            "measurability_checked"
+          ],
+          "to": "approved",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Approve commitment",
+          "slaWorkingDays": 10,
+          "slaRef": "ST-03 17",
+          "escalation": {
+            "rule": "Charter 11.3",
+            "firstLevel": "cdo",
+            "note": "An approval not given within its service level is referred to the CDO, then the Group, then the Director General."
+          }
+        },
+        {
+          "id": "start_measuring",
+          "from": [
+            "approved"
+          ],
+          "to": "measuring",
+          "actor": [
+            "system"
+          ],
+          "label": "Load and start measuring",
+          "slaNote": "Next monthly cycle",
+          "auto": true
+        }
+      ],
+      "reportingRule": "Until approved, DS&A reports the service against the DS&A proposed starting value, marked 'not yet committed' [decide] (ST-03 12.12). A service that misses its approved commitment in two consecutive months is escalated [decide] (ST-03 18.2)."
+    },
+    {
+      "id": "operational_statistic",
+      "name": "Operational statistic certification",
+      "module": "M7",
+      "entity": "OperationalStatistic",
+      "policyBasis": [
+        "DP-05 6.1, 7.2",
+        "DP-05 10.1",
+        "Charter 6.6",
+        "BR-101"
+      ],
+      "phase": 2,
+      "decide": "owner certification step and block on uncertified figures",
+      "clock": {
+        "starts": "Period opened",
+        "pauses": [],
+        "stops": [
+          "certified"
+        ]
+      },
+      "states": [
+        {
+          "id": "open",
+          "label": "Open for the period"
+        },
+        {
+          "id": "produced",
+          "label": "Produced from source system"
+        },
+        {
+          "id": "certified",
+          "label": "Certified by the owner"
+        },
+        {
+          "id": "shared",
+          "label": "Shared with DS&A and channels",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "produce",
+          "from": [
+            "open"
+          ],
+          "to": "produced",
+          "actor": [
+            "data_owner",
+            "digital_excellence"
+          ],
+          "label": "Produce from the source system against the DS&A counting rule"
+        },
+        {
+          "id": "certify",
+          "from": [
+            "produced"
+          ],
+          "to": "certified",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Certify value",
+          "slaNote": "Before the agreed delivery date each period [confirm]",
+          "confirm": true,
+          "slaRef": "DP-05 17"
+        },
+        {
+          "id": "share",
+          "from": [
+            "certified"
+          ],
+          "to": "shared",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Share with DS&A and record channels"
+        }
+      ],
+      "rule": "An operational statistic without a certification is flagged before publication or release (BR-101)."
+    },
+    {
+      "id": "statistical_publication",
+      "name": "Statistical publication (annual census report)",
+      "module": "M7",
+      "entity": "Publication",
+      "policyBasis": [
+        "DP-05 13, 17",
+        "Charter 6 (Engagement Department row)",
+        "Charter Appendix B"
+      ],
+      "pocAddition": true,
+      "clock": {
+        "starts": "Census snapshot date",
+        "pauses": [],
+        "stops": [
+          "published"
+        ],
+        "note": "The census stages total 47 working days from the snapshot (DP-05 13.5)."
+      },
+      "states": [
+        {
+          "id": "snapshot",
+          "label": "Snapshot taken"
+        },
+        {
+          "id": "certify_statistics",
+          "label": "Certify census operational statistics"
+        },
+        {
+          "id": "analysis_narrative",
+          "label": "Analysis, narrative and design brief"
+        },
+        {
+          "id": "first_design",
+          "label": "First design"
+        },
+        {
+          "id": "engagement_review",
+          "label": "Engagement Department wording and style review"
+        },
+        {
+          "id": "revise_design",
+          "label": "Revise design"
+        },
+        {
+          "id": "approval",
+          "label": "Approval"
+        },
+        {
+          "id": "publish",
+          "label": "Publish"
+        },
+        {
+          "id": "published",
+          "label": "Published",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "take_snapshot",
+          "from": [
+            "start"
+          ],
+          "to": "snapshot",
+          "actor": [
+            "dsa_analyst",
+            "data_owner"
+          ],
+          "label": "Take the census snapshot",
+          "slaNote": "Date fixed in the publication calendar",
+          "decide": "DS&A or the Data Owner takes it"
+        },
+        {
+          "id": "start_certification",
+          "from": [
+            "snapshot"
+          ],
+          "to": "certify_statistics",
+          "actor": [
+            "system"
+          ],
+          "label": "Open certification",
+          "auto": true
+        },
+        {
+          "id": "certify",
+          "from": [
+            "certify_statistics"
+          ],
+          "to": "analysis_narrative",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Certify census operational statistics (GHD)",
+          "slaWorkingDays": 5,
+          "slaRef": "DP-05 17"
+        },
+        {
+          "id": "submit_narrative",
+          "from": [
+            "analysis_narrative"
+          ],
+          "to": "first_design",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Analyze, write narrative and design brief",
+          "slaWorkingDays": 15,
+          "slaRef": "DP-05 17"
+        },
+        {
+          "id": "deliver_first_design",
+          "from": [
+            "first_design"
+          ],
+          "to": "engagement_review",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Record first design from the design vendor",
+          "slaWorkingDays": 10,
+          "slaRef": "DP-05 17"
+        },
+        {
+          "id": "engagement_review",
+          "from": [
+            "engagement_review"
+          ],
+          "to": "revise_design",
+          "actor": [
+            "engagement_department"
+          ],
+          "label": "Review wording and style (no response is no comment)",
+          "slaWorkingDays": 7,
+          "slaRef": "DP-05 17",
+          "note": "Any change that affects a figure, a finding or its meaning needs DS&A sign-off."
+        },
+        {
+          "id": "revise",
+          "from": [
+            "revise_design"
+          ],
+          "to": "approval",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Revise design",
+          "slaWorkingDays": 3,
+          "slaRef": "DP-05 17"
+        },
+        {
+          "id": "approve",
+          "from": [
+            "approval"
+          ],
+          "to": "publish",
+          "actor": [
+            "cdo",
+            "dg_office"
+          ],
+          "label": "Approve (CDO, then Director General where required)",
+          "slaWorkingDays": 5,
+          "slaRef": "DP-05 17",
+          "decide": "Director General approves the census narrative"
+        },
+        {
+          "id": "publish",
+          "from": [
+            "publish"
+          ],
+          "to": "published",
+          "actor": [
+            "engagement_department"
+          ],
+          "label": "Publish",
+          "slaWorkingDays": 2,
+          "slaRef": "DP-05 17"
+        }
+      ],
+      "otherPublicationServiceLevels": [
+        {
+          "activity": "Return the first design draft",
+          "responsible": "engagement_department",
+          "workingDays": 5,
+          "from": "receipt of final content",
+          "confirm": true
+        },
+        {
+          "activity": "Review a design draft",
+          "responsible": "dsa_analyst",
+          "workingDays": 3,
+          "confirm": true
+        },
+        {
+          "activity": "Return revisions",
+          "responsible": "engagement_department",
+          "workingDays": 2,
+          "confirm": true
+        },
+        {
+          "activity": "Deliver final files",
+          "responsible": "engagement_department",
+          "workingDays": 5,
+          "from": "before the release date",
+          "confirm": true
+        }
+      ]
+    },
+    {
+      "id": "kpi_adoption",
+      "name": "KPI or official statistic adoption",
+      "module": "M7",
+      "entity": "KpiCatalogEntry",
+      "policyBasis": [
+        "DP-05 5, 17"
+      ],
+      "clock": {
+        "starts": "Proposal by the performance owner",
+        "pauses": [],
+        "stops": [
+          "adopted",
+          "parked"
+        ]
+      },
+      "states": [
+        {
+          "id": "proposed",
+          "label": "Proposed"
+        },
+        {
+          "id": "rule_tested",
+          "label": "Counting rule written and source tested"
+        },
+        {
+          "id": "adopted",
+          "label": "Adopted",
+          "terminal": true
+        },
+        {
+          "id": "parked",
+          "label": "Parked",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "propose",
+          "from": [
+            "start"
+          ],
+          "to": "proposed",
+          "actor": [
+            "sector_ceo",
+            "director_strategy_excellence",
+            "data_owner"
+          ],
+          "label": "Propose definition and target",
+          "slaNote": "Annual cycle [confirm timing]",
+          "confirm": true
+        },
+        {
+          "id": "test",
+          "from": [
+            "proposed"
+          ],
+          "to": "rule_tested",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Write the counting rule and test the source (principal data users consulted, 5 working days within)",
+          "slaWorkingDays": 10,
+          "slaRef": "DP-05 5.3, 5.6, 17",
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "adopt",
+          "from": [
+            "rule_tested"
+          ],
+          "to": "adopted",
+          "actor": [
+            "director_strategy_excellence",
+            "cdo"
+          ],
+          "label": "Adopt",
+          "slaWorkingDays": 10,
+          "slaRef": "DP-05 5.4, 17",
+          "guard": "Formula, data source, Data Owner and delivery date recorded (DP-05 5.2)"
+        },
+        {
+          "id": "park",
+          "from": [
+            "rule_tested"
+          ],
+          "to": "parked",
+          "actor": [
+            "director_strategy_excellence",
+            "cdo"
+          ],
+          "label": "Park (not measurable)",
+          "slaWorkingDays": 10
+        }
+      ]
+    },
+    {
+      "id": "classification",
+      "name": "Dataset classification",
+      "module": "M7",
+      "entity": "Dataset",
+      "policyBasis": [
+        "DP-01 8, 10",
+        "Charter 6.2",
+        "BR-027, BR-072, BR-073",
+        "DDM-006.3, DDM-006.4; DDM-007.7 (Data Steward, Data Administrator, then CDO)"
+      ],
+      "clock": {
+        "starts": "Receipt of definitions and business rules",
+        "pauses": [],
+        "stops": [
+          "approved"
+        ]
+      },
+      "states": [
+        {
+          "id": "awaiting_definitions",
+          "label": "Awaiting definitions"
+        },
+        {
+          "id": "drafting",
+          "label": "DS&A drafting"
+        },
+        {
+          "id": "administrator_review",
+          "label": "Data Administrator review"
+        },
+        {
+          "id": "owner_review",
+          "label": "Owner review"
+        },
+        {
+          "id": "cdo_decision",
+          "label": "CDO decision"
+        },
+        {
+          "id": "approved",
+          "label": "Approved"
+        },
+        {
+          "id": "submitted_ddse",
+          "label": "Submitted to the DDSE",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "receive_definitions",
+          "from": [
+            "awaiting_definitions"
+          ],
+          "to": "drafting",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Supply definitions and business rules"
+        },
+        {
+          "id": "steward_draft",
+          "from": [
+            "drafting"
+          ],
+          "to": "administrator_review",
+          "actor": [
+            "data_steward"
+          ],
+          "label": "Make the initial classification and record the rationale (Data Steward)",
+          "policyRef": "DDM-006.3; BR-072"
+        },
+        {
+          "id": "admin_review",
+          "from": [
+            "administrator_review"
+          ],
+          "to": "owner_review",
+          "actor": [
+            "data_administrator"
+          ],
+          "label": "Review and consolidate the classification in the Data Inventory",
+          "policyRef": "DDM-006.4; BR-072"
+        },
+        {
+          "id": "draft",
+          "from": [
+            "drafting"
+          ],
+          "to": "owner_review",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Classify each field and record reasons",
+          "slaWorkingDays": 10,
+          "slaRef": "DP-01 10",
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "owner_confirm",
+          "from": [
+            "owner_review"
+          ],
+          "to": "cdo_decision",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Confirm facts or justify a different level (no response is agreement)",
+          "slaWorkingDays": 5,
+          "slaNote": "5 working days; 3 for a live sharing request",
+          "slaRef": "DP-01 10"
+        },
+        {
+          "id": "approve",
+          "from": [
+            "cdo_decision"
+          ],
+          "to": "approved",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Decide differences and approve levels; the CDO gives final approval and signs the Dubai Data Compliance Statement (DDM-007.7)",
+          "slaWorkingDays": 5,
+          "slaRef": "DP-01 10",
+          "decide": "CDO approves the inventory and classification (Charter 6.2)"
+        },
+        {
+          "id": "submit_ddse",
+          "from": [
+            "approved"
+          ],
+          "to": "submitted_ddse",
+          "actor": [
+            "data_administrator"
+          ],
+          "label": "Record in the Data Dictionary and submit to the DDSE (DX Hub datasets only)",
+          "guard": "Dataset is published on or exchanged through the DX Hub (externalExchanges includes 'DX Hub'); other datasets stay at approved, since DDSE approval applies only to DX Hub data",
+          "slaNote": "Next inventory upload",
+          "slaRef": "DP-01 10"
+        }
+      ],
+      "note": "Shared requires a recorded justification; datasets are Open by default (DDM-006.2, BR-124). Confidential and Sensitive datasets are flagged for the public Data Inventory listing unless the Competent Entity approves an exception (DDM-006.11)."
+    },
+    {
+      "id": "dashboard_certification",
+      "name": "Dashboard certification and lifecycle",
+      "module": "M7",
+      "entity": "Dashboard",
+      "policyBasis": [
+        "ST-02 4, 5, 11",
+        "DP-03 5.3, 9"
+      ],
+      "clock": {
+        "starts": "Request accepted",
+        "pauses": [],
+        "stops": [
+          "certified"
+        ]
+      },
+      "states": [
+        {
+          "id": "legacy",
+          "label": "Legacy, not certified"
+        },
+        {
+          "id": "requirements",
+          "label": "Requirements"
+        },
+        {
+          "id": "owner_signoff",
+          "label": "Owner sign-off"
+        },
+        {
+          "id": "build",
+          "label": "Build and test"
+        },
+        {
+          "id": "peer_review",
+          "label": "Peer review and data quality check"
+        },
+        {
+          "id": "certified",
+          "label": "Certified"
+        },
+        {
+          "id": "badge_lost",
+          "label": "Badge lost"
+        },
+        {
+          "id": "retired",
+          "label": "Retired",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "write_requirements",
+          "from": [
+            "requirements"
+          ],
+          "to": "owner_signoff",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Write requirements and plan",
+          "slaWorkingDays": 10,
+          "slaRef": "ST-02 11"
+        },
+        {
+          "id": "owner_signoff",
+          "from": [
+            "owner_signoff"
+          ],
+          "to": "build",
+          "actor": [
+            "data_owner"
+          ],
+          "label": "Sign off measures and definitions",
+          "slaWorkingDays": 5,
+          "slaRef": "ST-02 11"
+        },
+        {
+          "id": "submit_review",
+          "from": [
+            "build"
+          ],
+          "to": "peer_review",
+          "actor": [
+            "dsa_analyst"
+          ],
+          "label": "Submit for peer review",
+          "slaNote": "Date agreed in the plan"
+        },
+        {
+          "id": "certify",
+          "from": [
+            "peer_review"
+          ],
+          "to": "certified",
+          "actor": [
+            "data_administrator"
+          ],
+          "label": "Certify and publish",
+          "slaWorkingDays": 2,
+          "slaRef": "ST-02 11",
+          "confirm": true
+        },
+        {
+          "id": "lose_badge",
+          "from": [
+            "certified"
+          ],
+          "to": "badge_lost",
+          "actor": [
+            "system"
+          ],
+          "label": "Lose badge (uncertified source, failed DQ check or missed annual review)",
+          "auto": true
+        },
+        {
+          "id": "recertify",
+          "from": [
+            "badge_lost"
+          ],
+          "to": "peer_review",
+          "actor": [
+            "dsa_analyst"
+          ],
+          "label": "Resubmit for review"
+        },
+        {
+          "id": "rebuild_legacy",
+          "from": [
+            "legacy"
+          ],
+          "to": "requirements",
+          "actor": [
+            "data_administrator"
+          ],
+          "label": "Plan rebuild of a legacy dashboard",
+          "decide": "CDO approves the legacy plan [confirm]"
+        },
+        {
+          "id": "retire",
+          "from": [
+            "legacy",
+            "certified",
+            "badge_lost"
+          ],
+          "to": "retired",
+          "actor": [
+            "data_administrator"
+          ],
+          "label": "Retire after notice",
+          "slaWorkingDays": 10,
+          "slaRef": "ST-02 5.7, 11",
+          "confirm": true
+        }
+      ]
+    },
+    {
+      "id": "data_requirement",
+      "name": "Data requirement from a principal data user",
+      "module": "M7",
+      "entity": "DataRequirement",
+      "policyBasis": [
+        "DP-03 5.9, 9",
+        "DP-07 5.9",
+        "BR-098"
+      ],
+      "phase": 2,
+      "clock": {
+        "starts": "Submission",
+        "pauses": [],
+        "stops": [
+          "routed"
+        ]
+      },
+      "states": [
+        {
+          "id": "submitted",
+          "label": "Submitted"
+        },
+        {
+          "id": "routed",
+          "label": "Recorded and routed"
+        },
+        {
+          "id": "met",
+          "label": "Met",
+          "terminal": true
+        },
+        {
+          "id": "declined",
+          "label": "Declined",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "submit",
+          "from": [
+            "start"
+          ],
+          "to": "submitted",
+          "actor": [
+            "principal_data_user"
+          ],
+          "label": "Submit a data requirement (new data, field, integration or survey)"
+        },
+        {
+          "id": "route",
+          "from": [
+            "submitted"
+          ],
+          "to": "routed",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Record and state how it will be met (link field change, digitization request, survey or dashboard)",
+          "slaWorkingDays": 5,
+          "slaRef": "DP-03 9",
+          "confirm": true,
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "mark_met",
+          "from": [
+            "routed"
+          ],
+          "to": "met",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Mark met"
+        },
+        {
+          "id": "decline",
+          "from": [
+            "submitted",
+            "routed"
+          ],
+          "to": "declined",
+          "actor": [
+            "data_administrator"
+          ],
+          "label": "Decline with reason",
+          "requiresReason": true
+        }
+      ]
+    },
+    {
+      "id": "exception",
+      "name": "Policy exception",
+      "module": "M7",
+      "entity": "PolicyException",
+      "policyBasis": [
+        "Charter 12.4",
+        "BR-071"
+      ],
+      "phase": 2,
+      "clock": {
+        "starts": "Request",
+        "pauses": [],
+        "stops": [
+          "approved",
+          "refused"
+        ],
+        "note": "The sources set no decision time for exceptions."
+      },
+      "states": [
+        {
+          "id": "requested",
+          "label": "Requested"
+        },
+        {
+          "id": "referred_to_council",
+          "label": "Referred to the Leadership Council"
+        },
+        {
+          "id": "approved",
+          "label": "Approved (active)"
+        },
+        {
+          "id": "refused",
+          "label": "Refused",
+          "terminal": true
+        },
+        {
+          "id": "expired",
+          "label": "Expired",
+          "terminal": true
+        },
+        {
+          "id": "closed",
+          "label": "Closed",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "request",
+          "from": [
+            "start"
+          ],
+          "to": "requested",
+          "actor": [
+            "data_owner",
+            "digital_excellence",
+            "data_administrator"
+          ],
+          "label": "Request exception (clause, scope, justification, end date, remediation plan)"
+        },
+        {
+          "id": "approve",
+          "from": [
+            "requested"
+          ],
+          "to": "approved",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Approve (up to 6 months)"
+        },
+        {
+          "id": "refuse",
+          "from": [
+            "requested"
+          ],
+          "to": "refused",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Refuse",
+          "requiresReason": true
+        },
+        {
+          "id": "refer_council",
+          "from": [
+            "requested"
+          ],
+          "to": "referred_to_council",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Refer (over 6 months or repeated)",
+          "decide": "confirm the CDO refers the exception"
+        },
+        {
+          "id": "council_approve",
+          "from": [
+            "referred_to_council"
+          ],
+          "to": "approved",
+          "actor": [
+            "leadership_council"
+          ],
+          "label": "Approve"
+        },
+        {
+          "id": "council_refuse",
+          "from": [
+            "referred_to_council"
+          ],
+          "to": "refused",
+          "actor": [
+            "leadership_council"
+          ],
+          "label": "Refuse",
+          "requiresReason": true
+        },
+        {
+          "id": "expire",
+          "from": [
+            "approved"
+          ],
+          "to": "expired",
+          "actor": [
+            "system"
+          ],
+          "label": "End date passed",
+          "auto": true
+        },
+        {
+          "id": "close",
+          "from": [
+            "approved"
+          ],
+          "to": "closed",
+          "actor": [
+            "data_administrator"
+          ],
+          "label": "Close (remediated)"
+        }
+      ]
+    },
+    {
+      "id": "escalation",
+      "name": "Escalation (Charter Section 11)",
+      "module": "M9",
+      "entity": "Escalation",
+      "policyBasis": [
+        "Charter 5.2, 11.1 to 11.4",
+        "BR-080 to BR-084"
+      ],
+      "clock": {
+        "starts": "Escalation raised",
+        "pauses": [],
+        "stops": [
+          "resolved"
+        ]
+      },
+      "states": [
+        {
+          "id": "level1_raised",
+          "label": "Raised with the responsible director (11.1) or CDO (11.2)"
+        },
+        {
+          "id": "cdo",
+          "label": "CDO (11.3)"
+        },
+        {
+          "id": "group",
+          "label": "Data and Digital Governance Group"
+        },
+        {
+          "id": "director_general",
+          "label": "Director General (5.2)"
+        },
+        {
+          "id": "resolved",
+          "label": "Resolved",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "raise",
+          "from": [
+            "start"
+          ],
+          "to": "level1_raised",
+          "actor": [
+            "system",
+            "data_administrator",
+            "requester",
+            "governance_section"
+          ],
+          "label": "Raise missed service level",
+          "slaWorkingDays": 2,
+          "slaRef": "Charter 11.1, 11.2",
+          "auto": true,
+          "note": "11.1: raised by DS&A with the responsible director. 11.2: DS&A misses go to the CDO and the requester is told. Governance section flags (BR-084) start here too."
+        },
+        {
+          "id": "respond",
+          "from": [
+            "level1_raised",
+            "cdo",
+            "group",
+            "director_general"
+          ],
+          "to": "resolved",
+          "actor": [
+            "cdo",
+            "governance_group",
+            "dg_office",
+            "digital_excellence",
+            "data_owner",
+            "sector_ceo"
+          ],
+          "label": "Record response and outcome"
+        },
+        {
+          "id": "refer_cdo",
+          "from": [
+            "level1_raised"
+          ],
+          "to": "cdo",
+          "actor": [
+            "system"
+          ],
+          "label": "No response in 2 working days: refer to the CDO",
+          "auto": true,
+          "slaWorkingDays": 2
+        },
+        {
+          "id": "refer_group",
+          "from": [
+            "cdo"
+          ],
+          "to": "group",
+          "actor": [
+            "system"
+          ],
+          "label": "Not resolved by the CDO: refer to the Group",
+          "auto": true,
+          "slaWorkingDays": 2,
+          "confirm": true,
+          "note": "The sources set no response time at the CDO level under 11.3 [confirm]; the POC uses 2 working days as a configurable default."
+        },
+        {
+          "id": "refer_dg",
+          "from": [
+            "group"
+          ],
+          "to": "director_general",
+          "actor": [
+            "system"
+          ],
+          "label": "Not resolved by the Group in 15 working days: refer to the Director General automatically",
+          "auto": true,
+          "slaWorkingDays": 15,
+          "slaRef": "Charter 5.2, 11.3",
+          "decide": "unresolved items go to the Director General under 5.2"
+        }
+      ]
+    },
+    {
+      "id": "survey_approval",
+      "name": "Survey approval check (Res. 96/2016)",
+      "module": "M1",
+      "entity": "SurveyApproval",
+      "policyBasis": [
+        "DP-07 6",
+        "Res. 96/2016 Art. 4, 5, 8",
+        "BR-020",
+        "BR-125"
+      ],
+      "phase": 1,
+      "confirm": "with KHDA Legal: Res. 96/2016 still in force after Law 24/2023 and how it applies to KHDA's own surveys",
+      "questions": [
+        {
+          "id": "runBy",
+          "label": "Run by",
+          "options": [
+            "KHDA own resources, own premises (Art. 5(a))",
+            "DDSE Dubai Polls (DDSE.S04)",
+            "DDSE Statistical Field Survey (DDSE.S03)",
+            "Licensed firm"
+          ],
+          "needs": {
+            "Licensed firm": "firmPermitNumber"
+          }
+        },
+        {
+          "id": "under18",
+          "label": "Respondents under 18",
+          "needs": {
+            "yes": "guardianApprovalMethod"
+          },
+          "basis": "Art. 4(6)"
+        },
+        {
+          "id": "studentsAtInstitution",
+          "label": "Students polled at an educational institution",
+          "needs": {
+            "yes": "ddseStudentApprovalRef"
+          },
+          "basis": "Art. 4(9)"
+        },
+        {
+          "id": "sensitiveTopics",
+          "label": "Questions on politics, religion or ethnicity",
+          "needs": {
+            "yes": "ddseTopicApprovalRef"
+          },
+          "basis": "Art. 4(3)"
+        },
+        {
+          "id": "outsideHours",
+          "label": "Contact outside 9 a.m. to 9 p.m.",
+          "needs": {
+            "yes": "ddseHoursApprovalRef"
+          },
+          "basis": "Art. 4(8)"
+        },
+        {
+          "id": "mentalDisability",
+          "label": "Respondents with mental disabilities",
+          "stopsIf": "yes",
+          "basis": "Art. 4(7)"
+        },
+        {
+          "id": "excludedPlace",
+          "label": "Field polling at residences, labor compounds or places of worship",
+          "stopsIf": "yes",
+          "basis": "Art. 8"
+        },
+        {
+          "id": "consentWording",
+          "label": "Consent and recording notice wording",
+          "required": true,
+          "basis": "Art. 4(4)"
+        }
+      ],
+      "clock": {
+        "starts": "Screening",
+        "pauses": [
+          "awaiting_references"
+        ],
+        "stops": [
+          "cleared",
+          "stopped"
+        ]
+      },
+      "states": [
+        {
+          "id": "screening",
+          "label": "Screening questions answered"
+        },
+        {
+          "id": "awaiting_references",
+          "label": "Awaiting approval references"
+        },
+        {
+          "id": "cleared",
+          "label": "Cleared to go live",
+          "terminal": true
+        },
+        {
+          "id": "stopped",
+          "label": "Stopped (not allowed)",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "screen",
+          "from": [
+            "start"
+          ],
+          "to": "screening",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Record the Res. 96/2016 answers for the survey",
+          "slaWorkingDays": 3,
+          "slaRef": "DP-07 6.5 (log and review)",
+          "escalation": {
+            "rule": "Charter 11.2",
+            "firstLevel": "cdo",
+            "note": "A service level missed by DS&A is raised with the CDO, who must respond within 2 working days; the requester is told."
+          }
+        },
+        {
+          "id": "record_reference",
+          "from": [
+            "screening",
+            "awaiting_references"
+          ],
+          "to": "awaiting_references",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Record an approval reference (guardian method, DDSE approval or firm permit)"
+        },
+        {
+          "id": "clear",
+          "from": [
+            "screening",
+            "awaiting_references"
+          ],
+          "to": "cleared",
+          "actor": [
+            "data_administrator"
+          ],
+          "label": "Clear the survey to go live",
+          "guard": "Every approval reference its answers require is recorded and the consent wording is set (BR-125)"
+        },
+        {
+          "id": "stop",
+          "from": [
+            "screening",
+            "awaiting_references"
+          ],
+          "to": "stopped",
+          "actor": [
+            "data_administrator"
+          ],
+          "label": "Stop the survey",
+          "requiresReason": true,
+          "guard": "Respondents with mental disabilities, or field polling at an excluded place"
+        }
+      ]
+    },
+    {
+      "id": "dpia",
+      "name": "Data protection impact assessment (DPIA)",
+      "module": "M2",
+      "entity": "Dpia",
+      "policyBasis": [
+        "DP-02",
+        "DP-04",
+        "DDM-003.9",
+        "DDM-010.12",
+        "BR-122"
+      ],
+      "phase": 1,
+      "template": "DPIA template in the DDM-010 annex [confirm KHDA adopted template]",
+      "clock": {
+        "starts": "Submission",
+        "pauses": [
+          "returned"
+        ],
+        "stops": [
+          "approved",
+          "refused"
+        ],
+        "note": "The sources set no decision time for a DPIA [decide: proposed 5 working days]"
+      },
+      "states": [
+        {
+          "id": "draft",
+          "label": "Draft"
+        },
+        {
+          "id": "submitted",
+          "label": "With the Data Privacy Officer"
+        },
+        {
+          "id": "returned",
+          "label": "Returned for changes"
+        },
+        {
+          "id": "approved",
+          "label": "Approved"
+        },
+        {
+          "id": "refused",
+          "label": "Refused",
+          "terminal": true
+        },
+        {
+          "id": "under_review",
+          "label": "Annual review due"
+        }
+      ],
+      "transitions": [
+        {
+          "id": "start",
+          "from": [
+            "start"
+          ],
+          "to": "draft",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Start a DPIA for a sharing request or publication with personal data"
+        },
+        {
+          "id": "submit",
+          "from": [
+            "draft",
+            "returned"
+          ],
+          "to": "submitted",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Submit to the Data Privacy Officer"
+        },
+        {
+          "id": "approve",
+          "from": [
+            "submitted",
+            "under_review"
+          ],
+          "to": "approved",
+          "actor": [
+            "data_privacy_officer"
+          ],
+          "label": "Approve (risks, mitigations and privacy-protective transformation recorded)"
+        },
+        {
+          "id": "return",
+          "from": [
+            "submitted",
+            "under_review"
+          ],
+          "to": "returned",
+          "actor": [
+            "data_privacy_officer"
+          ],
+          "label": "Return for changes",
+          "requiresReason": true
+        },
+        {
+          "id": "refuse",
+          "from": [
+            "submitted"
+          ],
+          "to": "refused",
+          "actor": [
+            "data_privacy_officer"
+          ],
+          "label": "Refuse",
+          "requiresReason": true
+        },
+        {
+          "id": "start_review",
+          "from": [
+            "approved"
+          ],
+          "to": "under_review",
+          "actor": [
+            "system",
+            "data_privacy_officer"
+          ],
+          "label": "Annual review due",
+          "auto": true
+        }
+      ]
+    },
+    {
+      "id": "ddse_service",
+      "name": "DDSE service request",
+      "module": "M1",
+      "entity": "DdseServiceRequest",
+      "policyBasis": [
+        "DP-03 (DDSE services)",
+        "DDSE Services Catalog v3.1",
+        "BR-121"
+      ],
+      "phase": 2,
+      "clock": {
+        "starts": "Submission to the DDSE",
+        "pauses": [],
+        "stops": [
+          "delivered",
+          "declined"
+        ],
+        "note": "DDSE responds within 3 working days for S02 to S08 and within 3 to 20 working days for S01 (catalog, pp. 3 to 10)"
+      },
+      "states": [
+        {
+          "id": "draft",
+          "label": "Draft (need recorded by DS&A)"
+        },
+        {
+          "id": "submitted",
+          "label": "Submitted to the DDSE"
+        },
+        {
+          "id": "in_progress",
+          "label": "In progress with the DDSE"
+        },
+        {
+          "id": "delivered",
+          "label": "Delivered",
+          "terminal": true
+        },
+        {
+          "id": "declined",
+          "label": "Declined or withdrawn",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "submit",
+          "from": [
+            "start",
+            "draft"
+          ],
+          "to": "submitted",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Submit on DATA.DUBAI (official letter for S03 and S05; terms endorsed for S04)"
+        },
+        {
+          "id": "record_reference",
+          "from": [
+            "submitted"
+          ],
+          "to": "in_progress",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Record the DDSE reference and agreed plan"
+        },
+        {
+          "id": "deliver",
+          "from": [
+            "in_progress"
+          ],
+          "to": "delivered",
+          "actor": [
+            "dsa_analyst",
+            "data_administrator"
+          ],
+          "label": "Record the deliverable link"
+        },
+        {
+          "id": "decline",
+          "from": [
+            "submitted",
+            "in_progress"
+          ],
+          "to": "declined",
+          "actor": [
+            "data_administrator"
+          ],
+          "label": "Record decline or withdrawal",
+          "requiresReason": true
+        }
+      ]
+    },
+    {
+      "id": "culture_review",
+      "name": "Data culture review and maturity assessment",
+      "module": "M7",
+      "entity": "CultureReview",
+      "policyBasis": [
+        "Charter 12",
+        "DDM-004.1",
+        "DDM-004.6",
+        "DDM-004.7",
+        "BR-126"
+      ],
+      "phase": 2,
+      "clock": {
+        "starts": "Scheduled date",
+        "pauses": [],
+        "stops": [
+          "acknowledged"
+        ],
+        "note": "Culture review at least quarterly; maturity assessment at least yearly"
+      },
+      "states": [
+        {
+          "id": "scheduled",
+          "label": "Scheduled"
+        },
+        {
+          "id": "recorded",
+          "label": "Results recorded"
+        },
+        {
+          "id": "reported",
+          "label": "Reported to the CDO"
+        },
+        {
+          "id": "acknowledged",
+          "label": "Acknowledged",
+          "terminal": true
+        }
+      ],
+      "transitions": [
+        {
+          "id": "schedule",
+          "from": [
+            "start"
+          ],
+          "to": "scheduled",
+          "actor": [
+            "system"
+          ],
+          "label": "Schedule the quarterly review or the yearly maturity assessment",
+          "auto": true
+        },
+        {
+          "id": "record",
+          "from": [
+            "scheduled"
+          ],
+          "to": "recorded",
+          "actor": [
+            "data_champion",
+            "data_administrator"
+          ],
+          "label": "Record results against each objective or maturity sub-dimension"
+        },
+        {
+          "id": "report",
+          "from": [
+            "recorded"
+          ],
+          "to": "reported",
+          "actor": [
+            "data_champion",
+            "data_administrator"
+          ],
+          "label": "Report findings to the CDO"
+        },
+        {
+          "id": "acknowledge",
+          "from": [
+            "reported"
+          ],
+          "to": "acknowledged",
+          "actor": [
+            "cdo"
+          ],
+          "label": "Acknowledge and agree actions"
+        }
+      ]
+    }
+  ]
+}

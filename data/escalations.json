@@ -1,0 +1,209 @@
+{
+  "note": "Charter Section 11 escalations (synthetic). The Group-to-Director General referral after 15 working days is automatic.",
+  "escalations": [
+    {
+      "id": "ESC-2026-001",
+      "itemId": "DQI-2026-0015",
+      "itemEntity": "DataQualityIssue",
+      "rule": "11.3",
+      "reason": "Standard correction declined by Digital Excellence and referred to the Group (Charter 9.2); not resolved in 15 working days",
+      "raisedAt": "2026-07-30",
+      "steps": [
+        {
+          "level": "governance_group",
+          "raisedAt": "2026-07-30",
+          "responseDueAt": "2026-08-20"
+        },
+        {
+          "level": "dg_office",
+          "raisedAt": "2026-08-20",
+          "responseDueAt": "2026-08-24"
+        }
+      ],
+      "currentLevel": "dg_office",
+      "state": "director_general",
+      "workflowId": "escalation",
+      "resolvedAt": null,
+      "outcome": null,
+      "referredToDgAt": "2026-08-20",
+      "dueAt": "2026-08-24",
+      "flaggedByGovernanceSection": false
+    },
+    {
+      "id": "ESC-2026-002",
+      "itemId": "DQI-2026-0005",
+      "itemEntity": "DataQualityIssue",
+      "rule": "11.3",
+      "reason": "Owner objection to a standard correction referred to the Group (Charter 9.3)",
+      "raisedAt": "2026-10-02",
+      "steps": [
+        {
+          "level": "governance_group",
+          "raisedAt": "2026-10-02",
+          "responseDueAt": "2026-10-23"
+        }
+      ],
+      "currentLevel": "governance_group",
+      "state": "group",
+      "workflowId": "escalation",
+      "resolvedAt": null,
+      "outcome": null,
+      "referredToDgAt": null,
+      "dueAt": "2026-10-23",
+      "flaggedByGovernanceSection": false
+    },
+    {
+      "id": "ESC-2026-003",
+      "itemId": "SHR-2026-0014",
+      "itemEntity": "SharingRequest",
+      "rule": "11.3",
+      "reason": "CDO decision past working day 10",
+      "raisedAt": "2026-10-06",
+      "steps": [
+        {
+          "level": "cdo",
+          "raisedAt": "2026-10-06",
+          "responseDueAt": "2026-10-08"
+        }
+      ],
+      "currentLevel": "cdo",
+      "state": "cdo",
+      "workflowId": "escalation",
+      "resolvedAt": null,
+      "outcome": null,
+      "referredToDgAt": null,
+      "dueAt": "2026-10-08",
+      "flaggedByGovernanceSection": false
+    },
+    {
+      "id": "ESC-2026-004",
+      "itemId": "DQI-2026-0014",
+      "itemEntity": "DataQualityIssue",
+      "rule": "11.1",
+      "reason": "Fix at source past the agreed date (owner with Digital Excellence)",
+      "raisedAt": "2026-09-29",
+      "steps": [
+        {
+          "level": "responsible_director",
+          "raisedAt": "2026-09-29",
+          "responseDueAt": "2026-10-01"
+        },
+        {
+          "level": "cdo",
+          "raisedAt": "2026-10-01",
+          "responseDueAt": "2026-10-05"
+        }
+      ],
+      "currentLevel": "cdo",
+      "state": "cdo",
+      "workflowId": "escalation",
+      "resolvedAt": null,
+      "outcome": null,
+      "referredToDgAt": null,
+      "dueAt": "2026-10-05",
+      "flaggedByGovernanceSection": false
+    },
+    {
+      "id": "ESC-2026-005",
+      "itemId": "ACC-2026-0006",
+      "itemEntity": "AccessRequest",
+      "rule": "11.3",
+      "reason": "Owner did not respond in 3 working days",
+      "raisedAt": "2026-10-09",
+      "steps": [
+        {
+          "level": "cdo",
+          "raisedAt": "2026-10-09",
+          "responseDueAt": "2026-10-13"
+        }
+      ],
+      "currentLevel": "cdo",
+      "state": "cdo",
+      "workflowId": "escalation",
+      "resolvedAt": null,
+      "outcome": null,
+      "referredToDgAt": null,
+      "dueAt": "2026-10-13",
+      "flaggedByGovernanceSection": false
+    },
+    {
+      "id": "ESC-2026-006",
+      "itemId": "DSA-2026-00104",
+      "itemEntity": "ServiceRequest",
+      "rule": "11.2",
+      "reason": "DS&A completeness check missed",
+      "raisedAt": "2026-09-10",
+      "steps": [
+        {
+          "level": "cdo",
+          "raisedAt": "2026-09-10",
+          "responseDueAt": "2026-09-14"
+        }
+      ],
+      "currentLevel": "cdo",
+      "state": "resolved",
+      "workflowId": "escalation",
+      "resolvedAt": "2026-09-14",
+      "outcome": "Responded; item moved",
+      "referredToDgAt": null,
+      "dueAt": null,
+      "flaggedByGovernanceSection": false
+    },
+    {
+      "id": "ESC-2026-007",
+      "itemId": "TC-001",
+      "itemEntity": "TimelinessCommitment",
+      "rule": "flag",
+      "reason": "Governance section flag: producer commitments overdue (ST-03 18.3)",
+      "raisedAt": "2026-10-12",
+      "steps": [
+        {
+          "level": "responsible_director",
+          "raisedAt": "2026-10-12",
+          "responseDueAt": "2026-10-14"
+        }
+      ],
+      "currentLevel": "responsible_director",
+      "state": "level1_raised",
+      "workflowId": "escalation",
+      "resolvedAt": null,
+      "outcome": null,
+      "referredToDgAt": null,
+      "dueAt": "2026-10-14",
+      "flaggedByGovernanceSection": true
+    },
+    {
+      "id": "ESC-2026-008",
+      "itemId": "DQI-2026-0010",
+      "itemEntity": "DataQualityIssue",
+      "rule": "11.1",
+      "reason": "Owner did not plan the form fix with Service Design",
+      "raisedAt": "2026-09-03",
+      "steps": [
+        {
+          "level": "responsible_director",
+          "raisedAt": "2026-09-03",
+          "responseDueAt": "2026-09-07"
+        },
+        {
+          "level": "cdo",
+          "raisedAt": "2026-09-08",
+          "responseDueAt": "2026-09-10"
+        },
+        {
+          "level": "governance_group",
+          "raisedAt": "2026-09-11",
+          "responseDueAt": "2026-10-02"
+        }
+      ],
+      "currentLevel": "governance_group",
+      "state": "resolved",
+      "workflowId": "escalation",
+      "resolvedAt": "2026-10-01",
+      "outcome": "Responded; item moved",
+      "referredToDgAt": null,
+      "dueAt": null,
+      "flaggedByGovernanceSection": false
+    }
+  ]
+}

@@ -1,0 +1,353 @@
+{
+  "version": "0.1",
+  "modules": [
+    {
+      "id": "HOME",
+      "name": "Home and DS&A command view",
+      "route": "/",
+      "phase": 1,
+      "policyBasis": [
+        "BR-001",
+        "BRD 6.1 (command view is a proposal [decide: scope])"
+      ],
+      "purpose": "One home per role. The Data Administrator's home is the DS&A command view: per policy, open obligations, service levels due and overdue, KPIs; every other role sees only items assigned to it.",
+      "screens": [
+        "Command view",
+        "My items",
+        "Approvals",
+        "Worklist"
+      ],
+      "actions": [
+        "open item",
+        "act on item",
+        "filter by policy, sector, responsible party, status"
+      ]
+    },
+    {
+      "id": "M1",
+      "name": "DS&A service requests",
+      "route": "/requests",
+      "phase": 1,
+      "workflows": [
+        "ds_service_request",
+        "survey_approval",
+        "ddse_service"
+      ],
+      "policyBasis": [
+        "DP-03 5, 9",
+        "SPEC",
+        "BR-015 to BR-022",
+        "BR-099",
+        "BR-121",
+        "BR-125"
+      ],
+      "purpose": "The seven DS&A services (ANL data analysis, NGS NG survey, DDS DDA survey, DBC dashboard creation, DBA dashboard access, DBE dashboard enhancement, and data gap submission) with acknowledgment, approvals and the redirect of extracts and corrections.",
+      "screens": [
+        "Request list",
+        "New request (service picker, redirect message, acknowledgment)",
+        "Request detail (timeline, SLA clock, approvals)"
+      ],
+      "actions": [
+        "submit",
+        "request_information",
+        "accept",
+        "reject",
+        "approve",
+        "start_work",
+        "deliver",
+        "withdraw",
+        "flag_priority"
+      ]
+    },
+    {
+      "id": "M2",
+      "name": "External data sharing",
+      "route": "/sharing",
+      "phase": 1,
+      "workflows": [
+        "external_sharing",
+        "dpia"
+      ],
+      "policyBasis": [
+        "DP-02 5 to 7, 12, 13",
+        "DP-01 8",
+        "BR-023 to BR-035",
+        "BR-122"
+      ],
+      "purpose": "Every external request from receipt to release, on the 15-working-day clock, with the five Director General triggers and the Data Sharing Register.",
+      "screens": [
+        "Sharing list (day counter from receipt)",
+        "Sharing detail (trigger check, owner confirmation, decision, Access Permission terms, release)"
+      ],
+      "actions": [
+        "log",
+        "register",
+        "send_to_owner",
+        "owner_confirm",
+        "cdo_approve",
+        "cdo_refuse",
+        "route_to_dg",
+        "dg_approve",
+        "release",
+        "record_in_register"
+      ]
+    },
+    {
+      "id": "M3",
+      "name": "Data quality issues and corrections",
+      "route": "/issues",
+      "phase": 1,
+      "workflows": [
+        "dq_issue",
+        "data_incident"
+      ],
+      "policyBasis": [
+        "DP-06 7, 8",
+        "Charter 9, 10",
+        "ST-01 13",
+        "BR-036 to BR-048",
+        "BR-100",
+        "BR-127"
+      ],
+      "purpose": "One issue log; routing by root cause; standard-correction instructions DS&A may trigger only under a pre-approved rule; business-judgment changes; fit for use and closure; data incidents.",
+      "screens": [
+        "Issue log (aging, overdue)",
+        "Issue detail (route, instruction, objection, fix due by fix type, fit for use, re-measure)",
+        "Corrections (instructions to Digital Excellence)",
+        "Incidents"
+      ],
+      "actions": [
+        "log_issue",
+        "send_instruction",
+        "acknowledge",
+        "decline",
+        "object",
+        "owner_decide",
+        "record_correction",
+        "confirm_fit_for_use",
+        "verify_and_close"
+      ]
+    },
+    {
+      "id": "M4",
+      "name": "Institution remediation",
+      "route": "/remediation",
+      "phase": 2,
+      "workflows": [
+        "institution_remediation"
+      ],
+      "policyBasis": [
+        "ST-01 14",
+        "DP-06 8.7",
+        "BR-049 to BR-054"
+      ],
+      "purpose": "Issue lists by institution; owner acknowledgment and notification; correction and backfill clocks; fit for use; referral of overdue items. DS&A never chases institutions.",
+      "screens": [
+        "Remediation board by institution",
+        "Producer worklist with bulk status update",
+        "Item detail"
+      ],
+      "actions": [
+        "send_issue_list",
+        "acknowledge_list",
+        "notify_institution",
+        "record_correction",
+        "refer_overdue",
+        "confirm_fit_for_use",
+        "remeasure_close"
+      ]
+    },
+    {
+      "id": "M5",
+      "name": "Access management",
+      "route": "/access",
+      "phase": 2,
+      "workflows": [
+        "access_request",
+        "access_recertification"
+      ],
+      "policyBasis": [
+        "DP-03 4, 5.6, 7",
+        "ST-02 7",
+        "Charter 7",
+        "BR-055 to BR-062"
+      ],
+      "purpose": "Access requests, project access for PRP and QAC, the access register, six-monthly recertification, revocation, service provider access and DS&A standing access.",
+      "screens": [
+        "Access requests",
+        "Access register",
+        "Recertification tasks",
+        "Service providers"
+      ],
+      "actions": [
+        "submit",
+        "owner_approve",
+        "owner_refuse",
+        "provision",
+        "recertify",
+        "revoke",
+        "complete_revocation"
+      ]
+    },
+    {
+      "id": "M6",
+      "name": "Change and field requests",
+      "route": "/changes",
+      "phase": 2,
+      "workflows": [
+        "field_change",
+        "system_change"
+      ],
+      "policyBasis": [
+        "DP-07 5, 10",
+        "Charter 8.5, 9.6",
+        "BR-063 to BR-067",
+        "BR-091 to BR-096"
+      ],
+      "purpose": "The joint field process (Service Design, DS&A, owner, Digital Excellence) and system changes with a data impact assessment and go-live checklist.",
+      "screens": [
+        "Field change board (one column per step)",
+        "Field change detail",
+        "System changes and go-live checklist"
+      ],
+      "actions": [
+        "submit",
+        "service_design_assess",
+        "dsa_assess",
+        "owner_approve",
+        "estimate",
+        "go_live",
+        "complete_updates"
+      ]
+    },
+    {
+      "id": "M7",
+      "name": "Registers",
+      "route": "/registers",
+      "phase": 2,
+      "workflows": [
+        "classification",
+        "digitization",
+        "timeliness_commitment",
+        "operational_statistic",
+        "kpi_adoption",
+        "dashboard_certification",
+        "data_requirement",
+        "exception",
+        "statistical_publication",
+        "culture_review"
+      ],
+      "policyBasis": [
+        "BRD 6.2",
+        "BR-068 to BR-073",
+        "BR-097",
+        "BR-098",
+        "BR-101",
+        "BR-102",
+        "BR-119",
+        "BR-120",
+        "BR-123",
+        "BR-124",
+        "BR-126"
+      ],
+      "purpose": "The twelve BRD registers plus the POC additions (manual collections, timeliness commitments, model register, statistical publications), each with version history and review cycle.",
+      "screens": [
+        "Register index (review due and overdue)",
+        "Register table",
+        "Entry detail with version history"
+      ],
+      "actions": [
+        "add entry",
+        "edit entry (new version)",
+        "confirm entry",
+        "open review task",
+        "export (by classification)"
+      ]
+    },
+    {
+      "id": "M8",
+      "name": "Policy tracker and acknowledgments",
+      "route": "/policies",
+      "phase": 3,
+      "policyBasis": [
+        "Charter 12.1, 12.2, 12.6",
+        "BR-074 to BR-076"
+      ],
+      "purpose": "The 14 governing documents, each with its obligations, service levels, KPIs (and supporting measures for the three merged policies), status and link to the published document; the three documents retired on 15 October 2026 in a short note; acknowledgments of new versions.",
+      "screens": [
+        "Policy tracker grid",
+        "Policy detail (obligations, service levels, KPIs, open items, link)"
+      ],
+      "actions": [
+        "acknowledge",
+        "open review task"
+      ]
+    },
+    {
+      "id": "M9",
+      "name": "Service levels and escalation",
+      "route": "/service-levels",
+      "phase": 1,
+      "workflows": [
+        "escalation"
+      ],
+      "policyBasis": [
+        "Charter 10, 11",
+        "BR-077 to BR-084"
+      ],
+      "purpose": "Working-day clocks, reminders, automatic escalation (CDO, then the Group, then the Director General after 15 working days), Governance section flags.",
+      "screens": [
+        "Service level board (due soon, overdue by responsible party)",
+        "Escalations",
+        "Calendar and service-level configuration"
+      ],
+      "actions": [
+        "raise",
+        "respond",
+        "flag for escalation"
+      ]
+    },
+    {
+      "id": "M10",
+      "name": "Monitoring and KPIs",
+      "route": "/kpis",
+      "phase": 1,
+      "policyBasis": [
+        "Charter 11.4, 12.3",
+        "BR-085 to BR-090",
+        "Director Brief (28 KPIs)"
+      ],
+      "purpose": "The 28 KPIs by lifecycle stage (supporting measures shown on their policy, not here), the Governance section workspace and the draft monthly compliance report.",
+      "screens": [
+        "KPI dashboard",
+        "KPI detail (trend, numerator, denominator, source)",
+        "Governance workspace",
+        "Monthly compliance report (draft)"
+      ],
+      "actions": [
+        "record KPI value (DS&A entry)",
+        "flag item",
+        "issue compliance report"
+      ]
+    },
+    {
+      "id": "AUDIT",
+      "name": "Audit log",
+      "route": "/audit",
+      "phase": 1,
+      "policyBasis": [
+        "BR-004",
+        "BR-005",
+        "Charter 8.1"
+      ],
+      "purpose": "Every create, view, change, approval, export and delete, with user, role, time and before and after values. Read-only.",
+      "screens": [
+        "Audit log with filters"
+      ],
+      "actions": [
+        "filter",
+        "export"
+      ]
+    }
+  ]
+}

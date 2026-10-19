@@ -1,0 +1,153 @@
+{
+  "note": "M6 system change requests with data impact assessments (Phase 3 in the BRD; shown lightly in the POC).",
+  "changeRequests": [
+    {
+      "id": "CHG-2026-001",
+      "workflowId": "system_change",
+      "title": "New ECC permit renewal e-service (demo)",
+      "state": "impact_assessment",
+      "ownerSectorId": "GHD",
+      "material": false,
+      "goLiveChecklist": {
+        "auditLogging": false,
+        "metadataFeed": false,
+        "dataInventoryEntry": false,
+        "fieldDefinitions": true,
+        "proposedClassification": false,
+        "testDataLogsMetadata": false
+      },
+      "pausedWorkingDays": 0,
+      "stateEnteredAt": "2026-10-08",
+      "dueAt": "2026-10-22",
+      "documentIds": [
+        "DP-00",
+        "DP-07"
+      ],
+      "history": [
+        {
+          "at": "2026-10-07T12:52:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-10-08T11:20:00+04:00",
+          "from": "submitted",
+          "to": "impact_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "CHG-2026-002",
+      "workflowId": "system_change",
+      "title": "Inspection Application upgrade (demo)",
+      "state": "awaiting_information",
+      "ownerSectorId": "QAC",
+      "material": true,
+      "goLiveChecklist": {
+        "auditLogging": false,
+        "metadataFeed": false,
+        "dataInventoryEntry": false,
+        "fieldDefinitions": true,
+        "proposedClassification": false,
+        "testDataLogsMetadata": false
+      },
+      "pausedWorkingDays": 0,
+      "stateEnteredAt": "2026-10-08",
+      "dueAt": null,
+      "documentIds": [
+        "DP-00",
+        "DP-07"
+      ],
+      "history": [
+        {
+          "at": "2026-10-02T11:34:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-10-05T08:05:00+04:00",
+          "from": "submitted",
+          "to": "impact_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-08T12:52:00+04:00",
+          "from": "impact_assessment",
+          "to": "awaiting_information",
+          "transition": "request_information",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Field list missing"
+        }
+      ]
+    },
+    {
+      "id": "CHG-2026-003",
+      "workflowId": "system_change",
+      "title": "Parent contract form change (demo)",
+      "state": "golive_check",
+      "ownerSectorId": "GHD",
+      "material": false,
+      "goLiveChecklist": {
+        "auditLogging": true,
+        "metadataFeed": true,
+        "dataInventoryEntry": true,
+        "fieldDefinitions": true,
+        "proposedClassification": true,
+        "testDataLogsMetadata": true
+      },
+      "pausedWorkingDays": 0,
+      "stateEnteredAt": "2026-10-12",
+      "dueAt": "2026-10-15",
+      "documentIds": [
+        "DP-00",
+        "DP-07"
+      ],
+      "history": [
+        {
+          "at": "2026-09-01T09:12:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-02T09:05:00+04:00",
+          "from": "submitted",
+          "to": "impact_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-14T08:41:00+04:00",
+          "from": "impact_assessment",
+          "to": "in_build",
+          "transition": "sign_off_assessment",
+          "actorRole": "data_administrator",
+          "actorUserId": "U-data-administrator"
+        },
+        {
+          "at": "2026-10-12T08:52:00+04:00",
+          "from": "in_build",
+          "to": "golive_check",
+          "transition": "submit_for_golive",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        }
+      ]
+    }
+  ]
+}

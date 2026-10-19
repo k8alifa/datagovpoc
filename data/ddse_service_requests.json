@@ -1,0 +1,48 @@
+{
+  "note": "DDSE services register (synthetic). Service IDs and response times from the DDSE Services Catalog v3.1.",
+  "requests": [
+    {
+      "id": "DDSE-2026-001",
+      "workflowId": "ddse_service",
+      "state": "delivered",
+      "ddseServiceId": "DDSE.S04",
+      "sectorId": "PRP",
+      "coordinatorUserId": "U-dsa-analyst",
+      "submittedAt": "2026-09-01",
+      "ddseReference": "DEMO-DDSE-S04-001",
+      "officialLetterRef": null,
+      "termsEndorsed": true,
+      "operationalCosts": "None (electronic survey)",
+      "deliverableLink": "demo://dubai-polls/results-001",
+      "linkedItemId": "DSA-2026-00109"
+    },
+    {
+      "id": "DDSE-2026-002",
+      "workflowId": "ddse_service",
+      "state": "in_progress",
+      "ddseServiceId": "DDSE.S07",
+      "sectorId": "SD",
+      "coordinatorUserId": "U-data-administrator",
+      "submittedAt": "2026-10-05",
+      "ddseReference": "DEMO-DDSE-S07-002",
+      "officialLetterRef": null,
+      "termsEndorsed": null,
+      "operationalCosts": null,
+      "deliverableLink": null
+    },
+    {
+      "id": "DDSE-2026-003",
+      "workflowId": "ddse_service",
+      "state": "submitted",
+      "ddseServiceId": "DDSE.S08",
+      "sectorId": "SD",
+      "coordinatorUserId": "U-data-champion",
+      "submittedAt": "2026-10-12",
+      "ddseReference": null,
+      "officialLetterRef": null,
+      "termsEndorsed": null,
+      "operationalCosts": null,
+      "deliverableLink": null
+    }
+  ]
+}

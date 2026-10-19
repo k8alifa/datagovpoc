@@ -1,0 +1,1690 @@
+{
+  "source": "KHDA Timeliness and Field Metadata Workbook v0.1 (Timeliness matrix), from Data Dictionary Service Mapping V3. 69 distinct services in 75 service rows across 10 categories. Data types and starting values are a DS&A proposal [confirm].",
+  "dataTypes": [
+    {
+      "code": "T1",
+      "name": "Institution licensing and changes",
+      "covers": "A case that creates or changes an institution record: permits issued, renewed or cancelled; changes of name, premises, owners, manager or principal; grades, programs, courses, fees, age groups.",
+      "trigger": "KHDA approves the case.",
+      "dateField": "Case decision date (WorkflowCase CASELAST_PROCESSDATE) or permit ISSUED_ON",
+      "defaultRule": "The institution record shows the approved change on the day the case is approved.",
+      "howMeasured": "Lag from case approval to record update. Share of active institutions whose permit EXPIRY_ON has passed with no renewal or status change.",
+      "proposedStartingValue": "1 working day",
+      "confirm": true
+    },
+    {
+      "code": "T2",
+      "name": "Person and enrollment records",
+      "covers": "Records of students, staff and parent contracts that institutions report: registrations, amendments, deletions, promotions, staff assignments, contracts.",
+      "trigger": "The real-world event: a student joins, leaves, transfers or is promoted; a staff member joins or leaves; a contract is signed.",
+      "dateField": "Event date in the record (for example EnrollmentCommencedDate, WithdrawalDate, CurrPosition_DOJ, LeavingDate, SignDate)",
+      "defaultRule": "The institution records the event within the committed number of working days after it happens.",
+      "howMeasured": "Lag from event date to record date. Share of events recorded within the commitment. Not measurable where the view has no event date (see Gaps sheet).",
+      "proposedStartingValue": "10 working days",
+      "confirm": true
+    },
+    {
+      "code": "T3",
+      "name": "Periodic institution returns",
+      "covers": "Data every institution submits on a fixed cycle: exam datasets, people of determination returns, school profile returns, annual activity programs.",
+      "trigger": "The cycle deadline (for example the census date or the start of the academic year).",
+      "dateField": "Cycle deadline set in the commitment; record CreatedOn or UpdatedOn",
+      "defaultRule": "Every in-scope institution submits a complete return by the committed date.",
+      "howMeasured": "Share of institutions with a complete return by the committed date. Days late for the rest.",
+      "proposedStartingValue": "Deadline set per cycle",
+      "confirm": true
+    },
+    {
+      "code": "T4",
+      "name": "Field visits",
+      "covers": "Data captured by KHDA staff during inspection and compliance visits.",
+      "trigger": "The visit ends.",
+      "dateField": "Visit date (InspectionOn, InspectionDate, Schedule_InspectionTo) and report date (ReportDate)",
+      "defaultRule": "Visit findings are recorded within the committed days after the visit, and the report within the committed days after that.",
+      "howMeasured": "Lag from visit date to record and to report date.",
+      "proposedStartingValue": "5 working days",
+      "confirm": true
+    },
+    {
+      "code": "T5",
+      "name": "Certificates and approvals on request",
+      "covers": "Cases that issue a document or a one-off approval and change little master data: attestations, certificates, letters, advertising approvals.",
+      "trigger": "KHDA decides the case.",
+      "dateField": "Case decision date (WorkflowCase CASELAST_PROCESSDATE)",
+      "defaultRule": "The decision and its date are recorded on the day the decision is made. Processing time is a service level that Service Design documents and monitors; it is measured separately.",
+      "howMeasured": "Share of closed cases with a decision date and outcome recorded on the decision day.",
+      "proposedStartingValue": "Same day",
+      "confirm": true
+    },
+    {
+      "code": "T6",
+      "name": "Manual collections",
+      "covers": "Data kept outside a KHDA system: spreadsheets, emailed files, paper, survey exports with no system of record.",
+      "trigger": "Not applicable.",
+      "dateField": "None",
+      "defaultRule": "Not measurable. The collection must be registered and moved into a system under the KHDA Data Collection and Source Capture Policy (KHDA-DP-07).",
+      "howMeasured": "Count of registered manual collections, and the share with an approved digitization request.",
+      "proposedStartingValue": "Not applicable",
+      "confirm": true
+    },
+    {
+      "code": "T6",
+      "name": "Manual collections",
+      "covers": "Data kept outside any system of record",
+      "trigger": "Not applicable",
+      "dateField": "None",
+      "defaultRule": "Not measurable. The collection must be digitized under KHDA-DP-07",
+      "howMeasured": "Not measurable",
+      "proposedStartingValue": "Not applicable",
+      "confirm": true
+    }
+  ],
+  "services": [
+    {
+      "id": "SVC-001",
+      "name": "Compliance Visit",
+      "categories": [
+        "Compliance Visit"
+      ],
+      "channels": [
+        "Compliance Application"
+      ],
+      "dataType": "T4",
+      "dataTypeName": "Field visits",
+      "views": [
+        "Compliance_vw_ComplianceVisit"
+      ],
+      "serviceRowIds": [
+        "TC-001"
+      ],
+      "proposedProducer": "QAC",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "5 working days",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-002",
+      "name": "Amending the Age Group in an Early Childhood Centre",
+      "categories": [
+        "Early Childhood Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "ECCFee_vw_ECC_FEE"
+      ],
+      "serviceRowIds": [
+        "TC-002"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-003",
+      "name": "Amending the fees of an Early Childhood Centre",
+      "categories": [
+        "Early Childhood Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "ECCFee_vw_ECC_FEE"
+      ],
+      "serviceRowIds": [
+        "TC-003"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-004",
+      "name": "Approving advertising materials for Early Childhood Centres",
+      "categories": [
+        "Early Childhood Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "Attachment_vw_Attachment",
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-004"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-005",
+      "name": "Cancel the permit of an Early Childhood Centres",
+      "categories": [
+        "Early Childhood Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit",
+        "EducationCenters_vw_EducationCenters"
+      ],
+      "serviceRowIds": [
+        "TC-005"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-006",
+      "name": "Change the name of an Early Childhood Centre",
+      "categories": [
+        "Early Childhood Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenters_vw_EducationCenters"
+      ],
+      "serviceRowIds": [
+        "TC-006"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-007",
+      "name": "Changing the Manager of an Early Childhood Centre",
+      "categories": [
+        "Early Childhood Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "Representatives_vw_EducationCenterRepresentatives"
+      ],
+      "serviceRowIds": [
+        "TC-007"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-008",
+      "name": "Early Childhood Centre Owners Amendment",
+      "categories": [
+        "Early Childhood Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "Shareholders_vw_Shareholders"
+      ],
+      "serviceRowIds": [
+        "TC-008"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-009",
+      "name": "Expand the premises of an Early Childhood Centre",
+      "categories": [
+        "Early Childhood Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPremise_vw_EducationCenterPremise"
+      ],
+      "serviceRowIds": [
+        "TC-009"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-010",
+      "name": "Issue a Permit for an Early Childhood Centre",
+      "categories": [
+        "Early Childhood Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit",
+        "EducationCenterPremise_vw_EducationCenterPremise",
+        "EducationCenters_vw_EducationCenters",
+        "Representatives_vw_EducationCenterRepresentatives",
+        "Shareholders_vw_Shareholders"
+      ],
+      "serviceRowIds": [
+        "TC-010"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-011",
+      "name": "Relocate an Early Childhood Centre (ECC)",
+      "categories": [
+        "Early Childhood Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPremise_vw_EducationCenterPremise"
+      ],
+      "serviceRowIds": [
+        "TC-011"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-012",
+      "name": "Renew the Permit for Early Childhood Centre",
+      "categories": [
+        "Early Childhood Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit"
+      ],
+      "serviceRowIds": [
+        "TC-012"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-013",
+      "name": "Request Faculty Appointment Letter",
+      "categories": [
+        "Early Childhood Education Services",
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-013",
+        "TC-044"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-014",
+      "name": "Requesting Faculty Registration",
+      "categories": [
+        "Early Childhood Education Services",
+        "Higher Education Services",
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T2",
+      "dataTypeName": "Person and enrollment records",
+      "views": [
+        "Faculty_vw_FacultyRegistrations",
+        "HEPFaculty_vw_HEPFaculty"
+      ],
+      "serviceRowIds": [
+        "TC-014",
+        "TC-025",
+        "TC-056"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "10 working days",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-015",
+      "name": "Requesting a No Objection Certificate for Faculty",
+      "categories": [
+        "Early Childhood Education Services",
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-015",
+        "TC-059"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-016",
+      "name": "Adding Higher Education programmes",
+      "categories": [
+        "Higher Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "HEPProgramms_vw_HEPProgramms"
+      ],
+      "serviceRowIds": [
+        "TC-016"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-017",
+      "name": "Amending Student Record",
+      "categories": [
+        "Higher Education Services",
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T2",
+      "dataTypeName": "Person and enrollment records",
+      "views": [
+        "HEPStudents_vw_HEP_Students",
+        "ParentStudent_vw_ParentStudent"
+      ],
+      "serviceRowIds": [
+        "TC-017",
+        "TC-036"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "10 working days",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-018",
+      "name": "Amending shareholder details on the Higher Education Permit",
+      "categories": [
+        "Higher Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "Shareholders_vw_Shareholders"
+      ],
+      "serviceRowIds": [
+        "TC-018"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-019",
+      "name": "Amending the Higher Education premises",
+      "categories": [
+        "Higher Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPremise_vw_EducationCenterPremise"
+      ],
+      "serviceRowIds": [
+        "TC-019"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-020",
+      "name": "Amending the name of the Higher Education Institution",
+      "categories": [
+        "Higher Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenters_vw_EducationCenters"
+      ],
+      "serviceRowIds": [
+        "TC-020"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-021",
+      "name": "Cancel the Permit of a Higher Education Provider",
+      "categories": [
+        "Higher Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit",
+        "EducationCenters_vw_EducationCenters"
+      ],
+      "serviceRowIds": [
+        "TC-021"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-022",
+      "name": "Discontinue, suspend or close Higher Education programmes",
+      "categories": [
+        "Higher Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "HEPProgramms_vw_HEPProgramms"
+      ],
+      "serviceRowIds": [
+        "TC-022"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-023",
+      "name": "Issuing an Educational Services Permit for a Higher Education Provider",
+      "categories": [
+        "Higher Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit",
+        "EducationCenterPremise_vw_EducationCenterPremise",
+        "EducationCenters_vw_EducationCenters",
+        "Representatives_vw_EducationCenterRepresentatives",
+        "Shareholders_vw_Shareholders"
+      ],
+      "serviceRowIds": [
+        "TC-023"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-024",
+      "name": "Renewing an Educational Services Permit of a Higher Education Institution",
+      "categories": [
+        "Higher Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit"
+      ],
+      "serviceRowIds": [
+        "TC-024"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-025",
+      "name": "Requesting Student Registration",
+      "categories": [
+        "Higher Education Services",
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T2",
+      "dataTypeName": "Person and enrollment records",
+      "views": [
+        "HEPStudents_vw_HEP_Students",
+        "ParentStudent_vw_ParentStudent"
+      ],
+      "serviceRowIds": [
+        "TC-026",
+        "TC-057"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "10 working days",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-026",
+      "name": "Requesting a Change of Academic Head",
+      "categories": [
+        "Higher Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "Representatives_vw_EducationCenterRepresentatives"
+      ],
+      "serviceRowIds": [
+        "TC-027"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-027",
+      "name": "Requesting for Advertisement Approval",
+      "categories": [
+        "Higher Education Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "Attachment_vw_Attachment",
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-028"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-028",
+      "name": "Inspection Visit",
+      "categories": [
+        "Inspection Visit"
+      ],
+      "channels": [
+        "Inspection Application"
+      ],
+      "dataType": "T4",
+      "dataTypeName": "Field visits",
+      "views": [
+        "Inspection_vw_InspectionResults",
+        "Inspection_vw_Inspection_Schedule",
+        "Inspection_vw_InspectorProfile_Biography",
+        "Inspection_vw_InspectorProfile_CurriculumWorkExperience",
+        "Inspection_vw_InspectorProfile_DegreeInformation",
+        "Inspection_vw_InspectorProfile_GeneralInfo",
+        "Inspection_vw_InspectorProfile_LeadershipExperience",
+        "Inspection_vw_InspectorProfile_References",
+        "Inspection_vw_InspectorProfile_WorkExperience",
+        "Inspection_vw_InspectorProfile_WorkExperienceOfEvaluation"
+      ],
+      "serviceRowIds": [
+        "TC-029"
+      ],
+      "proposedProducer": "QAC",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "5 working days",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-029",
+      "name": "POD Students details",
+      "categories": [
+        "POD Students details"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T3",
+      "dataTypeName": "Periodic institution returns",
+      "views": [
+        "PODCategory_vw_SCH_STUDENTS_POD_CATEGORY",
+        "POD_vw_SCH_POD_STUDENTSODFORM"
+      ],
+      "serviceRowIds": [
+        "TC-030"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Deadline set per cycle",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-030",
+      "name": "Parent Contract",
+      "categories": [
+        "Parent Contract"
+      ],
+      "channels": [
+        "Parent Contract Application"
+      ],
+      "dataType": "T2",
+      "dataTypeName": "Person and enrollment records",
+      "views": [
+        "ParentContract_vw_ParentContract",
+        "SchoolFee_vw_SCHOOL_FEE"
+      ],
+      "serviceRowIds": [
+        "TC-031"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "10 working days",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-031",
+      "name": "Applying for the Student Registration History Certificate",
+      "categories": [
+        "Parent and Student Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-032"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-032",
+      "name": "Attestation of Higher Education Certificate",
+      "categories": [
+        "Parent and Student Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "Attachment_vw_Attachment",
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-033"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-033",
+      "name": "Attestation of School Certificate",
+      "categories": [
+        "Parent and Student Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "Attachment_vw_Attachment",
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-034"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-034",
+      "name": "Requesting an Education Continuation Certificate",
+      "categories": [
+        "Parent and Student Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "Attachment_vw_Attachment",
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-035"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-035",
+      "name": "Application for renewal of the Educational Permit of a Private School",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit"
+      ],
+      "serviceRowIds": [
+        "TC-037"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-036",
+      "name": "Applying  for School Leaving Certificate",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "ParentStudent_vw_ParentStudent"
+      ],
+      "serviceRowIds": [
+        "TC-038"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-037",
+      "name": "Applying for a Good Conduct Certificate for Students",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-039"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-038",
+      "name": "Assigning Grade or Subjects to Teachers",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T2",
+      "dataTypeName": "Person and enrollment records",
+      "views": [
+        "Faculty_vw_FacultyRegistrations"
+      ],
+      "serviceRowIds": [
+        "TC-040"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "10 working days",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-039",
+      "name": "Change the shareholders at a school",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "Shareholders_vw_Shareholders"
+      ],
+      "serviceRowIds": [
+        "TC-041"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-040",
+      "name": "Deleting Students Record",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T2",
+      "dataTypeName": "Person and enrollment records",
+      "views": [
+        "ParentStudent_vw_ParentStudent"
+      ],
+      "serviceRowIds": [
+        "TC-042"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "10 working days",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-041",
+      "name": "Issuing an Educational Services Permit for a new Private School",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit",
+        "EducationCenterPremise_vw_EducationCenterPremise",
+        "EducationCenters_vw_EducationCenters",
+        "Representatives_vw_EducationCenterRepresentatives",
+        "Shareholders_vw_Shareholders",
+        "TrainingInstituteCourses_vw_TrainingInstituteCourses"
+      ],
+      "serviceRowIds": [
+        "TC-043"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-042",
+      "name": "Request Job Leaving Certificate",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "Faculty_vw_FacultyRegistrations",
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-045"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-043",
+      "name": "Request for School Expansion",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPremise_vw_EducationCenterPremise"
+      ],
+      "serviceRowIds": [
+        "TC-046"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-044",
+      "name": "Request for a No Objection Certificate or 'To Whom It May Concern' Certificate in respect of any matter related to a Private School",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-047"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-045",
+      "name": "Request for a private school advertisement approval",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "Attachment_vw_Attachment",
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-048"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-046",
+      "name": "Request for approval of annual school activities and programmes",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T3",
+      "dataTypeName": "Periodic institution returns",
+      "views": [
+        "FactsheetOptionalServices_vw_FactsheetOptionalServices",
+        "SchoolActivities_vw_SchoolActivities"
+      ],
+      "serviceRowIds": [
+        "TC-049"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Deadline set per cycle",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-047",
+      "name": "Request for cessation/suspension of the educational activity",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit",
+        "EducationCenters_vw_EducationCenters"
+      ],
+      "serviceRowIds": [
+        "TC-050"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-048",
+      "name": "Request to add grades at a school",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterGrades_vw_EducationCenterGrades",
+        "SchoolFee_vw_SCHOOL_FEE"
+      ],
+      "serviceRowIds": [
+        "TC-051"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-049",
+      "name": "Request to amend tuition fees for a private school",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "SchoolFee_vw_SCHOOL_FEE"
+      ],
+      "serviceRowIds": [
+        "TC-052"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-050",
+      "name": "Request to appoint a new principal at a school",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "Representatives_vw_EducationCenterRepresentatives"
+      ],
+      "serviceRowIds": [
+        "TC-053"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-051",
+      "name": "Request to change the name of a school",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenters_vw_EducationCenters"
+      ],
+      "serviceRowIds": [
+        "TC-054"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-052",
+      "name": "Request to relocate a school to a new site",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPremise_vw_EducationCenterPremise",
+        "EducationCenters_vw_EducationCenters"
+      ],
+      "serviceRowIds": [
+        "TC-055"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-053",
+      "name": "Requesting Subject Exemption Due to Special Cases",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "SubjectExemption_vw_SubjectExemption"
+      ],
+      "serviceRowIds": [
+        "TC-058"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-054",
+      "name": "Requesting to demote students",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T2",
+      "dataTypeName": "Person and enrollment records",
+      "views": [
+        "ParentStudent_vw_ParentStudent"
+      ],
+      "serviceRowIds": [
+        "TC-060"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "10 working days",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-055",
+      "name": "School Exam Dataset",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T3",
+      "dataTypeName": "Periodic institution returns",
+      "views": [
+        "SchoolExam_vw_SchoolExam"
+      ],
+      "serviceRowIds": [
+        "TC-061"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Deadline set per cycle",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-056",
+      "name": "School fees discount",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "FeesOtherDiscounts_vw_FeesOtherDiscounts",
+        "SchoolFee_vw_SCHOOL_FEE"
+      ],
+      "serviceRowIds": [
+        "TC-062"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-057",
+      "name": "Student Promotion",
+      "categories": [
+        "School Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T2",
+      "dataTypeName": "Person and enrollment records",
+      "views": [
+        "ParentStudent_vw_ParentStudent"
+      ],
+      "serviceRowIds": [
+        "TC-063"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "10 working days",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-058",
+      "name": "School profile for Inspection Visit Data Collection",
+      "categories": [
+        "School profile"
+      ],
+      "channels": [
+        "School profile Application"
+      ],
+      "dataType": "T3",
+      "dataTypeName": "Periodic institution returns",
+      "views": [
+        "Inspection_vw_Inspection_Schedule",
+        "Inspection_vw_InspectorProfile_Biography",
+        "Inspection_vw_InspectorProfile_CurriculumWorkExperience",
+        "Inspection_vw_InspectorProfile_DegreeInformation",
+        "Inspection_vw_InspectorProfile_GeneralInfo",
+        "Inspection_vw_InspectorProfile_LeadershipExperience",
+        "Inspection_vw_InspectorProfile_References",
+        "Inspection_vw_InspectorProfile_WorkExperience",
+        "Inspection_vw_InspectorProfile_WorkExperienceOfEvaluation",
+        "SchoolProfile_vw_AccreditationBody",
+        "SchoolProfile_vw_AdmissionCrieteria",
+        "SchoolProfile_vw_Attendance",
+        "SchoolProfile_vw_Attendance_Emiratis",
+        "SchoolProfile_vw_BoardOfGovernors",
+        "SchoolProfile_vw_Coordinators",
+        "SchoolProfile_vw_GraduatesByCountry",
+        "SchoolProfile_vw_PreviousPrincipal",
+        "SchoolProfile_vw_SchoolAssessments",
+        "SchoolProfile_vw_SchoolCalendar",
+        "SchoolProfile_vw_SchoolsDetails",
+        "SchoolProfile_vw_StudentCertifications",
+        "SchoolProfile_vw_UpcomingAccreditationVisit"
+      ],
+      "serviceRowIds": [
+        "TC-064"
+      ],
+      "proposedProducer": "QAC",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Deadline set per cycle",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-059",
+      "name": "Amend courses or activities for Training Institutes",
+      "categories": [
+        "Training Institute Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "TIStudentAttestation_vw_TIStudentAttestation",
+        "TrainingInstituteCourses_vw_TrainingInstituteCourses"
+      ],
+      "serviceRowIds": [
+        "TC-065"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-060",
+      "name": "Amend the shareholders of a Training Institute",
+      "categories": [
+        "Training Institute Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "Shareholders_vw_Shareholders"
+      ],
+      "serviceRowIds": [
+        "TC-066"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-061",
+      "name": "Appoint a new manager for a Training Institute",
+      "categories": [
+        "Training Institute Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "Representatives_vw_EducationCenterRepresentatives"
+      ],
+      "serviceRowIds": [
+        "TC-067"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-062",
+      "name": "Approving Training Institute’s Advertisement",
+      "categories": [
+        "Training Institute Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "Attachment_vw_Attachment",
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-068"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-063",
+      "name": "Attestation of Training Institute Certificate",
+      "categories": [
+        "Training Institute Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T5",
+      "dataTypeName": "Certificates and approvals on request",
+      "views": [
+        "Attachment_vw_Attachment",
+        "TIStudentAttestation_vw_TIStudentAttestation",
+        "WorkflowCases_vw_WorkflowCases"
+      ],
+      "serviceRowIds": [
+        "TC-069"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "Same day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-064",
+      "name": "Authorisation to deliver a training course for Non-Training Institutes",
+      "categories": [
+        "Training Institute Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit",
+        "EducationCenters_vw_EducationCenters",
+        "Representatives_vw_EducationCenterRepresentatives",
+        "TIStudentAttestation_vw_TIStudentAttestation",
+        "TrainingInstituteCourses_vw_TrainingInstituteCourses"
+      ],
+      "serviceRowIds": [
+        "TC-070"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-065",
+      "name": "Cancel the Permit of a Training Institute",
+      "categories": [
+        "Training Institute Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit",
+        "EducationCenters_vw_EducationCenters"
+      ],
+      "serviceRowIds": [
+        "TC-071"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-066",
+      "name": "Change the location of a Training Institute",
+      "categories": [
+        "Training Institute Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenters_vw_EducationCenters"
+      ],
+      "serviceRowIds": [
+        "TC-072"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-067",
+      "name": "Change the name of a Training Institute",
+      "categories": [
+        "Training Institute Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenters_vw_EducationCenters"
+      ],
+      "serviceRowIds": [
+        "TC-073"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-068",
+      "name": "Issuing an Educational Services Permit for a Training Institute",
+      "categories": [
+        "Training Institute Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit",
+        "EducationCenterPremise_vw_EducationCenterPremise",
+        "EducationCenters_vw_EducationCenters",
+        "Representatives_vw_EducationCenterRepresentatives",
+        "Shareholders_vw_Shareholders",
+        "TrainingInstituteCourses_vw_TrainingInstituteCourses"
+      ],
+      "serviceRowIds": [
+        "TC-074"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    },
+    {
+      "id": "SVC-069",
+      "name": "Renew the Permit for a Training Institute for institutes",
+      "categories": [
+        "Training Institute Services"
+      ],
+      "channels": [
+        "KHDA portal"
+      ],
+      "dataType": "T1",
+      "dataTypeName": "Institution licensing and changes",
+      "views": [
+        "EducationCenterPermit_vw_Permit"
+      ],
+      "serviceRowIds": [
+        "TC-075"
+      ],
+      "proposedProducer": "GHD",
+      "proposedProducerConfirm": true,
+      "proposedStartingValue": "1 working day",
+      "proposedStartingValueConfirm": true
+    }
+  ]
+}

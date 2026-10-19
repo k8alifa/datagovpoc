@@ -1,0 +1,1 @@
+import{j as e}from"./react-CqE2tF_c.js";import{u as t,a3 as a,_ as o}from"./index-D1UTgdu9.js";function i({route:s,children:n}){const r=t();return a(r.index,r.roleId,s)?e.jsx(e.Fragment,{children:n}):e.jsx(o,{})}export{i as G};

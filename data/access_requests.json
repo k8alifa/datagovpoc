@@ -1,0 +1,567 @@
+{
+  "note": "M5 access requests (synthetic), including project access for PRP and QAC [decide: 3 or 5 working days].",
+  "accessRequests": [
+    {
+      "id": "ACC-2026-0001",
+      "workflowId": "access_request",
+      "type": "standard",
+      "requesterUserId": "U-requester",
+      "requesterSectorId": "BSS",
+      "objectType": "dashboard",
+      "objectId": "DSH-002",
+      "classification": "Confidential",
+      "purpose": "Role duties (demo)",
+      "projectReference": null,
+      "periodMonths": 6,
+      "state": "granted",
+      "submittedAt": "2026-07-23",
+      "approvedAt": "2026-07-28",
+      "grantedAt": "2026-07-30",
+      "provisioningWorkingDays": 2,
+      "stateEnteredAt": "2026-07-30",
+      "dueAt": null,
+      "sensitive": false,
+      "ownerSectorId": "GHD",
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-07-23T12:20:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-07-23T09:34:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_line_manager",
+          "transition": "route_line_manager",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-07-24T13:12:00+04:00",
+          "from": "awaiting_line_manager",
+          "to": "awaiting_owner",
+          "transition": "line_manager_approve",
+          "actorRole": "line_manager",
+          "actorUserId": "U-line-manager"
+        },
+        {
+          "at": "2026-07-28T11:05:00+04:00",
+          "from": "awaiting_owner",
+          "to": "approved_awaiting_provision",
+          "transition": "owner_approve",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-07-30T08:34:00+04:00",
+          "from": "approved_awaiting_provision",
+          "to": "granted",
+          "transition": "provision",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        }
+      ]
+    },
+    {
+      "id": "ACC-2026-0002",
+      "workflowId": "access_request",
+      "type": "project",
+      "requesterUserId": "U-principal-data-user",
+      "requesterSectorId": "PRP",
+      "objectType": "dashboard",
+      "objectId": "DSH-001",
+      "classification": "Confidential",
+      "purpose": "Project: demo research question",
+      "projectReference": "DEMO-PRJ-02",
+      "periodMonths": 6,
+      "state": "granted",
+      "submittedAt": "2026-08-20",
+      "approvedAt": "2026-08-25",
+      "grantedAt": "2026-08-31",
+      "provisioningWorkingDays": 4,
+      "stateEnteredAt": "2026-08-31",
+      "dueAt": null,
+      "sensitive": false,
+      "ownerSectorId": "GHD",
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-08-20T13:52:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-08-20T09:12:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_owner",
+          "transition": "route_owner",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-08-25T11:05:00+04:00",
+          "from": "awaiting_owner",
+          "to": "approved_awaiting_provision",
+          "transition": "owner_approve",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-08-31T09:41:00+04:00",
+          "from": "approved_awaiting_provision",
+          "to": "granted",
+          "transition": "provision",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "ACC-2026-0003",
+      "workflowId": "access_request",
+      "type": "project",
+      "requesterUserId": "U-principal-data-user",
+      "requesterSectorId": "PRP",
+      "objectType": "dashboard",
+      "objectId": "DSH-004",
+      "classification": "Confidential",
+      "purpose": "Project: demo research question",
+      "projectReference": "DEMO-PRJ-03",
+      "periodMonths": 6,
+      "state": "granted",
+      "submittedAt": "2026-06-11",
+      "approvedAt": "2026-06-15",
+      "grantedAt": "2026-06-17",
+      "provisioningWorkingDays": 2,
+      "stateEnteredAt": "2026-06-17",
+      "dueAt": null,
+      "sensitive": false,
+      "ownerSectorId": "GHD",
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-06-11T08:52:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-06-11T13:05:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_owner",
+          "transition": "route_owner",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-06-15T08:41:00+04:00",
+          "from": "awaiting_owner",
+          "to": "approved_awaiting_provision",
+          "transition": "owner_approve",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-06-17T15:52:00+04:00",
+          "from": "approved_awaiting_provision",
+          "to": "granted",
+          "transition": "provision",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "ACC-2026-0004",
+      "workflowId": "access_request",
+      "type": "project",
+      "requesterUserId": "U-principal-data-user",
+      "requesterSectorId": "PRP",
+      "objectType": "dashboard",
+      "objectId": "DSH-006",
+      "classification": "Confidential",
+      "purpose": "Project: demo research question",
+      "projectReference": "DEMO-PRJ-04",
+      "periodMonths": 6,
+      "state": "granted",
+      "submittedAt": "2026-09-03",
+      "approvedAt": "2026-09-08",
+      "grantedAt": "2026-09-17",
+      "provisioningWorkingDays": 7,
+      "stateEnteredAt": "2026-09-17",
+      "dueAt": null,
+      "sensitive": false,
+      "ownerSectorId": "GHD",
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-09-03T11:52:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-09-03T09:52:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_owner",
+          "transition": "route_owner",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-08T14:41:00+04:00",
+          "from": "awaiting_owner",
+          "to": "approved_awaiting_provision",
+          "transition": "owner_approve",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-17T13:41:00+04:00",
+          "from": "approved_awaiting_provision",
+          "to": "granted",
+          "transition": "provision",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst",
+          "comment": "Provisioned late"
+        }
+      ]
+    },
+    {
+      "id": "ACC-2026-0005",
+      "workflowId": "access_request",
+      "type": "project",
+      "requesterUserId": "U-principal-data-user",
+      "requesterSectorId": "PRP",
+      "objectType": "dashboard",
+      "objectId": "DSH-012",
+      "classification": "Confidential",
+      "purpose": "Project: demo research question",
+      "projectReference": "DEMO-PRJ-05",
+      "periodMonths": 6,
+      "state": "awaiting_owner",
+      "submittedAt": "2026-10-08",
+      "approvedAt": null,
+      "grantedAt": null,
+      "provisioningWorkingDays": null,
+      "stateEnteredAt": "2026-10-08",
+      "dueAt": "2026-10-13",
+      "sensitive": false,
+      "ownerSectorId": "GHD",
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-10-08T11:41:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-10-08T08:41:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_owner",
+          "transition": "route_owner",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "ACC-2026-0006",
+      "workflowId": "access_request",
+      "type": "standard",
+      "requesterUserId": "U-requester",
+      "requesterSectorId": "BSS",
+      "objectType": "dashboard",
+      "objectId": "DSH-001",
+      "classification": "Confidential",
+      "purpose": "Role duties (demo)",
+      "projectReference": null,
+      "periodMonths": 6,
+      "state": "referred_to_cdo",
+      "submittedAt": "2026-10-06",
+      "approvedAt": null,
+      "grantedAt": null,
+      "provisioningWorkingDays": null,
+      "stateEnteredAt": "2026-10-09",
+      "dueAt": null,
+      "sensitive": false,
+      "ownerSectorId": "GHD",
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-10-06T13:20:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-10-06T11:05:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_owner",
+          "transition": "route_owner",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-10-09T11:05:00+04:00",
+          "from": "awaiting_owner",
+          "to": "referred_to_cdo",
+          "transition": "owner_no_response",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "ACC-2026-0007",
+      "workflowId": "access_request",
+      "type": "standard",
+      "requesterUserId": "U-requester",
+      "requesterSectorId": "BSS",
+      "objectType": "dataset",
+      "objectId": "DS-014",
+      "classification": "Sensitive",
+      "purpose": "Role duties (demo)",
+      "projectReference": null,
+      "periodMonths": 6,
+      "state": "refused",
+      "submittedAt": "2026-09-17",
+      "approvedAt": null,
+      "grantedAt": null,
+      "provisioningWorkingDays": null,
+      "stateEnteredAt": "2026-09-21",
+      "dueAt": null,
+      "sensitive": true,
+      "ownerSectorId": "GHD",
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-09-17T10:52:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-09-17T11:20:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_owner",
+          "transition": "route_owner",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-21T12:41:00+04:00",
+          "from": "awaiting_owner",
+          "to": "refused",
+          "transition": "owner_refuse",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner",
+          "comment": "No need to know for this purpose"
+        }
+      ]
+    },
+    {
+      "id": "ACC-2026-0008",
+      "workflowId": "access_request",
+      "type": "standard",
+      "requesterUserId": "U-requester",
+      "requesterSectorId": "BSS",
+      "objectType": "dashboard",
+      "objectId": "DSH-011",
+      "classification": "Open",
+      "purpose": "Role duties (demo)",
+      "projectReference": null,
+      "periodMonths": 6,
+      "state": "granted",
+      "submittedAt": "2026-09-10",
+      "approvedAt": "2026-09-10",
+      "grantedAt": "2026-09-11",
+      "provisioningWorkingDays": 1,
+      "stateEnteredAt": "2026-09-11",
+      "dueAt": null,
+      "sensitive": false,
+      "ownerSectorId": "GHD",
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-09-10T10:34:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "requester",
+          "actorUserId": "U-requester"
+        },
+        {
+          "at": "2026-09-10T14:20:00+04:00",
+          "from": "submitted",
+          "to": "approved_awaiting_provision",
+          "transition": "open_auto_approve",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-09-11T12:41:00+04:00",
+          "from": "approved_awaiting_provision",
+          "to": "granted",
+          "transition": "provision",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        }
+      ]
+    },
+    {
+      "id": "ACC-2026-0009",
+      "workflowId": "access_request",
+      "type": "standing",
+      "requesterUserId": "U-principal-data-user",
+      "requesterSectorId": "PRP",
+      "objectType": "dashboard",
+      "objectId": "DSH-002",
+      "classification": "Confidential",
+      "purpose": "Standing access for the principal data user mandate [decide]",
+      "projectReference": null,
+      "periodMonths": 6,
+      "state": "granted",
+      "submittedAt": "2026-07-09",
+      "approvedAt": "2026-07-10",
+      "grantedAt": "2026-07-14",
+      "provisioningWorkingDays": 2,
+      "stateEnteredAt": "2026-07-14",
+      "dueAt": null,
+      "sensitive": false,
+      "ownerSectorId": "GHD",
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-07-09T09:05:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-07-09T11:05:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_owner",
+          "transition": "route_owner",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-07-10T15:20:00+04:00",
+          "from": "awaiting_owner",
+          "to": "approved_awaiting_provision",
+          "transition": "owner_approve",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-07-14T10:52:00+04:00",
+          "from": "approved_awaiting_provision",
+          "to": "granted",
+          "transition": "provision",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "ACC-2026-0010",
+      "workflowId": "access_request",
+      "type": "project",
+      "requesterUserId": "U-principal-data-user",
+      "requesterSectorId": "PRP",
+      "objectType": "dashboard",
+      "objectId": "DSH-005",
+      "classification": "Confidential",
+      "purpose": "Project: demo research question",
+      "projectReference": "DEMO-PRJ-10",
+      "periodMonths": 6,
+      "state": "approved_awaiting_provision",
+      "submittedAt": "2026-10-09",
+      "approvedAt": "2026-10-13",
+      "grantedAt": null,
+      "provisioningWorkingDays": null,
+      "stateEnteredAt": "2026-10-13",
+      "dueAt": "2026-10-16",
+      "sensitive": false,
+      "ownerSectorId": "GHD",
+      "documentIds": [
+        "DP-03",
+        "ST-02"
+      ],
+      "history": [
+        {
+          "at": "2026-10-09T13:34:00+04:00",
+          "from": null,
+          "to": "submitted",
+          "transition": "submit",
+          "actorRole": "principal_data_user",
+          "actorUserId": "U-principal-data-user"
+        },
+        {
+          "at": "2026-10-09T15:05:00+04:00",
+          "from": "submitted",
+          "to": "awaiting_owner",
+          "transition": "route_owner",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        },
+        {
+          "at": "2026-10-13T11:05:00+04:00",
+          "from": "awaiting_owner",
+          "to": "approved_awaiting_provision",
+          "transition": "owner_approve",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        }
+      ]
+    }
+  ]
+}

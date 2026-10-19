@@ -1,0 +1,53 @@
+{
+  "note": "Sector list is for the demo only [confirm sector list].",
+  "sectors": [
+    {
+      "id": "SD",
+      "name": "Strategic Development sector",
+      "short": "Strategic Development",
+      "units": [
+        "Strategy and Excellence department (DS&A, Governance section)",
+        "Service Design department"
+      ]
+    },
+    {
+      "id": "GHD",
+      "name": "Growth and Human Development sector",
+      "short": "GHD",
+      "units": [
+        "Permits and licensing",
+        "Student, teacher and parent services"
+      ]
+    },
+    {
+      "id": "QAC",
+      "name": "Quality Assurance and Compliance sector",
+      "short": "QAC",
+      "units": [
+        "Inspection",
+        "Compliance department"
+      ]
+    },
+    {
+      "id": "PRP",
+      "name": "Policies, Research and Programs sector",
+      "short": "PRP",
+      "units": []
+    },
+    {
+      "id": "BSS",
+      "name": "Business Support Sector",
+      "short": "Business Support Sector",
+      "units": [
+        "Digital Excellence department",
+        "Engagement Department [confirm]"
+      ]
+    },
+    {
+      "id": "DGO",
+      "name": "Director General's office",
+      "short": "DG office",
+      "units": []
+    }
+  ]
+}

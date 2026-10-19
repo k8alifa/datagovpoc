@@ -1,0 +1,1366 @@
+{
+  "note": "M2 external sharing requests (synthetic recipients). Day counts are working days from receipt (DP-02 13).",
+  "sharingRequests": [
+    {
+      "id": "SHR-2026-0001",
+      "workflowId": "external_sharing",
+      "title": "Aggregate enrollment by curriculum for planning (demo)",
+      "state": "closed",
+      "recipient": "Demo Government Entity A (Dubai)",
+      "recipientType": "government",
+      "channel": "Electronic Platform (DX Hub)",
+      "dxHubReference": null,
+      "dgRouted": false,
+      "receivedAt": "2026-07-09",
+      "loggedAt": "2026-07-09",
+      "lateLogged": false,
+      "datasetIds": [
+        "DS-005"
+      ],
+      "views": [
+        "EducationCenters_vw_EducationCenters"
+      ],
+      "fieldsRequested": 15,
+      "purpose": "Synthetic demo purpose: aggregate enrollment by curriculum for planning",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Open",
+      "personalData": false,
+      "dgTriggers": [],
+      "ownerSectorId": "GHD",
+      "sensitive": false,
+      "ownerPosition": "confirmed",
+      "decision": "approved",
+      "decidedAt": "2026-07-23",
+      "decidedByRole": "cdo",
+      "decisionWorkingDays": 10,
+      "accessPermission": {
+        "purpose": "As stated",
+        "fields": "Trimmed to the release specification",
+        "retention": "12 months (demo)",
+        "onwardSharing": "Not permitted"
+      },
+      "releasedAt": "2026-07-29",
+      "agreedReleaseDate": "2026-08-06",
+      "registerEntryAt": "2026-07-29",
+      "stateEnteredAt": "2026-07-29",
+      "dueAt": null,
+      "responsibleRole": null,
+      "documentIds": [
+        "DP-02",
+        "DP-01"
+      ],
+      "history": [
+        {
+          "at": "2026-07-09T13:52:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-10T11:34:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-13T10:12:00+04:00",
+          "from": "registered",
+          "to": "in_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-15T15:20:00+04:00",
+          "from": "in_assessment",
+          "to": "owner_confirmation",
+          "transition": "send_to_owner",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-20T12:05:00+04:00",
+          "from": "owner_confirmation",
+          "to": "awaiting_cdo",
+          "transition": "owner_confirm",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-07-23T14:52:00+04:00",
+          "from": "awaiting_cdo",
+          "to": "approved_awaiting_release",
+          "transition": "cdo_approve",
+          "actorRole": "cdo",
+          "actorUserId": "U-cdo"
+        },
+        {
+          "at": "2026-07-29T15:41:00+04:00",
+          "from": "approved_awaiting_release",
+          "to": "released",
+          "transition": "release",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-07-29T09:05:00+04:00",
+          "from": "released",
+          "to": "closed",
+          "transition": "record_in_register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0002",
+      "workflowId": "external_sharing",
+      "title": "School fee schedules for a cost study (demo)",
+      "state": "closed",
+      "recipient": "Demo Government Entity A (Dubai)",
+      "recipientType": "government",
+      "channel": "Secure file transfer",
+      "dxHubReference": null,
+      "dgRouted": false,
+      "receivedAt": "2026-06-04",
+      "loggedAt": "2026-06-04",
+      "lateLogged": false,
+      "datasetIds": [
+        "DS-008"
+      ],
+      "views": [
+        "SchoolFee_vw_SCHOOL_FEE"
+      ],
+      "fieldsRequested": 7,
+      "purpose": "Synthetic demo purpose: school fee schedules for a cost study",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Confidential",
+      "personalData": false,
+      "dgTriggers": [],
+      "ownerSectorId": "GHD",
+      "sensitive": false,
+      "ownerPosition": "confirmed",
+      "decision": "approved",
+      "decidedAt": "2026-06-18",
+      "decidedByRole": "cdo",
+      "decisionWorkingDays": 10,
+      "accessPermission": {
+        "purpose": "As stated",
+        "fields": "Trimmed to the release specification",
+        "retention": "12 months (demo)",
+        "onwardSharing": "Not permitted"
+      },
+      "releasedAt": "2026-06-24",
+      "agreedReleaseDate": "2026-07-02",
+      "registerEntryAt": "2026-06-24",
+      "stateEnteredAt": "2026-06-24",
+      "dueAt": null,
+      "responsibleRole": null,
+      "documentIds": [
+        "DP-02",
+        "DP-01"
+      ],
+      "history": [
+        {
+          "at": "2026-06-04T14:52:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-06-05T09:05:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-06-08T10:34:00+04:00",
+          "from": "registered",
+          "to": "in_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-06-10T12:52:00+04:00",
+          "from": "in_assessment",
+          "to": "owner_confirmation",
+          "transition": "send_to_owner",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-06-15T14:12:00+04:00",
+          "from": "owner_confirmation",
+          "to": "awaiting_cdo",
+          "transition": "owner_confirm",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-06-18T10:05:00+04:00",
+          "from": "awaiting_cdo",
+          "to": "approved_awaiting_release",
+          "transition": "cdo_approve",
+          "actorRole": "cdo",
+          "actorUserId": "U-cdo"
+        },
+        {
+          "at": "2026-06-24T14:05:00+04:00",
+          "from": "approved_awaiting_release",
+          "to": "released",
+          "transition": "release",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-06-24T08:34:00+04:00",
+          "from": "released",
+          "to": "closed",
+          "transition": "record_in_register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0003",
+      "workflowId": "external_sharing",
+      "title": "Record-level teacher data for a workforce study (demo)",
+      "state": "closed",
+      "recipient": "Demo Government Entity B (federal)",
+      "recipientType": "government",
+      "channel": "Electronic Platform (DX Hub)",
+      "dxHubReference": "DEMO-DXH-0003",
+      "dgRouted": false,
+      "receivedAt": "2026-05-14",
+      "loggedAt": "2026-05-14",
+      "lateLogged": false,
+      "datasetIds": [
+        "DS-003"
+      ],
+      "views": [
+        "Faculty_vw_FacultyRegistrations"
+      ],
+      "fieldsRequested": 15,
+      "purpose": "Synthetic demo purpose: record-level teacher data for a workforce study",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Sensitive",
+      "personalData": true,
+      "dgTriggers": [
+        "sensitive_or_secret",
+        "record_level_personal_data"
+      ],
+      "ownerSectorId": "GHD",
+      "sensitive": true,
+      "ownerPosition": "confirmed",
+      "decision": "approved",
+      "decidedAt": "2026-06-04",
+      "decidedByRole": "dg_office",
+      "decisionWorkingDays": 15,
+      "accessPermission": {
+        "purpose": "As stated",
+        "fields": "Trimmed to the release specification",
+        "retention": "12 months (demo)",
+        "onwardSharing": "Not permitted"
+      },
+      "releasedAt": "2026-06-11",
+      "agreedReleaseDate": "2026-06-18",
+      "registerEntryAt": "2026-06-11",
+      "stateEnteredAt": "2026-06-11",
+      "dueAt": null,
+      "responsibleRole": null,
+      "documentIds": [
+        "DP-02",
+        "DP-01",
+        "DP-04"
+      ],
+      "history": [
+        {
+          "at": "2026-05-14T09:05:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-05-15T15:34:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-05-18T09:41:00+04:00",
+          "from": "registered",
+          "to": "in_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-05-20T13:12:00+04:00",
+          "from": "in_assessment",
+          "to": "owner_confirmation",
+          "transition": "send_to_owner",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-05-25T12:41:00+04:00",
+          "from": "owner_confirmation",
+          "to": "awaiting_cdo",
+          "transition": "owner_confirm",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-05-27T13:34:00+04:00",
+          "from": "awaiting_cdo",
+          "to": "awaiting_dg",
+          "transition": "route_to_dg",
+          "actorRole": "cdo",
+          "actorUserId": "U-cdo"
+        },
+        {
+          "at": "2026-06-04T11:20:00+04:00",
+          "from": "awaiting_dg",
+          "to": "approved_awaiting_release",
+          "transition": "dg_approve",
+          "actorRole": "dg_office",
+          "actorUserId": "U-dg-office"
+        },
+        {
+          "at": "2026-06-11T10:34:00+04:00",
+          "from": "approved_awaiting_release",
+          "to": "released",
+          "transition": "release",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-06-11T15:12:00+04:00",
+          "from": "released",
+          "to": "closed",
+          "transition": "record_in_register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0004",
+      "workflowId": "external_sharing",
+      "title": "Higher education graduate counts (demo)",
+      "state": "closed",
+      "recipient": "Demo Government Entity D (Dubai)",
+      "recipientType": "government",
+      "channel": "Electronic Platform (DX Hub)",
+      "dxHubReference": null,
+      "dgRouted": false,
+      "receivedAt": "2026-04-23",
+      "loggedAt": "2026-04-23",
+      "lateLogged": false,
+      "datasetIds": [
+        "DS-002"
+      ],
+      "views": [
+        "HEPStudents_vw_HEP_Students"
+      ],
+      "fieldsRequested": 18,
+      "purpose": "Synthetic demo purpose: higher education graduate counts",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Confidential",
+      "personalData": false,
+      "dgTriggers": [],
+      "ownerSectorId": "GHD",
+      "sensitive": false,
+      "ownerPosition": "confirmed",
+      "decision": "approved",
+      "decidedAt": "2026-05-07",
+      "decidedByRole": "cdo",
+      "decisionWorkingDays": 10,
+      "accessPermission": {
+        "purpose": "As stated",
+        "fields": "Trimmed to the release specification",
+        "retention": "12 months (demo)",
+        "onwardSharing": "Not permitted"
+      },
+      "releasedAt": "2026-05-13",
+      "agreedReleaseDate": "2026-05-21",
+      "registerEntryAt": "2026-05-13",
+      "stateEnteredAt": "2026-05-13",
+      "dueAt": null,
+      "responsibleRole": null,
+      "documentIds": [
+        "DP-02",
+        "DP-01"
+      ],
+      "history": [
+        {
+          "at": "2026-04-23T13:52:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-04-24T12:34:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-04-27T14:52:00+04:00",
+          "from": "registered",
+          "to": "in_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-04-29T08:34:00+04:00",
+          "from": "in_assessment",
+          "to": "owner_confirmation",
+          "transition": "send_to_owner",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-05-04T15:52:00+04:00",
+          "from": "owner_confirmation",
+          "to": "awaiting_cdo",
+          "transition": "owner_confirm",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-05-07T12:52:00+04:00",
+          "from": "awaiting_cdo",
+          "to": "approved_awaiting_release",
+          "transition": "cdo_approve",
+          "actorRole": "cdo",
+          "actorUserId": "U-cdo"
+        },
+        {
+          "at": "2026-05-13T14:41:00+04:00",
+          "from": "approved_awaiting_release",
+          "to": "released",
+          "transition": "release",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-05-13T13:34:00+04:00",
+          "from": "released",
+          "to": "closed",
+          "transition": "record_in_register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0005",
+      "workflowId": "external_sharing",
+      "title": "Inspection outcomes by school for a research partnership (demo)",
+      "state": "closed",
+      "recipient": "Demo University Research Team",
+      "recipientType": "non_government",
+      "channel": "Secure file transfer",
+      "dxHubReference": null,
+      "dgRouted": false,
+      "receivedAt": "2026-06-25",
+      "loggedAt": "2026-06-25",
+      "lateLogged": false,
+      "datasetIds": [
+        "DS-009"
+      ],
+      "views": [
+        "Inspection_vw_InspectionResults"
+      ],
+      "fieldsRequested": 13,
+      "purpose": "Synthetic demo purpose: inspection outcomes by school for a research partnership",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Confidential",
+      "personalData": false,
+      "dgTriggers": [
+        "non_government_not_open"
+      ],
+      "ownerSectorId": "QAC",
+      "sensitive": false,
+      "ownerPosition": "confirmed",
+      "decision": "refused",
+      "decidedAt": "2026-07-09",
+      "decidedByRole": "cdo",
+      "decisionWorkingDays": 10,
+      "accessPermission": null,
+      "releasedAt": null,
+      "agreedReleaseDate": null,
+      "registerEntryAt": null,
+      "stateEnteredAt": "2026-07-09",
+      "dueAt": null,
+      "responsibleRole": null,
+      "documentIds": [
+        "DP-02",
+        "DP-01"
+      ],
+      "history": [
+        {
+          "at": "2026-06-25T13:52:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-06-26T10:20:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-06-29T11:20:00+04:00",
+          "from": "registered",
+          "to": "in_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-01T12:41:00+04:00",
+          "from": "in_assessment",
+          "to": "owner_confirmation",
+          "transition": "send_to_owner",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-07-06T13:12:00+04:00",
+          "from": "owner_confirmation",
+          "to": "awaiting_cdo",
+          "transition": "owner_confirm",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-07-09T10:05:00+04:00",
+          "from": "awaiting_cdo",
+          "to": "refused",
+          "transition": "cdo_refuse",
+          "actorRole": "cdo",
+          "actorUserId": "U-cdo",
+          "comment": "Record-level data not needed; aggregated data offered instead"
+        },
+        {
+          "at": "2026-07-09T12:05:00+04:00",
+          "from": "refused",
+          "to": "closed",
+          "transition": "close_refused",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0006",
+      "workflowId": "external_sharing",
+      "title": "Shareholder details of private schools (demo)",
+      "state": "awaiting_dg",
+      "recipient": "Demo Consultancy C (non-government)",
+      "recipientType": "non_government",
+      "channel": "Electronic Platform (DX Hub)",
+      "dxHubReference": "DEMO-DXH-0006",
+      "dgRouted": true,
+      "receivedAt": "2026-09-15",
+      "loggedAt": "2026-09-15",
+      "lateLogged": false,
+      "datasetIds": [
+        "DS-014"
+      ],
+      "views": [
+        "Shareholders_vw_Shareholders"
+      ],
+      "fieldsRequested": 4,
+      "purpose": "Synthetic demo purpose: shareholder details of private schools",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Sensitive",
+      "personalData": true,
+      "dgTriggers": [
+        "sensitive_or_secret",
+        "non_government_not_open"
+      ],
+      "ownerSectorId": "GHD",
+      "sensitive": true,
+      "ownerPosition": "confirmed",
+      "decision": null,
+      "decidedAt": null,
+      "decidedByRole": null,
+      "decisionWorkingDays": null,
+      "accessPermission": null,
+      "releasedAt": null,
+      "agreedReleaseDate": null,
+      "registerEntryAt": null,
+      "stateEnteredAt": "2026-09-25",
+      "dueAt": "2026-10-06",
+      "responsibleRole": "dg_office",
+      "documentIds": [
+        "DP-02",
+        "DP-01",
+        "DP-04"
+      ],
+      "history": [
+        {
+          "at": "2026-09-15T09:12:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-16T10:34:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-17T09:34:00+04:00",
+          "from": "registered",
+          "to": "in_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-21T13:20:00+04:00",
+          "from": "in_assessment",
+          "to": "owner_confirmation",
+          "transition": "send_to_owner",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-24T09:52:00+04:00",
+          "from": "owner_confirmation",
+          "to": "awaiting_cdo",
+          "transition": "owner_confirm",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-25T11:34:00+04:00",
+          "from": "awaiting_cdo",
+          "to": "awaiting_dg",
+          "transition": "route_to_dg",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0007",
+      "workflowId": "external_sharing",
+      "title": "Monthly enrollment feed via DX Hub (demo)",
+      "state": "awaiting_cdo",
+      "recipient": "Demo Government Entity A (Dubai)",
+      "recipientType": "government",
+      "channel": "DX Hub",
+      "dxHubReference": "DEMO-DXH-0007",
+      "dgRouted": false,
+      "receivedAt": "2026-09-28",
+      "loggedAt": "2026-09-28",
+      "lateLogged": false,
+      "datasetIds": [
+        "DS-001"
+      ],
+      "views": [
+        "ParentStudent_vw_ParentStudent"
+      ],
+      "fieldsRequested": 4,
+      "purpose": "Synthetic demo purpose: monthly enrollment feed via dx hub",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Confidential",
+      "personalData": true,
+      "dgTriggers": [],
+      "ownerSectorId": "GHD",
+      "sensitive": true,
+      "ownerPosition": "no objection (no reply)",
+      "decision": null,
+      "decidedAt": null,
+      "decidedByRole": null,
+      "decisionWorkingDays": null,
+      "accessPermission": null,
+      "releasedAt": null,
+      "agreedReleaseDate": null,
+      "registerEntryAt": null,
+      "stateEnteredAt": "2026-10-07",
+      "dueAt": "2026-10-12",
+      "responsibleRole": "cdo",
+      "documentIds": [
+        "DP-02",
+        "DP-01",
+        "DP-04"
+      ],
+      "history": [
+        {
+          "at": "2026-09-28T12:52:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-29T09:52:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-30T13:12:00+04:00",
+          "from": "registered",
+          "to": "in_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-02T13:12:00+04:00",
+          "from": "in_assessment",
+          "to": "owner_confirmation",
+          "transition": "send_to_owner",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-07T13:41:00+04:00",
+          "from": "owner_confirmation",
+          "to": "awaiting_cdo",
+          "transition": "owner_no_reply",
+          "actorRole": "system",
+          "actorUserId": "SYSTEM",
+          "comment": "No reply by working day 7: recorded as no objection"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0008",
+      "workflowId": "external_sharing",
+      "title": "ECC fee data for an affordability review (demo)",
+      "state": "owner_confirmation",
+      "recipient": "Demo Government Entity D (Dubai)",
+      "recipientType": "government",
+      "channel": "Electronic Platform (DX Hub)",
+      "dxHubReference": null,
+      "dgRouted": false,
+      "receivedAt": "2026-10-05",
+      "loggedAt": "2026-10-05",
+      "lateLogged": false,
+      "datasetIds": [
+        "DS-007"
+      ],
+      "views": [
+        "ECCFee_vw_ECC_FEE"
+      ],
+      "fieldsRequested": 16,
+      "purpose": "Synthetic demo purpose: ecc fee data for an affordability review",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Confidential",
+      "personalData": false,
+      "dgTriggers": [],
+      "ownerSectorId": "GHD",
+      "sensitive": false,
+      "ownerPosition": null,
+      "decision": null,
+      "decidedAt": null,
+      "decidedByRole": null,
+      "decisionWorkingDays": null,
+      "accessPermission": null,
+      "releasedAt": null,
+      "agreedReleaseDate": null,
+      "registerEntryAt": null,
+      "stateEnteredAt": "2026-10-09",
+      "dueAt": "2026-10-14",
+      "responsibleRole": "data_owner",
+      "documentIds": [
+        "DP-02",
+        "DP-01"
+      ],
+      "history": [
+        {
+          "at": "2026-10-05T08:41:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-06T09:52:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-07T09:41:00+04:00",
+          "from": "registered",
+          "to": "in_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-09T14:20:00+04:00",
+          "from": "in_assessment",
+          "to": "owner_confirmation",
+          "transition": "send_to_owner",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0009",
+      "workflowId": "external_sharing",
+      "title": "Training institute course list (demo)",
+      "state": "in_assessment",
+      "recipient": "Demo Government Entity E (federal)",
+      "recipientType": "government",
+      "channel": "Secure file transfer",
+      "dxHubReference": "DEMO-DXH-0009",
+      "dgRouted": false,
+      "receivedAt": "2026-10-12",
+      "loggedAt": "2026-10-12",
+      "lateLogged": false,
+      "datasetIds": [
+        "DS-013"
+      ],
+      "views": [
+        "TrainingInstituteCourses_vw_TrainingInstituteCourses"
+      ],
+      "fieldsRequested": 8,
+      "purpose": "Synthetic demo purpose: training institute course list",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Open",
+      "personalData": false,
+      "dgTriggers": [],
+      "ownerSectorId": "GHD",
+      "sensitive": false,
+      "ownerPosition": null,
+      "decision": null,
+      "decidedAt": null,
+      "decidedByRole": null,
+      "decisionWorkingDays": null,
+      "accessPermission": null,
+      "releasedAt": null,
+      "agreedReleaseDate": null,
+      "registerEntryAt": null,
+      "stateEnteredAt": "2026-10-14",
+      "dueAt": "2026-10-16",
+      "responsibleRole": "dsa_analyst",
+      "documentIds": [
+        "DP-02",
+        "DP-01"
+      ],
+      "history": [
+        {
+          "at": "2026-10-12T10:05:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-13T11:05:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-14T11:05:00+04:00",
+          "from": "registered",
+          "to": "in_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0010",
+      "workflowId": "external_sharing",
+      "title": "Parent contract counts by area (demo)",
+      "state": "registered",
+      "recipient": "Demo Government Entity A (Dubai)",
+      "recipientType": "government",
+      "channel": "Electronic Platform (DX Hub)",
+      "dxHubReference": null,
+      "dgRouted": false,
+      "receivedAt": "2026-10-13",
+      "loggedAt": "2026-10-13",
+      "lateLogged": false,
+      "datasetIds": [
+        "DS-011"
+      ],
+      "views": [
+        "ParentContract_vw_ParentContract"
+      ],
+      "fieldsRequested": 8,
+      "purpose": "Synthetic demo purpose: parent contract counts by area",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Confidential",
+      "personalData": false,
+      "dgTriggers": [],
+      "ownerSectorId": "GHD",
+      "sensitive": false,
+      "ownerPosition": null,
+      "decision": null,
+      "decidedAt": null,
+      "decidedByRole": null,
+      "decisionWorkingDays": null,
+      "accessPermission": null,
+      "releasedAt": null,
+      "agreedReleaseDate": null,
+      "registerEntryAt": null,
+      "stateEnteredAt": "2026-10-14",
+      "dueAt": "2026-10-19",
+      "responsibleRole": "dsa_analyst",
+      "documentIds": [
+        "DP-02",
+        "DP-01"
+      ],
+      "history": [
+        {
+          "at": "2026-10-13T08:20:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-10-14T15:52:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0011",
+      "workflowId": "external_sharing",
+      "title": "Student mobility statistics (demo)",
+      "state": "approved_awaiting_release",
+      "recipient": "Demo Government Entity B (federal)",
+      "recipientType": "government",
+      "channel": "Electronic Platform (DX Hub)",
+      "dxHubReference": null,
+      "dgRouted": false,
+      "receivedAt": "2026-09-03",
+      "loggedAt": "2026-09-03",
+      "lateLogged": false,
+      "datasetIds": [
+        "DS-001"
+      ],
+      "views": [
+        "ParentStudent_vw_ParentStudent"
+      ],
+      "fieldsRequested": 4,
+      "purpose": "Synthetic demo purpose: student mobility statistics",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Confidential",
+      "personalData": true,
+      "dgTriggers": [],
+      "ownerSectorId": "GHD",
+      "sensitive": true,
+      "ownerPosition": "confirmed",
+      "decision": "approved",
+      "decidedAt": "2026-09-22",
+      "decidedByRole": "dg_office",
+      "decisionWorkingDays": 13,
+      "accessPermission": {
+        "purpose": "As stated",
+        "fields": "Trimmed to the release specification",
+        "retention": "12 months (demo)",
+        "onwardSharing": "Not permitted"
+      },
+      "releasedAt": null,
+      "agreedReleaseDate": "2026-10-06",
+      "registerEntryAt": null,
+      "stateEnteredAt": "2026-09-22",
+      "dueAt": "2026-10-06",
+      "responsibleRole": "digital_excellence",
+      "documentIds": [
+        "DP-02",
+        "DP-01",
+        "DP-04"
+      ],
+      "history": [
+        {
+          "at": "2026-09-03T14:20:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-04T14:12:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-07T11:12:00+04:00",
+          "from": "registered",
+          "to": "in_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-09T08:20:00+04:00",
+          "from": "in_assessment",
+          "to": "owner_confirmation",
+          "transition": "send_to_owner",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-11T14:41:00+04:00",
+          "from": "owner_confirmation",
+          "to": "awaiting_cdo",
+          "transition": "owner_confirm",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-09-15T09:20:00+04:00",
+          "from": "awaiting_cdo",
+          "to": "awaiting_dg",
+          "transition": "route_to_dg",
+          "actorRole": "cdo",
+          "actorUserId": "U-cdo"
+        },
+        {
+          "at": "2026-09-22T15:34:00+04:00",
+          "from": "awaiting_dg",
+          "to": "approved_awaiting_release",
+          "transition": "dg_approve",
+          "actorRole": "dg_office",
+          "actorUserId": "U-dg-office"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0012",
+      "workflowId": "external_sharing",
+      "title": "School permit list for licensing cross-check (demo)",
+      "state": "received",
+      "recipient": "Demo Government Entity A (Dubai)",
+      "recipientType": "government",
+      "channel": "Secure file transfer",
+      "dxHubReference": "DEMO-DXH-0012",
+      "dgRouted": false,
+      "receivedAt": "2026-10-14",
+      "loggedAt": "2026-10-14",
+      "lateLogged": true,
+      "datasetIds": [
+        "DS-006"
+      ],
+      "views": [
+        "EducationCenterPermit_vw_Permit"
+      ],
+      "fieldsRequested": 9,
+      "purpose": "Synthetic demo purpose: school permit list for licensing cross-check",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Confidential",
+      "personalData": false,
+      "dgTriggers": [],
+      "ownerSectorId": "GHD",
+      "sensitive": false,
+      "ownerPosition": null,
+      "decision": null,
+      "decidedAt": null,
+      "decidedByRole": null,
+      "decisionWorkingDays": null,
+      "accessPermission": null,
+      "releasedAt": null,
+      "agreedReleaseDate": null,
+      "registerEntryAt": null,
+      "stateEnteredAt": "2026-10-14",
+      "dueAt": "2026-10-16",
+      "responsibleRole": "dsa_analyst",
+      "documentIds": [
+        "DP-02",
+        "DP-01"
+      ],
+      "history": [
+        {
+          "at": "2026-10-14T11:34:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "requester",
+          "actorUserId": "U-requester",
+          "comment": "Logged 2 working days after receipt"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0013",
+      "workflowId": "external_sharing",
+      "title": "Special educational needs counts (demo)",
+      "state": "closed",
+      "recipient": "Demo University Research Team",
+      "recipientType": "non_government",
+      "channel": "Electronic Platform (DX Hub)",
+      "dxHubReference": null,
+      "dgRouted": false,
+      "receivedAt": "2026-03-19",
+      "loggedAt": "2026-03-19",
+      "lateLogged": false,
+      "datasetIds": [],
+      "views": [
+        "POD_vw_SCH_POD_STUDENTSODFORM"
+      ],
+      "fieldsRequested": 14,
+      "purpose": "Synthetic demo purpose: special educational needs counts",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Sensitive",
+      "personalData": true,
+      "dgTriggers": [
+        "sensitive_or_secret",
+        "non_government_not_open"
+      ],
+      "ownerSectorId": "GHD",
+      "sensitive": true,
+      "ownerPosition": "confirmed",
+      "decision": "approved",
+      "decidedAt": "2026-04-09",
+      "decidedByRole": "dg_office",
+      "decisionWorkingDays": 15,
+      "accessPermission": {
+        "purpose": "As stated",
+        "fields": "Trimmed to the release specification",
+        "retention": "12 months (demo)",
+        "onwardSharing": "Not permitted"
+      },
+      "releasedAt": "2026-04-16",
+      "agreedReleaseDate": "2026-04-23",
+      "registerEntryAt": "2026-04-16",
+      "stateEnteredAt": "2026-04-16",
+      "dueAt": null,
+      "responsibleRole": null,
+      "documentIds": [
+        "DP-02",
+        "DP-01",
+        "DP-04"
+      ],
+      "history": [
+        {
+          "at": "2026-03-19T12:41:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-03-20T13:41:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-03-23T13:52:00+04:00",
+          "from": "registered",
+          "to": "in_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-03-25T08:20:00+04:00",
+          "from": "in_assessment",
+          "to": "owner_confirmation",
+          "transition": "send_to_owner",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-03-30T08:20:00+04:00",
+          "from": "owner_confirmation",
+          "to": "awaiting_cdo",
+          "transition": "owner_confirm",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        },
+        {
+          "at": "2026-04-01T11:41:00+04:00",
+          "from": "awaiting_cdo",
+          "to": "awaiting_dg",
+          "transition": "route_to_dg",
+          "actorRole": "cdo",
+          "actorUserId": "U-cdo"
+        },
+        {
+          "at": "2026-04-09T12:05:00+04:00",
+          "from": "awaiting_dg",
+          "to": "approved_awaiting_release",
+          "transition": "dg_approve",
+          "actorRole": "dg_office",
+          "actorUserId": "U-dg-office"
+        },
+        {
+          "at": "2026-04-16T12:52:00+04:00",
+          "from": "approved_awaiting_release",
+          "to": "released",
+          "transition": "release",
+          "actorRole": "digital_excellence",
+          "actorUserId": "U-digital-excellence"
+        },
+        {
+          "at": "2026-04-16T12:05:00+04:00",
+          "from": "released",
+          "to": "closed",
+          "transition": "record_in_register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        }
+      ]
+    },
+    {
+      "id": "SHR-2026-0014",
+      "workflowId": "external_sharing",
+      "title": "Exam results summary (demo)",
+      "state": "awaiting_cdo",
+      "recipient": "Demo Government Entity D (Dubai)",
+      "recipientType": "government",
+      "channel": "Secure file transfer",
+      "dxHubReference": null,
+      "dgRouted": false,
+      "receivedAt": "2026-09-21",
+      "loggedAt": "2026-09-21",
+      "lateLogged": false,
+      "datasetIds": [
+        "DS-012"
+      ],
+      "views": [
+        "SchoolExam_vw_SchoolExam"
+      ],
+      "fieldsRequested": 11,
+      "purpose": "Synthetic demo purpose: exam results summary",
+      "legalBasis": "Res. 2/2017 Art. 26 (demo entry) [confirm]",
+      "retention": "12 months (demo)",
+      "draftClassification": "Confidential",
+      "personalData": false,
+      "dgTriggers": [],
+      "ownerSectorId": "GHD",
+      "sensitive": false,
+      "ownerPosition": "confirmed",
+      "decision": null,
+      "decidedAt": null,
+      "decidedByRole": null,
+      "decisionWorkingDays": null,
+      "accessPermission": null,
+      "releasedAt": null,
+      "agreedReleaseDate": null,
+      "registerEntryAt": null,
+      "stateEnteredAt": "2026-09-30",
+      "dueAt": "2026-10-05",
+      "responsibleRole": "cdo",
+      "documentIds": [
+        "DP-02",
+        "DP-01"
+      ],
+      "history": [
+        {
+          "at": "2026-09-21T09:41:00+04:00",
+          "from": null,
+          "to": "received",
+          "transition": "log",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-22T08:34:00+04:00",
+          "from": "received",
+          "to": "registered",
+          "transition": "register",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-23T09:12:00+04:00",
+          "from": "registered",
+          "to": "in_assessment",
+          "transition": "start_assessment",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-25T14:34:00+04:00",
+          "from": "in_assessment",
+          "to": "owner_confirmation",
+          "transition": "send_to_owner",
+          "actorRole": "dsa_analyst",
+          "actorUserId": "U-dsa-analyst"
+        },
+        {
+          "at": "2026-09-30T12:34:00+04:00",
+          "from": "owner_confirmation",
+          "to": "awaiting_cdo",
+          "transition": "owner_confirm",
+          "actorRole": "data_owner",
+          "actorUserId": "U-data-owner"
+        }
+      ]
+    }
+  ]
+}
